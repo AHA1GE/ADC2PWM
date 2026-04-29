@@ -22,12 +22,12 @@ static uint16_t s_channelPulseUs[2] = { SERVO_DEFAULT_US, SERVO_DEFAULT_US };
 
 static bool isValidVirtualPin(int pin)
 {
-	return (pin == SERVO_PIN_CH1) || (pin == SERVO_PIN_CH4);
+	return (pin == PD4_TIM2CH1) || (pin == PD7_TIM2CH4);
 }
 
 static uint8_t pinToSlot(int pin)
 {
-	return (pin == SERVO_PIN_CH1) ? 0 : 1;
+	return (pin == PD4_TIM2CH1) ? 0 : 1;
 }
 
 static uint16_t clampPulseUs(uint16_t us)
@@ -84,7 +84,7 @@ static void initTimer2IfNeeded(void)
 static void writePulseToTimer(int pin, uint16_t pulseUs)
 {
 	const uint16_t clamped = clampPulseUs(pulseUs);
-	if (pin == SERVO_PIN_CH1) {
+	if (pin == PD4_TIM2CH1) {
 		TIM_SetCompare1(TIM2, clamped);
 		s_channelPulseUs[0] = clamped;
 	} else {
