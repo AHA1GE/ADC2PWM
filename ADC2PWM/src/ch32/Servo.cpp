@@ -16,18 +16,21 @@
 static servo_t servos[MAX_SERVOS];
 uint8_t ServoCount = 0;
 
-static bool s_timerInitialized = false;
-static uint8_t s_channelOwner[2] = { INVALID_SERVO, INVALID_SERVO };
-static uint16_t s_channelPulseUs[2] = { SERVO_DEFAULT_US, SERVO_DEFAULT_US };
+static bool s_timer2Initialized = false;
+static uint8_t s_channelOwner[3] = { INVALID_SERVO, INVALID_SERVO, INVALID_SERVO };
+static uint16_t s_channelPulseUs[3] = { SERVO_DEFAULT_US, SERVO_DEFAULT_US, SERVO_DEFAULT_US };
 
 static bool isValidVirtualPin(int pin)
 {
-	return (pin == PD4_TIM2CH1) || (pin == PD7_TIM2CH4);
+	return (pin == PD4_TIM2CH1) || (pin == PD7_TIM2CH4) || (pin == PC4_TIM1CH4);
 }
 
 static uint8_t pinToSlot(int pin)
 {
-	return (pin == PD4_TIM2CH1) ? 0 : 1;
+	if (pin == PD4_TIM2CH1) return 0;
+	if (pin == PD7_TIM2CH4) return 1;
+	if (pin == PC4_TIM1CH4) return 2;
+	return 0; // fallback, should not happen
 }
 
 static uint16_t clampPulseUs(uint16_t us)
@@ -43,10 +46,10 @@ static uint16_t clampPulseUs(uint16_t us)
 
 static void initTimer2IfNeeded(void)
 {
-	if (s_timerInitialized) {
+	if (s_timer2Initialized) {
 		return;
 	}
-	s_timerInitialized = true;
+	s_timer2Initialized = true;
 
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
@@ -81,15 +84,54 @@ static void initTimer2IfNeeded(void)
 	TIM_Cmd(TIM2, ENABLE);
 }
 
+initTimer1IfNeeded(void){
+	if (s_timer1Initialized) {
+		return;
+	}
+	s_timer1Initialized = true;
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
+
+	GPIO_InitTypeDef gpio = {0};
+	gpio.GPIO_Pin = GPIO_Pin_4;
+	gpio.GPIO_Mode = GPIO_Mode_AF_PP;
+	gpio.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOC, &gpio);
+
+	TIM_TimeBaseInitTypeDef tb = {0};
+	tb.TIM_Period = SERVO_TIM2_ARR;
+	tb.TIM_Prescaler = SERVO_TIM2_PSC;
+	tb.TIM_ClockDivision = TIM_CKD_DIV1;
+	tb.TIM_CounterMode = TIM_CounterMode_Up;
+	TIM_TimeBaseInit(TIM1, &tb);
+
+	TIM_OCInitTypeDef oc = {0};
+	oc.TIM_OCMode = TIM_OCMode_PWM1;
+	oc.TIM_OutputState = TIM_OutputState_Enable;
+	oc.TIM_Pulse = SERVO_DEFAULT_US;
+	oc.TIM_OCPolarity = TIM_OCPolarity_High;
+
+	TIM_OC4Init(TIM1, &oc);
+	TIM_OC4PreloadConfig(TIM1, TIM_OCPreload_Enable);
+
+	TIM_ARRPreloadConfig(TIM1, ENABLE);
+	TIM_GenerateEvent(TIM1, TIM_EventSource_Update);
+	TIM_Cmd(TIM1, ENABLE);
+}
+
 static void writePulseToTimer(int pin, uint16_t pulseUs)
 {
 	const uint16_t clamped = clampPulseUs(pulseUs);
 	if (pin == PD4_TIM2CH1) {
 		TIM_SetCompare1(TIM2, clamped);
 		s_channelPulseUs[0] = clamped;
-	} else {
+	} else if (pin == PD7_TIM2CH4) {
 		TIM_SetCompare4(TIM2, clamped);
 		s_channelPulseUs[1] = clamped;
+	} else if (pin == PC4_TIM1CH4) {
+		TIM_SetCompare4(TIM1, clamped);
+		s_channelPulseUs[2] = clamped;
 	}
 }
 
@@ -140,7 +182,11 @@ uint8_t Servo::attach(int pin, int min, int max)
 		}
 	}
 
-	initTimer2IfNeeded();
+	if (pin == PD4_TIM2CH1 || pin == PD7_TIM2CH4) {
+		initTimer2IfNeeded();
+	} else if (pin == PC4_TIM1CH4) {
+		initTimer1IfNeeded();
+	}
 
 	this->min = (MIN_PULSE_WIDTH - min) / 4;
 	this->max = (MAX_PULSE_WIDTH - max) / 4;
