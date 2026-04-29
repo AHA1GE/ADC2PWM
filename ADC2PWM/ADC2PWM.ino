@@ -22,26 +22,40 @@
 #if defined(ADC2PWM_PLATFORM_AVR)
 #define PWM_PIN 2
 #define ADC_PIN A0
+#define BATT_PIN A1
 #define LED_PIN 3
-#define LED_ACTIVE_HIGH 0
+#define LED_ACTIVE_HIGH 1 // arduino can push
 #define ADC_MAX_VALUE 1023
+#define SDA_PIN NULL
+#define SCL_PIN NULL
 #elif defined(ADC2PWM_PLATFORM_CH32)
-#define PWM_PIN SERVO_PIN_CH1
-#define ADC_PIN PA2
-#define LED_PIN PD1
-#define LED_ACTIVE_HIGH 0
+#define PWM_PIN PD4_TIM2CH1
+#define ADC_PIN PA2 // ADC0, potentiometer
+#define BATT_PIN PD6 //ADC6, 4.7k/10k divider, 5v vRef -> `vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE`
+#define LED_PIN PD4 // same physical pin as SWD on CH32V003J4M6
+#define LED_ACTIVE_HIGH 0  // ch32 use open/drain to sink, active low
+#define SDA_PIN PC1
+#define SCL_PIN PC2
 #define ADC_MAX_VALUE 1023
 #elif defined(ADC2PWM_PLATFORM_ESP32)
 #if defined(CONFIG_IDF_TARGET_ESP32C3)
-#define PWM_PIN 0
-#define ADC_PIN 10
-#define LED_PIN 8
-#define LED_ACTIVE_HIGH 1
+#define PWM_PIN NULL
+#define ADC_PIN NULL
+#define BATT_PIN NULL
+#define LED_PIN NULL
+#define LED_ACTIVE_HIGH NULL
+#define ADC_MAX_VALUE 4095
+#define SDA_PIN NULL
+#define SCL_PIN NULL
 #elif defined(CONFIG_IDF_TARGET_ESP32S3)
-#define PWM_PIN 13
-#define ADC_PIN 12
-#define LED_PIN 48
-#define LED_ACTIVE_HIGH 1
+#define PWM_PIN NULL
+#define ADC_PIN NULL
+#define BATT_PIN NULL
+#define LED_PIN NULL
+#define LED_ACTIVE_HIGH NULL
+#define ADC_MAX_VALUE 4095
+#define SDA_PIN NULL
+#define SCL_PIN NULL
 #elif !defined(PWM_PIN) || !defined(ADC_PIN) || !defined(LED_PIN) || !defined(LED_ACTIVE_HIGH)
 #error "Generic ESP32 requires predefined ADC_PIN, PWM_PIN, LED_PIN and LED_ACTIVE_HIGH before compiling."
 #endif
@@ -57,7 +71,7 @@
 #define PWM_MAX_US 2000
 
 // ---------------- Timing ----------------
-#define BOOT_TIME_MS 2500
+#define BOOT_TIME_MS 2100
 #define LOOP_DELAY_MS 10
 
 // ---------------- Soft Start ----------------
