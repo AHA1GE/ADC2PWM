@@ -23,12 +23,11 @@
 #define OLED_CMD  0	//写命令
 #define OLED_DATA 1	//写数据
 
-//使用宏定义，速度更快（寄存器方式）
-#define OLED_SCL_Clr()  (GPIOB->BRR = GPIO_Pin_8);for(int i=0;i<6;i++)   // 复位 SCL (将 GPIOB 的 8 号引脚拉低)
-#define OLED_SCL_Set()  (GPIOB->BSRR = GPIO_Pin_8);for(int i=0;i<6;i++)  // 置位 SCL (将 GPIOB 的 8 号引脚拉高)
-
-#define OLED_SDA_Clr()  (GPIOB->BRR = GPIO_Pin_9);for(int i=0;i<3;i++)   // 复位 SDA (将 GPIOB 的 9 号引脚拉低)
-#define OLED_SDA_Set()  (GPIOB->BSRR = GPIO_Pin_9);for(int i=0;i<3;i++)  // 置位 SDA (将 GPIOB 的 9 号引脚拉高)
+// port to ch32v003
+#define OLED_SCL_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<6;i++)   // 复位 SCL (将 GPIOC 的 1 号引脚拉低)
+#define OLED_SCL_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<6;i++)  // 置位 SCL (将 GPIOC 的 1 号引脚拉高)
+#define OLED_SDA_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<3;i++)   // 复位 SDA (将 GPIOC 的 2 号引脚拉低)
+#define OLED_SDA_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<3;i++)  // 置位 SDA (将 GPIOC 的 2 号引脚拉高)
 
 /*========================================================================*/
 /*========================================================================*/
@@ -73,14 +72,15 @@ bool OLED_IfChangedScreen(void){
   */
 void OLED_DelayMs(uint32_t xms)
 {
-	while(xms--)
-	{
-		SysTick->LOAD = 72 * 1000;				//设置定时器重装值
-		SysTick->VAL = 0x00;					//清空当前计数值
-		SysTick->CTRL = 0x00000005;				//设置时钟源为HCLK，启动定时器
-		while(!(SysTick->CTRL & 0x00010000));	//等待计数到0
-		SysTick->CTRL = 0x00000004;				//关闭定时器
-	}
+	// while(xms--)
+	// {
+	// 	SysTick->LOAD = 72 * 1000;				//设置定时器重装值
+	// 	SysTick->VAL = 0x00;					//清空当前计数值
+	// 	SysTick->CTRL = 0x00000005;				//设置时钟源为HCLK，启动定时器
+	// 	while(!(SysTick->CTRL & 0x00010000));	//等待计数到0
+	// 	SysTick->CTRL = 0x00000004;				//关闭定时器
+	// }
+    delay(xms);
 }
 /**
  * @brief IIC开始信号
@@ -330,23 +330,17 @@ extern void OLED_Clear(void);
 void OLED_Init(void)
 {
     OLED_DelayMs(100);	//等待100ms，等待OLED初始化完成
-	/*将SCL和SDA引脚初始化为开漏模式*/
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
-	
-	GPIO_InitTypeDef GPIO_InitStructure;
- 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
- 	GPIO_Init(GPIOB, &GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
- 	GPIO_Init(GPIOB, &GPIO_InitStructure);
-	
-     OLED_SCL_Set();
-     OLED_SDA_Set();
-     
+	/* 将SCL: PC1和SDA: PC2引脚初始化为开漏模式 */
+    GPIO_InitTypeDef GPIO_InitStructure = {0};
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
 
-	
-	
+    OLED_SCL_Set();
+    OLED_SDA_Set();
+
     OLED_Write_CMD(0xAE); /*关闭显示*/
     OLED_Write_CMD(0xD5); /*设置显示时钟分频比/振荡器频率*/
     OLED_Write_CMD(0xF0);
