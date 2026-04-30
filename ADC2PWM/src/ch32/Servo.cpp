@@ -17,6 +17,7 @@ static servo_t servos[MAX_SERVOS];
 uint8_t ServoCount = 0;
 
 static bool s_timer2Initialized = false;
+static bool s_timer1Initialized = false;
 static uint8_t s_channelOwner[3] = { INVALID_SERVO, INVALID_SERVO, INVALID_SERVO };
 static uint16_t s_channelPulseUs[3] = { SERVO_DEFAULT_US, SERVO_DEFAULT_US, SERVO_DEFAULT_US };
 
@@ -84,7 +85,7 @@ static void initTimer2IfNeeded(void)
 	TIM_Cmd(TIM2, ENABLE);
 }
 
-initTimer1IfNeeded(void){
+static void initTimer1IfNeeded(void){
 	if (s_timer1Initialized) {
 		return;
 	}
