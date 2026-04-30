@@ -213,17 +213,25 @@ static uint16_t adcToPulseUs(uint16_t adcValue)
 ================================*/
 
 #if USE_OLED_SCREEN && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
-static void screenClear(){
+static void screenInit(void){
+	u8x8.begin();
+	u8x8.setPowerSave(0);
+	u8x8.setFont(u8x8_font_chroma48medium8_r);
+	u8x8.clear();
+	u8x8.drawString(1, 3, "Init...");
+	u8x8.refreshDisplay();
+}
+static void screenClear(void){
 	u8x8.clear();
 	u8x8.refreshDisplay();
 }
-static void screenShowDisarmed()
+static void screenShowDisarmed(void)
 {
 	u8x8.clear();
 	u8x8.drawString(0, 3, "DISARMED");
 	u8x8.refreshDisplay();
 }
-static void screenPrintPrepare()
+static void screenPrintPrepare(void)
 {
 	u8x8.clear();
 	u8x8.drawString(0, 1, "Bat:");
@@ -231,19 +239,22 @@ static void screenPrintPrepare()
 	u8x8.drawString(0, 5, "PWM:");
 	u8x8.refreshDisplay();
 }
-static void screenPrint()
+static void screenPrint(void)
 {
 	char buffer[16];
 	// format vBattMv to `x.xV` with 1 decimal place
 	snprintf(buffer, sizeof(buffer), "%0.1fV", vBattMv / 1000.0);
-	u8x8.drawString(5, 1, buffer); // `Batt Voltage: ` offset 14
+	// `Bat:` length 4, +1 for spacing
+	u8x8.drawString(5, 1, buffer); 
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
-	u8x8.drawString(5, 3, buffer); // `Throttle: ` offset 10
+	// `Thr:` length 4, +1 for spacing
+	u8x8.drawString(5, 3, buffer); 
 	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
-	u8x8.drawString(5, 5, buffer); // `PWM(us): ` offset 9
+	// `PWM:` length 4, +1 for spacing
+	u8x8.drawString(5, 5, buffer); 
 	u8x8.refreshDisplay();
 }
-static void screenLowBatteryWarning()
+static void screenLowBatteryWarning(void)
 {
 	// blink low battery warning at the right corner
 	if (millis() % 1000 < 500)
@@ -256,13 +267,62 @@ static void screenLowBatteryWarning()
 	screenPrint();
 }
 #elif USE_OLED_SCREEN && defined(ADC2PWM_PLATFORM_CH32)
-static void screenClear(){}
-static void screenShowDisarmed(){}
-static void screenPrintPrepare(){}
-static void screenPrint()
-{}
-static void screenLowBatteryWarning()
-{}
+static void screenInit(void){
+	OLED_Init();
+	OLED_SetBrightness(50);
+	OLED_Printf(9,25,OLED_FONT_8,"Init...");
+    OLED_Update();
+}
+static void screenClear(void)
+{
+	OLED_Clear();
+	OLED_Update();
+}
+static void screenShowDisarmed(void)
+{
+	OLED_Clear();
+	OLED_Printf(0,25,OLED_FONT_8,"DISARMED");
+	OLED_Update();
+}
+static void screenPrintPrepare(void)
+{
+	OLED_Clear();
+	OLED_Printf(0,0,OLED_FONT_8,"Bat:");
+	OLED_Printf(0,16,OLED_FONT_8,"Thr:");
+	OLED_Printf(0,32,OLED_FONT_8,"PWM:");
+	OLED_Update();
+}
+static void screenPrint(void)
+{
+	char buffer[16];
+
+	// format vBattMv to `x.xV` with 1 decimal place
+	snprintf(buffer, sizeof(buffer), "%0.1fV", vBattMv / 1000.0);
+	// `Bat:` length 4, +1 for spacing
+	OLED_Printf(32,0,OLED_FONT_8,buffer); 
+
+	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
+	// `Thr:` length 4, +1 for spacing
+	OLED_Printf(32,16,OLED_FONT_8,buffer); 
+
+	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
+	// `PWM:` length 4, +1 for spacing
+	OLED_Printf(32,32,OLED_FONT_8,buffer); 
+
+	OLED_Update();
+}
+static void screenLowBatteryWarning(void)
+{
+	// blink low battery warning at the right corner
+	if (millis() % 1000 < 500)
+	{
+		OLED_Printf(64,0,OLED_FONT_8,"!");
+	}else
+	{
+		OLED_Printf(64,0,OLED_FONT_8," ");
+	}
+	screenPrint();
+}
 #endif
 
 /*================================
@@ -438,14 +498,9 @@ void setup()
 	stateError.stateEnter = nullptr;
 	stateError.stateRun = stateErrorRun;
 	stateError.stateExit = nullptr;
-#if USE_OLED_SCREEN
-	u8x8.begin();
-	u8x8.setPowerSave(0);
-	u8x8.setFont(u8x8_font_chroma48medium8_r);
-	u8x8.clear();
-	u8x8.drawString(0, 1, "Initializing...");
-	u8x8.refreshDisplay();
-#endif
+
+	screenInit();
+
 	delay(100);
 #if !defined(ADC2PWM_PLATFORM_CH32)
 	pinMode(PWM_PIN, OUTPUT); // CH32 has dedicated pin setup
