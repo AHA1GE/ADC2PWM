@@ -20,6 +20,12 @@
 #error "ADC2PWM supports AVR, CH32 and ESP32 only."
 #endif
 
+
+/*================================
+ * Pin and Hardware Configuration
+ *
+================================*/
+
 #if defined(ADC2PWM_PLATFORM_AVR)
 #define PWM_PIN 2
 #define ADC_PIN A0
@@ -27,8 +33,8 @@
 #define LED_PIN 3
 #define LED_ACTIVE_HIGH 1 // arduino can push
 #define ADC_MAX_VALUE 1023
-#define SDA_PIN NULL
-#define SCL_PIN NULL
+#define SDA_PIN -1
+#define SCL_PIN -1
 #elif defined(ADC2PWM_PLATFORM_CH32)
 #define PWM_PIN PC4_TIM1CH4
 #define ADC_PIN PA2		  // ADC0, potentiometer
@@ -40,31 +46,37 @@
 #define ADC_MAX_VALUE 1023
 #elif defined(ADC2PWM_PLATFORM_ESP32)
 #if defined(CONFIG_IDF_TARGET_ESP32C3)
-#define PWM_PIN NULL
-#define ADC_PIN NULL
-#define BATT_PIN NULL
-#define LED_PIN NULL
-#define LED_ACTIVE_HIGH NULL
+#define PWM_PIN -1
+#define ADC_PIN -1
+#define BATT_PIN -1
+#define LED_PIN -1
+#define LED_ACTIVE_HIGH -1
 #define ADC_MAX_VALUE 4095
-#define SDA_PIN NULL
-#define SCL_PIN NULL
+#define SDA_PIN -1
+#define SCL_PIN -1
 #elif defined(CONFIG_IDF_TARGET_ESP32S3)
-#define PWM_PIN NULL
-#define ADC_PIN NULL
-#define BATT_PIN NULL
-#define LED_PIN NULL
-#define LED_ACTIVE_HIGH NULL
+#define PWM_PIN -1
+#define ADC_PIN -1
+#define BATT_PIN -1
+#define LED_PIN -1
+#define LED_ACTIVE_HIGH -1
 #define ADC_MAX_VALUE 4095
-#define SDA_PIN NULL
-#define SCL_PIN NULL
+#define SDA_PIN -1
+#define SCL_PIN -1
 #elif !defined(PWM_PIN) || !defined(ADC_PIN) || !defined(LED_PIN) || !defined(LED_ACTIVE_HIGH)
 #error "Generic ESP32 requires predefined ADC_PIN, PWM_PIN, LED_PIN and LED_ACTIVE_HIGH before compiling."
 #endif
-
 #ifndef ADC_MAX_VALUE
 #define ADC_MAX_VALUE 4095
 #endif
 #endif
+
+
+
+/*================================
+ * PWM, Timing and Safety Configurations
+ *
+================================*/
 
 // ---------------- PWM Range ----------------
 #define PWM_BOOT_US 890
@@ -84,16 +96,26 @@
 #define LOW_BATTERY_MILLIVOLT_THRESHOLD_1S 3300 // 3.3V (for 1s battery)
 #define LOW_BATTERY_MILLIVOLT_THRESHOLD_2S 6500 // 6.5V (for 2s battery)
 
+/*================================
+ * Global Variables and State Definitions
+ *
+================================*/
+
 static uint16_t pwmOutput = PWM_BOOT_US;
 static uint16_t pwmTarget = PWM_BOOT_US;
 static unsigned long bootTimeMs = 0;
-static bool safetyArmed = false;
 
 static Servo esc;
 
 static FSM g_fsm = FSM();
 
 State_t stateBoot, stateDisarmed, stateArmed, stateLowBattery, stateError;
+
+
+/*================================
+ * Helper Functions
+ *
+================================*/
 
 static void ledSet(bool on)
 {
@@ -108,7 +130,7 @@ static void ledBlink(unsigned long intervalMs, unsigned long nowMs)
 
 static void lowBatteryCheck()
 {
-	if (BATT_PIN != NULL)
+	if (BATT_PIN != -1)
 	{
 		const uint16_t adc = readAdcClamped(BATT_PIN);
 		// 1s-2s battery with 4.7k/10k divider -> vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE
@@ -119,7 +141,8 @@ static void lowBatteryCheck()
 			// lower than 1s threshold
 			g_fsm.transition(&stateLowBattery);
 		}
-		else if (4400 < vBattMv && vBattMv < 6000){
+		else if (4400 < vBattMv && vBattMv < 6000)
+		{
 			// between 1s and 2s, error
 			g_fsm.transition(&stateError);
 		}
@@ -128,13 +151,14 @@ static void lowBatteryCheck()
 			// lower than 2s threshold
 			g_fsm.transition(&stateLowBattery);
 		}
-		else{
+		else
+		{
 			// higher than 2s threshold, do nothing
 		}
 	}
 }
 
-static uint16_t readAdcClamped(uint8_t PIN)
+static uint16_t readAdcClamped(int16_t PIN)
 {
 	int raw = analogRead(PIN);
 	if (raw < 0)
@@ -153,33 +177,11 @@ static uint16_t adcToPulseUs(uint16_t adc)
 	return (uint16_t)map((long)adc, 0L, (long)ADC_MAX_VALUE, PWM_MIN_US, PWM_MAX_US);
 }
 
-void setup()
-{
-	delay(100);
-#if !defined(ADC2PWM_PLATFORM_CH32)
-	pinMode(PWM_PIN, OUTPUT); // CH32 has dedicated pin setup
-#endif
-    pinMode(ADC_PIN, INPUT);
-	pinMode(LED_PIN, OUTPUT);
-	ledSet(false);
-	if (BATT_PIN != NULL)
-	{
-		pinMode(BATT_PIN, INPUT);
-	}
 
-#if defined(ADC2PWM_PLATFORM_ESP32)
-	analogReadResolution(12);
-#endif
-
-	g_fsm.init(&stateBoot);
-}
-
-void loop()
-{
-	g_fsm.run();
-	delay(10);
-}
-
+/*================================
+ * State Implementations
+ *
+================================*/
 void stateBootEnter()
 {
 	bootTimeMs = millis();
@@ -308,28 +310,58 @@ void stateErrorRun()
 	}
 }
 
-State_t stateBoot = {
-	.stateName = "stateBoot",
-	.stateEnter = stateBootEnter,
-	.stateRun = stateBootRun,
-	.stateExit = nullptr};
-State_t stateDisarmed = {
-	.stateName = "stateDisarmed",
-	.stateEnter = stateDisarmedEnter,
-	.stateRun = stateDisarmedRun,
-	.stateExit = nullptr};
-State_t stateArmed = {
-	.stateName = "stateArmed",
-	.stateEnter = stateArmedEnter,
-	.stateRun = stateArmedRun,
-	.stateExit = nullptr};
-State_t stateLowBattery = {
-	.stateName = "stateLowBattery",
-	.stateEnter = nullptr,
-	.stateRun = stateLowBatteryRun,
-	.stateExit = nullptr};
-State_t stateError = {
-	.stateName = "stateError",
-	.stateEnter = nullptr,
-	.stateRun = stateErrorRun,
-	.stateExit = nullptr};
+/*================================
+ * Arduino Setup and Loop
+ *
+================================*/
+
+void setup()
+{
+	stateBoot.stateName = "stateBoot";
+	stateBoot.stateEnter = stateBootEnter;
+	stateBoot.stateRun = stateBootRun;
+	stateBoot.stateExit = nullptr;
+
+	stateDisarmed.stateName = "stateDisarmed";
+	stateDisarmed.stateEnter = stateDisarmedEnter;
+	stateDisarmed.stateRun = stateDisarmedRun;
+	stateDisarmed.stateExit = nullptr;
+
+	stateArmed.stateName = "stateArmed";
+	stateArmed.stateEnter = stateArmedEnter;
+	stateArmed.stateRun = stateArmedRun;
+	stateArmed.stateExit = nullptr;
+
+	stateLowBattery.stateName = "stateLowBattery";
+	stateLowBattery.stateEnter = nullptr;
+	stateLowBattery.stateRun = stateLowBatteryRun;
+	stateLowBattery.stateExit = nullptr;
+
+	stateError.stateName = "stateError";
+	stateError.stateEnter = nullptr;
+	stateError.stateRun = stateErrorRun;
+	stateError.stateExit = nullptr;
+	delay(100);
+#if !defined(ADC2PWM_PLATFORM_CH32)
+	pinMode(PWM_PIN, OUTPUT); // CH32 has dedicated pin setup
+#endif
+	pinMode(ADC_PIN, INPUT);
+	pinMode(LED_PIN, OUTPUT);
+	ledSet(false);
+	if (BATT_PIN != -1)
+	{
+		pinMode(BATT_PIN, INPUT);
+	}
+
+#if defined(ADC2PWM_PLATFORM_ESP32)
+	analogReadResolution(12);
+#endif
+
+	g_fsm.init(&stateBoot);
+}
+
+void loop()
+{
+	g_fsm.run();
+	delay(10);
+}
