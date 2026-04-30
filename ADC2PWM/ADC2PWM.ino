@@ -85,15 +85,20 @@
  *
 ================================*/
 
-#if USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN)
+#if USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN)  && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
 #include <Wire.h>
 #include <U8x8lib.h>
 #define SCREEN_WIDTH 72										 // OLED display width, in pixels
 #define SCREEN_HEIGHT 40									 // OLED display height, in pixels
 #define SCREEN_RESET -1										 // OLED display reset pin # (or -1 if sharing Arduino reset pin)
-#define SCREEN_ADDRESS 0x3C									 // See datasheet for Address, 0x3D for 128x64, 0x3C for 128x32
-#define SCREEN_ADDRESS_2 0x3D								 // See datasheet for Address
 U8X8_SSD1306_72X40_ER_HW_I2C u8x8(/* reset=*/U8X8_PIN_NONE); // EastRising 0.42" OLED, 72x40 pixels
+#elif USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN)  && defined(ADC2PWM_PLATFORM_CH32)
+/* Note:
+ * 1) u8x8 or u8g2 is way too large for ch32v003 flash, use OLED-Basic-Lib instead
+ * 2) SDA and SCL pin are hard coded in `OLED_driver.c`. defines above are just for reference and do not have effect on CH32 platform.
+ * 3) Usage can be found at (OLED-Basic-Lib)[https://github.com/bdth-7777777/OLED-Basic-Lib/]
+*/
+#include "OLED.h" 
 #endif
 
 /*================================
@@ -196,32 +201,70 @@ static uint16_t readAdcClamped(int16_t PIN)
 	return (uint16_t)raw;
 }
 
-static uint16_t adcToPulseUs(uint16_t adc)
+static uint16_t adcToPulseUs(uint16_t adcValue)
 {
-	return (uint16_t)map((long)adc, 0L, (long)ADC_MAX_VALUE, PWM_MIN_US, PWM_MAX_US);
+	return (uint16_t)map((long)adcValue, 0L, (long)ADC_MAX_VALUE, PWM_MIN_US, PWM_MAX_US);
 }
 
-static void screenLowBatteryWarning()
+
+/*================================
+ * OLED Functions
+ *
+================================*/
+
+#if USE_OLED_SCREEN && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
+static void screenClear(){
+	u8x8.clear();
+	u8x8.refreshDisplay();
+}
+static void screenShowDisarmed()
 {
-#if USE_OLED_SCREEN
-	// add low battery warning at the right corner
-	u8x8.drawString(SCREEN_WIDTH / 8 * 7, 1, "LOW");
-#endif
+	u8x8.clear();
+	u8x8.drawString(0, 3, "DISARMED");
+	u8x8.refreshDisplay();
+}
+static void screenPrintPrepare()
+{
+	u8x8.clear();
+	u8x8.drawString(0, 1, "Bat:");
+	u8x8.drawString(0, 3, "Thr:");
+	u8x8.drawString(0, 5, "PWM:");
+	u8x8.refreshDisplay();
 }
 static void screenPrint()
 {
-#if USE_OLED_SCREEN
 	char buffer[16];
-	// format vBattMv to `xx.xx V` with 2 decimal places
-	snprintf(buffer, sizeof(buffer), "%0.2f V", vBattMv / 1000.0);
-	u8x8.drawString(14, 1, buffer); // `Batt Voltage: ` offset 14
-	snprintf(buffer, sizeof(buffer), "%u tick", throttleAdc);
-	u8x8.drawString(10, 2, buffer); // `Throttle: ` offset 10
-	snprintf(buffer, sizeof(buffer), "%u us", pwmOutput);
-	u8x8.drawString(9, 3, buffer); // `PWM(us): ` offset 9
+	// format vBattMv to `x.xV` with 1 decimal place
+	snprintf(buffer, sizeof(buffer), "%0.1fV", vBattMv / 1000.0);
+	u8x8.drawString(5, 1, buffer); // `Batt Voltage: ` offset 14
+	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
+	u8x8.drawString(5, 3, buffer); // `Throttle: ` offset 10
+	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
+	u8x8.drawString(5, 5, buffer); // `PWM(us): ` offset 9
 	u8x8.refreshDisplay();
-#endif
 }
+static void screenLowBatteryWarning()
+{
+	// blink low battery warning at the right corner
+	if (millis() % 1000 < 500)
+	{
+		u8x8.drawString(8, 1, "!");
+	}else
+	{
+		u8x8.drawString(8, 1, " ");
+	}
+	screenPrint();
+}
+#elif USE_OLED_SCREEN && defined(ADC2PWM_PLATFORM_CH32)
+static void screenClear(){}
+static void screenShowDisarmed(){}
+static void screenPrintPrepare(){}
+static void screenPrint()
+{}
+static void screenLowBatteryWarning()
+{}
+#endif
+
 /*================================
  * State Implementations
  *
@@ -254,10 +297,7 @@ void stateBootRun()
 }
 void stateBootExit()
 {
-#if USE_OLED_SCREEN
-	u8x8.clear();
-	u8x8.refreshDisplay();
-#endif
+	screenClear();
 }
 void stateDisarmedEnter()
 {
@@ -265,11 +305,7 @@ void stateDisarmedEnter()
 	pwmOutput = PWM_BOOT_US;
 	pwmTarget = PWM_BOOT_US;
 	esc.writeMicroseconds(pwmOutput);
-#if USE_OLED_SCREEN
-	u8x8.clear();
-	u8x8.drawString(10, 2, "DISARMED");
-	u8x8.refreshDisplay();
-#endif
+	screenShowDisarmed();
 }
 void stateDisarmedRun()
 {
@@ -296,13 +332,7 @@ void stateArmedEnter()
 	pwmOutput = PWM_MIN_US;
 	pwmTarget = PWM_MIN_US;
 	esc.writeMicroseconds(pwmOutput);
-#if USE_OLED_SCREEN
-	u8x8.clear();
-	u8x8.drawString(0, 1, "Batt Voltage:"); // offset 13
-	u8x8.drawString(0, 2, "Throttle:");	  // offset 9
-	u8x8.drawString(0, 3, "PWM(us):");	  // offset 8
-	u8x8.refreshDisplay();
-#endif
+	screenPrintPrepare();
 }
 void stateArmedRun()
 {
@@ -362,7 +392,6 @@ void stateLowBatteryRun()
 	ledBlink(300, nowMs);
 
 	screenLowBatteryWarning();
-	screenPrint();
 }
 void stateErrorRun()
 {
