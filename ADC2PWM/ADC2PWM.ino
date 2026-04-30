@@ -270,7 +270,7 @@ static void screenLowBatteryWarning(void)
 static void screenInit(void){
 	OLED_Init();
 	OLED_SetBrightness(50);
-	OLED_Printf(9,25,OLED_FONT_8,"Init...");
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 9, 25, "Init...", OLED_FONT_8);//OLED显示字符数组（字符串）
     OLED_Update();
 }
 static void screenClear(void)
@@ -281,15 +281,15 @@ static void screenClear(void)
 static void screenShowDisarmed(void)
 {
 	OLED_Clear();
-	OLED_Printf(0,25,OLED_FONT_8,"DISARMED");
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 25, "DISARMED", OLED_FONT_8);//OLED显示字符数组（字符串）
 	OLED_Update();
 }
 static void screenPrintPrepare(void)
 {
 	OLED_Clear();
-	OLED_Printf(0,0,OLED_FONT_8,"Bat:");
-	OLED_Printf(0,16,OLED_FONT_8,"Thr:");
-	OLED_Printf(0,32,OLED_FONT_8,"PWM:");
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Bat:", OLED_FONT_8);//OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "Thr:", OLED_FONT_8);//OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 32, "PWM:", OLED_FONT_8);//OLED显示字符数组（字符串）
 	OLED_Update();
 }
 static void screenPrint(void)
@@ -299,15 +299,15 @@ static void screenPrint(void)
 	// format vBattMv to `x.xV` with 1 decimal place
 	snprintf(buffer, sizeof(buffer), "%0.1fV", vBattMv / 1000.0);
 	// `Bat:` length 4, +1 for spacing
-	OLED_Printf(32,0,OLED_FONT_8,buffer); 
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);//OLED显示字符数组（字符串）
 
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
 	// `Thr:` length 4, +1 for spacing
-	OLED_Printf(32,16,OLED_FONT_8,buffer); 
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);//OLED显示字符数组（字符串）
 
 	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
 	// `PWM:` length 4, +1 for spacing
-	OLED_Printf(32,32,OLED_FONT_8,buffer); 
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 32, buffer, OLED_FONT_8);//OLED显示字符数组（字符串）
 
 	OLED_Update();
 }
@@ -316,10 +316,10 @@ static void screenLowBatteryWarning(void)
 	// blink low battery warning at the right corner
 	if (millis() % 1000 < 500)
 	{
-		OLED_Printf(64,0,OLED_FONT_8,"!");
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, "!", OLED_FONT_8);//OLED显示字符数组（字符串）
 	}else
 	{
-		OLED_Printf(64,0,OLED_FONT_8," ");
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, " ", OLED_FONT_8);//OLED显示字符数组（字符串）
 	}
 	screenPrint();
 }

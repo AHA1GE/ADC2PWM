@@ -1,8 +1,6 @@
 #ifndef __OLED_DRIVER_H
 #define __OLED_DRIVER_H
 
-
-
 #include <string.h>
 #include <math.h>
 #include <stdbool.h>
@@ -10,16 +8,9 @@
 #include <stdio.h>
 #include <ch32v00x.h> // port to ch32v00x
 
-
-
-
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-
 
 //	oled初始化函数
 void OLED_Init(void);

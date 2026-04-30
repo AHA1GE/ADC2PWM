@@ -31,13 +31,6 @@ extern "C" {
 #define OLED_FILLED				        (1)
 
 
-
-/**关于是否使用精简版vsprintf函数代替标准vsprintf函数的宏。如果开启此选项，代码体积将减少约5kb，有利于小型嵌入式系统**/
-#define USE_SIMPLE_VSPRINTF   (true)
-
-// 工具函数，实现了一个简单的vsprintf函数，用于格式化输出字符串
-int OLED_Simple_vsprintf(char* buf, const char* format, va_list args);
-
 // 清除屏幕
 void OLED_Clear(void);
 // 清除部分屏幕
@@ -51,7 +44,7 @@ void OLED_ReverseArea(int16_t X, int16_t Y, int16_t Width, int16_t Height);
 void OLED_ShowImage(int16_t X, int16_t Y, uint16_t Width, uint16_t Height, const uint8_t *Image);
 
 // 格式化输出混合字符串
-void OLED_Printf(int16_t X, int16_t Y, uint8_t Font,const char *format, ...);
+void OLED_ShowMixStringArea(int16_t RangeX,int16_t RangeY,int16_t RangeWidth,int16_t RangeHeight,int16_t X, int16_t Y, const char *String, uint8_t Font);
 
 // 限制区域显示图片
 void OLED_ShowImageArea(int16_t X_Area, int16_t Y_Area, int16_t AreaWidth, int16_t AreaHeight, int16_t X_Pic, int16_t Y_Pic, int16_t PictureWidth, int16_t PictureHeight, const uint8_t *Image);

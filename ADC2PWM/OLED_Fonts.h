@@ -28,7 +28,7 @@ typedef struct
 typedef struct 
 {
     char Index[OLED_CHN_CHAR_WIDTH + 1];   // 汉字索引
-    uint8_t Data[8];                      // 字模数据，8*8的汉字需要24字节
+    uint8_t Data[8];                      // 字模数据，8*8的汉字需要8字节
 } ChineseCell8x8_t;
 // 检测是否是C++编译器
 #ifdef __cplusplus
