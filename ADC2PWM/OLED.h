@@ -17,9 +17,9 @@ extern "C" {
 
 /*字体大小参数取值*/
 #define OLED_FONT_8                          (8)                   
- #define OLED_FONT_12                         (12) 
- #define OLED_FONT_16                         (16)
- #define OLED_FONT_20                         (20)
+//  #define OLED_FONT_12                         (12) 
+//  #define OLED_FONT_16                         (16)
+//  #define OLED_FONT_20                         (20)
 
 
 /*字体间隔取值*/
