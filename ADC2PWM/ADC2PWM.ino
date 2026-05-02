@@ -80,6 +80,25 @@
 #endif
 #endif
 
+/*
+ * Compile-time sanity checks
+ * Ensure platform pin macros and LED_ACTIVE_HIGH are not left as -1
+ * (which indicates "not defined" in some ESP32 configs) because
+ * the code calls pinMode/digitalWrite based on these macros.
+ */
+#if defined(PWM_PIN) && (PWM_PIN == -1)
+#error "PWM_PIN is set to -1. Define a valid PWM_PIN for this build target."
+#endif
+#if defined(ADC_PIN) && (ADC_PIN == -1)
+#error "ADC_PIN is set to -1. Define a valid ADC_PIN for this build target."
+#endif
+#if defined(LED_PIN) && (LED_PIN == -1)
+#error "LED_PIN is set to -1. Define a valid LED_PIN for this build target."
+#endif
+#if defined(LED_ACTIVE_HIGH) && !((LED_ACTIVE_HIGH) == 0 || (LED_ACTIVE_HIGH) == 1)
+#error "LED_ACTIVE_HIGH must be 0 or 1 (do not set to -1)."
+#endif
+
 /*================================
  * Screen Configuration (Optional)
  *
@@ -121,8 +140,12 @@ U8X8_SSD1306_72X40_ER_HW_I2C u8x8(/* reset=*/U8X8_PIN_NONE); // EastRising 0.42"
 
 // ---------------- Safety Latch ----------------
 #define ADC_ARM_THRESHOLD 10
-#define LOW_BATTERY_MILLIVOLT_THRESHOLD_1S 3300 // 3.3V (for 1s battery)
-#define LOW_BATTERY_MILLIVOLT_THRESHOLD_2S 6500 // 6.5V (for 2s battery)
+#define BATTERY_THRESHOLD_1S_MIN 3000 // 3.0V (for 1s battery, critical low voltage)
+#define BATTERY_THRESHOLD_1S_LOW 3300 // 3.3V (for 1s battery)
+#define BATTERY_THRESHOLD_1S_MAX 4350 // 4.35V (for 1s battery, 4.2V full charge + 0.15V margin)
+#define BATTERY_THRESHOLD_2S_MIN 6000 // 6.0V (for 2s battery, critical low voltage)
+#define BATTERY_THRESHOLD_2S_LOW 6500 // 6.5V (for 2s battery)
+#define BATTERY_THRESHOLD_2S_MAX 8700 // 8.7V (for 2s battery, 8.4V full charge + 0.3V margin)
 
 /*================================
  * Global Variables and State Definitions
@@ -161,28 +184,41 @@ static void lowBatteryCheck()
 {
 	if (BATT_PIN != -1)
 	{
-		throttleAdc = readAdcClamped(BATT_PIN);
-		// 1s-2s battery with 4.7k/10k divider -> vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE
-		vBattMv = (uint32_t)throttleAdc * 147 * 5 / 47 / ADC_MAX_VALUE;
-		// decide
-		if (vBattMv < LOW_BATTERY_MILLIVOLT_THRESHOLD_1S)
+		// 1s-2s battery, divider: gnd_4.7k_battAdc_10k_vBatt, ref = 5000mV
+		vBattMv = ((uint64_t)readAdcClamped(BATT_PIN) * 147ULL * 5000ULL) / (47ULL * ADC_MAX_VALUE);
+
+		if (vBattMv <= BATTERY_THRESHOLD_1S_MIN)
 		{
-			// lower than 1s threshold
-			g_fsm.transition(&stateLowBattery);
-		}
-		else if (4400 < vBattMv && vBattMv < 6000)
-		{
-			// between 1s and 2s, error
+			// too low, error
 			g_fsm.transition(&stateError);
 		}
-		else if (vBattMv < LOW_BATTERY_MILLIVOLT_THRESHOLD_2S)
+		else if (vBattMv <= BATTERY_THRESHOLD_1S_LOW)
 		{
-			// lower than 2s threshold
+			// 1s low battery, warning
 			g_fsm.transition(&stateLowBattery);
+		}
+		else if (vBattMv <= BATTERY_THRESHOLD_1S_MAX)
+		{
+			// 1s normal, do nothing
+		}
+		else if (vBattMv <= BATTERY_THRESHOLD_2S_MIN)
+		{
+			// not 1s nor 2s, error
+			g_fsm.transition(&stateError);
+		}
+		else if (vBattMv <= BATTERY_THRESHOLD_2S_LOW)
+		{
+			// 2s low battery, warning
+			g_fsm.transition(&stateLowBattery);
+		}
+		else if (vBattMv <= BATTERY_THRESHOLD_2S_MAX)
+		{
+			// 2s normal, do nothing
 		}
 		else
 		{
-			// higher than 2s threshold, do nothing
+			// above 2s max voltage, error
+			g_fsm.transition(&stateError);
 		}
 	}
 }
@@ -243,7 +279,7 @@ static void screenPrint(void)
 {
 	char buffer[16];
 	// format vBattMv to `x.xV` with 1 decimal place
-	snprintf(buffer, sizeof(buffer), "%0.1fV", vBattMv / 1000.0);
+	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv/1000, (vBattMv%1000)/100);
 	// `Bat:` length 4, +1 for spacing
 	u8x8.drawString(5, 1, buffer); 
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
@@ -297,7 +333,7 @@ static void screenPrint(void)
 	char buffer[16];
 
 	// format vBattMv to `x.xV` with 1 decimal place
-	snprintf(buffer, sizeof(buffer), "%0.1fV", vBattMv / 1000.0);
+	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv/1000, (vBattMv%1000)/100);
 	// `Bat:` length 4, +1 for spacing
 	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);//OLED显示字符数组（字符串）
 
@@ -335,14 +371,7 @@ void stateBootEnter()
 
 	if (esc.attach(PWM_PIN) == INVALID_SERVO)
 	{
-		// Fast blink to indicate ERROR
-		while (true)
-		{
-			ledSet(true);
-			delay(80);
-			ledSet(false);
-			delay(80);
-		}
+		g_fsm.transition(&stateError);
 	}
 
 	esc.writeMicroseconds(PWM_BOOT_US);
@@ -371,7 +400,7 @@ void stateDisarmedRun()
 {
 	const unsigned long nowMs = millis();
 
-	const uint16_t throttleAdc = readAdcClamped(ADC_PIN);
+	throttleAdc = readAdcClamped(ADC_PIN);
 	if (throttleAdc <= ADC_ARM_THRESHOLD)
 	{
 		pwmOutput = PWM_MIN_US;
@@ -397,7 +426,7 @@ void stateArmedEnter()
 void stateArmedRun()
 {
 	lowBatteryCheck();
-	const uint16_t throttleAdc = readAdcClamped(ADC_PIN);
+	throttleAdc = readAdcClamped(ADC_PIN);
 	pwmTarget = adcToPulseUs(throttleAdc);
 	if (pwmOutput < pwmTarget)
 	{
@@ -429,9 +458,9 @@ void stateArmedExit()
 void stateLowBatteryRun()
 {
 	// scale throttle down to 50% and blink LED
-	const uint16_t throttleAdc = readAdcClamped(ADC_PIN);
+	throttleAdc = readAdcClamped(ADC_PIN);
 	const unsigned long nowMs = millis();
-	pwmTarget = (uint16_t)(adcToPulseUs(throttleAdc * 0.5));
+	pwmTarget = (uint16_t)(adcToPulseUs(throttleAdc/2));
 	if (pwmOutput < pwmTarget)
 	{
 		pwmOutput = (uint16_t)(pwmOutput + RAMP_STEP_US_UP);
@@ -458,13 +487,8 @@ void stateErrorRun()
 	// Lock the motor
 	esc.writeMicroseconds(PWM_BOOT_US);
 	// Fast blink to indicate ERROR
-	while (true)
-	{
-		ledSet(true);
-		delay(80);
-		ledSet(false);
-		delay(80);
-	}
+	ledBlink(80, millis());
+
 }
 
 /*================================
