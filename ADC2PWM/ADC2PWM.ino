@@ -493,5 +493,6 @@ void setup() {
 
 void loop() {
 	g_fsm.run();
+	printf("DEBUG\r\n");
 	delay(10);
 }
