@@ -32,7 +32,7 @@
 #define ADC_PIN A0
 #define BATT_PIN A1
 #define LED_PIN 3
-#define LED_ACTIVE_HIGH 1 // arduino can push
+#define LED_ACTIVE_HIGH 1  // arduino can push
 #define ADC_MAX_VALUE 1023
 #if USE_OLED_SCREEN
 #define SDA_PIN -1
@@ -40,10 +40,10 @@
 #endif
 #elif defined(ADC2PWM_PLATFORM_CH32)
 #define PWM_PIN PC4_TIM1CH4
-#define ADC_PIN PA2		  // ADC0, potentiometer
-#define BATT_PIN PD6	  // ADC6, 4.7k/10k divider, 5v vRef -> `vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE`
-#define LED_PIN PD4		  // same physical pin as SWD on CH32V003J4M6
-#define LED_ACTIVE_HIGH 0 // ch32 use open/drain to sink, active low
+#define ADC_PIN PA2        // ADC0, potentiometer
+#define BATT_PIN PD6       // ADC6, 4.7k/10k divider, 5v vRef -> `vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE`
+#define LED_PIN PD4        // same physical pin as SWD on CH32V003J4M6
+#define LED_ACTIVE_HIGH 0  // ch32 use open/drain to sink, active low
 #define ADC_MAX_VALUE 1023
 #if USE_OLED_SCREEN
 #define SDA_PIN PC1
@@ -104,20 +104,20 @@
  *
 ================================*/
 
-#if USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN)  && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
+#if USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN) && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
 #include <Wire.h>
 #include <U8x8lib.h>
-#define SCREEN_WIDTH 72										 // OLED display width, in pixels
-#define SCREEN_HEIGHT 40									 // OLED display height, in pixels
-#define SCREEN_RESET -1										 // OLED display reset pin # (or -1 if sharing Arduino reset pin)
-U8X8_SSD1306_72X40_ER_HW_I2C u8x8(/* reset=*/U8X8_PIN_NONE); // EastRising 0.42" OLED, 72x40 pixels
-#elif USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN)  && defined(ADC2PWM_PLATFORM_CH32)
+#define SCREEN_WIDTH 72                                       // OLED display width, in pixels
+#define SCREEN_HEIGHT 40                                      // OLED display height, in pixels
+#define SCREEN_RESET -1                                       // OLED display reset pin # (or -1 if sharing Arduino reset pin)
+U8X8_SSD1306_72X40_ER_HW_I2C u8x8(/* reset=*/U8X8_PIN_NONE);  // EastRising 0.42" OLED, 72x40 pixels
+#elif USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN) && defined(ADC2PWM_PLATFORM_CH32)
 /* Note:
  * 1) u8x8 or u8g2 is way too large for ch32v003 flash, use OLED-Basic-Lib instead
  * 2) SDA and SCL pin are hard coded in `OLED_driver.c`. defines above are just for reference and do not have effect on CH32 platform.
  * 3) Usage can be found at (OLED-Basic-Lib)[https://github.com/bdth-7777777/OLED-Basic-Lib/]
 */
-#include "OLED.h" 
+#include "OLED.h"
 #endif
 
 /*================================
@@ -140,12 +140,12 @@ U8X8_SSD1306_72X40_ER_HW_I2C u8x8(/* reset=*/U8X8_PIN_NONE); // EastRising 0.42"
 
 // ---------------- Safety Latch ----------------
 #define ADC_ARM_THRESHOLD 10
-#define BATTERY_THRESHOLD_1S_MIN 3000 // 3.0V (for 1s battery, critical low voltage)
-#define BATTERY_THRESHOLD_1S_LOW 3300 // 3.3V (for 1s battery)
-#define BATTERY_THRESHOLD_1S_MAX 4350 // 4.35V (for 1s battery, 4.2V full charge + 0.15V margin)
-#define BATTERY_THRESHOLD_2S_MIN 6000 // 6.0V (for 2s battery, critical low voltage)
-#define BATTERY_THRESHOLD_2S_LOW 6500 // 6.5V (for 2s battery)
-#define BATTERY_THRESHOLD_2S_MAX 8700 // 8.7V (for 2s battery, 8.4V full charge + 0.3V margin)
+#define BATTERY_THRESHOLD_1S_MIN 3000  // 3.0V (for 1s battery, critical low voltage)
+#define BATTERY_THRESHOLD_1S_LOW 3300  // 3.3V (for 1s battery)
+#define BATTERY_THRESHOLD_1S_MAX 4350  // 4.35V (for 1s battery, 4.2V full charge + 0.15V margin)
+#define BATTERY_THRESHOLD_2S_MIN 6000  // 6.0V (for 2s battery, critical low voltage)
+#define BATTERY_THRESHOLD_2S_LOW 6500  // 6.5V (for 2s battery)
+#define BATTERY_THRESHOLD_2S_MAX 8700  // 8.7V (for 2s battery, 8.4V full charge + 0.3V margin)
 
 /*================================
  * Global Variables and State Definitions
@@ -169,76 +169,55 @@ State_t stateBoot, stateDisarmed, stateArmed, stateLowBattery, stateError;
  *
 ================================*/
 
-static void ledSet(bool on)
-{
+static void ledSet(bool on) {
 	const uint8_t level = LED_ACTIVE_HIGH ? (on ? HIGH : LOW) : (on ? LOW : HIGH);
 	digitalWrite(LED_PIN, level);
 }
 
-static void ledBlink(unsigned long intervalMs, unsigned long nowMs)
-{
+static void ledBlink(unsigned long intervalMs, unsigned long nowMs) {
 	ledSet(((nowMs / intervalMs) % 2u) == 0u);
 }
 
-static void lowBatteryCheck()
-{
-	if (BATT_PIN != -1)
-	{
+static void lowBatteryCheck() {
+	if (BATT_PIN != -1) {
 		// 1s-2s battery, divider: gnd_4.7k_battAdc_10k_vBatt, ref = 5000mV
 		vBattMv = ((uint64_t)readAdcClamped(BATT_PIN) * 147ULL * 5000ULL) / (47ULL * ADC_MAX_VALUE);
 
-		if (vBattMv <= BATTERY_THRESHOLD_1S_MIN)
-		{
+		if (vBattMv <= BATTERY_THRESHOLD_1S_MIN) {
 			// too low, error
 			g_fsm.transition(&stateError);
-		}
-		else if (vBattMv <= BATTERY_THRESHOLD_1S_LOW)
-		{
+		} else if (vBattMv <= BATTERY_THRESHOLD_1S_LOW) {
 			// 1s low battery, warning
 			g_fsm.transition(&stateLowBattery);
-		}
-		else if (vBattMv <= BATTERY_THRESHOLD_1S_MAX)
-		{
+		} else if (vBattMv <= BATTERY_THRESHOLD_1S_MAX) {
 			// 1s normal, do nothing
-		}
-		else if (vBattMv <= BATTERY_THRESHOLD_2S_MIN)
-		{
+		} else if (vBattMv <= BATTERY_THRESHOLD_2S_MIN) {
 			// not 1s nor 2s, error
 			g_fsm.transition(&stateError);
-		}
-		else if (vBattMv <= BATTERY_THRESHOLD_2S_LOW)
-		{
+		} else if (vBattMv <= BATTERY_THRESHOLD_2S_LOW) {
 			// 2s low battery, warning
 			g_fsm.transition(&stateLowBattery);
-		}
-		else if (vBattMv <= BATTERY_THRESHOLD_2S_MAX)
-		{
+		} else if (vBattMv <= BATTERY_THRESHOLD_2S_MAX) {
 			// 2s normal, do nothing
-		}
-		else
-		{
+		} else {
 			// above 2s max voltage, error
 			g_fsm.transition(&stateError);
 		}
 	}
 }
 
-static uint16_t readAdcClamped(int16_t PIN)
-{
+static uint16_t readAdcClamped(int16_t PIN) {
 	int raw = analogRead(PIN);
-	if (raw < 0)
-	{
+	if (raw < 0) {
 		raw = 0;
 	}
-	if (raw > ADC_MAX_VALUE)
-	{
+	if (raw > ADC_MAX_VALUE) {
 		raw = ADC_MAX_VALUE;
 	}
 	return (uint16_t)raw;
 }
 
-static uint16_t adcToPulseUs(uint16_t adcValue)
-{
+static uint16_t adcToPulseUs(uint16_t adcValue) {
 	return (uint16_t)map((long)adcValue, 0L, (long)ADC_MAX_VALUE, PWM_MIN_US, PWM_MAX_US);
 }
 
@@ -249,7 +228,7 @@ static uint16_t adcToPulseUs(uint16_t adcValue)
 ================================*/
 
 #if USE_OLED_SCREEN && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
-static void screenInit(void){
+static void screenInit(void) {
 	u8x8.begin();
 	u8x8.setPowerSave(0);
 	u8x8.setFont(u8x8_font_chroma48medium8_r);
@@ -257,105 +236,92 @@ static void screenInit(void){
 	u8x8.drawString(1, 3, "Init...");
 	u8x8.refreshDisplay();
 }
-static void screenClear(void){
+static void screenClear(void) {
 	u8x8.clear();
 	u8x8.refreshDisplay();
 }
-static void screenShowDisarmed(void)
-{
+static void screenShowDisarmed(void) {
 	u8x8.clear();
 	u8x8.drawString(0, 3, "DISARMED");
 	u8x8.refreshDisplay();
 }
-static void screenPrintPrepare(void)
-{
+static void screenPrintPrepare(void) {
 	u8x8.clear();
 	u8x8.drawString(0, 1, "Bat:");
 	u8x8.drawString(0, 3, "Thr:");
 	u8x8.drawString(0, 5, "PWM:");
 	u8x8.refreshDisplay();
 }
-static void screenPrint(void)
-{
+static void screenPrint(void) {
 	char buffer[16];
 	// format vBattMv to `x.xV` with 1 decimal place
-	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv/1000, (vBattMv%1000)/100);
+	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv / 1000, (vBattMv % 1000) / 100);
 	// `Bat:` length 4, +1 for spacing
-	u8x8.drawString(5, 1, buffer); 
+	u8x8.drawString(5, 1, buffer);
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
 	// `Thr:` length 4, +1 for spacing
-	u8x8.drawString(5, 3, buffer); 
+	u8x8.drawString(5, 3, buffer);
 	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
 	// `PWM:` length 4, +1 for spacing
-	u8x8.drawString(5, 5, buffer); 
+	u8x8.drawString(5, 5, buffer);
 	u8x8.refreshDisplay();
 }
-static void screenLowBatteryWarning(void)
-{
+static void screenLowBatteryWarning(void) {
 	// blink low battery warning at the right corner
-	if (millis() % 1000 < 500)
-	{
+	if (millis() % 1000 < 500) {
 		u8x8.drawString(8, 1, "!");
-	}else
-	{
+	} else {
 		u8x8.drawString(8, 1, " ");
 	}
 	screenPrint();
 }
 #elif USE_OLED_SCREEN && defined(ADC2PWM_PLATFORM_CH32)
-static void screenInit(void){
+static void screenInit(void) {
 	OLED_Init();
 	OLED_SetBrightness(50);
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 9, 25, "Init...", OLED_FONT_8);//OLED显示字符数组（字符串）
-    OLED_Update();
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 9, 25, "Init...", OLED_FONT_8);  //OLED显示字符数组（字符串）
+	OLED_Update();
 }
-static void screenClear(void)
-{
+static void screenClear(void) {
 	OLED_Clear();
 	OLED_Update();
 }
-static void screenShowDisarmed(void)
-{
+static void screenShowDisarmed(void) {
 	OLED_Clear();
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 25, "DISARMED", OLED_FONT_8);//OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 25, "DISARMED", OLED_FONT_8);  //OLED显示字符数组（字符串）
 	OLED_Update();
 }
-static void screenPrintPrepare(void)
-{
+static void screenPrintPrepare(void) {
 	OLED_Clear();
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Bat:", OLED_FONT_8);//OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "Thr:", OLED_FONT_8);//OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 32, "PWM:", OLED_FONT_8);//OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Bat:", OLED_FONT_8);   //OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "Thr:", OLED_FONT_8);  //OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 32, "PWM:", OLED_FONT_8);  //OLED显示字符数组（字符串）
 	OLED_Update();
 }
-static void screenPrint(void)
-{
+static void screenPrint(void) {
 	char buffer[16];
 
 	// format vBattMv to `x.xV` with 1 decimal place
-	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv/1000, (vBattMv%1000)/100);
+	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv / 1000, (vBattMv % 1000) / 100);
 	// `Bat:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);//OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
 
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
 	// `Thr:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);//OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
 
 	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
 	// `PWM:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 32, buffer, OLED_FONT_8);//OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 32, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
 
 	OLED_Update();
 }
-static void screenLowBatteryWarning(void)
-{
+static void screenLowBatteryWarning(void) {
 	// blink low battery warning at the right corner
-	if (millis() % 1000 < 500)
-	{
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, "!", OLED_FONT_8);//OLED显示字符数组（字符串）
-	}else
-	{
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, " ", OLED_FONT_8);//OLED显示字符数组（字符串）
+	if (millis() % 1000 < 500) {
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, "!", OLED_FONT_8);  //OLED显示字符数组（字符串）
+	} else {
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, " ", OLED_FONT_8);  //OLED显示字符数组（字符串）
 	}
 	screenPrint();
 }
@@ -365,82 +331,65 @@ static void screenLowBatteryWarning(void)
  * State Implementations
  *
 ================================*/
-void stateBootEnter()
-{
+void stateBootEnter() {
 	bootTimeMs = millis();
 
-	if (esc.attach(PWM_PIN) == INVALID_SERVO)
-	{
+	if (esc.attach(PWM_PIN) == INVALID_SERVO) {
 		g_fsm.transition(&stateError);
 	}
 
 	esc.writeMicroseconds(PWM_BOOT_US);
 }
-void stateBootRun()
-{
+void stateBootRun() {
 	const unsigned long nowMs = millis();
-	if ((nowMs - bootTimeMs) >= BOOT_TIME_MS)
-	{
+	if ((nowMs - bootTimeMs) >= BOOT_TIME_MS) {
 		g_fsm.transition(&stateDisarmed);
 	}
 }
-void stateBootExit()
-{
+void stateBootExit() {
 	screenClear();
 }
-void stateDisarmedEnter()
-{
+void stateDisarmedEnter() {
 	ledSet(false);
 	pwmOutput = PWM_BOOT_US;
 	pwmTarget = PWM_BOOT_US;
 	esc.writeMicroseconds(pwmOutput);
 	screenShowDisarmed();
 }
-void stateDisarmedRun()
-{
+void stateDisarmedRun() {
 	const unsigned long nowMs = millis();
 
 	throttleAdc = readAdcClamped(ADC_PIN);
-	if (throttleAdc <= ADC_ARM_THRESHOLD)
-	{
+	if (throttleAdc <= ADC_ARM_THRESHOLD) {
 		pwmOutput = PWM_MIN_US;
 		pwmTarget = PWM_MIN_US;
 		esc.writeMicroseconds(pwmOutput);
 		ledSet(true);
 		g_fsm.transition(&stateArmed);
-	}
-	else
-	{
+	} else {
 		ledBlink(150, nowMs);
 		esc.writeMicroseconds(PWM_BOOT_US);
 	}
 }
-void stateArmedEnter()
-{
+void stateArmedEnter() {
 	ledSet(true);
 	pwmOutput = PWM_MIN_US;
 	pwmTarget = PWM_MIN_US;
 	esc.writeMicroseconds(pwmOutput);
 	screenPrintPrepare();
 }
-void stateArmedRun()
-{
+void stateArmedRun() {
 	lowBatteryCheck();
 	throttleAdc = readAdcClamped(ADC_PIN);
 	pwmTarget = adcToPulseUs(throttleAdc);
-	if (pwmOutput < pwmTarget)
-	{
+	if (pwmOutput < pwmTarget) {
 		pwmOutput = (uint16_t)(pwmOutput + RAMP_STEP_US_UP);
-		if (pwmOutput > pwmTarget)
-		{
+		if (pwmOutput > pwmTarget) {
 			pwmOutput = pwmTarget;
 		}
-	}
-	else if (pwmOutput > pwmTarget)
-	{
+	} else if (pwmOutput > pwmTarget) {
 		pwmOutput = (uint16_t)(pwmOutput - RAMP_STEP_US_DOWN);
-		if (pwmOutput < pwmTarget)
-		{
+		if (pwmOutput < pwmTarget) {
 			pwmOutput = pwmTarget;
 		}
 	}
@@ -448,32 +397,25 @@ void stateArmedRun()
 
 	screenPrint();
 }
-void stateArmedExit()
-{
+void stateArmedExit() {
 	ledSet(false);
 	pwmOutput = PWM_BOOT_US;
 	pwmTarget = PWM_BOOT_US;
 	esc.writeMicroseconds(pwmOutput);
 }
-void stateLowBatteryRun()
-{
+void stateLowBatteryRun() {
 	// scale throttle down to 50% and blink LED
 	throttleAdc = readAdcClamped(ADC_PIN);
 	const unsigned long nowMs = millis();
-	pwmTarget = (uint16_t)(adcToPulseUs(throttleAdc/2));
-	if (pwmOutput < pwmTarget)
-	{
+	pwmTarget = (uint16_t)(adcToPulseUs(throttleAdc / 2));
+	if (pwmOutput < pwmTarget) {
 		pwmOutput = (uint16_t)(pwmOutput + RAMP_STEP_US_UP);
-		if (pwmOutput > pwmTarget)
-		{
+		if (pwmOutput > pwmTarget) {
 			pwmOutput = pwmTarget;
 		}
-	}
-	else if (pwmOutput > pwmTarget)
-	{
+	} else if (pwmOutput > pwmTarget) {
 		pwmOutput = (uint16_t)(pwmOutput - RAMP_STEP_US_DOWN);
-		if (pwmOutput < pwmTarget)
-		{
+		if (pwmOutput < pwmTarget) {
 			pwmOutput = pwmTarget;
 		}
 	}
@@ -482,13 +424,11 @@ void stateLowBatteryRun()
 
 	screenLowBatteryWarning();
 }
-void stateErrorRun()
-{
+void stateErrorRun() {
 	// Lock the motor
 	esc.writeMicroseconds(PWM_BOOT_US);
 	// Fast blink to indicate ERROR
 	ledBlink(80, millis());
-
 }
 
 /*================================
@@ -496,8 +436,7 @@ void stateErrorRun()
  *
 ================================*/
 
-void setup()
-{
+void setup() {
 	stateBoot.stateName = "stateBoot";
 	stateBoot.stateEnter = stateBootEnter;
 	stateBoot.stateRun = stateBootRun;
@@ -523,17 +462,25 @@ void setup()
 	stateError.stateRun = stateErrorRun;
 	stateError.stateExit = nullptr;
 
+#if defined(ADC2PWM_PLATFORM_CH32)
+#if (SDI_PRINT == SDI_PR_OPEN)
+	// SDI_Printf_Enable();
+#else
+	USART_Printf_Init(115200);
+#endif
+
+	printf("SystemClk:%d\r\n", SystemCoreClock);
+#endif
 	screenInit();
 
 	delay(100);
 #if !defined(ADC2PWM_PLATFORM_CH32)
-	pinMode(PWM_PIN, OUTPUT); // CH32 has dedicated pin setup
+	pinMode(PWM_PIN, OUTPUT);  // CH32 has dedicated pin setup
 #endif
 	pinMode(ADC_PIN, INPUT);
 	pinMode(LED_PIN, OUTPUT);
 	ledSet(false);
-	if (BATT_PIN != -1)
-	{
+	if (BATT_PIN != -1) {
 		pinMode(BATT_PIN, INPUT);
 	}
 
@@ -544,8 +491,7 @@ void setup()
 	g_fsm.init(&stateBoot);
 }
 
-void loop()
-{
+void loop() {
 	g_fsm.run();
 	delay(10);
 }
