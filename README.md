@@ -23,10 +23,10 @@ ADC2PWM 是一款将模拟电压（ADC）输入转换为 PWM 信号输出的通�
 
 | 信号       | AVR/Arduino | CH32V003 | ESP32      | 说明            |
 | ---------- | ----------- | -------- | ---------- | --------------- |
-| PWM_OUT    | D2          | PC4      | 用户自定义 | PWM 输出        |
+| PWM_OUT    | D2          | PD4      | 用户自定义 | PWM 输出        |
 | ADC_IN     | A0          | PA2      | 用户自定义 | 油门/电位器输入 |
 | BATT_SENSE | A1          | PD6      | 用户自定义 | 电池电压检测    |
-| LED        | D3          | PD4      | 用户自定义 | 状态指示灯      |
+| LED        | D3          | PD1      | 用户自定义 | 状态指示灯      |
 | OLED_SDA   | -           | PC1      | -          | OLED 屏幕 SDA   |
 | OLED_SCL   | -           | PC2      | -          | OLED 屏幕 SCL   |
 

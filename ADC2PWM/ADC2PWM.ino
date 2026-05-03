@@ -39,10 +39,10 @@
 #define SCL_PIN -1
 #endif
 #elif defined(ADC2PWM_PLATFORM_CH32)
-#define PWM_PIN PC4_TIM1CH4
+#define PWM_PIN PD4_TIM2CH1
 #define ADC_PIN PA2        // ADC0, potentiometer
 #define BATT_PIN PD6       // ADC6, 4.7k/10k divider, 5v vRef -> `vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE`
-#define LED_PIN PD4        // same physical pin as SWD on CH32V003J4M6
+#define LED_PIN PD1        // onboard LED on CH32V003 EVT boards, active low
 #define LED_ACTIVE_HIGH 0  // ch32 use open/drain to sink, active low
 #define ADC_MAX_VALUE 1023
 #if USE_OLED_SCREEN
@@ -163,6 +163,28 @@ static Servo esc;
 static FSM g_fsm = FSM();
 
 State_t stateBoot, stateDisarmed, stateArmed, stateLowBattery, stateError;
+
+static void ledSet(bool on);
+static void ledBlink(unsigned long intervalMs, unsigned long nowMs);
+static void lowBatteryCheck(void);
+static uint16_t readAdcClamped(int16_t pin);
+static uint16_t adcToPulseUs(uint16_t adcValue);
+static void screenInit(void);
+static void screenClear(void);
+static void screenShowDisarmed(void);
+static void screenPrintPrepare(void);
+static void screenPrint(void);
+static void screenLowBatteryWarning(void);
+static void stateBootEnter(void);
+static void stateBootRun(void);
+static void stateBootExit(void);
+static void stateDisarmedEnter(void);
+static void stateDisarmedRun(void);
+static void stateArmedEnter(void);
+static void stateArmedRun(void);
+static void stateArmedExit(void);
+static void stateLowBatteryRun(void);
+static void stateErrorRun(void);
 
 /*================================
  * Helper Functions

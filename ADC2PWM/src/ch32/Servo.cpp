@@ -118,6 +118,7 @@ static void initTimer1IfNeeded(void){
 
 	TIM_ARRPreloadConfig(TIM1, ENABLE);
 	TIM_GenerateEvent(TIM1, TIM_EventSource_Update);
+	TIM_CtrlPWMOutputs(TIM1, ENABLE);
 	TIM_Cmd(TIM1, ENABLE);
 }
 
