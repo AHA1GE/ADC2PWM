@@ -461,16 +461,7 @@ void setup() {
 	stateError.stateEnter = nullptr;
 	stateError.stateRun = stateErrorRun;
 	stateError.stateExit = nullptr;
-
-#if defined(ADC2PWM_PLATFORM_CH32)
-#if (SDI_PRINT == SDI_PR_OPEN)
-	// SDI_Printf_Enable();
-#else
-	USART_Printf_Init(115200);
-#endif
-
-	printf("SystemClk:%lu\r\n", (unsigned long)SystemCoreClock);
-#endif
+	
 	screenInit();
 
 	delay(100);
