@@ -255,7 +255,7 @@ static void screenPrintPrepare(void) {
 static void screenPrint(void) {
 	char buffer[16];
 	// format vBattMv to `x.xV` with 1 decimal place
-	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv / 1000, (vBattMv % 1000) / 100);
+	snprintf(buffer, sizeof(buffer), "%lu.%luV", (unsigned long)(vBattMv / 1000), (unsigned long)((vBattMv % 1000) / 100));
 	// `Bat:` length 4, +1 for spacing
 	u8x8.drawString(5, 1, buffer);
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
@@ -302,7 +302,7 @@ static void screenPrint(void) {
 	char buffer[16];
 
 	// format vBattMv to `x.xV` with 1 decimal place
-	snprintf(buffer, sizeof(buffer), "%u.%uV", vBattMv / 1000, (vBattMv % 1000) / 100);
+	snprintf(buffer, sizeof(buffer), "%lu.%luV", (unsigned long)(vBattMv / 1000), (unsigned long)((vBattMv % 1000) / 100));
 	// `Bat:` length 4, +1 for spacing
 	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
 
@@ -469,7 +469,7 @@ void setup() {
 	USART_Printf_Init(115200);
 #endif
 
-	printf("SystemClk:%d\r\n", SystemCoreClock);
+	printf("SystemClk:%lu\r\n", (unsigned long)SystemCoreClock);
 #endif
 	screenInit();
 
