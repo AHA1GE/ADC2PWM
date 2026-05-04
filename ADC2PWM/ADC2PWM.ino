@@ -39,10 +39,10 @@
 #define SCL_PIN -1
 #endif
 #elif defined(ADC2PWM_PLATFORM_CH32)
-#define PWM_PIN PD4_TIM2CH1
+#define PWM_PIN PC4_TIM1CH4
 #define ADC_PIN PA2        // ADC0, potentiometer
 #define BATT_PIN PD6       // ADC6, 4.7k/10k divider, 5v vRef -> `vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE`
-#define LED_PIN PD1        // onboard LED on CH32V003 EVT boards, active low
+#define LED_PIN PD4        // same physical pin as SWD on CH32V003J4M6
 #define LED_ACTIVE_HIGH 0  // ch32 use open/drain to sink, active low
 #define ADC_MAX_VALUE 1023
 #if USE_OLED_SCREEN
