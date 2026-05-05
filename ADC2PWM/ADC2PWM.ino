@@ -157,12 +157,35 @@ static uint16_t pwmTarget = PWM_BOOT_US;
 static unsigned long bootTimeMs = 0;
 static uint32_t vBattMv = 0;
 static uint16_t throttleAdc = 0;
+static char errorMessageBuffer[10] = {0};  // buffer for error message, max 9 chars + null terminator
 
 static Servo esc;
 
 static FSM g_fsm = FSM();
 
 State_t stateBoot, stateDisarmed, stateArmed, stateLowBattery, stateError;
+
+static void ledSet(bool on);
+static void ledBlink(unsigned long intervalMs, unsigned long nowMs);
+static void lowBatteryCheck(void);
+static uint16_t readAdcClamped(int16_t pin);
+static uint16_t adcToPulseUs(uint16_t adcValue);
+static void screenInit(void);
+static void screenClear(void);
+static void screenShowDisarmed(void);
+static void screenPrintPrepare(void);
+static void screenPrint(void);
+static void screenLowBatteryWarning(void);
+static void stateBootEnter(void);
+static void stateBootRun(void);
+static void stateBootExit(void);
+static void stateDisarmedEnter(void);
+static void stateDisarmedRun(void);
+static void stateArmedEnter(void);
+static void stateArmedRun(void);
+static void stateArmedExit(void);
+static void stateLowBatteryRun(void);
+static void stateErrorRun(void);
 
 /*================================
  * Helper Functions
@@ -185,6 +208,8 @@ static void lowBatteryCheck() {
 
 		if (vBattMv <= BATTERY_THRESHOLD_1S_MIN) {
 			// too low, error
+			strncpy(errorMessageBuffer, "BAT LOW!", sizeof(errorMessageBuffer) - 1);
+			errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';  // ensure null termination
 			g_fsm.transition(&stateError);
 		} else if (vBattMv <= BATTERY_THRESHOLD_1S_LOW) {
 			// 1s low battery, warning
@@ -193,6 +218,8 @@ static void lowBatteryCheck() {
 			// 1s normal, do nothing
 		} else if (vBattMv <= BATTERY_THRESHOLD_2S_MIN) {
 			// not 1s nor 2s, error
+			strncpy(errorMessageBuffer, "BAT ERR!", sizeof(errorMessageBuffer) - 1);
+			errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';  // ensure null termination
 			g_fsm.transition(&stateError);
 		} else if (vBattMv <= BATTERY_THRESHOLD_2S_LOW) {
 			// 2s low battery, warning
@@ -201,6 +228,8 @@ static void lowBatteryCheck() {
 			// 2s normal, do nothing
 		} else {
 			// above 2s max voltage, error
+			strncpy(errorMessageBuffer, "BAT HIGH!", sizeof(errorMessageBuffer) - 1);
+			errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';  // ensure null termination
 			g_fsm.transition(&stateError);
 		}
 	}
@@ -325,6 +354,17 @@ static void screenLowBatteryWarning(void) {
 	}
 	screenPrint();
 }
+static void screenShowError( const char* message, uint8_t messageLength) {
+	// chack length, no more than 9 characters
+	if (messageLength > 9) {
+		// do nothing
+	}else{
+		OLED_Clear();
+	    OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 16, 16, "ERROR", OLED_FONT_8);  //OLED显示字符数组（字符串）
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 16, 32, message, OLED_FONT_8);  //OLED显示字符数组（字符串）
+	    OLED_Update();
+	}
+}
 #endif
 
 /*================================
@@ -335,6 +375,8 @@ void stateBootEnter() {
 	bootTimeMs = millis();
 
 	if (esc.attach(PWM_PIN) == INVALID_SERVO) {
+		strncpy(errorMessageBuffer, "ESC PIN!", sizeof(errorMessageBuffer) - 1);
+		errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';
 		g_fsm.transition(&stateError);
 	}
 
@@ -429,6 +471,8 @@ void stateErrorRun() {
 	esc.writeMicroseconds(PWM_BOOT_US);
 	// Fast blink to indicate ERROR
 	ledBlink(80, millis());
+	// show error message if screen is available
+	screenShowError(errorMessageBuffer, strlen(errorMessageBuffer));
 }
 
 /*================================

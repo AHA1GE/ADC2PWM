@@ -2,7 +2,7 @@
 #define __OLED_H
 
 
-#include "OLED_Driver.h"			//oled底层驱动头文件
+#include "OLED_driver.h"			//oled底层驱动头文件
 #include "OLED_Fonts.h"				//oled字体库头文件
 #include "stdbool.h"
 
@@ -69,4 +69,3 @@ void OLED_DrawRoundedRectangle(int16_t X, int16_t Y, int16_t Width, int16_t Heig
 #endif
 
 #endif
-

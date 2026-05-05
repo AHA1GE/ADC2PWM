@@ -24,10 +24,10 @@
 #define OLED_DATA 1	//写数据
 
 // port to ch32v003
-#define OLED_SCL_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<6;i++)   // 复位 SCL (将 GPIOC 的 1 号引脚拉低)
-#define OLED_SCL_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<6;i++)  // 置位 SCL (将 GPIOC 的 1 号引脚拉高)
-#define OLED_SDA_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<3;i++)   // 复位 SDA (将 GPIOC 的 2 号引脚拉低)
-#define OLED_SDA_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<3;i++)  // 置位 SDA (将 GPIOC 的 2 号引脚拉高)
+#define OLED_SDA_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<3;i++)   // 复位 SDA (将 GPIOC 的 1 号引脚拉低)
+#define OLED_SDA_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<3;i++)  // 置位 SDA (将 GPIOC 的 1 号引脚拉高)
+#define OLED_SCL_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<6;i++)   // 复位 SCL (将 GPIOC 的 2 号引脚拉低)
+#define OLED_SCL_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<6;i++)  // 置位 SCL (将 GPIOC 的 2 号引脚拉高)
 
 /*========================================================================*/
 /*========================================================================*/
@@ -330,7 +330,7 @@ extern void OLED_Clear(void);
 void OLED_Init(void)
 {
     OLED_DelayMs(100);	//等待100ms，等待OLED初始化完成
-	/* 将SCL: PC1和SDA: PC2引脚初始化为开漏模式 */
+	/* 将SDA: PC1和SCL: PC2引脚初始化为开漏模式 */
     GPIO_InitTypeDef GPIO_InitStructure = {0};
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2;
@@ -395,5 +395,4 @@ void OLED_SetBrightness(int16_t Brightness){
 	OLED_Write_CMD(0x81);
 	OLED_Write_CMD(Brightness);
  }
-
 
