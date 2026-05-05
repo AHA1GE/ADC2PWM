@@ -1,7 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                              C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o (printf)
+                              C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o (snprintf)
 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
                               (--whole-archive)
 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
@@ -315,8 +315,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .data          0x0000000000000000        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .bss           0x0000000000000000        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .text._Z14stateArmedExitv
-                0x0000000000000000       0x3e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .text          0x0000000000000000        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
  .data          0x0000000000000000        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
  .bss           0x0000000000000000        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
@@ -462,7 +460,9 @@ Discarded input sections
  .text          0x0000000000000000        0x0 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
  .data          0x0000000000000000        0x0 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
  .bss           0x0000000000000000        0x0 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+ .text.printf   0x0000000000000000       0x28 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
  .text.sprintf  0x0000000000000000       0x2c c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+ .text.puts     0x0000000000000000       0x52 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
  .text.putchar  0x0000000000000000       0x1c c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
  .group         0x0000000000000000        0x8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
  .group         0x0000000000000000        0x8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
@@ -1550,8 +1550,6 @@ Discarded input sections
                 0x0000000000000000       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
  .text.TIM_BDTRStructInit
                 0x0000000000000000       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
- .text.TIM_CtrlPWMOutputs
-                0x0000000000000000       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
  .text.TIM_ITConfig
                 0x0000000000000000       0x12 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
  .text.TIM_DMAConfig
@@ -2703,7 +2701,7 @@ END GROUP
  *fill*         0x000000000000009e        0x2 
                 0x00000000000000a0                _einit = .
 
-.text           0x00000000000000a0     0x3448
+.text           0x00000000000000a0     0x33c4
                 0x00000000000000a0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000000000a0       0xa8 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-memset.o)
@@ -2724,523 +2722,504 @@ END GROUP
                 0x00000000000001a8                __umodsi3
                 0x00000000000001cc                __modsi3
  *(.text.*)
- .text._Z14stateBootEnterv
-                0x00000000000001f2       0x38 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x00000000000001f2                stateBootEnter()
- .text._Z13stateBootExitv
-                0x000000000000022a        0xe C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x000000000000022a                stateBootExit()
  .text._ZL14readAdcClampeds
-                0x0000000000000238       0x22 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x00000000000001f2       0x22 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .text._ZL11screenPrintv
-                0x000000000000025a       0xbe C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .text._Z12stateBootRunv
-                0x0000000000000318       0x24 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x0000000000000318                stateBootRun()
- .text._Z18stateDisarmedEnterv
-                0x000000000000033c       0x54 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x000000000000033c                stateDisarmedEnter()
- .text._Z15stateArmedEnterv
-                0x0000000000000390       0x96 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x0000000000000390                stateArmedEnter()
+                0x0000000000000214       0xbe C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL13stateBootExitv
+                0x00000000000002d2        0xc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL14stateBootEnterv
+                0x00000000000002de       0x36 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL12stateBootRunv
+                0x0000000000000314       0x24 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL18stateDisarmedEnterv
+                0x0000000000000338       0x54 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL15stateArmedEnterv
+                0x000000000000038c       0x96 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .text._ZL8ledBlinkmm
-                0x0000000000000426       0x1a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .text._Z13stateErrorRunv
-                0x0000000000000440       0x1e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x0000000000000440                stateErrorRun()
- .text._Z16stateDisarmedRunv
-                0x000000000000045e       0x62 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x000000000000045e                stateDisarmedRun()
- .text._Z18stateLowBatteryRunv
-                0x00000000000004c0       0xba C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x00000000000004c0                stateLowBatteryRun()
- .text._Z13stateArmedRunv
-                0x000000000000057a       0xcc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x000000000000057a                stateArmedRun()
- .text.setup    0x0000000000000646      0x13a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x0000000000000646                setup
- .text.loop     0x0000000000000780       0x20 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                0x0000000000000780                loop
+                0x0000000000000422       0x1a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL13stateErrorRunv
+                0x000000000000043c       0x1e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL18stateLowBatteryRunv
+                0x000000000000045a       0xba C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL16stateDisarmedRunv
+                0x0000000000000514       0x62 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text._ZL13stateArmedRunv
+                0x0000000000000576       0xcc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .text.setup    0x0000000000000642      0x12a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000000642                setup
+ .text.loop     0x000000000000076c       0x14 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x000000000000076c                loop
  .text.startup._GLOBAL__sub_I_stateBoot
-                0x00000000000007a0       0x16 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000000780       0x16 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .text._ZN3FSMC2Ev
-                0x00000000000007b6        0xa C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
-                0x00000000000007b6                FSM::FSM()
-                0x00000000000007b6                FSM::FSM()
+                0x0000000000000796        0xa C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+                0x0000000000000796                FSM::FSM()
+                0x0000000000000796                FSM::FSM()
  .text._ZN3FSM4initEP7State_t
-                0x00000000000007c0       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
-                0x00000000000007c0                FSM::init(State_t*)
+                0x00000000000007a0       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+                0x00000000000007a0                FSM::init(State_t*)
  .text._ZN3FSM3runEv
-                0x00000000000007d8       0x32 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
-                0x00000000000007d8                FSM::run()
+                0x00000000000007b8       0x32 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+                0x00000000000007b8                FSM::run()
  .text._ZN3FSM10transitionEP7State_t
-                0x000000000000080a        0x4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
-                0x000000000000080a                FSM::transition(State_t*)
+                0x00000000000007ea        0x4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+                0x00000000000007ea                FSM::transition(State_t*)
  .text.OLED_Clear
-                0x000000000000080e       0x1a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
-                0x000000000000080e                OLED_Clear
+                0x00000000000007ee       0x1a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+                0x00000000000007ee                OLED_Clear
  .text.OLED_ClearArea
-                0x0000000000000828       0xd4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
-                0x0000000000000828                OLED_ClearArea
+                0x0000000000000808       0xd4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+                0x0000000000000808                OLED_ClearArea
  .text.OLED_ShowImageArea
-                0x00000000000008fc      0x1b0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
-                0x00000000000008fc                OLED_ShowImageArea
+                0x00000000000008dc      0x1b0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+                0x00000000000008dc                OLED_ShowImageArea
  .text.OLED_ShowCharArea
-                0x0000000000000aac       0x88 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
-                0x0000000000000aac                OLED_ShowCharArea
+                0x0000000000000a8c       0x88 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+                0x0000000000000a8c                OLED_ShowCharArea
  .text.OLED_ShowMixStringArea
-                0x0000000000000b34       0x7e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
-                0x0000000000000b34                OLED_ShowMixStringArea
+                0x0000000000000b14       0x7e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+                0x0000000000000b14                OLED_ShowMixStringArea
  .text.OLED_I2C_Start
-                0x0000000000000bb2       0x30 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000bb2                OLED_I2C_Start
+                0x0000000000000b92       0x30 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000b92                OLED_I2C_Start
  .text.OLED_I2C_Stop
-                0x0000000000000be2       0x26 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000be2                OLED_I2C_Stop
+                0x0000000000000bc2       0x26 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000bc2                OLED_I2C_Stop
  .text.OLED_Write_DATA
-                0x0000000000000c08       0x5c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000c08                OLED_Write_DATA
+                0x0000000000000be8       0x5c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000be8                OLED_Write_DATA
  .text.OLED_WriteDataArr
-                0x0000000000000c64       0x48 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000c64                OLED_WriteDataArr
+                0x0000000000000c44       0x48 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000c44                OLED_WriteDataArr
  .text.OLED_Write_CMD
-                0x0000000000000cac       0x1c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000cac                OLED_Write_CMD
+                0x0000000000000c8c       0x1c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000c8c                OLED_Write_CMD
  .text.OLED_SetCursor
-                0x0000000000000cc8       0x24 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000cc8                OLED_SetCursor
+                0x0000000000000ca8       0x24 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000ca8                OLED_SetCursor
  .text.OLED_Update
-                0x0000000000000cec       0x38 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000cec                OLED_Update
+                0x0000000000000ccc       0x38 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000ccc                OLED_Update
  .text.OLED_Init
-                0x0000000000000d24       0xf4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000d24                OLED_Init
+                0x0000000000000d04       0xf4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000d04                OLED_Init
  .text.OLED_SetBrightness
-                0x0000000000000e18       0x2e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                0x0000000000000e18                OLED_SetBrightness
+                0x0000000000000df8       0x2e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000df8                OLED_SetBrightness
  .text._ZL9pinToSloti
-                0x0000000000000e46       0x1a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+                0x0000000000000e26       0x1a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
  .text._ZN5ServoC2Ev
-                0x0000000000000e60       0x34 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
-                0x0000000000000e60                Servo::Servo()
-                0x0000000000000e60                Servo::Servo()
+                0x0000000000000e40       0x34 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+                0x0000000000000e40                Servo::Servo()
+                0x0000000000000e40                Servo::Servo()
  .text._ZN5Servo17writeMicrosecondsEi
-                0x0000000000000e94       0xc0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
-                0x0000000000000e94                Servo::writeMicroseconds(int)
+                0x0000000000000e74       0xc0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+                0x0000000000000e74                Servo::writeMicroseconds(int)
  .text._ZN5Servo6attachEiii
-                0x0000000000000f54      0x250 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
-                0x0000000000000f54                Servo::attach(int, int, int)
+                0x0000000000000f34      0x25a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+                0x0000000000000f34                Servo::attach(int, int, int)
  .text._ZN5Servo6attachEi
-                0x00000000000011a4       0x14 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
-                0x00000000000011a4                Servo::attach(int)
+                0x000000000000118e       0x14 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+                0x000000000000118e                Servo::attach(int)
  .text.printchar
-                0x00000000000011b8       0x4a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x00000000000011b8                printchar
- .text.prints   0x0000000000001202       0xe6 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x0000000000001202                prints
+                0x00000000000011a2       0x48 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x00000000000011a2                printchar
+ .text.prints   0x00000000000011ea       0xe6 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x00000000000011ea                prints
  .text.printInt
-                0x00000000000012e8      0x10e c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x00000000000012e8                printInt
+                0x00000000000012d0      0x10e c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x00000000000012d0                printInt
  .text.printLongLongInt
-                0x00000000000013f6        0x4 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x00000000000013f6                printLongLongInt
+                0x00000000000013de        0x4 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x00000000000013de                printLongLongInt
  .text.printDouble
-                0x00000000000013fa        0x4 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x00000000000013fa                printDouble
- .text.print    0x00000000000013fe      0x35e c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x00000000000013fe                print
- .text.printf   0x000000000000175c       0x24 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x000000000000175c                printf
+                0x00000000000013e2        0x4 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x00000000000013e2                printDouble
+ .text.print    0x00000000000013e6      0x35e c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x00000000000013e6                print
  .text.snprintf
-                0x0000000000001780       0x2a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x0000000000001780                snprintf
- .text.puts     0x00000000000017aa       0x46 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
-                0x00000000000017aa                puts
+                0x0000000000001744       0x2a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x0000000000001744                snprintf
  .text._ZN5Print17availableForWriteEv
-                0x00000000000017f0        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x00000000000017f0                Print::availableForWrite()
+                0x000000000000176e        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x000000000000176e                Print::availableForWrite()
  .text._ZN5Print5flushEv
-                0x00000000000017f4        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x00000000000017f4                Print::flush()
+                0x0000000000001772        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000001772                Print::flush()
  .text._ZN14HardwareSerial9availableEv
-                0x00000000000017f6        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x00000000000017f6                HardwareSerial::available()
-                0x00000000000017f6                HardwareSerial::peek()
+                0x0000000000001774        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000001774                HardwareSerial::available()
+                0x0000000000001774                HardwareSerial::peek()
  .text._ZN14HardwareSerial5writeEh
-                0x00000000000017fa       0x1a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x00000000000017fa                HardwareSerial::write(unsigned char)
+                0x0000000000001778       0x1a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000001778                HardwareSerial::write(unsigned char)
  .text._ZN14HardwareSerial4readEv
-                0x0000000000001814       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x0000000000001814                HardwareSerial::read()
+                0x0000000000001792       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000001792                HardwareSerial::read()
  .text._ZN14HardwareSerial5writeEPKhj
-                0x0000000000001832       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x0000000000001832                HardwareSerial::write(unsigned char const*, unsigned int)
+                0x00000000000017b0       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x00000000000017b0                HardwareSerial::write(unsigned char const*, unsigned int)
  .text._ZN14HardwareSerial5setRxEm
-                0x0000000000001842       0x58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x0000000000001842                HardwareSerial::setRx(unsigned long)
+                0x00000000000017c0       0x58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x00000000000017c0                HardwareSerial::setRx(unsigned long)
  .text._ZN14HardwareSerial5setTxEm
-                0x000000000000189a       0x58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x000000000000189a                HardwareSerial::setTx(unsigned long)
+                0x0000000000001818       0x58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000001818                HardwareSerial::setTx(unsigned long)
  .text._ZN14HardwareSerialC2EPv
-                0x00000000000018f2       0x3e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x00000000000018f2                HardwareSerial::HardwareSerial(void*)
-                0x00000000000018f2                HardwareSerial::HardwareSerial(void*)
+                0x0000000000001870       0x3e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000001870                HardwareSerial::HardwareSerial(void*)
+                0x0000000000001870                HardwareSerial::HardwareSerial(void*)
  .text.startup._GLOBAL__sub_I__ZN14HardwareSerialC2EPv
-                0x0000000000001930       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
- .text._write   0x0000000000001946       0x2e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
-                0x0000000000001946                _write
+                0x00000000000018ae       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .text._write   0x00000000000018c4       0x2e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+                0x00000000000018c4                _write
  .text._ZN6Stream9timedReadEv
-                0x0000000000001974       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
-                0x0000000000001974                Stream::timedRead()
+                0x00000000000018f2       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+                0x00000000000018f2                Stream::timedRead()
  .text._ZN6Stream9readBytesEPcj
-                0x00000000000019a0       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
-                0x00000000000019a0                Stream::readBytes(char*, unsigned int)
+                0x000000000000191e       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+                0x000000000000191e                Stream::readBytes(char*, unsigned int)
  .text._ZN6Stream14readBytesUntilEcPcj
-                0x00000000000019d0       0x3c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
-                0x00000000000019d0                Stream::readBytesUntil(char, char*, unsigned int)
+                0x000000000000194e       0x3c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+                0x000000000000194e                Stream::readBytesUntil(char, char*, unsigned int)
  .text._Z3maplllll
-                0x0000000000001a0c       0x2a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
-                0x0000000000001a0c                map(long, long, long, long, long)
+                0x000000000000198a       0x2a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+                0x000000000000198a                map(long, long, long, long, long)
  .text.pre_init
-                0x0000000000001a36        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
-                0x0000000000001a36                pre_init
+                0x00000000000019b4        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+                0x00000000000019b4                pre_init
  .text.set_GPIO_Port_Clock
-                0x0000000000001a40       0x46 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
-                0x0000000000001a40                set_GPIO_Port_Clock
- .text.GetTick  0x0000000000001a86        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
-                0x0000000000001a86                GetTick
+                0x00000000000019be       0x46 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+                0x00000000000019be                set_GPIO_Port_Clock
+ .text.GetTick  0x0000000000001a04        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+                0x0000000000001a04                GetTick
  .text.noOsSystickHandler
-                0x0000000000001a90        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
-                0x0000000000001a90                osSystickHandler
-                0x0000000000001a90                noOsSystickHandler
+                0x0000000000001a0e        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+                0x0000000000001a0e                osSystickHandler
+                0x0000000000001a0e                noOsSystickHandler
  .text.getCurrentMillis
-                0x0000000000001a92        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
-                0x0000000000001a92                getCurrentMillis
+                0x0000000000001a10        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+                0x0000000000001a10                getCurrentMillis
  .text.SysTick_Handler
-                0x0000000000001a9c       0x2a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
-                0x0000000000001a9c                SysTick_Handler
+                0x0000000000001a1a       0x2a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+                0x0000000000001a1a                SysTick_Handler
  .text.systick_init
-                0x0000000000001ac6       0x3c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
-                0x0000000000001ac6                systick_init
+                0x0000000000001a44       0x3c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+                0x0000000000001a44                systick_init
  .text.hw_config_init
-                0x0000000000001b02        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
-                0x0000000000001b02                hw_config_init
+                0x0000000000001a80        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+                0x0000000000001a80                hw_config_init
  .text._Z19_gpio_exti_callbackt
-                0x0000000000001b0c       0x2e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
-                0x0000000000001b0c                _gpio_exti_callback(unsigned short)
+                0x0000000000001a8a       0x2e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+                0x0000000000001a8a                _gpio_exti_callback(unsigned short)
  .text.EXTI7_0_IRQHandler
-                0x0000000000001b3a       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
-                0x0000000000001b3a                EXTI7_0_IRQHandler
- .text._fini    0x0000000000001b60        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
-                0x0000000000001b60                _fini
- .text._init    0x0000000000001b62        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
-                0x0000000000001b62                _init
+                0x0000000000001ab8       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+                0x0000000000001ab8                EXTI7_0_IRQHandler
+ .text._fini    0x0000000000001ade        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+                0x0000000000001ade                _fini
+ .text._init    0x0000000000001ae0        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+                0x0000000000001ae0                _init
  .text.EXTI_ClearITPendingBit
-                0x0000000000001b64        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
-                0x0000000000001b64                EXTI_ClearITPendingBit
+                0x0000000000001ae2        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+                0x0000000000001ae2                EXTI_ClearITPendingBit
  .text.GPIO_Init
-                0x0000000000001b6e       0xd6 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
-                0x0000000000001b6e                GPIO_Init
+                0x0000000000001aec       0xd6 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+                0x0000000000001aec                GPIO_Init
  .text.GPIO_SetBits
-                0x0000000000001c44        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
-                0x0000000000001c44                GPIO_SetBits
+                0x0000000000001bc2        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+                0x0000000000001bc2                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x0000000000001c48        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
-                0x0000000000001c48                GPIO_ResetBits
+                0x0000000000001bc6        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+                0x0000000000001bc6                GPIO_ResetBits
  .text.GPIO_PinRemapConfig
-                0x0000000000001c4c       0xc4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
-                0x0000000000001c4c                GPIO_PinRemapConfig
+                0x0000000000001bca       0xc4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+                0x0000000000001bca                GPIO_PinRemapConfig
  .text.NMI_Handler
-                0x0000000000001d10        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
-                0x0000000000001d10                NMI_Handler
+                0x0000000000001c8e        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+                0x0000000000001c8e                NMI_Handler
  .text.HardFault_Handler
-                0x0000000000001d14        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
-                0x0000000000001d14                HardFault_Handler
+                0x0000000000001c92        0x2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+                0x0000000000001c92                HardFault_Handler
  .text.RCC_GetClocksFreq
-                0x0000000000001d16       0x9c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
-                0x0000000000001d16                RCC_GetClocksFreq
+                0x0000000000001c94       0x9c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+                0x0000000000001c94                RCC_GetClocksFreq
  .text.RCC_APB2PeriphClockCmd
-                0x0000000000001db2       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
-                0x0000000000001db2                RCC_APB2PeriphClockCmd
+                0x0000000000001d30       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+                0x0000000000001d30                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x0000000000001dd0       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
-                0x0000000000001dd0                RCC_APB1PeriphClockCmd
+                0x0000000000001d4e       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+                0x0000000000001d4e                RCC_APB1PeriphClockCmd
  .text.TIM_TimeBaseInit
-                0x0000000000001dee       0x4e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001dee                TIM_TimeBaseInit
+                0x0000000000001d6c       0x4e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001d6c                TIM_TimeBaseInit
  .text.TIM_OC1Init
-                0x0000000000001e3c       0x6a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001e3c                TIM_OC1Init
+                0x0000000000001dba       0x6a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001dba                TIM_OC1Init
  .text.TIM_OC4Init
-                0x0000000000001ea6       0x6e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001ea6                TIM_OC4Init
- .text.TIM_Cmd  0x0000000000001f14       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001f14                TIM_Cmd
+                0x0000000000001e24       0x6e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001e24                TIM_OC4Init
+ .text.TIM_Cmd  0x0000000000001e92       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001e92                TIM_Cmd
+ .text.TIM_CtrlPWMOutputs
+                0x0000000000001eaa       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001eaa                TIM_CtrlPWMOutputs
  .text.TIM_GenerateEvent
-                0x0000000000001f2c        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001f2c                TIM_GenerateEvent
+                0x0000000000001ec0        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001ec0                TIM_GenerateEvent
  .text.TIM_ARRPreloadConfig
-                0x0000000000001f30       0x1a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001f30                TIM_ARRPreloadConfig
+                0x0000000000001ec4       0x1a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001ec4                TIM_ARRPreloadConfig
  .text.TIM_OC1PreloadConfig
-                0x0000000000001f4a        0xe C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001f4a                TIM_OC1PreloadConfig
+                0x0000000000001ede        0xe C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001ede                TIM_OC1PreloadConfig
  .text.TIM_OC4PreloadConfig
-                0x0000000000001f58       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001f58                TIM_OC4PreloadConfig
+                0x0000000000001eec       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001eec                TIM_OC4PreloadConfig
  .text.TIM_SetCompare1
-                0x0000000000001f6e        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001f6e                TIM_SetCompare1
+                0x0000000000001f02        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001f02                TIM_SetCompare1
  .text.TIM_SetCompare4
-                0x0000000000001f72        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
-                0x0000000000001f72                TIM_SetCompare4
+                0x0000000000001f06        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x0000000000001f06                TIM_SetCompare4
  .text.USART_Init
-                0x0000000000001f76       0xce C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
-                0x0000000000001f76                USART_Init
+                0x0000000000001f0a       0xce C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+                0x0000000000001f0a                USART_Init
  .text.USART_Cmd
-                0x0000000000002044       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
-                0x0000000000002044                USART_Cmd
+                0x0000000000001fd8       0x16 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+                0x0000000000001fd8                USART_Cmd
  .text.USART_SendData
-                0x000000000000205a        0x8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
-                0x000000000000205a                USART_SendData
+                0x0000000000001fee        0x8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+                0x0000000000001fee                USART_SendData
  .text.USART_ReceiveData
-                0x0000000000002062        0x8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
-                0x0000000000002062                USART_ReceiveData
+                0x0000000000001ff6        0x8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+                0x0000000000001ff6                USART_ReceiveData
  .text.USART_HalfDuplexCmd
-                0x000000000000206a       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
-                0x000000000000206a                USART_HalfDuplexCmd
+                0x0000000000001ffe       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+                0x0000000000001ffe                USART_HalfDuplexCmd
  .text.USART_GetFlagStatus
-                0x0000000000002082        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
-                0x0000000000002082                USART_GetFlagStatus
+                0x0000000000002016        0xa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+                0x0000000000002016                USART_GetFlagStatus
  .text.SystemInit
-                0x000000000000208c       0xfe C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
-                0x000000000000208c                SystemInit
+                0x0000000000002020       0xfe C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+                0x0000000000002020                SystemInit
  .text.pin_function
-                0x000000000000218a      0x198 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
-                0x000000000000218a                pin_function
+                0x000000000000211e      0x198 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x000000000000211e                pin_function
  .text.pinmap_pinout
-                0x0000000000002322       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
-                0x0000000000002322                pinmap_pinout
+                0x00000000000022b6       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x00000000000022b6                pinmap_pinout
  .text.pinmap_find_peripheral
-                0x0000000000002348       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
-                0x0000000000002348                pinmap_find_peripheral
+                0x00000000000022dc       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x00000000000022dc                pinmap_find_peripheral
  .text.pinmap_peripheral
-                0x0000000000002360       0x14 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
-                0x0000000000002360                pinmap_peripheral
+                0x00000000000022f4       0x14 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x00000000000022f4                pinmap_peripheral
  .text.pinmap_merge_peripheral
-                0x0000000000002374       0x12 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
-                0x0000000000002374                pinmap_merge_peripheral
+                0x0000000000002308       0x12 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x0000000000002308                pinmap_merge_peripheral
  .text.vector_handler
-                0x0000000000002386       0x36 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(startup_ch32yyxx.S.o)
-                0x000000000000238c                SW_Handler
-                0x000000000000238e                WWDG_IRQHandler
-                0x0000000000002390                PVD_IRQHandler
-                0x0000000000002392                FLASH_IRQHandler
-                0x0000000000002394                RCC_IRQHandler
-                0x0000000000002398                AWU_IRQHandler
-                0x000000000000239a                DMA1_Channel1_IRQHandler
-                0x000000000000239c                DMA1_Channel2_IRQHandler
-                0x000000000000239e                DMA1_Channel3_IRQHandler
-                0x00000000000023a0                DMA1_Channel4_IRQHandler
-                0x00000000000023a2                DMA1_Channel5_IRQHandler
-                0x00000000000023a4                DMA1_Channel6_IRQHandler
-                0x00000000000023a6                DMA1_Channel7_IRQHandler
-                0x00000000000023a8                ADC1_IRQHandler
-                0x00000000000023aa                I2C1_EV_IRQHandler
-                0x00000000000023ac                I2C1_ER_IRQHandler
-                0x00000000000023ae                USART1_IRQHandler
-                0x00000000000023b0                SPI1_IRQHandler
-                0x00000000000023b2                TIM1_BRK_IRQHandler
-                0x00000000000023b4                TIM1_UP_IRQHandler
-                0x00000000000023b6                TIM1_TRG_COM_IRQHandler
-                0x00000000000023b8                TIM1_CC_IRQHandler
-                0x00000000000023ba                TIM2_IRQHandler
+                0x000000000000231a       0x36 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(startup_ch32yyxx.S.o)
+                0x0000000000002320                SW_Handler
+                0x0000000000002322                WWDG_IRQHandler
+                0x0000000000002324                PVD_IRQHandler
+                0x0000000000002326                FLASH_IRQHandler
+                0x0000000000002328                RCC_IRQHandler
+                0x000000000000232c                AWU_IRQHandler
+                0x000000000000232e                DMA1_Channel1_IRQHandler
+                0x0000000000002330                DMA1_Channel2_IRQHandler
+                0x0000000000002332                DMA1_Channel3_IRQHandler
+                0x0000000000002334                DMA1_Channel4_IRQHandler
+                0x0000000000002336                DMA1_Channel5_IRQHandler
+                0x0000000000002338                DMA1_Channel6_IRQHandler
+                0x000000000000233a                DMA1_Channel7_IRQHandler
+                0x000000000000233c                ADC1_IRQHandler
+                0x000000000000233e                I2C1_EV_IRQHandler
+                0x0000000000002340                I2C1_ER_IRQHandler
+                0x0000000000002342                USART1_IRQHandler
+                0x0000000000002344                SPI1_IRQHandler
+                0x0000000000002346                TIM1_BRK_IRQHandler
+                0x0000000000002348                TIM1_UP_IRQHandler
+                0x000000000000234a                TIM1_TRG_COM_IRQHandler
+                0x000000000000234c                TIM1_CC_IRQHandler
+                0x000000000000234e                TIM2_IRQHandler
  .text.handle_reset
-                0x00000000000023bc       0x88 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(startup_ch32yyxx.S.o)
-                0x00000000000023bc                handle_reset
+                0x0000000000002350       0x88 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(startup_ch32yyxx.S.o)
+                0x0000000000002350                handle_reset
  .text.uart_init.part.0
-                0x0000000000002444      0x152 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+                0x00000000000023d8      0x152 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
  .text.uart_debug_init
-                0x0000000000002596       0x46 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
-                0x0000000000002596                uart_debug_init
+                0x000000000000252a       0x46 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+                0x000000000000252a                uart_debug_init
  .text.serial_rx_active
-                0x00000000000025dc       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
-                0x00000000000025dc                serial_rx_active
+                0x0000000000002570       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+                0x0000000000002570                serial_rx_active
  .text.serial_tx_active
-                0x0000000000002602       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
-                0x0000000000002602                serial_tx_active
+                0x0000000000002596       0x26 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+                0x0000000000002596                serial_tx_active
  .text.uart_debug_write
-                0x0000000000002628      0x10a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
-                0x0000000000002628                uart_debug_write
+                0x00000000000025bc      0x10a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+                0x00000000000025bc                uart_debug_write
  .text.uart_getc
-                0x0000000000002732       0x36 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
-                0x0000000000002732                uart_getc
+                0x00000000000026c6       0x36 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+                0x00000000000026c6                uart_getc
  .text.startup.main
-                0x0000000000002768       0x12 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
-                0x0000000000002768                main
+                0x00000000000026fc       0x12 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+                0x00000000000026fc                main
  .text.analogRead
-                0x000000000000277a        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
-                0x000000000000277a                analogRead
- .text.pinMode  0x000000000000277e       0x84 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
-                0x000000000000277e                pinMode
+                0x000000000000270e        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+                0x000000000000270e                analogRead
+ .text.pinMode  0x0000000000002712       0x84 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+                0x0000000000002712                pinMode
  .text.digitalWrite
-                0x0000000000002802       0x98 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
-                0x0000000000002802                digitalWrite
- .text.millis   0x000000000000289a        0xc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
-                0x000000000000289a                millis
- .text.delay    0x00000000000028a6       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
-                0x00000000000028a6                delay
- .text.atexit   0x00000000000028c4        0xa c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-atexit.o)
-                0x00000000000028c4                atexit
+                0x0000000000002796       0x98 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+                0x0000000000002796                digitalWrite
+ .text.millis   0x000000000000282e        0xc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+                0x000000000000282e                millis
+ .text.delay    0x000000000000283a       0x1e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+                0x000000000000283a                delay
+ .text.atexit   0x0000000000002858        0xa c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-atexit.o)
+                0x0000000000002858                atexit
  .text.__libc_fini_array
-                0x00000000000028ce       0x3a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-fini.o)
-                0x00000000000028ce                __libc_fini_array
+                0x0000000000002862       0x3a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-fini.o)
+                0x0000000000002862                __libc_fini_array
  .text.__libc_init_array
-                0x0000000000002908       0x76 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-init.o)
-                0x0000000000002908                __libc_init_array
+                0x000000000000289c       0x76 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-init.o)
+                0x000000000000289c                __libc_init_array
  .text.__register_exitproc
-                0x000000000000297e       0x7a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__atexit.o)
-                0x000000000000297e                __register_exitproc
+                0x0000000000002912       0x7a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__atexit.o)
+                0x0000000000002912                __register_exitproc
  .text.startup.register_fini
-                0x00000000000029f8       0x18 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__call_atexit.o)
+                0x000000000000298c       0x18 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__call_atexit.o)
  .text.__udivdi3
-                0x0000000000002a10      0x4f2 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(_udivdi3.o)
-                0x0000000000002a10                __udivdi3
+                0x00000000000029a4      0x4f2 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(_udivdi3.o)
+                0x00000000000029a4                __udivdi3
  .text.__muldi3
-                0x0000000000002f02       0x6a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(multi3.o)
-                0x0000000000002f02                __muldi3
+                0x0000000000002e96       0x6a c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(multi3.o)
+                0x0000000000002e96                __muldi3
  *(.rodata)
  *(.rodata*)
- *fill*         0x0000000000002f6c        0x0 
- .rodata._Z15stateArmedEnterv.str1.4
-                0x0000000000002f6c       0x15 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- *fill*         0x0000000000002f81        0x3 
- .rodata._Z18stateDisarmedEnterv.str1.4
-                0x0000000000002f84        0x9 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- *fill*         0x0000000000002f8d        0x3 
- .rodata._Z18stateLowBatteryRunv.str1.4
-                0x0000000000002f90        0x6 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- *fill*         0x0000000000002f96        0x2 
+ *fill*         0x0000000000002f00        0x0 
  .rodata._ZL11screenPrintv.str1.4
-                0x0000000000002f98        0xf C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- *fill*         0x0000000000002fa7        0x1 
- .rodata.loop.str1.4
-                0x0000000000002fa8        0x7 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- *fill*         0x0000000000002faf        0x1 
+                0x0000000000002f00        0xf C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ *fill*         0x0000000000002f0f        0x1 
+ .rodata._ZL15stateArmedEnterv.str1.4
+                0x0000000000002f10       0x15 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ *fill*         0x0000000000002f25        0x3 
+ .rodata._ZL18stateDisarmedEnterv.str1.4
+                0x0000000000002f28        0x9 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ *fill*         0x0000000000002f31        0x3 
+ .rodata._ZL18stateLowBatteryRunv.str1.4
+                0x0000000000002f34        0x6 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ *fill*         0x0000000000002f3a        0x2 
  .rodata.setup.str1.4
-                0x0000000000002fb0       0x5c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000002f3c       0x4c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rodata.OLED_F6x8
-                0x000000000000300c      0x23a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
-                0x000000000000300c                OLED_F6x8
- *fill*         0x0000000000003246        0x2 
+                0x0000000000002f88      0x23a C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
+                0x0000000000002f88                OLED_F6x8
+ *fill*         0x00000000000031c2        0x2 
  .rodata.PinMap_UART_CTS
-                0x0000000000003248       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
-                0x0000000000003248                PinMap_UART_CTS
+                0x00000000000031c4       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+                0x00000000000031c4                PinMap_UART_CTS
  .rodata.PinMap_UART_RTS
-                0x0000000000003260       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
-                0x0000000000003260                PinMap_UART_RTS
+                0x00000000000031dc       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+                0x00000000000031dc                PinMap_UART_RTS
  .rodata.PinMap_UART_RX
-                0x0000000000003278       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
-                0x0000000000003278                PinMap_UART_RX
+                0x00000000000031f4       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+                0x00000000000031f4                PinMap_UART_RX
  .rodata.PinMap_UART_TX
-                0x0000000000003290       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
-                0x0000000000003290                PinMap_UART_TX
+                0x000000000000320c       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+                0x000000000000320c                PinMap_UART_TX
  .rodata.analogInputPin
-                0x00000000000032a8       0x20 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
-                0x00000000000032a8                analogInputPin
+                0x0000000000003224       0x20 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
+                0x0000000000003224                analogInputPin
  .rodata.digitalPin
-                0x00000000000032c8       0x48 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
-                0x00000000000032c8                digitalPin
+                0x0000000000003244       0x48 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
+                0x0000000000003244                digitalPin
  .rodata.print.str1.4
-                0x0000000000003310        0x8 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
+                0x000000000000328c        0x8 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libprintf.a(wchprintf.o)
                                           0x7 (size before relaxing)
  .rodata._ZTV14HardwareSerial
-                0x0000000000003318       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x0000000000003318                vtable for HardwareSerial
+                0x0000000000003294       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000003294                vtable for HardwareSerial
  .rodata.pin_function
-                0x0000000000003344       0x6c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x00000000000032c0       0x6c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
  .rodata.pin_map
-                0x00000000000033b0       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
-                0x00000000000033b0                pin_map
+                0x000000000000332c       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x000000000000332c                pin_map
  .rodata.pinMode
-                0x00000000000033d0       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+                0x000000000000334c       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
  .rodata.__clz_tab
-                0x00000000000033e8      0x100 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(_clz.o)
-                0x00000000000033e8                __clz_tab
+                0x0000000000003364      0x100 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(_clz.o)
+                0x0000000000003364                __clz_tab
  *(.gnu.linkonce.t.*)
-                0x00000000000034e8                . = ALIGN (0x4)
+                0x0000000000003464                . = ALIGN (0x4)
 
-.rela.dyn       0x00000000000034e8        0x0
- .rela.text.setup
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+.rela.dyn       0x0000000000003464        0x0
  .rela.text.printchar
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.prints
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.printInt
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.print
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .rela.text.printf
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.snprintf
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .rela.text.puts
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text._ZN14HardwareSerialC2EPv
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.rodata._ZTV14HardwareSerial
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.getCurrentMillis
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.SysTick_Handler
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .rela.init     0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .rela.init     0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.handle_reset
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.uart_init.part.0
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.uart_debug_init
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.uart_debug_write
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.startup.main
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.__libc_fini_array
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.__libc_init_array
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.__register_exitproc
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .rela.text.startup.register_fini
-                0x00000000000034e8        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000003464        0x0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
 
-.fini           0x00000000000034e8        0x0
+.fini           0x0000000000003464        0x0
  *(SORT_NONE(.fini))
-                0x00000000000034e8                . = ALIGN (0x4)
+                0x0000000000003464                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (_eitcm = .)
 
-.preinit_array  0x00000000000034e8        0x0
-                0x00000000000034e8                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000000003464        0x0
+                0x0000000000003464                PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x00000000000034e8                PROVIDE (__preinit_array_end = .)
+                0x0000000000003464                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x00000000000034e8        0xc
-                0x00000000000034e8                PROVIDE (__init_array_start = .)
+.init_array     0x0000000000003464        0xc
+                0x0000000000003464                PROVIDE (__init_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
  .init_array.00000
-                0x00000000000034e8        0x4 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__call_atexit.o)
+                0x0000000000003464        0x4 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__call_atexit.o)
  *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
- .init_array    0x00000000000034ec        0x4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .init_array    0x00000000000034f0        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
-                0x00000000000034f4                PROVIDE (__init_array_end = .)
+ .init_array    0x0000000000003468        0x4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .init_array    0x000000000000346c        0x4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x0000000000003470                PROVIDE (__init_array_end = .)
 
-.fini_array     0x00000000000034f4        0x0
-                0x00000000000034f4                PROVIDE (__fini_array_start = .)
+.fini_array     0x0000000000003470        0x0
+                0x0000000000003470                PROVIDE (__fini_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
  *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
-                0x00000000000034f4                PROVIDE (__fini_array_end = .)
+                0x0000000000003470                PROVIDE (__fini_array_end = .)
 
 .ctors
  *crtbegin.o(.ctors)
@@ -3256,15 +3235,15 @@ END GROUP
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
 
-.dalign         0x0000000020000000        0x0 load address 0x00000000000034f4
+.dalign         0x0000000020000000        0x0 load address 0x0000000000003470
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                PROVIDE (_data_vma = .)
 
-.dlalign        0x00000000000034f4        0x0
-                0x00000000000034f4                . = ALIGN (0x4)
-                0x00000000000034f4                PROVIDE (_data_lma = .)
+.dlalign        0x0000000000003470        0x0
+                0x0000000000003470                . = ALIGN (0x4)
+                0x0000000000003470                PROVIDE (_data_lma = .)
 
-.data           0x0000000020000000       0xb8 load address 0x00000000000034f4
+.data           0x0000000020000000       0xb8 load address 0x0000000000003470
                 0x0000000020000000                . = ALIGN (0x4)
  *(.gnu.linkonce.r.*)
  *(.data .data.*)
@@ -3310,7 +3289,7 @@ END GROUP
                 0x00000000200000b8                . = ALIGN (0x4)
                 0x00000000200000b8                PROVIDE (_edata = .)
 
-.bss            0x00000000200000b8      0x31c load address 0x00000000000035ac
+.bss            0x00000000200000b8      0x31c load address 0x0000000000003528
                 0x00000000200000b8                . = ALIGN (0x4)
                 0x00000000200000b8                PROVIDE (_sbss = .)
  *(.sbss*)
@@ -3385,288 +3364,288 @@ END GROUP
                 0x0000000020000800                PROVIDE (_eusrstack = .)
 OUTPUT(C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F/ADC2PWM.ino.elf elf32-littleriscv)
 
-.debug_info     0x0000000000000000    0x34507
- .debug_info    0x0000000000000000     0x54b3 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .debug_info    0x00000000000054b3      0xbc8 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
- .debug_info    0x000000000000607b     0x1785 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
- .debug_info    0x0000000000007800      0x2ea C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
- .debug_info    0x0000000000007aea     0x1569 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
- .debug_info    0x0000000000009053     0x3760 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
- .debug_info    0x000000000000c7b3     0x1087 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
- .debug_info    0x000000000000d83a     0x12fb C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
- .debug_info    0x000000000000eb35     0x37c0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
- .debug_info    0x00000000000122f5     0x5779 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
- .debug_info    0x0000000000017a6e     0x4927 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
- .debug_info    0x000000000001c395     0x1207 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
- .debug_info    0x000000000001d59c      0xdd1 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
- .debug_info    0x000000000001e36d      0xab9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
- .debug_info    0x000000000001ee26      0xaad C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
- .debug_info    0x000000000001f8d3      0xd58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
- .debug_info    0x000000000002062b     0x30fb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
- .debug_info    0x0000000000023726      0xe5d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
- .debug_info    0x0000000000024583      0xc05 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
- .debug_info    0x0000000000025188      0xf89 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
- .debug_info    0x0000000000026111      0x962 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
- .debug_info    0x0000000000026a73     0x1063 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
- .debug_info    0x0000000000027ad6     0x2949 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
- .debug_info    0x000000000002a41f     0x1351 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
- .debug_info    0x000000000002b770      0xc00 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
- .debug_info    0x000000000002c370     0x1189 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
- .debug_info    0x000000000002d4f9     0x17bc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
- .debug_info    0x000000000002ecb5     0x2902 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
- .debug_info    0x00000000000315b7      0xfd7 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
- .debug_info    0x000000000003258e     0x1122 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
- .debug_info    0x00000000000336b0      0xe57 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+.debug_info     0x0000000000000000    0x35ba1
+ .debug_info    0x0000000000000000     0x53c8 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .debug_info    0x00000000000053c8      0xbc8 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+ .debug_info    0x0000000000005f90     0x1785 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+ .debug_info    0x0000000000007715      0x2ea C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
+ .debug_info    0x00000000000079ff     0x1569 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+ .debug_info    0x0000000000008f68     0x4ee5 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+ .debug_info    0x000000000000de4d     0x1087 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+ .debug_info    0x000000000000eed4     0x12fb C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
+ .debug_info    0x00000000000101cf     0x37c0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .debug_info    0x000000000001398f     0x5779 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+ .debug_info    0x0000000000019108     0x4927 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+ .debug_info    0x000000000001da2f     0x1207 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+ .debug_info    0x000000000001ec36      0xdd1 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+ .debug_info    0x000000000001fa07      0xab9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+ .debug_info    0x00000000000204c0      0xaad C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+ .debug_info    0x0000000000020f6d      0xd58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+ .debug_info    0x0000000000021cc5     0x30fb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+ .debug_info    0x0000000000024dc0      0xe5d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+ .debug_info    0x0000000000025c1d      0xc05 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+ .debug_info    0x0000000000026822      0xf89 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+ .debug_info    0x00000000000277ab      0x962 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+ .debug_info    0x000000000002810d     0x1063 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+ .debug_info    0x0000000000029170     0x2949 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+ .debug_info    0x000000000002bab9     0x1351 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+ .debug_info    0x000000000002ce0a      0xc00 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+ .debug_info    0x000000000002da0a     0x1189 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+ .debug_info    0x000000000002eb93     0x17bc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+ .debug_info    0x000000000003034f     0x2902 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+ .debug_info    0x0000000000032c51      0xfd7 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+ .debug_info    0x0000000000033c28     0x1122 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+ .debug_info    0x0000000000034d4a      0xe57 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
 
-.debug_abbrev   0x0000000000000000     0x8341
- .debug_abbrev  0x0000000000000000      0x98c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .debug_abbrev  0x000000000000098c      0x329 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
- .debug_abbrev  0x0000000000000cb5      0x481 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
- .debug_abbrev  0x0000000000001136       0x95 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
- .debug_abbrev  0x00000000000011cb      0x44f C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
- .debug_abbrev  0x000000000000161a      0x833 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
- .debug_abbrev  0x0000000000001e4d      0x254 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
- .debug_abbrev  0x00000000000020a1      0x306 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
- .debug_abbrev  0x00000000000023a7      0x821 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
- .debug_abbrev  0x0000000000002bc8      0xa39 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
- .debug_abbrev  0x0000000000003601      0x953 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
- .debug_abbrev  0x0000000000003f54      0x36e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
- .debug_abbrev  0x00000000000042c2      0x272 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
- .debug_abbrev  0x0000000000004534      0x263 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
- .debug_abbrev  0x0000000000004797      0x2a0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
- .debug_abbrev  0x0000000000004a37      0x2a4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
- .debug_abbrev  0x0000000000004cdb      0x79a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
- .debug_abbrev  0x0000000000005475      0x309 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
- .debug_abbrev  0x000000000000577e      0x2da C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
- .debug_abbrev  0x0000000000005a58      0x2f8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
- .debug_abbrev  0x0000000000005d50      0x1cf C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
- .debug_abbrev  0x0000000000005f1f      0x36d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
- .debug_abbrev  0x000000000000628c      0x408 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
- .debug_abbrev  0x0000000000006694      0x323 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
- .debug_abbrev  0x00000000000069b7      0x2af C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
- .debug_abbrev  0x0000000000006c66      0x356 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
- .debug_abbrev  0x0000000000006fbc      0x404 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
- .debug_abbrev  0x00000000000073c0      0x5c9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
- .debug_abbrev  0x0000000000007989      0x39c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
- .debug_abbrev  0x0000000000007d25      0x361 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
- .debug_abbrev  0x0000000000008086      0x2bb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+.debug_abbrev   0x0000000000000000     0x839b
+ .debug_abbrev  0x0000000000000000      0x957 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .debug_abbrev  0x0000000000000957      0x329 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+ .debug_abbrev  0x0000000000000c80      0x481 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+ .debug_abbrev  0x0000000000001101       0x95 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
+ .debug_abbrev  0x0000000000001196      0x44f C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+ .debug_abbrev  0x00000000000015e5      0x8c2 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+ .debug_abbrev  0x0000000000001ea7      0x254 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+ .debug_abbrev  0x00000000000020fb      0x306 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
+ .debug_abbrev  0x0000000000002401      0x821 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .debug_abbrev  0x0000000000002c22      0xa39 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+ .debug_abbrev  0x000000000000365b      0x953 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+ .debug_abbrev  0x0000000000003fae      0x36e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+ .debug_abbrev  0x000000000000431c      0x272 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+ .debug_abbrev  0x000000000000458e      0x263 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+ .debug_abbrev  0x00000000000047f1      0x2a0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+ .debug_abbrev  0x0000000000004a91      0x2a4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+ .debug_abbrev  0x0000000000004d35      0x79a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+ .debug_abbrev  0x00000000000054cf      0x309 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+ .debug_abbrev  0x00000000000057d8      0x2da C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+ .debug_abbrev  0x0000000000005ab2      0x2f8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+ .debug_abbrev  0x0000000000005daa      0x1cf C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+ .debug_abbrev  0x0000000000005f79      0x36d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+ .debug_abbrev  0x00000000000062e6      0x408 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+ .debug_abbrev  0x00000000000066ee      0x323 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+ .debug_abbrev  0x0000000000006a11      0x2af C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+ .debug_abbrev  0x0000000000006cc0      0x356 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+ .debug_abbrev  0x0000000000007016      0x404 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+ .debug_abbrev  0x000000000000741a      0x5c9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+ .debug_abbrev  0x00000000000079e3      0x39c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+ .debug_abbrev  0x0000000000007d7f      0x361 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+ .debug_abbrev  0x00000000000080e0      0x2bb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
 
-.debug_loc      0x0000000000000000     0x92f4
- .debug_loc     0x0000000000000000      0x287 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .debug_loc     0x0000000000000287       0xec C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
- .debug_loc     0x0000000000000373     0x1391 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
- .debug_loc     0x0000000000001704      0x37b C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
- .debug_loc     0x0000000000001a7f      0x3e1 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
- .debug_loc     0x0000000000001e60      0x4f9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
- .debug_loc     0x0000000000002359     0x1c8b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
- .debug_loc     0x0000000000003fe4      0xcca C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
- .debug_loc     0x0000000000004cae      0x1b9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
- .debug_loc     0x0000000000004e67       0xbb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
- .debug_loc     0x0000000000004f22       0x63 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
- .debug_loc     0x0000000000004f85       0x3d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
- .debug_loc     0x0000000000004fc2      0x2aa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
- .debug_loc     0x000000000000526c       0xbd C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
- .debug_loc     0x0000000000005329      0x181 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
- .debug_loc     0x00000000000054aa      0x670 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
- .debug_loc     0x0000000000005b1a      0x59f C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
- .debug_loc     0x00000000000060b9     0x1936 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
- .debug_loc     0x00000000000079ef      0x735 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
- .debug_loc     0x0000000000008124       0x55 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
- .debug_loc     0x0000000000008179      0x7ce C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
- .debug_loc     0x0000000000008947      0x504 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
- .debug_loc     0x0000000000008e4b      0x158 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
- .debug_loc     0x0000000000008fa3      0x315 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
- .debug_loc     0x00000000000092b8       0x3c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+.debug_loc      0x0000000000000000     0x92e0
+ .debug_loc     0x0000000000000000      0x273 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .debug_loc     0x0000000000000273       0xec C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+ .debug_loc     0x000000000000035f     0x1391 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+ .debug_loc     0x00000000000016f0      0x37b C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+ .debug_loc     0x0000000000001a6b      0x3e1 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+ .debug_loc     0x0000000000001e4c      0x4f9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .debug_loc     0x0000000000002345     0x1c8b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+ .debug_loc     0x0000000000003fd0      0xcca C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+ .debug_loc     0x0000000000004c9a      0x1b9 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+ .debug_loc     0x0000000000004e53       0xbb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+ .debug_loc     0x0000000000004f0e       0x63 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+ .debug_loc     0x0000000000004f71       0x3d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+ .debug_loc     0x0000000000004fae      0x2aa C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+ .debug_loc     0x0000000000005258       0xbd C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+ .debug_loc     0x0000000000005315      0x181 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+ .debug_loc     0x0000000000005496      0x670 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+ .debug_loc     0x0000000000005b06      0x59f C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+ .debug_loc     0x00000000000060a5     0x1936 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+ .debug_loc     0x00000000000079db      0x735 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+ .debug_loc     0x0000000000008110       0x55 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+ .debug_loc     0x0000000000008165      0x7ce C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+ .debug_loc     0x0000000000008933      0x504 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+ .debug_loc     0x0000000000008e37      0x158 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+ .debug_loc     0x0000000000008f8f      0x315 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+ .debug_loc     0x00000000000092a4       0x3c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
 
-.debug_aranges  0x0000000000000000      0xe68
+.debug_aranges  0x0000000000000000      0xe60
  .debug_aranges
-                0x0000000000000000       0x98 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                0x0000000000000000       0x90 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
  .debug_aranges
-                0x0000000000000098       0x50 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+                0x0000000000000090       0x50 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
  .debug_aranges
-                0x00000000000000e8       0x90 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+                0x00000000000000e0       0x90 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
  .debug_aranges
-                0x0000000000000178       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
+                0x0000000000000170       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
  .debug_aranges
-                0x0000000000000190       0x90 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                0x0000000000000188       0x90 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
  .debug_aranges
-                0x0000000000000220       0x68 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+                0x0000000000000218       0x68 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
  .debug_aranges
-                0x0000000000000288       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+                0x0000000000000280       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
  .debug_aranges
-                0x00000000000002a0       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
+                0x0000000000000298       0x18 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
  .debug_aranges
-                0x00000000000002b8       0xc8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+                0x00000000000002b0       0xc8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
  .debug_aranges
-                0x0000000000000380      0x150 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+                0x0000000000000378      0x150 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
  .debug_aranges
-                0x00000000000004d0       0xa8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+                0x00000000000004c8       0xa8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
  .debug_aranges
-                0x0000000000000578       0x48 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+                0x0000000000000570       0x48 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
  .debug_aranges
-                0x00000000000005c0       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+                0x00000000000005b8       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
  .debug_aranges
-                0x00000000000005e0       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+                0x00000000000005d8       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
  .debug_aranges
-                0x0000000000000600       0x40 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+                0x00000000000005f8       0x40 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
  .debug_aranges
-                0x0000000000000640       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+                0x0000000000000638       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
  .debug_aranges
-                0x0000000000000668       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+                0x0000000000000660       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
  .debug_aranges
-                0x00000000000006a0       0x48 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+                0x0000000000000698       0x48 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
  .debug_aranges
-                0x00000000000006e8       0x50 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+                0x00000000000006e0       0x50 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
  .debug_aranges
-                0x0000000000000738       0x90 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+                0x0000000000000730       0x90 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
  .debug_aranges
-                0x00000000000007c8       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+                0x00000000000007c0       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
  .debug_aranges
-                0x00000000000007f0       0xe0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+                0x00000000000007e8       0xe0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
  .debug_aranges
-                0x00000000000008d0      0x2d0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+                0x00000000000008c8      0x2d0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
  .debug_aranges
-                0x0000000000000ba0      0x100 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+                0x0000000000000b98      0x100 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
  .debug_aranges
-                0x0000000000000ca0       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+                0x0000000000000c98       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
  .debug_aranges
-                0x0000000000000cc8       0x68 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+                0x0000000000000cc0       0x68 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
  .debug_aranges
-                0x0000000000000d30       0x60 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+                0x0000000000000d28       0x60 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
  .debug_aranges
-                0x0000000000000d90       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+                0x0000000000000d88       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
  .debug_aranges
-                0x0000000000000db0       0x50 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+                0x0000000000000da8       0x50 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
  .debug_aranges
-                0x0000000000000e00       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+                0x0000000000000df8       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
  .debug_aranges
-                0x0000000000000e38       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+                0x0000000000000e30       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
 
-.debug_ranges   0x0000000000000000     0x12a8
- .debug_ranges  0x0000000000000000      0x140 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .debug_ranges  0x0000000000000140       0x40 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
- .debug_ranges  0x0000000000000180      0x1a0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
- .debug_ranges  0x0000000000000320       0xb0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
- .debug_ranges  0x00000000000003d0       0xc0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
- .debug_ranges  0x0000000000000490       0xe8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
- .debug_ranges  0x0000000000000578      0x230 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
- .debug_ranges  0x00000000000007a8      0x1e0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
- .debug_ranges  0x0000000000000988       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
- .debug_ranges  0x00000000000009c0       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
- .debug_ranges  0x00000000000009d0       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
- .debug_ranges  0x00000000000009e0       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
- .debug_ranges  0x0000000000000a10       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
- .debug_ranges  0x0000000000000a28       0x60 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
- .debug_ranges  0x0000000000000a88       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
- .debug_ranges  0x0000000000000ac0       0x40 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
- .debug_ranges  0x0000000000000b00       0x80 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
- .debug_ranges  0x0000000000000b80       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
- .debug_ranges  0x0000000000000b98       0xd0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
- .debug_ranges  0x0000000000000c68      0x2f0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
- .debug_ranges  0x0000000000000f58       0xf0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
- .debug_ranges  0x0000000000001048       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
- .debug_ranges  0x0000000000001080       0x70 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
- .debug_ranges  0x00000000000010f0       0x88 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
- .debug_ranges  0x0000000000001178       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
- .debug_ranges  0x0000000000001188       0x58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
- .debug_ranges  0x00000000000011e0       0xa8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
- .debug_ranges  0x0000000000001288       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+.debug_ranges   0x0000000000000000     0x12a0
+ .debug_ranges  0x0000000000000000      0x138 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .debug_ranges  0x0000000000000138       0x40 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+ .debug_ranges  0x0000000000000178      0x1a0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+ .debug_ranges  0x0000000000000318       0xb0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+ .debug_ranges  0x00000000000003c8       0xc0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+ .debug_ranges  0x0000000000000488       0xe8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .debug_ranges  0x0000000000000570      0x230 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+ .debug_ranges  0x00000000000007a0      0x1e0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+ .debug_ranges  0x0000000000000980       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+ .debug_ranges  0x00000000000009b8       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+ .debug_ranges  0x00000000000009c8       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+ .debug_ranges  0x00000000000009d8       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+ .debug_ranges  0x0000000000000a08       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+ .debug_ranges  0x0000000000000a20       0x60 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+ .debug_ranges  0x0000000000000a80       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+ .debug_ranges  0x0000000000000ab8       0x40 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+ .debug_ranges  0x0000000000000af8       0x80 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+ .debug_ranges  0x0000000000000b78       0x18 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+ .debug_ranges  0x0000000000000b90       0xd0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+ .debug_ranges  0x0000000000000c60      0x2f0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+ .debug_ranges  0x0000000000000f50       0xf0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+ .debug_ranges  0x0000000000001040       0x38 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+ .debug_ranges  0x0000000000001078       0x70 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+ .debug_ranges  0x00000000000010e8       0x88 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+ .debug_ranges  0x0000000000001170       0x10 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+ .debug_ranges  0x0000000000001180       0x58 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+ .debug_ranges  0x00000000000011d8       0xa8 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+ .debug_ranges  0x0000000000001280       0x20 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
 
-.debug_line     0x0000000000000000    0x168ee
- .debug_line    0x0000000000000000     0x155d C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .debug_line    0x000000000000155d      0x4bc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
- .debug_line    0x0000000000001a19     0x10d0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
- .debug_line    0x0000000000002ae9      0x176 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
- .debug_line    0x0000000000002c5f      0xd5d C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
- .debug_line    0x00000000000039bc     0x1450 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
- .debug_line    0x0000000000004e0c      0x52b C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
- .debug_line    0x0000000000005337      0x66c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
- .debug_line    0x00000000000059a3      0xf9a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
- .debug_line    0x000000000000693d     0x1b89 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
- .debug_line    0x00000000000084c6     0x13fc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
- .debug_line    0x00000000000098c2      0x5ed C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
- .debug_line    0x0000000000009eaf      0x47d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
- .debug_line    0x000000000000a32c      0x463 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
- .debug_line    0x000000000000a78f      0x51e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
- .debug_line    0x000000000000acad      0x47f C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
- .debug_line    0x000000000000b12c      0xd27 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
- .debug_line    0x000000000000be53      0x79b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
- .debug_line    0x000000000000c5ee      0x6f0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
- .debug_line    0x000000000000ccde      0xce1 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
- .debug_line    0x000000000000d9bf      0x293 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
- .debug_line    0x000000000000dc52      0xe86 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
- .debug_line    0x000000000000ead8     0x311b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
- .debug_line    0x0000000000011bf3     0x1028 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
- .debug_line    0x0000000000012c1b      0x727 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
- .debug_line    0x0000000000013342      0xbb0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
- .debug_line    0x0000000000013ef2      0xd03 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
- .debug_line    0x0000000000014bf5      0x848 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
- .debug_line    0x000000000001543d      0x737 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
- .debug_line    0x0000000000015b74      0x845 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
- .debug_line    0x00000000000163b9      0x535 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+.debug_line     0x0000000000000000    0x1693d
+ .debug_line    0x0000000000000000     0x14bd C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .debug_line    0x00000000000014bd      0x4bc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+ .debug_line    0x0000000000001979     0x10d0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+ .debug_line    0x0000000000002a49      0x176 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
+ .debug_line    0x0000000000002bbf      0xd5d C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+ .debug_line    0x000000000000391c     0x153f C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+ .debug_line    0x0000000000004e5b      0x52b C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+ .debug_line    0x0000000000005386      0x66c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
+ .debug_line    0x00000000000059f2      0xf9a C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .debug_line    0x000000000000698c     0x1b89 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+ .debug_line    0x0000000000008515     0x13fc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+ .debug_line    0x0000000000009911      0x5ed C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+ .debug_line    0x0000000000009efe      0x47d C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+ .debug_line    0x000000000000a37b      0x463 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+ .debug_line    0x000000000000a7de      0x51e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+ .debug_line    0x000000000000acfc      0x47f C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+ .debug_line    0x000000000000b17b      0xd27 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+ .debug_line    0x000000000000bea2      0x79b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+ .debug_line    0x000000000000c63d      0x6f0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+ .debug_line    0x000000000000cd2d      0xce1 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+ .debug_line    0x000000000000da0e      0x293 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+ .debug_line    0x000000000000dca1      0xe86 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+ .debug_line    0x000000000000eb27     0x311b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+ .debug_line    0x0000000000011c42     0x1028 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+ .debug_line    0x0000000000012c6a      0x727 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+ .debug_line    0x0000000000013391      0xbb0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+ .debug_line    0x0000000000013f41      0xd03 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+ .debug_line    0x0000000000014c44      0x848 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+ .debug_line    0x000000000001548c      0x737 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+ .debug_line    0x0000000000015bc3      0x845 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+ .debug_line    0x0000000000016408      0x535 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
 
-.debug_str      0x0000000000000000     0x78cb
- .debug_str     0x0000000000000000     0x2abc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
-                                       0x2ee6 (size before relaxing)
- .debug_str     0x0000000000002abc      0x121 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+.debug_str      0x0000000000000000     0x77df
+ .debug_str     0x0000000000000000     0x29d0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+                                       0x2dee (size before relaxing)
+ .debug_str     0x00000000000029d0      0x121 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
                                         0x785 (size before relaxing)
- .debug_str     0x0000000000002bdd      0x353 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
-                                        0x9cf (size before relaxing)
- .debug_str     0x0000000000002f30       0x63 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
+ .debug_str     0x0000000000002af1      0x353 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+                                        0x9c7 (size before relaxing)
+ .debug_str     0x0000000000002e44       0x63 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_Fonts.c.o
                                         0x2a3 (size before relaxing)
- .debug_str     0x0000000000002f93      0x27e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
-                                        0x984 (size before relaxing)
- .debug_str     0x0000000000003211      0x355 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
-                                       0x1ebe (size before relaxing)
- .debug_str     0x0000000000003566      0x3bc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
+ .debug_str     0x0000000000002ea7      0x27e C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+                                        0x97c (size before relaxing)
+ .debug_str     0x0000000000003125      0x368 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+                                       0x2e08 (size before relaxing)
+ .debug_str     0x000000000000348d      0x3bc C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\PeripheralPins.c.o
                                         0xcfe (size before relaxing)
- .debug_str     0x0000000000003922       0x7d C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
+ .debug_str     0x0000000000003849       0x7d C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\core\variant_CH32V003F4.cpp.o
                                         0x992 (size before relaxing)
- .debug_str     0x000000000000399f      0x799 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .debug_str     0x00000000000038c6      0x799 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
                                        0x1fdc (size before relaxing)
- .debug_str     0x0000000000004138     0x102c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+ .debug_str     0x000000000000405f     0x102c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
                                        0x2865 (size before relaxing)
- .debug_str     0x0000000000005164      0x4b3 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+ .debug_str     0x000000000000508b      0x4b3 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
                                        0x278d (size before relaxing)
- .debug_str     0x0000000000005617       0xf3 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+ .debug_str     0x000000000000553e       0xf3 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
                                         0x88e (size before relaxing)
- .debug_str     0x000000000000570a       0x77 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+ .debug_str     0x0000000000005631       0x77 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
                                         0x93b (size before relaxing)
- .debug_str     0x0000000000005781       0xbb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+ .debug_str     0x00000000000056a8       0xbb C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
                                         0x696 (size before relaxing)
- .debug_str     0x000000000000583c       0xc5 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+ .debug_str     0x0000000000005763       0xc5 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
                                         0x670 (size before relaxing)
- .debug_str     0x0000000000005901       0xe2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+ .debug_str     0x0000000000005828       0xe2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
                                         0x881 (size before relaxing)
- .debug_str     0x00000000000059e3      0x30e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+ .debug_str     0x000000000000590a      0x30e C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
                                        0x1e49 (size before relaxing)
- .debug_str     0x0000000000005cf1       0xfe C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+ .debug_str     0x0000000000005c18       0xfe C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
                                         0x925 (size before relaxing)
- .debug_str     0x0000000000005def      0x115 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+ .debug_str     0x0000000000005d16      0x115 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
                                         0x7d7 (size before relaxing)
- .debug_str     0x0000000000005f04      0x1ff C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+ .debug_str     0x0000000000005e2b      0x1ff C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
                                         0x954 (size before relaxing)
- .debug_str     0x0000000000006103       0x8c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+ .debug_str     0x000000000000602a       0x8c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
                                         0x60a (size before relaxing)
- .debug_str     0x000000000000618f      0x38f C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+ .debug_str     0x00000000000060b6      0x38f C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
                                         0x9fb (size before relaxing)
- .debug_str     0x000000000000651e      0x963 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+ .debug_str     0x0000000000006445      0x950 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
                                        0x1299 (size before relaxing)
- .debug_str     0x0000000000006e81      0x3c2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+ .debug_str     0x0000000000006d95      0x3c2 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
                                         0xb4a (size before relaxing)
- .debug_str     0x0000000000007243       0xe0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+ .debug_str     0x0000000000007157       0xe0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
                                         0x756 (size before relaxing)
- .debug_str     0x0000000000007323      0x132 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+ .debug_str     0x0000000000007237      0x132 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
                                         0xd05 (size before relaxing)
- .debug_str     0x0000000000007455      0x124 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+ .debug_str     0x0000000000007369      0x124 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
                                         0xe3d (size before relaxing)
- .debug_str     0x0000000000007579       0x65 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+ .debug_str     0x000000000000748d       0x65 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
                                        0x1763 (size before relaxing)
- .debug_str     0x00000000000075de      0x17b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+ .debug_str     0x00000000000074f2      0x17b C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
                                         0xa76 (size before relaxing)
- .debug_str     0x0000000000007759      0x106 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+ .debug_str     0x000000000000766d      0x106 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
                                         0xa89 (size before relaxing)
- .debug_str     0x000000000000785f       0x6c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+ .debug_str     0x0000000000007773       0x6c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
                                         0x965 (size before relaxing)
 
 .comment        0x0000000000000000       0x33
@@ -3704,41 +3683,41 @@ OUTPUT(C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A9491
  .comment       0x0000000000000033       0x34 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
  .comment       0x0000000000000033       0x34 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
 
-.debug_frame    0x0000000000000000     0x2488
- .debug_frame   0x0000000000000000      0x20c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
- .debug_frame   0x000000000000020c       0xb0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
- .debug_frame   0x00000000000002bc      0x1d4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
- .debug_frame   0x0000000000000490      0x1b4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
- .debug_frame   0x0000000000000644      0x12c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
- .debug_frame   0x0000000000000770      0x1d4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
- .debug_frame   0x0000000000000944      0x4c4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
- .debug_frame   0x0000000000000e08      0x25c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
- .debug_frame   0x0000000000001064       0xb0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
- .debug_frame   0x0000000000001114       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
- .debug_frame   0x0000000000001140       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
- .debug_frame   0x000000000000116c       0x84 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
- .debug_frame   0x00000000000011f0       0x4c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
- .debug_frame   0x000000000000123c       0x84 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
- .debug_frame   0x00000000000012c0       0xc0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
- .debug_frame   0x0000000000001380       0x90 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
- .debug_frame   0x0000000000001410      0x12c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
- .debug_frame   0x000000000000153c       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
- .debug_frame   0x000000000000156c      0x1c0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
- .debug_frame   0x000000000000172c      0x614 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
- .debug_frame   0x0000000000001d40      0x204 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
- .debug_frame   0x0000000000001f44       0x4c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
- .debug_frame   0x0000000000001f90       0xfc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
- .debug_frame   0x000000000000208c      0x12c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
- .debug_frame   0x00000000000021b8       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
- .debug_frame   0x00000000000021e0       0x94 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
- .debug_frame   0x0000000000002274       0x80 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
- .debug_frame   0x00000000000022f4       0x68 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
- .debug_frame   0x000000000000235c       0x20 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-atexit.o)
- .debug_frame   0x000000000000237c       0x38 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-fini.o)
- .debug_frame   0x00000000000023b4       0x38 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-init.o)
- .debug_frame   0x00000000000023ec       0x20 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__atexit.o)
- .debug_frame   0x000000000000240c       0x48 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__call_atexit.o)
- .debug_frame   0x0000000000002454       0x34 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(multi3.o)
+.debug_frame    0x0000000000000000     0x246c
+ .debug_frame   0x0000000000000000      0x1f0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\ADC2PWM.ino.cpp.o
+ .debug_frame   0x00000000000001f0       0xb0 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\Fsm.cpp.o
+ .debug_frame   0x00000000000002a0      0x1d4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED.c.o
+ .debug_frame   0x0000000000000474      0x1b4 C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\OLED_driver.c.o
+ .debug_frame   0x0000000000000628      0x12c C:\Users\Harry\AppData\Local\arduino\sketches\ADD3DC2FF6D86F8B5FBA65A94915251F\sketch\src\ch32\Servo.cpp.o
+ .debug_frame   0x0000000000000754      0x1d4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(HardwareSerial.cpp.o)
+ .debug_frame   0x0000000000000928      0x4c4 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Print.cpp.o)
+ .debug_frame   0x0000000000000dec      0x25c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(Stream.cpp.o)
+ .debug_frame   0x0000000000001048       0xb0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(WMath.cpp.o)
+ .debug_frame   0x00000000000010f8       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(board.c.o)
+ .debug_frame   0x0000000000001124       0x2c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(PortNames.c.o)
+ .debug_frame   0x0000000000001150       0x84 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(clock.c.o)
+ .debug_frame   0x00000000000011d4       0x4c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(hw_config.c.o)
+ .debug_frame   0x0000000000001220       0x84 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(interrupt.cpp.o)
+ .debug_frame   0x00000000000012a4       0xc0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_debug.c.o)
+ .debug_frame   0x0000000000001364       0x90 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_exti.c.o)
+ .debug_frame   0x00000000000013f4      0x12c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_gpio.c.o)
+ .debug_frame   0x0000000000001520       0x30 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_it.c.o)
+ .debug_frame   0x0000000000001550      0x1c0 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_rcc.c.o)
+ .debug_frame   0x0000000000001710      0x614 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_tim.c.o)
+ .debug_frame   0x0000000000001d24      0x204 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(ch32yyxx_usart.c.o)
+ .debug_frame   0x0000000000001f28       0x4c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(system_ch32yyxx.c.o)
+ .debug_frame   0x0000000000001f74       0xfc C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(pinmap.c.o)
+ .debug_frame   0x0000000000002070      0x12c C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(uart.c.o)
+ .debug_frame   0x000000000000219c       0x28 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(main.cpp.o)
+ .debug_frame   0x00000000000021c4       0x94 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_analog.c.o)
+ .debug_frame   0x0000000000002258       0x80 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_digital.c.o)
+ .debug_frame   0x00000000000022d8       0x68 C:\Users\Harry\AppData\Local\arduino\cores\19521d8d84ebdcd60c49f375f8e886fe\core.a(wiring_time.c.o)
+ .debug_frame   0x0000000000002340       0x20 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-atexit.o)
+ .debug_frame   0x0000000000002360       0x38 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-fini.o)
+ .debug_frame   0x0000000000002398       0x38 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000000000023d0       0x20 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__atexit.o)
+ .debug_frame   0x00000000000023f0       0x48 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a(lib_a-__call_atexit.o)
+ .debug_frame   0x0000000000002438       0x34 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(multi3.o)
 
 .stabstr        0x0000000000000000       0xa9
  .stabstr       0x0000000000000000       0xa9 c:/users/harry/appdata/local/arduino15/packages/wch/tools/riscv-none-embed-gcc/8.2.0/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libnosys.a(close.o)
