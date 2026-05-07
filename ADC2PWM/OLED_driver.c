@@ -16,8 +16,8 @@
 #define IF_ENABLE_DYNAMIC_REFRESH       (false)
 #define DYNAMIC_REFRESH_LENGHT          (9)   // 动态刷新区块的长度，单位为像素。
 
-#define OLED_HEIGHT_DRIVER	        	(40)					//OLED像素的高度
-#define OLED_WIDTH_DRIVER		    	(72)					//OLED像素的宽度
+#define OLED_HEIGHT_DRIVER	        	(48)					//OLED像素的高度
+#define OLED_WIDTH_DRIVER		    	(88)					//OLED像素的宽度
 #define OLED_PAGE_DRIVER				(OLED_HEIGHT_DRIVER/8)	//OLED的页数（由高度自动计算）
 
 #define OLED_CMD  0	//写命令
@@ -175,9 +175,8 @@ void  OLED_Write_CMD(uint8_t data)
 void OLED_SetCursor(uint8_t Page, uint8_t X)
 {
 	/*可以在此调整X，以适应一些芯片X轴坐标的偏移*/
-	/*X += 2;*/
 	/*通过指令设置页地址和列地址*/
-    X += 28;
+    X += 20;
 	OLED_Write_CMD(0xB0 | Page);					//设置页位置
 	OLED_Write_CMD(0x10 | ((X & 0xF0) >> 4));	//设置X位置高4位
 	OLED_Write_CMD(0x00 | (X & 0x0F));			//设置X位置低4位
@@ -345,7 +344,7 @@ void OLED_Init(void)
     OLED_Write_CMD(0xD5); /*设置显示时钟分频比/振荡器频率*/
     OLED_Write_CMD(0xF0);
     OLED_Write_CMD(0xA8); /*设置多路复用率*/
-    OLED_Write_CMD(0x27); /*设置占空比为1/40*/
+    OLED_Write_CMD(0x2F); /*设置占空比为1/48*/
     OLED_Write_CMD(0xD3); /*设置显示偏移*/
     OLED_Write_CMD(0x00);
     OLED_Write_CMD(0x40); /*设置显示起始行*/
@@ -367,7 +366,7 @@ void OLED_Init(void)
     OLED_Write_CMD(0x20);
     OLED_Write_CMD(0xA4); /*全局显示开启/关闭设置*/
     OLED_Write_CMD(0xA6); /*正常/反转显示设置*/
-    OLED_Write_CMD(0x0C); /*设置低列地址*/
+    OLED_Write_CMD(0x04); /*设置低列地址*/
     OLED_Write_CMD(0x11); /*设置高列地址*/
 
 	OLED_Clear();

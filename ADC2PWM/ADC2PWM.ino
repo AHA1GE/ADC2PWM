@@ -107,10 +107,12 @@
 #if USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN) && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
 #include <Wire.h>
 #include <U8x8lib.h>
-#define SCREEN_WIDTH 72                                       // OLED display width, in pixels
-#define SCREEN_HEIGHT 40                                      // OLED display height, in pixels
-#define SCREEN_RESET -1                                       // OLED display reset pin # (or -1 if sharing Arduino reset pin)
-U8X8_SSD1306_72X40_ER_HW_I2C u8x8(/* reset=*/U8X8_PIN_NONE);  // EastRising 0.42" OLED, 72x40 pixels
+#define SCREEN_WIDTH 88                                                        // OLED display width, in pixels
+#define SCREEN_HEIGHT 48                                                       // OLED display height, in pixels
+#define SCREEN_RESET -1                                                        // OLED display reset pin # (or -1 if sharing Arduino reset pin)
+#define SCREEN_X_OFFSET 5                                                      // character column offset: (128 - 88) / 8 = 5
+#define SCREEN_Y_OFFSET 2                                                      // character row offset: (64 - 48) / 8 = 2
+U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(SCL_PIN, SDA_PIN, U8X8_PIN_NONE);  // SSD1306 128x64, 88x48 pixels visible
 #elif USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN) && defined(ADC2PWM_PLATFORM_CH32)
 /* Note:
  * 1) u8x8 or u8g2 is way too large for ch32v003 flash, use OLED-Basic-Lib instead
@@ -176,6 +178,7 @@ static void screenShowDisarmed(void);
 static void screenPrintPrepare(void);
 static void screenPrint(void);
 static void screenLowBatteryWarning(void);
+static void screenShowError(const char* message, uint8_t messageLength);
 static void stateBootEnter(void);
 static void stateBootRun(void);
 static void stateBootExit(void);
@@ -262,7 +265,9 @@ static void screenInit(void) {
 	u8x8.setPowerSave(0);
 	u8x8.setFont(u8x8_font_chroma48medium8_r);
 	u8x8.clear();
-	u8x8.drawString(1, 3, "Init...");
+	// "Init..." is 7 chars; center on 11-column visible area: (11-7)/2 = 2
+	// vertical center of 6 visible rows: row 2
+	u8x8.drawString(SCREEN_X_OFFSET + 2, SCREEN_Y_OFFSET + 2, "Init...");
 	u8x8.refreshDisplay();
 }
 static void screenClear(void) {
@@ -271,44 +276,63 @@ static void screenClear(void) {
 }
 static void screenShowDisarmed(void) {
 	u8x8.clear();
-	u8x8.drawString(0, 3, "DISARMED");
+	// "DISARMED" is 8 chars; center on 11-column visible area: (11-8)/2 = 1
+	// vertical center of 6 visible rows: row 2
+	u8x8.drawString(SCREEN_X_OFFSET + 1, SCREEN_Y_OFFSET + 2, "DISARMED");
 	u8x8.refreshDisplay();
 }
 static void screenPrintPrepare(void) {
 	u8x8.clear();
-	u8x8.drawString(0, 1, "Bat:");
-	u8x8.drawString(0, 3, "Thr:");
-	u8x8.drawString(0, 5, "PWM:");
 	u8x8.refreshDisplay();
 }
 static void screenPrint(void) {
 	char buffer[16];
-	// format vBattMv to `x.xV` with 1 decimal place
+	// 3-line layout: Bat/Thr/PWM at screen rows 0, 2, 4 (absolute rows 2, 4, 6)
+	// each line is cleared before redraw to remove stale characters
+	u8x8.clearLine(SCREEN_Y_OFFSET + 0);
+	u8x8.drawString(SCREEN_X_OFFSET + 0, SCREEN_Y_OFFSET + 0, "Bat:");
 	snprintf(buffer, sizeof(buffer), "%lu.%luV", (unsigned long)(vBattMv / 1000), (unsigned long)((vBattMv % 1000) / 100));
-	// `Bat:` length 4, +1 for spacing
-	u8x8.drawString(5, 1, buffer);
+	u8x8.drawString(SCREEN_X_OFFSET + 5, SCREEN_Y_OFFSET + 0, buffer);
+
+	u8x8.clearLine(SCREEN_Y_OFFSET + 2);
+	u8x8.drawString(SCREEN_X_OFFSET + 0, SCREEN_Y_OFFSET + 2, "Thr:");
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
-	// `Thr:` length 4, +1 for spacing
-	u8x8.drawString(5, 3, buffer);
+	u8x8.drawString(SCREEN_X_OFFSET + 5, SCREEN_Y_OFFSET + 2, buffer);
+
+	u8x8.clearLine(SCREEN_Y_OFFSET + 4);
+	u8x8.drawString(SCREEN_X_OFFSET + 0, SCREEN_Y_OFFSET + 4, "PWM:");
 	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
-	// `PWM:` length 4, +1 for spacing
-	u8x8.drawString(5, 5, buffer);
+	u8x8.drawString(SCREEN_X_OFFSET + 5, SCREEN_Y_OFFSET + 4, buffer);
+
 	u8x8.refreshDisplay();
 }
 static void screenLowBatteryWarning(void) {
-	// blink low battery warning at the right corner
-	if (millis() % 1000 < 500) {
-		u8x8.drawString(8, 1, "!");
-	} else {
-		u8x8.drawString(8, 1, " ");
-	}
 	screenPrint();
+	// blink low battery warning at the top-right corner (col 15, the rightmost visible column)
+	if (millis() % 1000 < 500) {
+		u8x8.drawString(SCREEN_X_OFFSET + 10, SCREEN_Y_OFFSET + 0, "!");
+	} else {
+		u8x8.drawString(SCREEN_X_OFFSET + 10, SCREEN_Y_OFFSET + 0, " ");
+	}
+	u8x8.refreshDisplay();
+}
+static void screenShowError(const char* message, uint8_t messageLength) {
+	// return early if message exceeds 9-character display limit
+	if (messageLength > 9) return;
+	u8x8.clear();
+	// "ERROR" (5 chars) centered on 11-column screen: (11-5)/2 = 3
+	// two-line block centered in 6 rows: rows 1 and 3
+	u8x8.drawString(SCREEN_X_OFFSET + 3, SCREEN_Y_OFFSET + 1, "ERROR");
+	// message (up to 9 chars = 9 cols); center for typical 8-char msg: (11-8)/2 = 1
+	u8x8.drawString(SCREEN_X_OFFSET + 1, SCREEN_Y_OFFSET + 3, message);
+	u8x8.refreshDisplay();
 }
 #elif USE_OLED_SCREEN && defined(ADC2PWM_PLATFORM_CH32)
 static void screenInit(void) {
 	OLED_Init();
 	OLED_SetBrightness(50);
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 9, 25, "Init...", OLED_FONT_8);  //OLED显示字符数组（字符串）
+	// "Init..." (7 chars * 8px = 56px); center x = (88-56)/2 = 16; center y = (48-8)/2 = 20
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 16, 20, "Init...", OLED_FONT_8);
 	OLED_Update();
 }
 static void screenClear(void) {
@@ -317,14 +341,16 @@ static void screenClear(void) {
 }
 static void screenShowDisarmed(void) {
 	OLED_Clear();
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 25, "DISARMED", OLED_FONT_8);  //OLED显示字符数组（字符串）
+	// "DISARMED" (8 chars * 8px = 64px); center x = (88-64)/2 = 12; center y = (48-8)/2 = 20
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 12, 20, "DISARMED", OLED_FONT_8);
 	OLED_Update();
 }
 static void screenPrintPrepare(void) {
 	OLED_Clear();
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Bat:", OLED_FONT_8);   //OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "Thr:", OLED_FONT_8);  //OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 32, "PWM:", OLED_FONT_8);  //OLED显示字符数组（字符串）
+	// 3-line layout: Bat/Thr/PWM at y=0, 16, 32 (fits in 48px height)
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Bat:", OLED_FONT_8);
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "Thr:", OLED_FONT_8);
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 32, "PWM:", OLED_FONT_8);
 	OLED_Update();
 }
 static void screenPrint(void) {
@@ -332,38 +358,38 @@ static void screenPrint(void) {
 
 	// format vBattMv to `x.xV` with 1 decimal place
 	snprintf(buffer, sizeof(buffer), "%lu.%luV", (unsigned long)(vBattMv / 1000), (unsigned long)((vBattMv % 1000) / 100));
-	// `Bat:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
+	// `Bat:` length 4 * 8px = 32px, +0px gap
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);
 
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
-	// `Thr:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
+	// `Thr:` length 4 * 8px = 32px, +0px gap
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);
 
 	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
-	// `PWM:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 32, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
+	// `PWM:` length 4 * 8px = 32px, +0px gap
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 32, buffer, OLED_FONT_8);
 
 	OLED_Update();
 }
 static void screenLowBatteryWarning(void) {
-	// blink low battery warning at the right corner
+	// blink low battery warning at top-right corner (x=80 = last char column in 88px screen)
 	if (millis() % 1000 < 500) {
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, "!", OLED_FONT_8);  //OLED显示字符数组（字符串）
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 80, 0, "!", OLED_FONT_8);
 	} else {
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, " ", OLED_FONT_8);  //OLED显示字符数组（字符串）
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 80, 0, " ", OLED_FONT_8);
 	}
 	screenPrint();
 }
-static void screenShowError( const char* message, uint8_t messageLength) {
-	// chack length, no more than 9 characters
-	if (messageLength > 9) {
-		// do nothing
-	}else{
-		OLED_Clear();
-	    OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 16, 16, "ERROR", OLED_FONT_8);  //OLED显示字符数组（字符串）
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 16, 32, message, OLED_FONT_8);  //OLED显示字符数组（字符串）
-	    OLED_Update();
-	}
+static void screenShowError(const char* message, uint8_t messageLength) {
+	// return early if message exceeds 9-character display limit
+	if (messageLength > 9) return;
+	OLED_Clear();
+	// "ERROR" (5 chars * 8px = 40px); center x = (88-40)/2 = 24
+	// two-line block in 48px: 8px gap between lines, total 24px; start y = (48-24)/2 = 12
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 24, 12, "ERROR", OLED_FONT_8);
+	// message (up to 9 chars = 72px); center x for 8-char msg: (88-64)/2 = 12
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 12, 28, message, OLED_FONT_8);
+	OLED_Update();
 }
 #endif
 
