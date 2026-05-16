@@ -168,7 +168,6 @@ State_t stateBoot, stateDisarmed, stateArmed, stateLowBattery, stateError;
 static void ledSet(bool on);
 static void ledBlink(unsigned long intervalMs, unsigned long nowMs);
 static void lowBatteryCheck(void);
-static uint16_t readAdcClamped(int16_t pin);
 static uint16_t adcToPulseUs(uint16_t adcValue);
 static void screenInit(void);
 static void screenClear(void);
@@ -204,7 +203,7 @@ static void ledBlink(unsigned long intervalMs, unsigned long nowMs) {
 static void lowBatteryCheck() {
 	if (BATT_PIN != -1) {
 		// 1s-2s battery, divider: gnd_4.7k_battAdc_10k_vBatt, ref = 5000mV
-		vBattMv = ((uint64_t)readAdcClamped(BATT_PIN) * 147ULL * 5000ULL) / (47ULL * ADC_MAX_VALUE);
+		vBattMv = ((uint64_t)analogRead(BATT_PIN) * 147ULL * 5000ULL) / (47ULL * ADC_MAX_VALUE);
 
 		if (vBattMv <= BATTERY_THRESHOLD_1S_MIN) {
 			// too low, error
@@ -233,17 +232,6 @@ static void lowBatteryCheck() {
 			g_fsm.transition(&stateError);
 		}
 	}
-}
-
-static uint16_t readAdcClamped(int16_t PIN) {
-	int raw = analogRead(PIN);
-	if (raw < 0) {
-		raw = 0;
-	}
-	if (raw > ADC_MAX_VALUE) {
-		raw = ADC_MAX_VALUE;
-	}
-	return (uint16_t)raw;
 }
 
 static uint16_t adcToPulseUs(uint16_t adcValue) {
@@ -401,7 +389,7 @@ void stateDisarmedEnter() {
 void stateDisarmedRun() {
 	const unsigned long nowMs = millis();
 
-	throttleAdc = readAdcClamped(ADC_PIN);
+	throttleAdc = analogRead(ADC_PIN);
 	if (throttleAdc <= ADC_ARM_THRESHOLD) {
 		pwmOutput = PWM_MIN_US;
 		pwmTarget = PWM_MIN_US;
@@ -422,7 +410,7 @@ void stateArmedEnter() {
 }
 void stateArmedRun() {
 	lowBatteryCheck();
-	throttleAdc = readAdcClamped(ADC_PIN);
+	throttleAdc = analogRead(ADC_PIN);
 	pwmTarget = adcToPulseUs(throttleAdc);
 	if (pwmOutput < pwmTarget) {
 		pwmOutput = (uint16_t)(pwmOutput + RAMP_STEP_US_UP);
@@ -447,7 +435,7 @@ void stateArmedExit() {
 }
 void stateLowBatteryRun() {
 	// scale throttle down to 50% and blink LED
-	throttleAdc = readAdcClamped(ADC_PIN);
+	throttleAdc = analogRead(ADC_PIN);
 	const unsigned long nowMs = millis();
 	pwmTarget = (uint16_t)(adcToPulseUs(throttleAdc / 2));
 	if (pwmOutput < pwmTarget) {
