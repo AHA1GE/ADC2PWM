@@ -212,10 +212,6 @@ static void screenShowError( const char* message, uint8_t messageLength) {
  *
 ================================*/
 void stateBootEnter() {
-	bootTimeMs = millis();
-	// attach servo (CH32 implementation of Servo::attach is void)
-	esc.attach(PWM_PIN);
-
 	esc.writeMicroseconds(PWM_BOOT_US);
 }
 void stateBootRun() {
@@ -317,6 +313,11 @@ void stateErrorRun() {
 ================================*/
 
 void setup() {
+	// Bring PWM up before slow OLED init so the ESC sees a valid boot pulse immediately.
+	esc.attach(PWM_PIN);
+	esc.writeMicroseconds(PWM_BOOT_US);
+	bootTimeMs = millis();
+
 	stateBoot.stateName = "stateBoot";
 	stateBoot.stateEnter = stateBootEnter;
 	stateBoot.stateRun = stateBootRun;
@@ -343,8 +344,6 @@ void setup() {
 	stateError.stateExit = nullptr;
 	
 	screenInit();
-
-	delay(100);
 
 	pinMode(ADC_PIN, INPUT);
 	pinMode(LED_PIN, OUTPUT);
