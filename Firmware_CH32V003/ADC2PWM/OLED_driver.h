@@ -24,8 +24,6 @@ void OLED_SetColorMode(bool colormode);
 void OLED_SetBrightness(int16_t Brightness);
 // 显存数组是否变化
 bool OLED_IfChangedScreen(void);
-// 延时函数
-void OLED_DelayMs(uint32_t xms);
 
 #ifdef __cplusplus
 }

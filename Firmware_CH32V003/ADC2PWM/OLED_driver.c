@@ -69,23 +69,6 @@ bool OLED_IfChangedScreen(void){
 }
 
 /**
-  * @brief  毫秒级延时
-  * @param  xms 延时时长，范围：0~4294967295
-  * @retval 无
-  */
-void OLED_DelayMs(uint32_t xms)
-{
-	// while(xms--)
-	// {
-	// 	SysTick->LOAD = 72 * 1000;				//设置定时器重装值
-	// 	SysTick->VAL = 0x00;					//清空当前计数值
-	// 	SysTick->CTRL = 0x00000005;				//设置时钟源为HCLK，启动定时器
-	// 	while(!(SysTick->CTRL & 0x00010000));	//等待计数到0
-	// 	SysTick->CTRL = 0x00000004;				//关闭定时器
-	// }
-    delay(xms);
-}
-/**
  * @brief IIC开始信号
  * @return 无
  */
@@ -332,7 +315,7 @@ extern void OLED_Clear(void);
  */
 void OLED_Init(void)
 {
-    OLED_DelayMs(100);	//等待100ms，等待OLED初始化完成
+    delay(100);	//等待100ms，等待OLED初始化完成
 	/* 将SDA: PC1和SCL: PC2引脚初始化为开漏模式 */
     GPIO_InitTypeDef GPIO_InitStructure = {0};
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
