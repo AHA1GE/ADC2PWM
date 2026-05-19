@@ -7,17 +7,15 @@
  * 3) After unlock, map ADC to PWM range with asymmetric ramp limiting.
  */
 
-#include "Servo.h"
+#include <Servo.h>
 #include "Fsm.h"
 
 #if defined(ARDUINO_ARCH_AVR)
 #define ADC2PWM_PLATFORM_AVR 1
-#elif defined(ARDUINO_ARCH_CH32) || defined(ARDUINO_ARCH_CH32V) || defined(CH32V003) || defined(CH32V003xx) || defined(CH32V003F4) || defined(CH32V00x) || defined(CH32V10x) || defined(CH32V20x) || defined(CH32V30x) || defined(CH32X035)
-#define ADC2PWM_PLATFORM_CH32 1
 #elif defined(ARDUINO_ARCH_ESP32)
 #define ADC2PWM_PLATFORM_ESP32 1
 #else
-#error "ADC2PWM supports AVR, CH32 and ESP32 only."
+#error "ADC2PWM supports CH32 and ESP32 only."
 #endif
 
 /*================================
@@ -37,17 +35,6 @@
 #if USE_OLED_SCREEN
 #define SDA_PIN -1
 #define SCL_PIN -1
-#endif
-#elif defined(ADC2PWM_PLATFORM_CH32)
-#define PWM_PIN PC4_TIM1CH4
-#define ADC_PIN PA2        // ADC0, potentiometer
-#define BATT_PIN PD6       // ADC6, 4.7k/10k divider, 5v vRef -> `vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE`
-#define LED_PIN PD4        // same physical pin as SWD on CH32V003J4M6
-#define LED_ACTIVE_HIGH 0  // ch32 use open/drain to sink, active low
-#define ADC_MAX_VALUE 1023
-#if USE_OLED_SCREEN
-#define SDA_PIN PC1
-#define SCL_PIN PC2
 #endif
 #elif defined(ADC2PWM_PLATFORM_ESP32)
 #if defined(CONFIG_IDF_TARGET_ESP32C3)
@@ -104,20 +91,13 @@
  *
 ================================*/
 
-#if USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN) && (defined(ADC2PWM_PLATFORM_AVR) || defined(ADC2PWM_PLATFORM_ESP32))
+#if USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN)
 #include <Wire.h>
 #include <U8x8lib.h>
 #define SCREEN_WIDTH 72                                       // OLED display width, in pixels
 #define SCREEN_HEIGHT 40                                      // OLED display height, in pixels
 #define SCREEN_RESET -1                                       // OLED display reset pin # (or -1 if sharing Arduino reset pin)
 U8X8_SSD1306_72X40_ER_HW_I2C u8x8(/* reset=*/U8X8_PIN_NONE);  // EastRising 0.42" OLED, 72x40 pixels
-#elif USE_OLED_SCREEN && defined(SDA_PIN) && defined(SCL_PIN) && defined(ADC2PWM_PLATFORM_CH32)
-/* Note:
- * 1) u8x8 or u8g2 is way too large for ch32v003 flash, use OLED-Basic-Lib instead
- * 2) SDA and SCL pin are hard coded in `OLED_driver.c`. defines above are just for reference and do not have effect on CH32 platform.
- * 3) Usage can be found at (OLED-Basic-Lib)[https://github.com/bdth-7777777/OLED-Basic-Lib/]
-*/
-#include "OLED.h"
 #endif
 
 /*================================
@@ -292,67 +272,6 @@ static void screenLowBatteryWarning(void) {
 	}
 	screenPrint();
 }
-#elif USE_OLED_SCREEN && defined(ADC2PWM_PLATFORM_CH32)
-static void screenInit(void) {
-	OLED_Init();
-	OLED_SetBrightness(50);
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 9, 25, "Init...", OLED_FONT_8);  //OLED显示字符数组（字符串）
-	OLED_Update();
-}
-static void screenClear(void) {
-	OLED_Clear();
-	OLED_Update();
-}
-static void screenShowDisarmed(void) {
-	OLED_Clear();
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 25, "DISARMED", OLED_FONT_8);  //OLED显示字符数组（字符串）
-	OLED_Update();
-}
-static void screenPrintPrepare(void) {
-	OLED_Clear();
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Bat:", OLED_FONT_8);   //OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "Thr:", OLED_FONT_8);  //OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 32, "PWM:", OLED_FONT_8);  //OLED显示字符数组（字符串）
-	OLED_Update();
-}
-static void screenPrint(void) {
-	char buffer[16];
-
-	// format vBattMv to `x.xV` with 1 decimal place
-	snprintf(buffer, sizeof(buffer), "%lu.%luV", (unsigned long)(vBattMv / 1000), (unsigned long)((vBattMv % 1000) / 100));
-	// `Bat:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 0, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
-
-	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
-	// `Thr:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
-
-	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
-	// `PWM:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 32, buffer, OLED_FONT_8);  //OLED显示字符数组（字符串）
-
-	OLED_Update();
-}
-static void screenLowBatteryWarning(void) {
-	// blink low battery warning at the right corner
-	if (millis() % 1000 < 500) {
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, "!", OLED_FONT_8);  //OLED显示字符数组（字符串）
-	} else {
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, " ", OLED_FONT_8);  //OLED显示字符数组（字符串）
-	}
-	screenPrint();
-}
-static void screenShowError( const char* message, uint8_t messageLength) {
-	// chack length, no more than 9 characters
-	if (messageLength > 9) {
-		// do nothing
-	}else{
-		OLED_Clear();
-	    OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 16, 16, "ERROR", OLED_FONT_8);  //OLED显示字符数组（字符串）
-		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 16, 32, message, OLED_FONT_8);  //OLED显示字符数组（字符串）
-	    OLED_Update();
-	}
-}
 #endif
 
 /*================================
@@ -497,9 +416,7 @@ void setup() {
 	screenInit();
 
 	delay(100);
-#if !defined(ADC2PWM_PLATFORM_CH32)
-	pinMode(PWM_PIN, OUTPUT);  // CH32 has dedicated pin setup
-#endif
+
 	pinMode(ADC_PIN, INPUT);
 	pinMode(LED_PIN, OUTPUT);
 	ledSet(false);
