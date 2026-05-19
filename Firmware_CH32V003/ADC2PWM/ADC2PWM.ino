@@ -346,8 +346,6 @@ void setup() {
 
 	delay(100);
 
-	pinMode(PWM_PIN, OUTPUT);  // CH32 has dedicated pin setup
-
 	pinMode(ADC_PIN, INPUT);
 	pinMode(LED_PIN, OUTPUT);
 	ledSet(false);
