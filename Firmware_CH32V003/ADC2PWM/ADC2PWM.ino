@@ -112,8 +112,7 @@ static void lowBatteryCheck() {
 
 		if (vBattMv <= BATTERY_THRESHOLD_1S_MIN) {
 			// too low, error
-			strncpy(errorMessageBuffer, "BAT LOW!", sizeof(errorMessageBuffer) - 1);
-			errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';  // ensure null termination
+			snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT LOW!");
 			g_fsm.transition(&stateError);
 		} else if (vBattMv <= BATTERY_THRESHOLD_1S_LOW) {
 			// 1s low battery, warning
@@ -122,8 +121,7 @@ static void lowBatteryCheck() {
 			// 1s normal, do nothing
 		} else if (vBattMv <= BATTERY_THRESHOLD_2S_MIN) {
 			// not 1s nor 2s, error
-			strncpy(errorMessageBuffer, "BAT ERR!", sizeof(errorMessageBuffer) - 1);
-			errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';  // ensure null termination
+			snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT ERR!");
 			g_fsm.transition(&stateError);
 		} else if (vBattMv <= BATTERY_THRESHOLD_2S_LOW) {
 			// 2s low battery, warning
@@ -132,8 +130,7 @@ static void lowBatteryCheck() {
 			// 2s normal, do nothing
 		} else {
 			// above 2s max voltage, error
-			strncpy(errorMessageBuffer, "BAT HIGH!", sizeof(errorMessageBuffer) - 1);
-			errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';  // ensure null termination
+			snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT HIGH!");
 			g_fsm.transition(&stateError);
 		}
 	}
@@ -216,12 +213,8 @@ static void screenShowError( const char* message, uint8_t messageLength) {
 ================================*/
 void stateBootEnter() {
 	bootTimeMs = millis();
-
-	if (esc.attach(PWM_PIN) == INVALID_SERVO) {
-		strncpy(errorMessageBuffer, "ESC PIN!", sizeof(errorMessageBuffer) - 1);
-		errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';
-		g_fsm.transition(&stateError);
-	}
+	// attach servo (CH32 implementation of Servo::attach is void)
+	esc.attach(PWM_PIN);
 
 	esc.writeMicroseconds(PWM_BOOT_US);
 }
@@ -337,7 +330,7 @@ void setup() {
 	stateArmed.stateName = "stateArmed";
 	stateArmed.stateEnter = stateArmedEnter;
 	stateArmed.stateRun = stateArmedRun;
-	stateArmed.stateExit = nullptr;
+	stateArmed.stateExit = stateArmedExit;
 
 	stateLowBattery.stateName = "stateLowBattery";
 	stateLowBattery.stateEnter = nullptr;
