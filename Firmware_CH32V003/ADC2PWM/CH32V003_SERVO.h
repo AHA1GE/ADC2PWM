@@ -3,9 +3,8 @@
 
 #include <stdint.h>
 
-#define SERVO_PIN_PD4_TIM2_CH1 0
-#define SERVO_PIN_PD7_TIM2_CH4 1
-#define SERVO_PIN_PC4_TIM1_CH4 2
+
+#define SERVO_PIN_PC4_TIM1_CH4 0  /* TIM1_CH4 on PC4, default pin for ESC output */
 
 #ifdef __cplusplus
 extern "C"
@@ -13,30 +12,15 @@ extern "C"
 #endif
 
     /**
-     * Initialize TIM2 for servo PWM on PD4 (CH1) and PD7 (CH4).
-     *   - AFIO full remap: TIM2_RM = 11b
-     *   - 50 Hz period (20 ms), 1 us resolution (PSC=47, ARR=19999 @ 48 MHz)
-     *   - Both channels start at 1500 us neutral
-     * Idempotent – safe to call from multiple Servo::attach() calls.
-     */
-    void CH32V003_SERVO_Init(void);
-
-    /** Set pulse width for TIM2_CH1 / PD4.  Clamped to [500, 2500] us. */
-    void CH32V003_SERVO_WriteCH1(uint16_t us);
-
-    /** Set pulse width for TIM2_CH4 / PD7.  Clamped to [500, 2500] us. */
-    void CH32V003_SERVO_WriteCH4(uint16_t us);
-
-    /**
      * Initialize TIM1 for servo PWM on PC4 (CH4).
      *   - 50 Hz period (20 ms), 1 us resolution (PSC=47, ARR=19999 @ 48 MHz)
      *   - Channel starts at 1500 us neutral
      * Idempotent – safe to call from multiple Servo::attach() calls.
      */
-    void CH32V003_SERVO_InitTIM1CH4(void);
+    void CH32V003_SERVO_Init(void);
 
     /** Set pulse width for TIM1_CH4 / PC4.  Clamped to [500, 2500] us. */
-    void CH32V003_SERVO_WriteTIM1CH4(uint16_t us);
+    void CH32V003_SERVO_WriteCH4(uint16_t us);
 
 #ifdef __cplusplus
 } /* extern "C" */
@@ -46,7 +30,7 @@ extern "C"
  *
  * Usage:
  *   Servo s;
- *   s.attach(SERVO_PIN_PD4_TIM2_CH1);          // bind to PD4 / TIM2_CH1
+ *   s.attach(SERVO_PIN_PC4_TIM1_CH4);          // bind to PC4 / TIM1_CH4
  *   s.writeMicroseconds(1000);        // 1000 us pulse
  */
 class Servo
@@ -55,27 +39,23 @@ public:
     Servo() : _ch(0xFFu) {}
 
     /**
-     * @param pin  SERVO_PIN_PD4_TIM2_CH1 (0) → PD4,  SERVO_PIN_PD7_TIM2_CH4 (1) → PD7.
-     *             Any other value silently maps to CH1.
+     * @param pin  SERVO_PIN_PC4_TIM1_CH4 (0) → PC4 / TIM1_CH4.
+     *             Any other value silently maps to CH4.
      */
     void attach(uint8_t pin)
     {
-        _ch = pin;
-        if (pin == SERVO_PIN_PC4_TIM1_CH4)
-            CH32V003_SERVO_InitTIM1CH4();
-        else
-            CH32V003_SERVO_Init();
+        CH32V003_SERVO_Init();
+        (void)pin;
+        _ch = (uint8_t)SERVO_PIN_PC4_TIM1_CH4;
     }
 
     /** Set pulse width in microseconds.  Clamped to [500, 2500]. */
     void writeMicroseconds(uint16_t us)
     {
-        if (_ch == SERVO_PIN_PC4_TIM1_CH4)
-            CH32V003_SERVO_WriteTIM1CH4(us);
-        else if (_ch == SERVO_PIN_PD7_TIM2_CH4)
-            CH32V003_SERVO_WriteCH4(us);
-        else
-            CH32V003_SERVO_WriteCH1(us);
+        if (_ch != SERVO_PIN_PC4_TIM1_CH4)
+            return;
+
+        CH32V003_SERVO_WriteCH4(us);
     }
 
 private:
