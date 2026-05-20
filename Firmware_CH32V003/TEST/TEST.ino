@@ -11,7 +11,7 @@ static uint16_t adcToPulseUs(uint16_t adcValue) {
 void setup() {
     esc.attach(PWM_PIN);
 	esc.writeMicroseconds(890);
-    while (analogRead(PA2) > 500 ){
+    while (analogRead(PA2) > 200 ){
         continue;
     }
 }
