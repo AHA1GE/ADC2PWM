@@ -7,9 +7,6 @@
 
 #include "OLED_driver.h"
 
-// Arduino-style millisecond delay is provided by core; declare prototype
-extern void delay(unsigned long ms);
-
 /*========================================================================*/
 /*================================[可配置宏]===============================*/
 /*========================================================================*/
@@ -17,20 +14,20 @@ extern void delay(unsigned long ms);
 // 是否开启动态刷新。如果开启，OLED-Basic-Lib会仅在显存更新的时候刷新有变化的区域，提高效率。
 // 在多数情况下，建议开启动态刷新，以提高显示效率。
 #define IF_ENABLE_DYNAMIC_REFRESH       (false)
-#define DYNAMIC_REFRESH_LENGHT          (9)   // 动态刷新区块的长度，单位为像素。
+#define DYNAMIC_REFRESH_LENGHT          (8)   // 动态刷新区块的长度，单位为像素。
 
-#define OLED_HEIGHT_DRIVER	        	(40)					//OLED像素的高度
-#define OLED_WIDTH_DRIVER		    	(72)					//OLED像素的宽度
+#define OLED_HEIGHT_DRIVER	        	(56)					//OLED像素的高度 64
+#define OLED_WIDTH_DRIVER		    	(128)					//OLED像素的宽度 128
 #define OLED_PAGE_DRIVER				(OLED_HEIGHT_DRIVER/8)	//OLED的页数（由高度自动计算）
 
 #define OLED_CMD  0	//写命令
 #define OLED_DATA 1	//写数据
 
-// port to ch32v003
+//使用宏定义，速度更快（寄存器方式）
 #define OLED_SDA_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<3;i++)   // 复位 SDA (将 GPIOC 的 1 号引脚拉低)
-#define OLED_SDA_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<3;i++)  // 置位 SDA (将 GPIOC 的 1 号引脚拉高)
+#define OLED_SDA_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_1);for(int i=0;i<3;i++)     // 置位 SDA (将 GPIOC 的 1 号引脚拉高)
 #define OLED_SCL_Clr()  GPIO_ResetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<6;i++)   // 复位 SCL (将 GPIOC 的 2 号引脚拉低)
-#define OLED_SCL_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<6;i++)  // 置位 SCL (将 GPIOC 的 2 号引脚拉高)
+#define OLED_SCL_Set()  GPIO_SetBits(GPIOC, GPIO_Pin_2);for(int i=0;i<6;i++)     // 置位 SCL (将 GPIOC 的 2 号引脚拉高)
 
 /*========================================================================*/
 /*========================================================================*/
@@ -67,6 +64,13 @@ void OLED_SetColorMode(bool colormode){
 bool OLED_IfChangedScreen(void){
 	return OLED_IfUpdate;
 }
+
+/**
+  * @brief  Arduino-style millisecond delay is provided by core; declare prototype
+  * @param  ms 延时时长
+  * @retval 无
+  */
+extern void delay(unsigned long ms);
 
 /**
  * @brief IIC开始信号
@@ -163,7 +167,6 @@ void OLED_SetCursor(uint8_t Page, uint8_t X)
 	/*可以在此调整X，以适应一些芯片X轴坐标的偏移*/
 	/*X += 2;*/
 	/*通过指令设置页地址和列地址*/
-    X += 28;
 	OLED_Write_CMD(0xB0 | Page);					//设置页位置
 	OLED_Write_CMD(0x10 | ((X & 0xF0) >> 4));	//设置X位置高4位
 	OLED_Write_CMD(0x00 | (X & 0x0F));			//设置X位置低4位
@@ -315,7 +318,6 @@ extern void OLED_Clear(void);
  */
 void OLED_Init(void)
 {
-    delay(100);	//等待100ms，等待OLED初始化完成
 	/* 将SDA: PC1和SCL: PC2引脚初始化为开漏模式 */
     GPIO_InitTypeDef GPIO_InitStructure = {0};
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
@@ -323,39 +325,34 @@ void OLED_Init(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOC, &GPIO_InitStructure);
-
+	
     OLED_SCL_Set();
     OLED_SDA_Set();
-
-    OLED_Write_CMD(0xAE); /*关闭显示*/
-    OLED_Write_CMD(0xD5); /*设置显示时钟分频比/振荡器频率*/
-    OLED_Write_CMD(0xF0);
-    OLED_Write_CMD(0xA8); /*设置多路复用率*/
-    OLED_Write_CMD(0x27); /*设置占空比为1/40*/
-    OLED_Write_CMD(0xD3); /*设置显示偏移*/
-    OLED_Write_CMD(0x00);
-    OLED_Write_CMD(0x40); /*设置显示起始行*/
-    OLED_Write_CMD(0x8d); /*使能电荷泵*/
-    OLED_Write_CMD(0x14);
-    OLED_Write_CMD(0x20); /*设置内存地址模式*/
-    OLED_Write_CMD(0x02); /*页地址模式*/
-    OLED_Write_CMD(0xA1); /*段重映射设置*/
-    OLED_Write_CMD(0xC8); /*COM扫描方向设置*/
-    OLED_Write_CMD(0xDA); /*设置COM引脚配置*/
+    
+	/*写入一系列的命令，对OLED进行初始化配置*/
+    OLED_Write_CMD(0xAE);	//设置显示开启/关闭，0xAE关闭，0xAF开启
+    OLED_Write_CMD(0xD5);	//设置显示时钟分频比/振荡器频率
+    OLED_Write_CMD(0xf0);	//0x00~0xFF
+    OLED_Write_CMD(0xA8);	//设置多路复用率
+    OLED_Write_CMD(0x3F);	//0x0E~0x3F
+    OLED_Write_CMD(0xD3);	//设置显示偏移
+    OLED_Write_CMD(0x00);	//0x00~0x7F
+    OLED_Write_CMD(0x40);	//设置显示开始行，0x40~0x7F
+    OLED_Write_CMD(0xA1);	//设置左右方向，0xA1正常，0xA0左右反置
+    OLED_Write_CMD(0xC8);	//设置上下方向，0xC8正常，0xC0上下反
+    OLED_Write_CMD(0xDA);	//设置COM引脚硬件配置
     OLED_Write_CMD(0x12);
-    OLED_Write_CMD(0xAD); /*内部IREF设置*/
+    OLED_Write_CMD(0x81);	//设置对比度
+    OLED_Write_CMD(0xDF);	//0x00~0xFF
+    OLED_Write_CMD(0xD9);	//设置预充电周期
+    OLED_Write_CMD(0xF1);
+    OLED_Write_CMD(0xDB);	//设置VCOMH取消选择级别
     OLED_Write_CMD(0x30);
-    OLED_Write_CMD(0x81); /*对比度控制*/
-    OLED_Write_CMD(0xff); /*设置对比度为最大值128*/
-    OLED_Write_CMD(0xD9); /*设置预充电周期*/
-    OLED_Write_CMD(0x22);
-    OLED_Write_CMD(0xdb); /*设置VCOMH电压*/
-    OLED_Write_CMD(0x20);
-    OLED_Write_CMD(0xA4); /*全局显示开启/关闭设置*/
-    OLED_Write_CMD(0xA6); /*正常/反转显示设置*/
-    OLED_Write_CMD(0x0C); /*设置低列地址*/
-    OLED_Write_CMD(0x11); /*设置高列地址*/
-
+    OLED_Write_CMD(0xA4);	//设置整个显示打开/关闭
+    OLED_Write_CMD(0xA6);	//设置正常/反色显示，0xA6正常，0xA7反色
+    OLED_Write_CMD(0x8D);	//设置充电泵
+    OLED_Write_CMD(0x14);
+    
 	OLED_Clear();
     
 	OLED_Update();
@@ -381,4 +378,5 @@ void OLED_SetBrightness(int16_t Brightness){
 	OLED_Write_CMD(0x81);
 	OLED_Write_CMD(Brightness);
  }
+
 
