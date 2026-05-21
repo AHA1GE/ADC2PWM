@@ -56,21 +56,11 @@
 
 static uint16_t pwmOutput = PWM_BOOT_US;
 static uint16_t pwmTarget = PWM_BOOT_US;
-static unsigned long bootTimeMs = 0;
 static uint32_t vBattMv = 0;
 static uint16_t throttleAdc = 0;
 static char errorMessageBuffer[10] = {0}; // buffer for error message, max 9 chars + null terminator
 
 static Servo esc;
-
-typedef enum
-{
-	APP_STATE_BOOT = 0,
-	APP_STATE_ARMED,
-	APP_STATE_ERROR,
-} AppState;
-
-static AppState currentState = APP_STATE_BOOT;
 
 static bool lowBatteryCheck(void);
 static uint16_t adcToPulseUs(uint16_t adcValue);
@@ -96,7 +86,6 @@ static bool lowBatteryCheck()
 	{
 		// too low, error
 		snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT LOW!");
-		// currentState = APP_STATE_ERROR;
 	}
 	else if (vBattMv <= BATTERY_THRESHOLD_1S_LOW)
 	{
@@ -111,7 +100,6 @@ static bool lowBatteryCheck()
 	{
 		// not 1s nor 2s, error
 		snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT ERR!");
-		// currentState = APP_STATE_ERROR;
 	}
 	else if (vBattMv <= BATTERY_THRESHOLD_2S_LOW)
 	{
@@ -126,7 +114,6 @@ static bool lowBatteryCheck()
 	{
 		// above 2s max voltage, error
 		snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT HIGH!");
-		// currentState = APP_STATE_ERROR;
 	}
 	return false;
 }
@@ -224,14 +211,19 @@ void setup()
 	pinMode(ADC_PIN, INPUT);
 	pinMode(BATT_PIN, INPUT);
 
-	// Bring PWM up before slow OLED init so the ESC sees a valid boot pulse immediately.
+	// init PWM before slow OLED so the ESC sees a valid boot pulse immediately.
 	pwmOutput = PWM_BOOT_US;
 	pwmTarget = PWM_BOOT_US;
 	esc.attach(PWM_PIN);
 	esc.writeMicroseconds(PWM_BOOT_US);
+
+	// init screen
 	screenInit();
+
+	// ESC need PWM_BOOT_US for 2s
 	delay(2000);
 
+	// lock to low throttle 
 	pwmOutput = PWM_MIN_US;
 	pwmTarget = PWM_MIN_US;
 	esc.writeMicroseconds(pwmOutput);
@@ -242,47 +234,40 @@ void setup()
 		delay(LOOP_DELAY_MS);
 	}
 
+	// unlock, start normal operation
 	screenPrintPrepare();
-	currentState = APP_STATE_ARMED;
 }
 void loop()
 {
-	switch (currentState)
+	bool isLowBattery = lowBatteryCheck();
+	throttleAdc = analogRead(ADC_PIN);
+	pwmTarget = adcToPulseUs(isLowBattery ? throttleAdc / 2 : throttleAdc);
+	if (pwmOutput < pwmTarget)
 	{
-	case APP_STATE_ARMED:
+		pwmOutput = (uint16_t)(pwmOutput + RAMP_STEP_US_UP);
+		if (pwmOutput > pwmTarget)
+		{
+			pwmOutput = pwmTarget;
+		}
+	}
+	else if (pwmOutput > pwmTarget)
 	{
-		bool isLowBattery = lowBatteryCheck();
-		throttleAdc = analogRead(ADC_PIN);
-		pwmTarget = adcToPulseUs(isLowBattery ? throttleAdc / 2 : throttleAdc);
+		pwmOutput = (uint16_t)(pwmOutput - RAMP_STEP_US_DOWN);
 		if (pwmOutput < pwmTarget)
 		{
-			pwmOutput = (uint16_t)(pwmOutput + RAMP_STEP_US_UP);
-			if (pwmOutput > pwmTarget)
-			{
-				pwmOutput = pwmTarget;
-			}
+			pwmOutput = pwmTarget;
 		}
-		else if (pwmOutput > pwmTarget)
-		{
-			pwmOutput = (uint16_t)(pwmOutput - RAMP_STEP_US_DOWN);
-			if (pwmOutput < pwmTarget)
-			{
-				pwmOutput = pwmTarget;
-			}
-		}
-		esc.writeMicroseconds(pwmOutput);
+	}
+	esc.writeMicroseconds(pwmOutput);
 
-		isLowBattery ? screenLowBatteryWarning();
-		screenPrint();
-		break;
+	if (isLowBattery)
+	{
+		screenLowBatteryWarning();
 	}
-	case APP_STATE_ERROR:
-	{ // Lock the motor
-		esc.writeMicroseconds(PWM_BOOT_US);
-		// show error message if screen is available
-		screenShowError(errorMessageBuffer, strlen(errorMessageBuffer));
-		break;
+	else
+	{
+		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, " ", OLED_FONT_8);
 	}
-	}
+	screenPrint();
 	delay(LOOP_DELAY_MS);
 }
