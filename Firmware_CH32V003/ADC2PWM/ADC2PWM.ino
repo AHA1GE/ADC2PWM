@@ -10,6 +10,8 @@
 #include "OLED.h"
 #include "CH32V003_SERVO.h"
 
+#define ENABLE_SCREEN 0
+
 /*================================
  * Pin and Hardware Configuration
  *
@@ -62,16 +64,6 @@ static char errorMessageBuffer[10] = {0}; // buffer for error message, max 9 cha
 
 static Servo esc;
 
-static bool lowBatteryCheck(void);
-static uint16_t adcToPulseUs(uint16_t adcValue);
-
-static void screenInit(void);
-static void screenClear(void);
-static void screenShowDisarmed(void);
-static void screenPrintPrepare(void);
-static void screenPrint(void);
-static void screenLowBatteryWarning(void);
-
 /*================================
  * Helper Functions
  *
@@ -123,6 +115,7 @@ static uint16_t adcToPulseUs(uint16_t adcValue)
 	return (uint16_t)map((long)adcValue, 0L, (long)ADC_MAX_VALUE, PWM_MIN_US, PWM_MAX_US);
 }
 
+#if ENABLE_SCREEN
 /*================================
  * OLED Functions
  *
@@ -200,6 +193,7 @@ static void screenShowError(const char *message, uint8_t messageLength)
 		OLED_Update();
 	}
 }
+#endif
 
 /*================================
  * Arduino Setup and Loop
@@ -216,26 +210,30 @@ void setup()
 	pwmTarget = PWM_BOOT_US;
 	esc.attach(PWM_PIN);
 	esc.writeMicroseconds(PWM_BOOT_US);
-
+#if ENABLE_SCREEN
 	// init screen
 	screenInit();
-
+#endif
 	// ESC need PWM_BOOT_US for 2s
 	delay(2000);
 
-	// lock to low throttle 
+	// lock to low throttle
 	pwmOutput = PWM_MIN_US;
 	pwmTarget = PWM_MIN_US;
 	esc.writeMicroseconds(pwmOutput);
+#if ENABLE_SCREEN
 	screenClear();
 	screenShowDisarmed();
+#endif
 	while (analogRead(ADC_PIN) > ADC_ARM_THRESHOLD)
 	{
 		delay(LOOP_DELAY_MS);
 	}
 
 	// unlock, start normal operation
+#if ENABLE_SCREEN
 	screenPrintPrepare();
+#endif
 }
 void loop()
 {
@@ -260,6 +258,7 @@ void loop()
 	}
 	esc.writeMicroseconds(pwmOutput);
 
+#if ENABLE_SCREEN
 	if (isLowBattery)
 	{
 		screenLowBatteryWarning();
@@ -269,5 +268,7 @@ void loop()
 		OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 64, 0, " ", OLED_FONT_8);
 	}
 	screenPrint();
+#endif
+
 	delay(LOOP_DELAY_MS);
 }
