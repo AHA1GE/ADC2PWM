@@ -10,13 +10,14 @@
 #include "OLED.h"
 #include "CH32V003_SERVO.h"
 
-#define ENABLE_SCREEN 0
+#define ENABLE_SCREEN 1
 
 /*================================
  * Pin and Hardware Configuration
  *
 ================================*/
 
+#define VOLTAGE_REFERENCE_MILLIVOLTS 3400ULL // should be 3v3, but TPS63060 here actually outputs 3.4V
 #define PWM_PIN SERVO_PIN_PC4_TIM1_CH4
 #define ADC_PIN PA2	 // ADC0, potentiometer
 #define BATT_PIN PD6 // ADC6, 4.7k/10k divider, 5v vRef -> `vBatt = adc*14.7/4.7*5/ADC_MAX_VALUE`
@@ -44,12 +45,12 @@
 
 // ---------------- Safety Latch ----------------
 #define ADC_ARM_THRESHOLD 200
-#define BATTERY_THRESHOLD_1S_MIN 3000 // 3.0V (for 1s battery, critical low voltage)
-#define BATTERY_THRESHOLD_1S_LOW 3300 // 3.3V (for 1s battery)
-#define BATTERY_THRESHOLD_1S_MAX 4350 // 4.35V (for 1s battery, 4.2V full charge + 0.15V margin)
-#define BATTERY_THRESHOLD_2S_MIN 6000 // 6.0V (for 2s battery, critical low voltage)
-#define BATTERY_THRESHOLD_2S_LOW 6500 // 6.5V (for 2s battery)
-#define BATTERY_THRESHOLD_2S_MAX 8700 // 8.7V (for 2s battery, 8.4V full charge + 0.3V margin)
+#define BATTERY_THRESHOLD_1S_MIN 3000 // 3.0V (1s battery, critical low voltage)
+#define BATTERY_THRESHOLD_1S_LOW 3300 // 3.3V (1s battery, warning low voltage)
+#define BATTERY_THRESHOLD_1S_MAX 4500 // 4.5V (1s battery, 4.35V full charge (LiHv) + 0.15V margin)
+#define BATTERY_THRESHOLD_2S_MIN 6000 // 6.0V (2s battery, critical low voltage)
+#define BATTERY_THRESHOLD_2S_LOW 6500 // 6.5V (2s battery, warning low voltage)
+#define BATTERY_THRESHOLD_2S_MAX 8900 // 8.9V (2s battery, 8.7V full charge (LiHv) + 0.2V margin)
 
 /*================================
  * Global Variables and State Definitions
@@ -62,7 +63,22 @@ static uint32_t vBattMv = 0;
 static uint16_t throttleAdc = 0;
 static char errorMessageBuffer[10] = {0}; // buffer for error message, max 9 chars + null terminator
 
+enum BatteryState : uint8_t
+{
+	BATTERY_STATE_NORMAL = 0,
+	BATTERY_STATE_LOW,
+	BATTERY_STATE_ERROR,
+};
+static BatteryState batteryState = BATTERY_STATE_NORMAL;
+static BatteryState lastBatteryState = BATTERY_STATE_NORMAL;
+
 static Servo esc;
+
+static void copyErrorMessage(const char *msg)
+{
+	strncpy(errorMessageBuffer, msg, sizeof(errorMessageBuffer) - 1);
+	errorMessageBuffer[sizeof(errorMessageBuffer) - 1] = '\0';
+}
 
 /*================================
  * Helper Functions
@@ -71,18 +87,25 @@ static Servo esc;
 
 static bool lowBatteryCheck()
 {
-	// 1s-2s battery, divider: gnd_4.7k_battAdc_10k_vBatt, ref = 5000mV
-	vBattMv = ((uint64_t)analogRead(BATT_PIN) * 147ULL * 5000ULL) / (47ULL * ADC_MAX_VALUE);
+	// 1s-2s battery, divider: gnd_4.7k_battAdc_10k_vBatt, ref = VOLTAGE_REFERENCE_MILLIVOLTS
+	const uint16_t rawBattAdc = analogRead(BATT_PIN);
+	vBattMv = ((uint64_t)rawBattAdc * 147ULL * VOLTAGE_REFERENCE_MILLIVOLTS) / (47ULL * ADC_MAX_VALUE);
+
+	batteryState = BATTERY_STATE_NORMAL;
 
 	if (vBattMv <= BATTERY_THRESHOLD_1S_MIN)
 	{
 		// too low, error
-		snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT LOW!");
+		batteryState = BATTERY_STATE_ERROR;
+		if (lastBatteryState != batteryState)
+		{
+			copyErrorMessage("BAT LOW");
+		}
 	}
 	else if (vBattMv <= BATTERY_THRESHOLD_1S_LOW)
 	{
 		// 1s low battery, warning
-		return true;
+		batteryState = BATTERY_STATE_LOW;
 	}
 	else if (vBattMv <= BATTERY_THRESHOLD_1S_MAX)
 	{
@@ -91,12 +114,16 @@ static bool lowBatteryCheck()
 	else if (vBattMv <= BATTERY_THRESHOLD_2S_MIN)
 	{
 		// not 1s nor 2s, error
-		snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT ERR!");
+		batteryState = BATTERY_STATE_ERROR;
+		if (lastBatteryState != batteryState)
+		{
+			copyErrorMessage("BAT ERR");
+		}
 	}
 	else if (vBattMv <= BATTERY_THRESHOLD_2S_LOW)
 	{
 		// 2s low battery, warning
-		return true;
+		batteryState = BATTERY_STATE_LOW;
 	}
 	else if (vBattMv <= BATTERY_THRESHOLD_2S_MAX)
 	{
@@ -105,9 +132,20 @@ static bool lowBatteryCheck()
 	else
 	{
 		// above 2s max voltage, error
-		snprintf(errorMessageBuffer, sizeof(errorMessageBuffer), "BAT HIGH!");
+		batteryState = BATTERY_STATE_ERROR;
+		if (lastBatteryState != batteryState)
+		{
+			copyErrorMessage("BAT HIGH");
+		}
 	}
-	return false;
+
+	if (batteryState == BATTERY_STATE_NORMAL)
+	{
+		errorMessageBuffer[0] = '\0';
+	}
+
+	lastBatteryState = batteryState;
+	return (batteryState == BATTERY_STATE_LOW);
 }
 
 static uint16_t adcToPulseUs(uint16_t adcValue)
@@ -239,7 +277,11 @@ void loop()
 {
 	bool isLowBattery = lowBatteryCheck();
 	throttleAdc = analogRead(ADC_PIN);
-	pwmTarget = adcToPulseUs(isLowBattery ? throttleAdc / 2 : throttleAdc);
+	if (isLowBattery)
+	{
+		throttleAdc = throttleAdc / 2;
+	}
+	pwmTarget = adcToPulseUs(throttleAdc);
 	if (pwmOutput < pwmTarget)
 	{
 		pwmOutput = (uint16_t)(pwmOutput + RAMP_STEP_US_UP);
