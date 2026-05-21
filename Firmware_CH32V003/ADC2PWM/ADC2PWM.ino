@@ -53,8 +53,6 @@
 #define BATTERY_THRESHOLD_2S_MAX 8900  // 8.9V (2s battery, 8.7V full charge (LiHv) + 0.2V margin)
 
 // ---------------- OLED ----------------
-#define OLED_X_OFFSET 0   // offset to move to top left conner
-#define OLED_Y_OFFSET 16  // offset to move to top left conner
 
 /*================================
  * Global Variables and State Definitions
@@ -144,7 +142,7 @@ static uint16_t adcToPulseUs(uint16_t adcValue) {
 static void screenInit(void) {
 	OLED_Init();
 	OLED_SetBrightness(50);
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, OLED_X_OFFSET, OLED_Y_OFFSET, "Init.", OLED_FONT_8);  // OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Init.", OLED_FONT_8);  // OLED显示字符数组（字符串）
 	OLED_Update();
 }
 static void screenClear(void) {
