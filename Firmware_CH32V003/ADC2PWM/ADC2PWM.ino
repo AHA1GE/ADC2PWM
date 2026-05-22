@@ -157,8 +157,8 @@ static void screenShowDisarmed(void) {
 static void screenPrintPrepare(void) {
 	OLED_Clear();
 	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 0, "Bat:", OLED_FONT_8);   // OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "Thr:", OLED_FONT_8);  // OLED显示字符数组（字符串）
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 32, "PWM:", OLED_FONT_8);  // OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 8, "Thr:", OLED_FONT_8);  // OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 0, 16, "PWM:", OLED_FONT_8);  // OLED显示字符数组（字符串）
 	OLED_Update();
 }
 static void screenPrint(void) {
@@ -171,11 +171,11 @@ static void screenPrint(void) {
 
 	snprintf(buffer, sizeof(buffer), "%u", throttleAdc);
 	// `Thr:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);  // OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 8, buffer, OLED_FONT_8);  // OLED显示字符数组（字符串）
 
 	snprintf(buffer, sizeof(buffer), "%u", pwmOutput);
 	// `PWM:` length 4, +1 for spacing
-	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 32, buffer, OLED_FONT_8);  // OLED显示字符数组（字符串）
+	OLED_ShowMixStringArea(0, 0, OLED_WIDTH, OLED_HEIGHT, 32, 16, buffer, OLED_FONT_8);  // OLED显示字符数组（字符串）
 
 	OLED_Update();
 }
