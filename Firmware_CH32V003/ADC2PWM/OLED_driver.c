@@ -5,10 +5,10 @@
 // Visible pixels : 88x48
 // Hidden area    : first 40 columns + first 8 rows
 //
-// RAM usage:
-// 88 * 48 / 8 = 528 bytes
-//
-// Optimized for CH32V003 flash/RAM usage.
+// Note:
+// The software layer (OLED.c/OLED.h) uses a logical 128x56 framebuffer.
+// To keep indexing/layout consistent across translation units, the exported
+// framebuffer here must keep the same logical dimensions.
 /*========================================================================*/
 
 #include "OLED_driver.h"
@@ -19,10 +19,14 @@
 #define OLED_VISIBLE_WIDTH        (88)
 #define OLED_VISIBLE_HEIGHT       (48)
 
+#define OLED_LOGICAL_WIDTH        (128)
+#define OLED_LOGICAL_HEIGHT       (56)
+
 #define OLED_X_OFFSET             (40)
 #define OLED_Y_OFFSET             (8)
 
 #define OLED_PAGE_NUM             (OLED_VISIBLE_HEIGHT / 8)
+#define OLED_LOGICAL_PAGE_NUM     (OLED_LOGICAL_HEIGHT / 8)
 
 #define OLED_CMD                  (0)
 #define OLED_DATA                 (1)
@@ -34,8 +38,8 @@
 
 /*========================================================================*/
 
-/* 528 bytes only */
-uint8_t OLED_DisplayBuf[OLED_PAGE_NUM][OLED_VISIBLE_WIDTH];
+/* Keep this shape aligned with extern declaration in OLED.c */
+uint8_t OLED_DisplayBuf[OLED_LOGICAL_PAGE_NUM][OLED_LOGICAL_WIDTH];
 
 bool OLED_ColorMode = true;
 
