@@ -26,7 +26,7 @@
 //
 
 #include <stdlib.h>
-#include "drv8311_driver.h"
+#include "drv8311.h"
 #include "drv8311_reg.h"
 
 #define RW_CTRL_READ 0x01
@@ -308,5 +308,16 @@ void drv8311_set_duty(drv8311_handle_t handle, float a, float b, float c) {
     pwmg_duty.pwmg_x_duty.pwm_duty_outx = cmp_b;
     drv8311_write(handle, DRV8311_PWMG_B_DUTY_ADDR, pwmg_duty.half_word);
     pwmg_duty.pwmg_x_duty.pwm_duty_outx = cmp_c;
+    drv8311_write(handle, DRV8311_PWMG_C_DUTY_ADDR, pwmg_duty.half_word);
+}
+
+void drv8311_set_duty_raw(drv8311_handle_t handle, uint16_t a, uint16_t b, uint16_t c) {
+    drv8311_reg_t pwmg_duty;
+
+    pwmg_duty.pwmg_x_duty.pwm_duty_outx = a;
+    drv8311_write(handle, DRV8311_PWMG_A_DUTY_ADDR, pwmg_duty.half_word);
+    pwmg_duty.pwmg_x_duty.pwm_duty_outx = b;
+    drv8311_write(handle, DRV8311_PWMG_B_DUTY_ADDR, pwmg_duty.half_word);
+    pwmg_duty.pwmg_x_duty.pwm_duty_outx = c;
     drv8311_write(handle, DRV8311_PWMG_C_DUTY_ADDR, pwmg_duty.half_word);
 }

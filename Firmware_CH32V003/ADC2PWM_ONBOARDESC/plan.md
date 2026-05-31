@@ -432,3 +432,15 @@ And in `loop()`, clear the warning area when not low battery — use y=0 instead
 2. **Pin audit**: Cross-check all pin macros against `PIN.md`
 3. **Logic audit**: Verify all `esc.` calls replaced, all `PWM_*_US` constants replaced
 4. **Driver integration**: `drv8311_init()` config uses UP mode, SYNC_DISABLE, SPI protocol, 2000 period
+
+---
+
+## Implementation Notes (deviations from plan)
+
+1. **Float elimination**: All float usage removed to fit in 16KB flash. Added `drv8311_set_duty_raw()` (integer API) to the driver. Current sensing uses fixed-point math returning `uint16_t` milliamps. `busCurrentA` → `busCurrentMa`. Removed `CSA_GAIN_V_PER_A` constant.
+
+2. **`extern "C"` guards**: Added to `drv8311.h` to fix C/C++ linkage mismatch between the .ino (C++) and `drv8311.c` (C).
+
+3. **Designated initializer order**: Fixed `drv8311_cfg_t` initializer field order to match struct declaration (C++ requirement). Added `.spi_clk = SPI_FREQ_1M` and `.spi_sync_clks = CLOCKS_512` (unused with SYNC_DISABLE but required for correct order).
+
+**Build result**: Flash 13,844/16,384 (84%), RAM 1,452/2,048 (70%).

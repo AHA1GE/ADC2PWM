@@ -31,6 +31,10 @@
 #include "drv8311_reg.h"
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 typedef enum {
     SPI = 0x00, tSPI = 0x01
@@ -94,5 +98,11 @@ void drv8311_out_ctrl(drv8311_handle_t handle, uint8_t en);
 void drv8311_set_period(drv8311_handle_t handle, uint16_t period);
 
 void drv8311_set_duty(drv8311_handle_t handle, float a, float b, float c);
+
+void drv8311_set_duty_raw(drv8311_handle_t handle, uint16_t a, uint16_t b, uint16_t c);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //DRV8311_DRIVER_H
