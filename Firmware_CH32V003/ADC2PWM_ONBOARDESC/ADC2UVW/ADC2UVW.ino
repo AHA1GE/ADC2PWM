@@ -37,6 +37,7 @@
 // CSA (Current Sense Amplifier) config
 // DRV8311 peak = 5A. VREF = 3.4V. 500mV/A → max measurable = 3.4/0.5 = 6.8A (covers 5A with headroom).
 #define CSA_GAIN             CSA_GAIN_500MV    // 0.5V per amp
+#define CSA_GAIN_MV_PER_A    500               // 500 mV per amp (for fixed-point math)
 
 // Peripherals
 #define ADC_PIN              PA2   // ADC0, throttle potentiometer
@@ -206,26 +207,30 @@ static void motorSetDuty(uint16_t rawDuty) {
 }
 
 // Check DRV8311 for faults via nFAULT pin + SPI status register. Returns true if fault detected.
+// nFAULT asserted (low) = hardware fault. SPI status provides the reason for display.
 static bool drv8311FaultCheck(void) {
-    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) == Bit_RESET) {
-        drv8311_dev_sts1_t status = drv8311_get_status(drv8311);
-        if (status.fault) {
-            if (status.ocp)      copyErrorMessage("DRV OCP!");
-            else if (status.ot)  copyErrorMessage("DRV OT!");
-            else if (status.uvp) copyErrorMessage("DRV UVP!");
-            else                 copyErrorMessage("DRV FLT!");
-            return true;
-        }
+    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) != Bit_RESET) {
+        return false;  // nFAULT high = no fault
     }
-    return false;
+
+    // nFAULT is low — always treat as fault. Try SPI for detail, fall back to generic message.
+    drv8311_dev_sts1_t status = drv8311_get_status(drv8311);
+    if (status.fault) {
+        if (status.ocp)      copyErrorMessage("DRV OCP!");
+        else if (status.ot)  copyErrorMessage("DRV OT!");
+        else if (status.uvp) copyErrorMessage("DRV UVP!");
+        else                 copyErrorMessage("DRV FLT!");
+    } else {
+        copyErrorMessage("DRV FLT!");  // SPI didn't confirm, but nFAULT is asserted
+    }
+    return true;
 }
 
 // Read all 3 phase currents from DRV8311 CSA outputs.
 // DRV8311 CSA measures low-side FET current via analog voltage output.
 // Returns the estimated bus current in milliamps (max of the 3 phase readings).
-// Fixed-point math: I_mA = maxAdc * VREF_mV / ADC_MAX / CSA_GAIN_V_PER_A
-//                      = maxAdc * 3400 / 1023 / 0.5
-//                      = maxAdc * 6800 / 1023
+// I_mA = maxAdc * VREF_mV * 1000 / ADC_MAX / CSA_GAIN_MV_PER_A
+// All constants fold at compile time — no runtime division overhead.
 static uint16_t readPhaseCurrents(void) {
     phaseCurrentAdc[0] = analogRead(ISEN_U_PIN);
     phaseCurrentAdc[1] = analogRead(ISEN_V_PIN);
@@ -236,8 +241,9 @@ static uint16_t readPhaseCurrents(void) {
     if (phaseCurrentAdc[1] > maxAdc) maxAdc = phaseCurrentAdc[1];
     if (phaseCurrentAdc[2] > maxAdc) maxAdc = phaseCurrentAdc[2];
 
-    // I_mA = maxAdc * 6800 / 1023
-    return (uint16_t)(((uint32_t)maxAdc * 6800UL) / 1023UL);
+    // I_mA = maxAdc * VREF_mV * 1000 / (ADC_MAX * CSA_GAIN_MV_PER_A)
+    return (uint16_t)(((uint32_t)maxAdc * VOLTAGE_REFERENCE_MILLIVOLTS * 1000UL)
+                      / ((uint32_t)ADC_MAX_VALUE * CSA_GAIN_MV_PER_A));
 }
 
 #if ENABLE_SCREEN

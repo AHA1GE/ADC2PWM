@@ -312,7 +312,12 @@ void drv8311_set_duty(drv8311_handle_t handle, float a, float b, float c) {
 }
 
 void drv8311_set_duty_raw(drv8311_handle_t handle, uint16_t a, uint16_t b, uint16_t c) {
-    drv8311_reg_t pwmg_duty;
+    drv8311_reg_t pwmg_duty = {0};
+
+    // Clamp to 12-bit register width (0-4095)
+    if (a > 0x0FFF) a = 0x0FFF;
+    if (b > 0x0FFF) b = 0x0FFF;
+    if (c > 0x0FFF) c = 0x0FFF;
 
     pwmg_duty.pwmg_x_duty.pwm_duty_outx = a;
     drv8311_write(handle, DRV8311_PWMG_A_DUTY_ADDR, pwmg_duty.half_word);
