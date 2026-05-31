@@ -2,7 +2,7 @@
 
 ## MCU Target
 
-**CH32V003F4P6** (TSSOP20). All pins listed above are available.
+**CH32V003F4P6** (TSSOP20). All pins listed are available.
 
 ## Pin Assignment Table
 
