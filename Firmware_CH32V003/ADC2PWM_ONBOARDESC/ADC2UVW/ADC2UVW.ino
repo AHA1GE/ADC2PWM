@@ -18,7 +18,7 @@
  * Pins and Hardware
 ================================*/
 
-#define VOLTAGE_REFERENCE_MILLIVOLTS 3400ULL  // should be 3v3, but TPS63060 here actually outputs 3.4V
+#define VOLTAGE_REFERENCE_MILLIVOLTS 3280ULL  // actuall voltage on 3v3
 #define ADC_MAX_VALUE 1023
 
 // DRV8311 SPI & Control
