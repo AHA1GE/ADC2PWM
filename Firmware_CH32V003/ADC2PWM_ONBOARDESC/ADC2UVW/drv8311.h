@@ -78,7 +78,9 @@ typedef struct {
 typedef drv8311_instance_t *drv8311_handle_t;
 
 
-void drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg);
+// Returns 0 on success, or step number (1-4) where nFAULT went LOW:
+//   1 = after nSLEEP wake, 2 = after SYS_CTRL, 3 = after PWMG_CTRL, 4 = after PWMG_PERIOD
+int  drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg);
 
 void drv8311_nsleep_ctrl(drv8311_handle_t handle, uint8_t level);
 
@@ -100,6 +102,14 @@ void drv8311_set_period(drv8311_handle_t handle, uint16_t period);
 void drv8311_set_duty(drv8311_handle_t handle, float a, float b, float c);
 
 void drv8311_set_duty_raw(drv8311_handle_t handle, uint16_t a, uint16_t b, uint16_t c);
+
+void drv8311_set_duty_single(drv8311_handle_t handle, uint8_t phase_reg, uint16_t duty);
+
+uint16_t drv8311_read_reg(drv8311_handle_t handle, uint8_t reg);
+
+void drv8311_clear_faults(drv8311_handle_t handle);
+
+void drv8311_write_reg(drv8311_handle_t handle, uint8_t reg, uint16_t data);
 
 #ifdef __cplusplus
 }
