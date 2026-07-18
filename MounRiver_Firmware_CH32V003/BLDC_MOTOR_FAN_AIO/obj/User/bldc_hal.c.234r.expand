@@ -1,0 +1,3922 @@
+
+;; Function nsleep_set_cb (nsleep_set_cb, funcdef_no=28, decl_uid=4424, cgraph_uid=29, symbol_order=34)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 72 [ level ])
+        (reg:SI 10 a0 [ level ])) "../User/bldc_hal.c":185 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 0 2 (debug_marker) "../User/bldc_hal.c":186 -1
+     (nil))
+
+;; Function btn_update (btn_update, funcdef_no=38, decl_uid=4557, cgraph_uid=39, symbol_order=46)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 5->6 to 21 failed.
+Redirecting jump 24 from 20 to 21.
+Edge 8->6 redirected to 21
+Redirecting jump 50 from 20 to 21.
+Edge 10->6 redirected to 21
+Edge 11->6 redirected to 21
+Redirecting jump 65 from 20 to 21.
+Edge 13->6 redirected to 21
+Edge 14->6 redirected to 21
+Redirecting jump 103 from 20 to 21.
+Edge 17->6 redirected to 21
+Redirecting jump 126 from 20 to 21.
+Merging block 20 into block 19...
+Merged blocks 19 and 20.
+Merged 19 and 20 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 5->6 to 21 failed.
+Deleted label in block 6.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 87 [ ctx ])
+        (reg:SI 10 a0 [ ctx ])) "../User/bldc_hal.c":349 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 88 [ raw_state ])
+        (reg:SI 11 a1 [ raw_state ])) "../User/bldc_hal.c":349 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../User/bldc_hal.c":351 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 89)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                    (const_int 2 [0x2])) [0 ctx_10(D)->last_raw+0 S1 A16]))) "../User/bldc_hal.c":351 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (ne (reg:SI 89)
+                (reg/v:SI 88 [ raw_state ]))
+            (label_ref 128)
+            (pc))) "../User/bldc_hal.c":351 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 128)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 11 10 12 4 (debug_marker) "../User/bldc_hal.c":352 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (mem:QI (reg/v/f:SI 87 [ ctx ]) [0 ctx_10(D)->stable_count+0 S1 A32]))) "../User/bldc_hal.c":352 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 90)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":352 -1
+     (nil))
+(jump_insn 14 13 15 4 (set (pc)
+        (if_then_else (gtu (reg:SI 73 [ _2 ])
+                (reg:SI 90))
+            (label_ref 67)
+            (pc))) "../User/bldc_hal.c":352 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 67)
+(note 15 14 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 16 15 17 5 (debug_marker) "../User/bldc_hal.c":353 -1
+     (nil))
+(insn 17 16 18 5 (set (reg:SI 91)
+        (plus:SI (reg:SI 73 [ _2 ])
+            (const_int 1 [0x1]))) "../User/bldc_hal.c":353 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 74 [ _4 ])
+        (zero_extend:SI (subreg:QI (reg:SI 91) 0))) "../User/bldc_hal.c":353 -1
+     (nil))
+(insn 19 18 20 5 (set (mem:QI (reg/v/f:SI 87 [ ctx ]) [0 ctx_10(D)->stable_count+0 S1 A32])
+        (subreg/s/v:QI (reg:SI 74 [ _4 ]) 0)) "../User/bldc_hal.c":353 -1
+     (nil))
+(debug_insn 20 19 21 5 (debug_marker) "../User/bldc_hal.c":354 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 92)
+        (const_int 3 [0x3])) "../User/bldc_hal.c":354 -1
+     (nil))
+(jump_insn 22 21 23 5 (set (pc)
+        (if_then_else (eq (reg:SI 74 [ _4 ])
+                (reg:SI 92))
+            (label_ref 26)
+            (pc))) "../User/bldc_hal.c":354 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 26)
+(note 23 22 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 24 23 25 6 (set (pc)
+        (label_ref:SI 136)) 250 {jump}
+     (nil)
+ -> 136)
+(barrier 25 24 26)
+(code_label 26 25 27 7 5 (nil) [1 uses])
+(note 27 26 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 28 27 29 7 (debug_marker) "../User/bldc_hal.c":356 -1
+     (nil))
+(insn 29 28 30 7 (set (reg:SI 75 [ _6 ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                    (const_int 1 [0x1])) [0 ctx_10(D)->debounced_state+0 S1 A8]))) "../User/bldc_hal.c":356 -1
+     (nil))
+(insn 30 29 31 7 (set (reg:SI 93)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":356 -1
+     (nil))
+(jump_insn 31 30 32 7 (set (pc)
+        (if_then_else (ne (reg:SI 75 [ _6 ])
+                (reg:SI 93))
+            (label_ref 52)
+            (pc))) "../User/bldc_hal.c":356 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 52)
+(note 32 31 34 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 34 32 35 8 (set (pc)
+        (if_then_else (ne (reg/v:SI 88 [ raw_state ])
+                (const_int 0 [0]))
+            (label_ref:SI 136)
+            (pc))) "../User/bldc_hal.c":356 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 136)
+(note 35 34 36 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 36 35 37 9 (debug_marker) "../User/bldc_hal.c":358 -1
+     (nil))
+(insn 37 36 38 9 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 1 [0x1])) [0 ctx_10(D)->debounced_state+0 S1 A8])
+        (const_int 0 [0])) "../User/bldc_hal.c":358 -1
+     (nil))
+(debug_insn 38 37 39 9 (debug_marker) "../User/bldc_hal.c":359 -1
+     (nil))
+(insn 39 38 40 9 (set (reg:QI 94)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":359 -1
+     (nil))
+(insn 40 39 41 9 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 3 [0x3])) [0 ctx_10(D)->edge_detected+0 S1 A8])
+        (reg:QI 94)) "../User/bldc_hal.c":359 -1
+     (nil))
+(debug_insn 41 40 42 9 (debug_marker) "../User/bldc_hal.c":360 -1
+     (nil))
+(insn 42 41 43 9 (set (reg:SI 96)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":360 -1
+     (nil))
+(insn 43 42 44 9 (set (reg/f:SI 95)
+        (lo_sum:SI (reg:SI 96)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":360 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 44 43 45 9 (set (reg:SI 76 [ sys_tick_millis.10_7 ])
+        (mem/v/c:SI (reg/f:SI 95) [2 sys_tick_millis+0 S4 A32])) "../User/bldc_hal.c":360 -1
+     (nil))
+(insn 45 44 46 9 (set (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 4 [0x4])) [2 ctx_10(D)->press_start_millis+0 S4 A32])
+        (reg:SI 76 [ sys_tick_millis.10_7 ])) "../User/bldc_hal.c":360 -1
+     (nil))
+(debug_insn 46 45 47 9 (debug_marker) "../User/bldc_hal.c":361 -1
+     (nil))
+(insn 47 46 48 9 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 8 [0x8])) [0 ctx_10(D)->long_press_active+0 S1 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":361 -1
+     (nil))
+(debug_insn 48 47 49 9 (debug_marker) "../User/bldc_hal.c":362 -1
+     (nil))
+(insn 49 48 50 9 (set (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 12 [0xc])) [2 ctx_10(D)->last_repeat_millis+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":362 -1
+     (nil))
+(jump_insn 50 49 51 9 (set (pc)
+        (label_ref:SI 136)) "../User/bldc_hal.c":362 250 {jump}
+     (nil)
+ -> 136)
+(barrier 51 50 52)
+(code_label 52 51 53 10 7 (nil) [1 uses])
+(note 53 52 54 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 54 53 55 10 (debug_marker) "../User/bldc_hal.c":363 -1
+     (nil))
+(jump_insn 55 54 56 10 (set (pc)
+        (if_then_else (ne (reg:SI 75 [ _6 ])
+                (const_int 0 [0]))
+            (label_ref:SI 136)
+            (pc))) "../User/bldc_hal.c":363 180 {*branchsi}
+     (int_list:REG_BR_PROB 398585980 (nil))
+ -> 136)
+(note 56 55 57 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 57 56 58 11 (set (reg:SI 97)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":363 -1
+     (nil))
+(jump_insn 58 57 59 11 (set (pc)
+        (if_then_else (ne (reg/v:SI 88 [ raw_state ])
+                (reg:SI 97))
+            (label_ref:SI 136)
+            (pc))) "../User/bldc_hal.c":363 180 {*branchsi}
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 136)
+(note 59 58 60 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 60 59 61 12 (debug_marker) "../User/bldc_hal.c":365 -1
+     (nil))
+(insn 61 60 62 12 (set (reg:QI 98)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":365 -1
+     (nil))
+(insn 62 61 63 12 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 1 [0x1])) [0 ctx_10(D)->debounced_state+0 S1 A8])
+        (reg:QI 98)) "../User/bldc_hal.c":365 -1
+     (nil))
+(debug_insn 63 62 64 12 (debug_marker) "../User/bldc_hal.c":366 -1
+     (nil))
+(insn 64 63 65 12 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 8 [0x8])) [0 ctx_10(D)->long_press_active+0 S1 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":366 -1
+     (nil))
+(jump_insn 65 64 66 12 (set (pc)
+        (label_ref:SI 136)) "../User/bldc_hal.c":366 250 {jump}
+     (nil)
+ -> 136)
+(barrier 66 65 67)
+(code_label 67 66 68 13 4 (nil) [1 uses])
+(note 68 67 69 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 69 68 70 13 (debug_marker) "../User/bldc_hal.c":371 -1
+     (nil))
+(insn 70 69 71 13 (set (reg:SI 99)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                    (const_int 1 [0x1])) [0 ctx_10(D)->debounced_state+0 S1 A8]))) "../User/bldc_hal.c":371 -1
+     (nil))
+(jump_insn 71 70 72 13 (set (pc)
+        (if_then_else (ne (reg:SI 99)
+                (const_int 0 [0]))
+            (label_ref:SI 136)
+            (pc))) "../User/bldc_hal.c":371 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 136)
+(note 72 71 73 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 73 72 74 14 (var_location:QI D#1 (subreg:QI (reg/v:SI 88 [ raw_state ]) 0)) -1
+     (nil))
+(debug_insn 74 73 75 14 (var_location:SI ctx (reg/v/f:SI 87 [ ctx ])) -1
+     (nil))
+(debug_insn 75 74 76 14 (var_location:QI D#2 (debug_expr:QI D#1)) -1
+     (nil))
+(debug_insn 76 75 77 14 (var_location:QI raw_state (debug_expr:QI D#2)) -1
+     (nil))
+(debug_insn 77 76 78 14 (debug_marker) "../User/bldc_hal.c":372 -1
+     (nil))
+(insn 78 77 79 14 (set (reg:SI 101)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":372 -1
+     (nil))
+(insn 79 78 80 14 (set (reg/f:SI 100)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":372 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 80 79 81 14 (set (reg:SI 78 [ sys_tick_millis.11_22 ])
+        (mem/v/c:SI (reg/f:SI 100) [2 sys_tick_millis+0 S4 A32])) "../User/bldc_hal.c":372 -1
+     (nil))
+(debug_insn 81 80 82 14 (var_location:SI held (minus:SI (reg:SI 78 [ sys_tick_millis.11_22 ])
+        (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 4 [0x4])) [2 ctx_10(D)->press_start_millis+0 S4 A32]))) "../User/bldc_hal.c":372 -1
+     (nil))
+(debug_insn 82 81 83 14 (debug_marker) "../User/bldc_hal.c":373 -1
+     (nil))
+(insn 83 82 84 14 (set (reg:SI 103)
+        (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 4 [0x4])) [2 ctx_10(D)->press_start_millis+0 S4 A32])) "../User/bldc_hal.c":372 -1
+     (nil))
+(insn 84 83 85 14 (set (reg:SI 102 [ held ])
+        (minus:SI (reg:SI 78 [ sys_tick_millis.11_22 ])
+            (reg:SI 103))) "../User/bldc_hal.c":372 -1
+     (nil))
+(insn 85 84 86 14 (set (reg:SI 104)
+        (const_int 499 [0x1f3])) "../User/bldc_hal.c":373 -1
+     (nil))
+(jump_insn 86 85 87 14 (set (pc)
+        (if_then_else (leu (reg:SI 102 [ held ])
+                (reg:SI 104))
+            (label_ref:SI 136)
+            (pc))) "../User/bldc_hal.c":373 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 136)
+(note 87 86 88 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 88 87 89 15 (debug_marker) "../User/bldc_hal.c":374 -1
+     (nil))
+(insn 89 88 90 15 (set (reg:SI 105)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                    (const_int 8 [0x8])) [0 ctx_10(D)->long_press_active+0 S1 A32]))) "../User/bldc_hal.c":374 -1
+     (nil))
+(jump_insn 90 89 91 15 (set (pc)
+        (if_then_else (ne (reg:SI 105)
+                (const_int 0 [0]))
+            (label_ref 105)
+            (pc))) "../User/bldc_hal.c":374 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 105)
+(note 91 90 92 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 92 91 93 16 (debug_marker) "../User/bldc_hal.c":375 -1
+     (nil))
+(insn 93 92 94 16 (set (reg:QI 106)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":375 -1
+     (nil))
+(insn 94 93 95 16 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 8 [0x8])) [0 ctx_10(D)->long_press_active+0 S1 A32])
+        (reg:QI 106)) "../User/bldc_hal.c":375 -1
+     (nil))
+(debug_insn 95 94 96 16 (debug_marker) "../User/bldc_hal.c":376 -1
+     (nil))
+(insn 96 95 97 16 (set (reg:SI 108)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":376 -1
+     (nil))
+(insn 97 96 98 16 (set (reg/f:SI 107)
+        (lo_sum:SI (reg:SI 108)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":376 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 98 97 99 16 (set (reg:SI 82 [ sys_tick_millis.12_26 ])
+        (mem/v/c:SI (reg/f:SI 107) [2 sys_tick_millis+0 S4 A32])) "../User/bldc_hal.c":376 -1
+     (nil))
+(insn 99 98 100 16 (set (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 12 [0xc])) [2 ctx_10(D)->last_repeat_millis+0 S4 A32])
+        (reg:SI 82 [ sys_tick_millis.12_26 ])) "../User/bldc_hal.c":376 -1
+     (nil))
+(debug_insn 100 99 101 16 (debug_marker) "../User/bldc_hal.c":377 -1
+     (nil))
+(insn 101 100 102 16 (set (reg:QI 109)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":377 -1
+     (nil))
+(insn 102 101 103 16 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 3 [0x3])) [0 ctx_10(D)->edge_detected+0 S1 A8])
+        (reg:QI 109)) "../User/bldc_hal.c":377 -1
+     (nil))
+(jump_insn 103 102 104 16 (set (pc)
+        (label_ref:SI 136)) "../User/bldc_hal.c":377 250 {jump}
+     (nil)
+ -> 136)
+(barrier 104 103 105)
+(code_label 105 104 106 17 9 (nil) [1 uses])
+(note 106 105 107 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 107 106 108 17 (debug_marker) "../User/bldc_hal.c":379 -1
+     (nil))
+(insn 108 107 109 17 (set (reg:SI 111)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":379 -1
+     (nil))
+(insn 109 108 110 17 (set (reg/f:SI 110)
+        (lo_sum:SI (reg:SI 111)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":379 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 110 109 111 17 (set (reg:SI 83 [ sys_tick_millis.13_27 ])
+        (mem/v/c:SI (reg/f:SI 110) [2 sys_tick_millis+0 S4 A32])) "../User/bldc_hal.c":379 -1
+     (nil))
+(debug_insn 111 110 112 17 (var_location:SI since_repeat (minus:SI (reg:SI 83 [ sys_tick_millis.13_27 ])
+        (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 12 [0xc])) [2 ctx_10(D)->last_repeat_millis+0 S4 A32]))) "../User/bldc_hal.c":379 -1
+     (nil))
+(debug_insn 112 111 113 17 (debug_marker) "../User/bldc_hal.c":380 -1
+     (nil))
+(insn 113 112 114 17 (set (reg:SI 113)
+        (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 12 [0xc])) [2 ctx_10(D)->last_repeat_millis+0 S4 A32])) "../User/bldc_hal.c":379 -1
+     (nil))
+(insn 114 113 115 17 (set (reg:SI 112 [ since_repeat ])
+        (minus:SI (reg:SI 83 [ sys_tick_millis.13_27 ])
+            (reg:SI 113))) "../User/bldc_hal.c":379 -1
+     (nil))
+(insn 115 114 116 17 (set (reg:SI 114)
+        (const_int 99 [0x63])) "../User/bldc_hal.c":380 -1
+     (nil))
+(jump_insn 116 115 117 17 (set (pc)
+        (if_then_else (leu (reg:SI 112 [ since_repeat ])
+                (reg:SI 114))
+            (label_ref:SI 136)
+            (pc))) "../User/bldc_hal.c":380 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 136)
+(note 117 116 118 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 118 117 119 18 (debug_marker) "../User/bldc_hal.c":381 -1
+     (nil))
+(insn 119 118 120 18 (set (reg:SI 116)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":381 -1
+     (nil))
+(insn 120 119 121 18 (set (reg/f:SI 115)
+        (lo_sum:SI (reg:SI 116)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/bldc_hal.c":381 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 121 120 122 18 (set (reg:SI 86 [ sys_tick_millis.14_30 ])
+        (mem/v/c:SI (reg/f:SI 115) [2 sys_tick_millis+0 S4 A32])) "../User/bldc_hal.c":381 -1
+     (nil))
+(insn 122 121 123 18 (set (mem:SI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 12 [0xc])) [2 ctx_10(D)->last_repeat_millis+0 S4 A32])
+        (reg:SI 86 [ sys_tick_millis.14_30 ])) "../User/bldc_hal.c":381 -1
+     (nil))
+(debug_insn 123 122 124 18 (debug_marker) "../User/bldc_hal.c":382 -1
+     (nil))
+(insn 124 123 125 18 (set (reg:QI 117)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":382 -1
+     (nil))
+(insn 125 124 126 18 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 3 [0x3])) [0 ctx_10(D)->edge_detected+0 S1 A8])
+        (reg:QI 117)) "../User/bldc_hal.c":382 -1
+     (nil))
+(jump_insn 126 125 127 18 (set (pc)
+        (label_ref:SI 136)) "../User/bldc_hal.c":382 250 {jump}
+     (nil)
+ -> 136)
+(barrier 127 126 128)
+(code_label 128 127 129 19 3 (nil) [1 uses])
+(note 129 128 130 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 130 129 131 19 (debug_marker) "../User/bldc_hal.c":389 -1
+     (nil))
+(insn 131 130 132 19 (set (mem:QI (reg/v/f:SI 87 [ ctx ]) [0 ctx_10(D)->stable_count+0 S1 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":389 -1
+     (nil))
+(debug_insn 132 131 133 19 (debug_marker) "../User/bldc_hal.c":390 -1
+     (nil))
+(insn 133 132 136 19 (set (mem:QI (plus:SI (reg/v/f:SI 87 [ ctx ])
+                (const_int 2 [0x2])) [0 ctx_10(D)->last_raw+0 S1 A16])
+        (subreg/s/v:QI (reg/v:SI 88 [ raw_state ]) 0)) "../User/bldc_hal.c":390 -1
+     (nil))
+(code_label 136 133 137 21 2 (nil) [11 uses])
+(note 137 136 0 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+
+;; Function spi_trans_cb (spi_trans_cb, funcdef_no=27, decl_uid=4422, cgraph_uid=28, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 21 into block 20...
+Merged blocks 20 and 21.
+Merged 20 and 21 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (reg/v/f:SI 90 [ tx ])
+        (reg:SI 10 a0 [ tx ])) "../User/bldc_hal.c":157 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 91 [ tx_len ])
+        (reg:SI 11 a1 [ tx_len ])) "../User/bldc_hal.c":157 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v/f:SI 92 [ rx ])
+        (reg:SI 12 a2 [ rx ])) "../User/bldc_hal.c":157 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 93 [ rx_len ])
+        (reg:SI 13 a3 [ rx_len ])) "../User/bldc_hal.c":157 -1
+     (nil))
+(note 6 5 10 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 10 6 11 2 (debug_marker) "../User/bldc_hal.c":158 -1
+     (nil))
+(debug_insn 11 10 12 2 (debug_marker) "../User/bldc_hal.c":160 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 11 a1)
+        (const_int 8 [0x8])) "../User/bldc_hal.c":160 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":160 -1
+     (nil))
+(call_insn 14 13 15 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05851528 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":160 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05851528 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 15 14 16 2 (debug_marker) "../User/bldc_hal.c":163 -1
+     (nil))
+(debug_insn 16 15 17 2 (var_location:QI i (const_int 0 [0])) "../User/bldc_hal.c":163 -1
+     (nil))
+(insn 17 16 7 2 (set (reg:SI 86 [ _53 ])
+        (reg/v:SI 91 [ tx_len ])) -1
+     (nil))
+(insn 7 17 18 2 (set (reg:SI 77 [ ivtmp.21 ])
+        (const_int 0 [0])) "../User/bldc_hal.c":163 -1
+     (nil))
+(jump_insn 18 7 19 2 (set (pc)
+        (label_ref 65)) "../User/bldc_hal.c":163 -1
+     (nil)
+ -> 65)
+(barrier 19 18 26)
+(code_label 26 19 20 4 12 (nil) [2 uses])
+(note 20 26 21 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 21 20 22 4 (debug_marker) "../User/bldc_hal.c":164 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":164 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":164 -1
+     (nil))
+(call_insn 24 23 25 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":164 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 25 24 27 4 (set (reg:SI 72 [ _1 ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":164 -1
+     (nil))
+(jump_insn 27 25 28 4 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) "../User/bldc_hal.c":164 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 26)
+(note 28 27 29 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 29 28 30 5 (debug_marker) "../User/bldc_hal.c":165 -1
+     (nil))
+(insn 30 29 31 5 (set (reg:SI 94)
+        (plus:SI (reg/v/f:SI 90 [ tx ])
+            (reg:SI 77 [ ivtmp.21 ]))) "../User/bldc_hal.c":165 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:HI 95)
+        (zero_extend:HI (mem:QI (reg:SI 94) [0 MEM[base: _56, offset: 0B]+0 S1 A8]))) "../User/bldc_hal.c":165 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:SI 96)
+        (zero_extend:SI (reg:HI 95))) "../User/bldc_hal.c":165 -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 11 a1)
+        (reg:SI 96)) "../User/bldc_hal.c":165 -1
+     (nil))
+(insn 34 33 35 5 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":165 -1
+     (nil))
+(call_insn 35 34 36 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 05908c30 SPI_I2S_SendData>) [0 SPI_I2S_SendData S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":165 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 05908c30 SPI_I2S_SendData>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 36 35 43 5 (debug_marker) "../User/bldc_hal.c":166 -1
+     (nil))
+(code_label 43 36 37 6 13 (nil) [1 uses])
+(note 37 43 38 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 38 37 39 6 (debug_marker) "../User/bldc_hal.c":166 -1
+     (nil))
+(insn 39 38 40 6 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":166 -1
+     (nil))
+(insn 40 39 41 6 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":166 -1
+     (nil))
+(call_insn 41 40 42 6 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":166 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 42 41 44 6 (set (reg:SI 75 [ _6 ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":166 -1
+     (nil))
+(jump_insn 44 42 45 6 (set (pc)
+        (if_then_else (eq (reg:SI 75 [ _6 ])
+                (const_int 0 [0]))
+            (label_ref 43)
+            (pc))) "../User/bldc_hal.c":166 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 43)
+(note 45 44 46 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 46 45 47 7 (debug_marker) "../User/bldc_hal.c":167 -1
+     (nil))
+(insn 47 46 48 7 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":167 -1
+     (nil))
+(call_insn 48 47 49 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 05908ca8 SPI_I2S_ReceiveData>) [0 SPI_I2S_ReceiveData S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":167 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 05908ca8 SPI_I2S_ReceiveData>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 49 48 50 7 (set (reg:SI 97)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":167 -1
+     (nil))
+(insn 50 49 51 7 (set (reg:SI 76 [ _7 ])
+        (reg:SI 97)) "../User/bldc_hal.c":167 -1
+     (nil))
+(debug_insn 51 50 52 7 (var_location:QI rx_byte (subreg:QI (reg:SI 76 [ _7 ]) 0)) "../User/bldc_hal.c":167 -1
+     (nil))
+(debug_insn 52 51 53 7 (debug_marker) "../User/bldc_hal.c":168 -1
+     (nil))
+(jump_insn 53 52 54 7 (set (pc)
+        (if_then_else (eq (reg/v/f:SI 92 [ rx ])
+                (const_int 0 [0]))
+            (label_ref 61)
+            (pc))) "../User/bldc_hal.c":168 -1
+     (int_list:REG_BR_PROB 322122548 (nil))
+ -> 61)
+(note 54 53 55 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 55 54 56 8 (set (reg:SI 98)
+        (zero_extend:SI (subreg:QI (reg:SI 77 [ ivtmp.21 ]) 0))) "../User/bldc_hal.c":168 -1
+     (nil))
+(jump_insn 56 55 57 8 (set (pc)
+        (if_then_else (leu (reg/v:SI 93 [ rx_len ])
+                (reg:SI 98))
+            (label_ref 61)
+            (pc))) "../User/bldc_hal.c":168 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 61)
+(note 57 56 58 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 58 57 59 9 (debug_marker) "../User/bldc_hal.c":168 -1
+     (nil))
+(insn 59 58 60 9 (set (reg:SI 99)
+        (plus:SI (reg/v/f:SI 92 [ rx ])
+            (reg:SI 77 [ ivtmp.21 ]))) "../User/bldc_hal.c":168 -1
+     (nil))
+(insn 60 59 61 9 (set (mem:QI (reg:SI 99) [0 MEM[base: _55, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 76 [ _7 ]) 0)) "../User/bldc_hal.c":167 -1
+     (nil))
+(code_label 61 60 62 10 14 (nil) [2 uses])
+(note 62 61 63 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 63 62 64 10 (var_location:QI i (plus:QI (subreg:QI (reg:SI 77 [ ivtmp.21 ]) 0)
+        (const_int 1 [0x1]))) "../User/bldc_hal.c":163 -1
+     (nil))
+(insn 64 63 65 10 (set (reg:SI 77 [ ivtmp.21 ])
+        (plus:SI (reg:SI 77 [ ivtmp.21 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(code_label 65 64 66 11 11 (nil) [1 uses])
+(note 66 65 67 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 67 66 68 11 (var_location:QI i (subreg:QI (reg:SI 77 [ ivtmp.21 ]) 0)) -1
+     (nil))
+(jump_insn 68 67 69 11 (set (pc)
+        (if_then_else (ne (reg:SI 77 [ ivtmp.21 ])
+                (reg:SI 86 [ _53 ]))
+            (label_ref 26)
+            (pc))) "../User/bldc_hal.c":163 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 26)
+(note 69 68 70 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 70 69 71 12 (set (reg:SI 85 [ ivtmp.19 ])
+        (plus:SI (reg/v/f:SI 92 [ rx ])
+            (reg:SI 86 [ _53 ]))) -1
+     (nil))
+(jump_insn 71 70 72 12 (set (pc)
+        (label_ref 111)) -1
+     (nil)
+ -> 111)
+(barrier 72 71 79)
+(code_label 79 72 73 13 16 (nil) [2 uses])
+(note 73 79 74 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 74 73 75 13 (debug_marker) "../User/bldc_hal.c":174 -1
+     (nil))
+(insn 75 74 76 13 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":174 -1
+     (nil))
+(insn 76 75 77 13 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":174 -1
+     (nil))
+(call_insn 77 76 78 13 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":174 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 78 77 80 13 (set (reg:SI 80 [ _30 ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":174 -1
+     (nil))
+(jump_insn 80 78 81 13 (set (pc)
+        (if_then_else (eq (reg:SI 80 [ _30 ])
+                (const_int 0 [0]))
+            (label_ref 79)
+            (pc))) "../User/bldc_hal.c":174 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 79)
+(note 81 80 82 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 82 81 83 14 (debug_marker) "../User/bldc_hal.c":175 -1
+     (nil))
+(insn 83 82 84 14 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../User/bldc_hal.c":175 -1
+     (nil))
+(insn 84 83 85 14 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":175 -1
+     (nil))
+(call_insn 85 84 86 14 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 05908c30 SPI_I2S_SendData>) [0 SPI_I2S_SendData S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":175 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 05908c30 SPI_I2S_SendData>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 86 85 93 14 (debug_marker) "../User/bldc_hal.c":176 -1
+     (nil))
+(code_label 93 86 87 15 17 (nil) [1 uses])
+(note 87 93 88 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 88 87 89 15 (debug_marker) "../User/bldc_hal.c":176 -1
+     (nil))
+(insn 89 88 90 15 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":176 -1
+     (nil))
+(insn 90 89 91 15 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":176 -1
+     (nil))
+(call_insn 91 90 92 15 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":176 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 0590f0f0 SPI_I2S_GetFlagStatus>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 92 91 94 15 (set (reg:SI 81 [ _31 ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":176 -1
+     (nil))
+(jump_insn 94 92 95 15 (set (pc)
+        (if_then_else (eq (reg:SI 81 [ _31 ])
+                (const_int 0 [0]))
+            (label_ref 93)
+            (pc))) "../User/bldc_hal.c":176 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 93)
+(note 95 94 96 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 96 95 97 16 (debug_marker) "../User/bldc_hal.c":177 -1
+     (nil))
+(jump_insn 97 96 98 16 (set (pc)
+        (if_then_else (eq (reg/v/f:SI 92 [ rx ])
+                (const_int 0 [0]))
+            (label_ref 105)
+            (pc))) "../User/bldc_hal.c":177 -1
+     (int_list:REG_BR_PROB 499612076 (nil))
+ -> 105)
+(note 98 97 99 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 99 98 100 17 (debug_marker) "../User/bldc_hal.c":177 -1
+     (nil))
+(insn 100 99 101 17 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":177 -1
+     (nil))
+(call_insn 101 100 102 17 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 05908ca8 SPI_I2S_ReceiveData>) [0 SPI_I2S_ReceiveData S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":177 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 05908ca8 SPI_I2S_ReceiveData>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 102 101 103 17 (set (reg:SI 100)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":177 -1
+     (nil))
+(insn 103 102 104 17 (set (reg:SI 82 [ _32 ])
+        (reg:SI 100)) "../User/bldc_hal.c":177 -1
+     (nil))
+(insn 104 103 105 17 (set (mem:QI (reg:SI 85 [ ivtmp.19 ]) [0 MEM[base: _49, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 82 [ _32 ]) 0)) "../User/bldc_hal.c":177 -1
+     (nil))
+(code_label 105 104 106 18 18 (nil) [1 uses])
+(note 106 105 107 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 107 106 108 18 (set (reg:SI 101)
+        (plus:SI (reg/v:SI 91 [ tx_len ])
+            (const_int 1 [0x1]))) "../User/bldc_hal.c":173 -1
+     (nil))
+(insn 108 107 109 18 (set (reg/v:SI 91 [ tx_len ])
+        (zero_extend:SI (subreg:QI (reg:SI 101) 0))) "../User/bldc_hal.c":173 -1
+     (nil))
+(debug_insn 109 108 110 18 (var_location:QI i (subreg:QI (reg/v:SI 91 [ tx_len ]) 0)) "../User/bldc_hal.c":173 -1
+     (nil))
+(insn 110 109 111 18 (set (reg:SI 85 [ ivtmp.19 ])
+        (plus:SI (reg:SI 85 [ ivtmp.19 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(code_label 111 110 112 19 15 (nil) [1 uses])
+(note 112 111 113 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 113 112 114 19 (var_location:QI i (subreg:QI (reg/v:SI 91 [ tx_len ]) 0)) -1
+     (nil))
+(jump_insn 114 113 115 19 (set (pc)
+        (if_then_else (gtu (reg/v:SI 93 [ rx_len ])
+                (reg/v:SI 91 [ tx_len ]))
+            (label_ref 79)
+            (pc))) "../User/bldc_hal.c":173 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 79)
+(note 115 114 116 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 116 115 117 20 (debug_marker) "../User/bldc_hal.c":180 -1
+     (nil))
+(insn 117 116 118 20 (set (reg:SI 11 a1)
+        (const_int 8 [0x8])) "../User/bldc_hal.c":180 -1
+     (nil))
+(insn 118 117 119 20 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":180 -1
+     (nil))
+(call_insn 119 118 120 20 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":180 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 120 119 121 20 (var_location:QI tx_len (clobber (const_int 0 [0]))) -1
+     (nil))
+(debug_insn 121 120 122 20 (var_location:SI rx (clobber (const_int 0 [0]))) -1
+     (nil))
+(debug_insn 122 121 123 20 (var_location:QI rx_len (clobber (const_int 0 [0]))) -1
+     (nil))
+(debug_insn 123 122 124 20 (var_location:QI i (clobber (const_int 0 [0]))) -1
+     (nil))
+(debug_insn 124 123 125 20 (var_location:QI rx_byte (clobber (const_int 0 [0]))) -1
+     (nil))
+(debug_insn 125 124 0 20 (var_location:SI tx (clobber (const_int 0 [0]))) -1
+     (nil))
+
+;; Function HAL_GPIO_Init (HAL_GPIO_Init, funcdef_no=21, decl_uid=4049, cgraph_uid=22, symbol_order=27)
+
+Partition 0: size 12 align 4
+	GPIO_InitStructure
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":28 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 GPIO_InitStructure+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":28 -1
+     (nil))
+(insn 7 6 8 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 GPIO_InitStructure+4 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":28 -1
+     (nil))
+(insn 8 7 9 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 GPIO_InitStructure+8 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":28 -1
+     (nil))
+(debug_insn 9 8 10 2 (debug_marker) "../User/bldc_hal.c":31 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":31 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 10 a0)
+        (const_int 4 [0x4])) "../User/bldc_hal.c":31 -1
+     (nil))
+(call_insn 12 11 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":31 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 13 12 14 2 (debug_marker) "../User/bldc_hal.c":32 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:HI 72)
+        (const_int 6 [0x6])) "../User/bldc_hal.c":32 -1
+     (nil))
+(insn 15 14 16 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 72)) "../User/bldc_hal.c":32 -1
+     (nil))
+(debug_insn 16 15 17 2 (debug_marker) "../User/bldc_hal.c":33 -1
+     (nil))
+(insn 17 16 18 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":33 -1
+     (nil))
+(debug_insn 18 17 19 2 (debug_marker) "../User/bldc_hal.c":34 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 73)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":34 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 11 a1)
+        (reg:SI 73)) "../User/bldc_hal.c":34 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 74)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":34 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 74)
+            (const_int -2048 [0xfffffffffffff800]))) "../User/bldc_hal.c":34 -1
+     (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
+        (nil)))
+(call_insn 23 22 24 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":34 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 24 23 25 2 (debug_marker) "../User/bldc_hal.c":37 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":37 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SI 10 a0)
+        (const_int 16 [0x10])) "../User/bldc_hal.c":37 -1
+     (nil))
+(call_insn 27 26 28 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":37 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 28 27 29 2 (debug_marker) "../User/bldc_hal.c":40 -1
+     (nil))
+(insn 29 28 30 2 (set (reg:HI 75)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":40 -1
+     (nil))
+(insn 30 29 31 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 75)) "../User/bldc_hal.c":40 -1
+     (nil))
+(debug_insn 31 30 32 2 (debug_marker) "../User/bldc_hal.c":41 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 76)
+        (const_int 72 [0x48])) "../User/bldc_hal.c":41 -1
+     (nil))
+(insn 33 32 34 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 76)) "../User/bldc_hal.c":41 -1
+     (nil))
+(debug_insn 34 33 35 2 (debug_marker) "../User/bldc_hal.c":42 -1
+     (nil))
+(insn 35 34 36 2 (set (reg:SI 77)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":42 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:SI 11 a1)
+        (reg:SI 77)) "../User/bldc_hal.c":42 -1
+     (nil))
+(insn 37 36 38 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":42 -1
+     (nil))
+(call_insn 38 37 39 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":42 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 39 38 40 2 (debug_marker) "../User/bldc_hal.c":48 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:HI 78)
+        (const_int 8 [0x8])) "../User/bldc_hal.c":48 -1
+     (nil))
+(insn 41 40 42 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 78)) "../User/bldc_hal.c":48 -1
+     (nil))
+(debug_insn 42 41 43 2 (debug_marker) "../User/bldc_hal.c":49 -1
+     (nil))
+(insn 43 42 44 2 (set (reg:SI 79)
+        (const_int 16 [0x10])) "../User/bldc_hal.c":49 -1
+     (nil))
+(insn 44 43 45 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 79)) "../User/bldc_hal.c":49 -1
+     (nil))
+(debug_insn 45 44 46 2 (debug_marker) "../User/bldc_hal.c":50 -1
+     (nil))
+(insn 46 45 47 2 (set (reg:SI 80)
+        (const_int 3 [0x3])) "../User/bldc_hal.c":50 -1
+     (nil))
+(insn 47 46 48 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 GPIO_InitStructure.GPIO_Speed+0 S4 A32])
+        (reg:SI 80)) "../User/bldc_hal.c":50 -1
+     (nil))
+(debug_insn 48 47 49 2 (debug_marker) "../User/bldc_hal.c":51 -1
+     (nil))
+(insn 49 48 50 2 (set (reg:SI 81)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":51 -1
+     (nil))
+(insn 50 49 51 2 (set (reg:SI 11 a1)
+        (reg:SI 81)) "../User/bldc_hal.c":51 -1
+     (nil))
+(insn 51 50 52 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":51 -1
+     (nil))
+(call_insn 52 51 53 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":51 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 53 52 54 2 (debug_marker) "../User/bldc_hal.c":52 -1
+     (nil))
+(insn 54 53 55 2 (set (reg:SI 11 a1)
+        (const_int 8 [0x8])) "../User/bldc_hal.c":52 -1
+     (nil))
+(insn 55 54 56 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":52 -1
+     (nil))
+(call_insn 56 55 57 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":52 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 57 56 58 2 (debug_marker) "../User/bldc_hal.c":57 -1
+     (nil))
+(insn 58 57 59 2 (set (reg:HI 82)
+        (const_int 16 [0x10])) "../User/bldc_hal.c":57 -1
+     (nil))
+(insn 59 58 60 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 82)) "../User/bldc_hal.c":57 -1
+     (nil))
+(debug_insn 60 59 61 2 (debug_marker) "../User/bldc_hal.c":58 -1
+     (nil))
+(insn 61 60 62 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":58 -1
+     (nil))
+(debug_insn 62 61 63 2 (debug_marker) "../User/bldc_hal.c":59 -1
+     (nil))
+(insn 63 62 64 2 (set (reg:SI 83)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":59 -1
+     (nil))
+(insn 64 63 65 2 (set (reg:SI 11 a1)
+        (reg:SI 83)) "../User/bldc_hal.c":59 -1
+     (nil))
+(insn 65 64 66 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":59 -1
+     (nil))
+(call_insn 66 65 67 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":59 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 67 66 68 2 (debug_marker) "../User/bldc_hal.c":62 -1
+     (nil))
+(insn 68 67 69 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":62 -1
+     (nil))
+(insn 69 68 70 2 (set (reg:SI 10 a0)
+        (const_int 32 [0x20])) "../User/bldc_hal.c":62 -1
+     (nil))
+(call_insn 70 69 71 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":62 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 71 70 72 2 (debug_marker) "../User/bldc_hal.c":65 -1
+     (nil))
+(insn 72 71 73 2 (set (reg:HI 84)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":65 -1
+     (nil))
+(insn 73 72 74 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 84)) "../User/bldc_hal.c":65 -1
+     (nil))
+(debug_insn 74 73 75 2 (debug_marker) "../User/bldc_hal.c":66 -1
+     (nil))
+(insn 75 74 76 2 (set (reg:SI 85)
+        (const_int 72 [0x48])) "../User/bldc_hal.c":66 -1
+     (nil))
+(insn 76 75 77 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 85)) "../User/bldc_hal.c":66 -1
+     (nil))
+(debug_insn 77 76 78 2 (debug_marker) "../User/bldc_hal.c":67 -1
+     (nil))
+(insn 78 77 79 2 (set (reg:SI 86)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":67 -1
+     (nil))
+(insn 79 78 80 2 (set (reg:SI 11 a1)
+        (reg:SI 86)) "../User/bldc_hal.c":67 -1
+     (nil))
+(insn 80 79 81 2 (set (reg:SI 87)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":67 -1
+     (nil))
+(insn 81 80 82 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 87)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":67 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 82 81 83 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":67 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 83 82 84 2 (debug_marker) "../User/bldc_hal.c":73 -1
+     (nil))
+(insn 84 83 85 2 (set (reg:HI 88)
+        (const_int 124 [0x7c])) "../User/bldc_hal.c":73 -1
+     (nil))
+(insn 85 84 86 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 88)) "../User/bldc_hal.c":73 -1
+     (nil))
+(debug_insn 86 85 87 2 (debug_marker) "../User/bldc_hal.c":75 -1
+     (nil))
+(insn 87 86 88 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":75 -1
+     (nil))
+(debug_insn 88 87 89 2 (debug_marker) "../User/bldc_hal.c":76 -1
+     (nil))
+(insn 89 88 90 2 (set (reg:SI 89)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":76 -1
+     (nil))
+(insn 90 89 91 2 (set (reg:SI 11 a1)
+        (reg:SI 89)) "../User/bldc_hal.c":76 -1
+     (nil))
+(insn 91 90 92 2 (set (reg:SI 90)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":76 -1
+     (nil))
+(insn 92 91 93 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 90)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":76 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 93 92 94 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":76 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 94 93 95 2 (debug_marker) "../User/bldc_hal.c":80 -1
+     (nil))
+(insn 95 94 96 2 (set (reg:HI 91)
+        (const_int 128 [0x80])) "../User/bldc_hal.c":80 -1
+     (nil))
+(insn 96 95 97 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 91)) "../User/bldc_hal.c":80 -1
+     (nil))
+(debug_insn 97 96 98 2 (debug_marker) "../User/bldc_hal.c":81 -1
+     (nil))
+(insn 98 97 99 2 (set (reg:SI 92)
+        (const_int 4 [0x4])) "../User/bldc_hal.c":81 -1
+     (nil))
+(insn 99 98 100 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 92)) "../User/bldc_hal.c":81 -1
+     (nil))
+(debug_insn 100 99 101 2 (debug_marker) "../User/bldc_hal.c":82 -1
+     (nil))
+(insn 101 100 102 2 (set (reg:SI 93)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":82 -1
+     (nil))
+(insn 102 101 103 2 (set (reg:SI 11 a1)
+        (reg:SI 93)) "../User/bldc_hal.c":82 -1
+     (nil))
+(insn 103 102 104 2 (set (reg:SI 94)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":82 -1
+     (nil))
+(insn 104 103 105 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 94)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":82 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 105 104 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":82 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function LED_Init (LED_Init, funcdef_no=22, decl_uid=4061, cgraph_uid=23, symbol_order=28)
+
+Partition 0: size 12 align 4
+	GPIO_InitStructure
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":91 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 GPIO_InitStructure+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":91 -1
+     (nil))
+(insn 7 6 8 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 GPIO_InitStructure+4 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":91 -1
+     (nil))
+(insn 8 7 9 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 GPIO_InitStructure+8 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":91 -1
+     (nil))
+(debug_insn 9 8 10 2 (debug_marker) "../User/bldc_hal.c":92 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":92 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 10 a0)
+        (const_int 32 [0x20])) "../User/bldc_hal.c":92 -1
+     (nil))
+(call_insn 12 11 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":92 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 13 12 14 2 (debug_marker) "../User/bldc_hal.c":93 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:HI 72)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":93 -1
+     (nil))
+(insn 15 14 16 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 72)) "../User/bldc_hal.c":93 -1
+     (nil))
+(debug_insn 16 15 17 2 (debug_marker) "../User/bldc_hal.c":94 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 73)
+        (const_int 16 [0x10])) "../User/bldc_hal.c":94 -1
+     (nil))
+(insn 18 17 19 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 73)) "../User/bldc_hal.c":94 -1
+     (nil))
+(debug_insn 19 18 20 2 (debug_marker) "../User/bldc_hal.c":95 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 74)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":95 -1
+     (nil))
+(insn 21 20 22 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 GPIO_InitStructure.GPIO_Speed+0 S4 A32])
+        (reg:SI 74)) "../User/bldc_hal.c":95 -1
+     (nil))
+(debug_insn 22 21 23 2 (debug_marker) "../User/bldc_hal.c":96 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 75)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":96 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 11 a1)
+        (reg:SI 75)) "../User/bldc_hal.c":96 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 76)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":96 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 76)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":96 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 27 26 28 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":96 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 28 27 29 2 (debug_marker) "../User/bldc_hal.c":97 -1
+     (nil))
+(insn 29 28 30 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":97 -1
+     (nil))
+(insn 30 29 31 2 (set (reg:SI 77)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":97 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 77)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":97 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 32 31 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":97 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function LED_On (LED_On, funcdef_no=23, decl_uid=4440, cgraph_uid=24, symbol_order=29)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":100 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":100 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 72)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":100 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 72)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":100 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 9 8 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05851528 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":100 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05851528 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function LED_Off (LED_Off, funcdef_no=24, decl_uid=4442, cgraph_uid=25, symbol_order=30)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":101 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":101 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 72)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":101 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 72)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":101 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 9 8 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":101 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function LED_Toggle (LED_Toggle, funcdef_no=25, decl_uid=4444, cgraph_uid=26, symbol_order=31)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 19 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":104 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":104 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 73)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":104 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 73)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":104 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 9 8 10 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("GPIO_ReadOutputDataBit") [flags 0x41] <function_decl 058513c0 GPIO_ReadOutputDataBit>) [0 GPIO_ReadOutputDataBit S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":104 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ReadOutputDataBit") [flags 0x41] <function_decl 058513c0 GPIO_ReadOutputDataBit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 10 9 11 2 (set (reg:SI 74)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":104 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 72 [ _1 ])
+        (reg:SI 74)) "../User/bldc_hal.c":104 -1
+     (nil))
+(jump_insn 12 11 13 2 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "../User/bldc_hal.c":104 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 21)
+(note 13 12 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 14 13 15 4 (debug_marker) "../User/bldc_hal.c":105 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":105 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 75)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":105 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 75)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":105 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 18 17 19 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05851528 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":105 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05851528 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(jump_insn 19 18 20 4 (set (pc)
+        (label_ref:SI 30)) 250 {jump}
+     (nil)
+ -> 30)
+(barrier 20 19 21)
+(code_label 21 20 22 5 45 (nil) [1 uses])
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 23 22 24 5 (debug_marker) "../User/bldc_hal.c":107 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":107 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 76)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":107 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 76)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":107 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 27 26 30 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":107 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 058514b0 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 30 27 31 7 44 (nil) [1 uses])
+(note 31 30 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function HAL_SPI_Init (HAL_SPI_Init, funcdef_no=26, decl_uid=4051, cgraph_uid=27, symbol_order=32)
+
+Partition 1: size 18 align 4
+	SPI_InitStructure
+Partition 0: size 12 align 4
+	GPIO_InitStructure
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":118 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 GPIO_InitStructure+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":118 -1
+     (nil))
+(insn 7 6 8 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -28 [0xffffffffffffffe4])) [3 GPIO_InitStructure+4 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":118 -1
+     (nil))
+(insn 8 7 9 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [3 GPIO_InitStructure+8 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":118 -1
+     (nil))
+(debug_insn 9 8 10 2 (debug_marker) "../User/bldc_hal.c":119 -1
+     (nil))
+(insn 10 9 11 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [7 SPI_InitStructure+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":119 -1
+     (nil))
+(insn 11 10 12 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [7 SPI_InitStructure+4 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":119 -1
+     (nil))
+(insn 12 11 13 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [7 SPI_InitStructure+8 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":119 -1
+     (nil))
+(insn 13 12 14 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [7 SPI_InitStructure+12 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":119 -1
+     (nil))
+(insn 14 13 15 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [7 SPI_InitStructure+16 S2 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":119 -1
+     (nil))
+(debug_insn 15 14 16 2 (debug_marker) "../User/bldc_hal.c":121 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":121 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 72)
+        (const_int 4096 [0x1000])) "../User/bldc_hal.c":121 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 72)
+            (const_int 16 [0x10]))) "../User/bldc_hal.c":121 -1
+     (expr_list:REG_EQUAL (const_int 4112 [0x1010])
+        (nil)))
+(call_insn 19 18 20 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":121 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 20 19 21 2 (debug_marker) "../User/bldc_hal.c":124 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:HI 73)
+        (const_int 32 [0x20])) "../User/bldc_hal.c":124 -1
+     (nil))
+(insn 22 21 23 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 73)) "../User/bldc_hal.c":124 -1
+     (nil))
+(debug_insn 23 22 24 2 (debug_marker) "../User/bldc_hal.c":125 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 74)
+        (const_int 24 [0x18])) "../User/bldc_hal.c":125 -1
+     (nil))
+(insn 25 24 26 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 74)) "../User/bldc_hal.c":125 -1
+     (nil))
+(debug_insn 26 25 27 2 (debug_marker) "../User/bldc_hal.c":126 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:SI 75)
+        (const_int 3 [0x3])) "../User/bldc_hal.c":126 -1
+     (nil))
+(insn 28 27 29 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -28 [0xffffffffffffffe4])) [5 GPIO_InitStructure.GPIO_Speed+0 S4 A32])
+        (reg:SI 75)) "../User/bldc_hal.c":126 -1
+     (nil))
+(debug_insn 29 28 30 2 (debug_marker) "../User/bldc_hal.c":127 -1
+     (nil))
+(insn 30 29 31 2 (set (reg:SI 76)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -32 [0xffffffffffffffe0]))) "../User/bldc_hal.c":127 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:SI 11 a1)
+        (reg:SI 76)) "../User/bldc_hal.c":127 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":127 -1
+     (nil))
+(call_insn 33 32 34 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":127 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 34 33 35 2 (debug_marker) "../User/bldc_hal.c":130 -1
+     (nil))
+(insn 35 34 36 2 (set (reg:HI 77)
+        (const_int 64 [0x40])) "../User/bldc_hal.c":130 -1
+     (nil))
+(insn 36 35 37 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 77)) "../User/bldc_hal.c":130 -1
+     (nil))
+(debug_insn 37 36 38 2 (debug_marker) "../User/bldc_hal.c":131 -1
+     (nil))
+(insn 38 37 39 2 (set (reg:SI 78)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -32 [0xffffffffffffffe0]))) "../User/bldc_hal.c":131 -1
+     (nil))
+(insn 39 38 40 2 (set (reg:SI 11 a1)
+        (reg:SI 78)) "../User/bldc_hal.c":131 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":131 -1
+     (nil))
+(call_insn 41 40 42 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":131 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 42 41 43 2 (debug_marker) "../User/bldc_hal.c":134 -1
+     (nil))
+(insn 43 42 44 2 (set (reg:HI 79)
+        (const_int 128 [0x80])) "../User/bldc_hal.c":134 -1
+     (nil))
+(insn 44 43 45 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 79)) "../User/bldc_hal.c":134 -1
+     (nil))
+(debug_insn 45 44 46 2 (debug_marker) "../User/bldc_hal.c":135 -1
+     (nil))
+(insn 46 45 47 2 (set (reg:SI 80)
+        (const_int 4 [0x4])) "../User/bldc_hal.c":135 -1
+     (nil))
+(insn 47 46 48 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 80)) "../User/bldc_hal.c":135 -1
+     (nil))
+(debug_insn 48 47 49 2 (debug_marker) "../User/bldc_hal.c":136 -1
+     (nil))
+(insn 49 48 50 2 (set (reg:SI 81)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -32 [0xffffffffffffffe0]))) "../User/bldc_hal.c":136 -1
+     (nil))
+(insn 50 49 51 2 (set (reg:SI 11 a1)
+        (reg:SI 81)) "../User/bldc_hal.c":136 -1
+     (nil))
+(insn 51 50 52 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":136 -1
+     (nil))
+(call_insn 52 51 53 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":136 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058511e0 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 53 52 54 2 (debug_marker) "../User/bldc_hal.c":139 -1
+     (nil))
+(debug_insn 54 53 55 2 (debug_marker) "../User/bldc_hal.c":140 -1
+     (nil))
+(debug_insn 55 54 56 2 (debug_marker) "../User/bldc_hal.c":141 -1
+     (nil))
+(debug_insn 56 55 57 2 (debug_marker) "../User/bldc_hal.c":142 -1
+     (nil))
+(debug_insn 57 56 58 2 (debug_marker) "../User/bldc_hal.c":143 -1
+     (nil))
+(debug_insn 58 57 59 2 (debug_marker) "../User/bldc_hal.c":144 -1
+     (nil))
+(debug_insn 59 58 60 2 (debug_marker) "../User/bldc_hal.c":145 -1
+     (nil))
+(debug_insn 60 59 61 2 (debug_marker) "../User/bldc_hal.c":146 -1
+     (nil))
+(debug_insn 61 60 62 2 (debug_marker) "../User/bldc_hal.c":147 -1
+     (nil))
+(insn 62 61 63 2 (set (reg:SI 82)
+        (const_int 17039360 [0x1040000])) "../User/bldc_hal.c":139 -1
+     (nil))
+(insn 63 62 64 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [4 MEM[(short unsigned int *)&SPI_InitStructure]+0 S4 A32])
+        (reg:SI 82)) "../User/bldc_hal.c":139 -1
+     (nil))
+(insn 64 63 65 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [4 MEM[(short unsigned int *)&SPI_InitStructure + 4B]+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":141 -1
+     (nil))
+(insn 65 64 66 2 (set (reg:SI 84)
+        (const_int 33554432 [0x2000000])) "../User/bldc_hal.c":143 -1
+     (nil))
+(insn 66 65 67 2 (set (reg:SI 83)
+        (plus:SI (reg:SI 84)
+            (const_int 1 [0x1]))) "../User/bldc_hal.c":143 -1
+     (expr_list:REG_EQUAL (const_int 33554433 [0x2000001])
+        (nil)))
+(insn 67 66 68 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 MEM[(short unsigned int *)&SPI_InitStructure + 8B]+0 S4 A32])
+        (reg:SI 83)) "../User/bldc_hal.c":143 -1
+     (nil))
+(insn 68 67 69 2 (set (reg:SI 85)
+        (const_int 16 [0x10])) "../User/bldc_hal.c":145 -1
+     (nil))
+(insn 69 68 70 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [4 MEM[(short unsigned int *)&SPI_InitStructure + 12B]+0 S4 A32])
+        (reg:SI 85)) "../User/bldc_hal.c":145 -1
+     (nil))
+(insn 70 69 71 2 (set (reg:HI 86)
+        (const_int 7 [0x7])) "../User/bldc_hal.c":147 -1
+     (nil))
+(insn 71 70 72 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [4 SPI_InitStructure.SPI_CRCPolynomial+0 S2 A32])
+        (reg:HI 86)) "../User/bldc_hal.c":147 -1
+     (nil))
+(debug_insn 72 71 73 2 (debug_marker) "../User/bldc_hal.c":148 -1
+     (nil))
+(insn 73 72 74 2 (set (reg:SI 87)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -20 [0xffffffffffffffec]))) "../User/bldc_hal.c":148 -1
+     (nil))
+(insn 74 73 75 2 (set (reg:SI 11 a1)
+        (reg:SI 87)) "../User/bldc_hal.c":148 -1
+     (nil))
+(insn 75 74 76 2 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":148 -1
+     (nil))
+(call_insn 76 75 77 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SPI_Init") [flags 0x41] <function_decl 059089d8 SPI_Init>) [0 SPI_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":148 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_Init") [flags 0x41] <function_decl 059089d8 SPI_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 77 76 78 2 (debug_marker) "../User/bldc_hal.c":150 -1
+     (nil))
+(insn 78 77 79 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":150 -1
+     (nil))
+(insn 79 78 80 2 (set (reg:SI 10 a0)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":150 -1
+     (nil))
+(call_insn 80 79 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SPI_Cmd") [flags 0x41] <function_decl 05908ac8 SPI_Cmd>) [0 SPI_Cmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":150 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_Cmd") [flags 0x41] <function_decl 05908ac8 SPI_Cmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function DRV8311_Init (DRV8311_Init, funcdef_no=29, decl_uid=4413, cgraph_uid=30, symbol_order=35)
+
+Partition 0: size 40 align 4
+	cfg
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 47.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":195 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 73)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -36 [0xffffffffffffffdc]))) "../User/bldc_hal.c":195 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 74)
+        (const_int 28 [0x1c])) "../User/bldc_hal.c":195 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 12 a2)
+        (reg:SI 74)) "../User/bldc_hal.c":195 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../User/bldc_hal.c":195 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 10 a0)
+        (reg:SI 73)) "../User/bldc_hal.c":195 -1
+     (nil))
+(call_insn 11 10 12 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 053c1078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":195 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 053c1078 __builtin_memset>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (set (reg:SI 10 a0)
+            (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 10 a0))
+            (expr_list:SI (use (reg:SI 11 a1))
+                (expr_list:SI (use (reg:SI 12 a2))
+                    (nil))))))
+(insn 12 11 13 2 (set (reg:SI 75)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":195 -1
+     (nil))
+(debug_insn 13 12 14 2 (debug_marker) "../User/bldc_hal.c":197 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 76)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":197 -1
+     (nil))
+(insn 15 14 16 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -40 [0xffffffffffffffd8])) [9 cfg.pwmcnt_mode+0 S4 A32])
+        (reg:SI 76)) "../User/bldc_hal.c":197 -1
+     (nil))
+(debug_insn 16 15 17 2 (debug_marker) "../User/bldc_hal.c":198 -1
+     (nil))
+(debug_insn 17 16 18 2 (debug_marker) "../User/bldc_hal.c":199 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 77)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":199 -1
+     (nil))
+(insn 19 18 20 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [13 cfg.portal+0 S4 A32])
+        (reg:SI 77)) "../User/bldc_hal.c":199 -1
+     (nil))
+(debug_insn 20 19 21 2 (debug_marker) "../User/bldc_hal.c":200 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 78)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":200 -1
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [14 cfg.csa_gain+0 S4 A32])
+        (reg:SI 78)) "../User/bldc_hal.c":200 -1
+     (nil))
+(debug_insn 23 22 24 2 (debug_marker) "../User/bldc_hal.c":201 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:HI 79)
+        (const_int 960 [0x3c0])) "../User/bldc_hal.c":201 -1
+     (nil))
+(insn 25 24 26 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [4 cfg.pwm_period+0 S2 A32])
+        (reg:HI 79)) "../User/bldc_hal.c":201 -1
+     (nil))
+(debug_insn 26 25 27 2 (debug_marker) "../User/bldc_hal.c":202 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:QI 80)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":202 -1
+     (nil))
+(insn 28 27 29 2 (set (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -14 [0xfffffffffffffff2])) [0 cfg.use_csa+0 S1 A16])
+        (reg:QI 80)) "../User/bldc_hal.c":202 -1
+     (nil))
+(debug_insn 29 28 30 2 (debug_marker) "../User/bldc_hal.c":203 -1
+     (nil))
+(debug_insn 30 29 31 2 (debug_marker) "../User/bldc_hal.c":204 -1
+     (nil))
+(debug_insn 31 30 32 2 (debug_marker) "../User/bldc_hal.c":205 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 82)
+        (high:SI (symbol_ref:SI ("spi_trans_cb") [flags 0x3] <function_decl 05949b40 spi_trans_cb>))) "../User/bldc_hal.c":205 -1
+     (nil))
+(insn 33 32 34 2 (set (reg/f:SI 81)
+        (lo_sum:SI (reg:SI 82)
+            (symbol_ref:SI ("spi_trans_cb") [flags 0x3] <function_decl 05949b40 spi_trans_cb>))) "../User/bldc_hal.c":205 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("spi_trans_cb") [flags 0x3] <function_decl 05949b40 spi_trans_cb>)
+        (nil)))
+(insn 34 33 35 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [15 cfg.spi_trans+0 S4 A32])
+        (reg/f:SI 81)) "../User/bldc_hal.c":205 -1
+     (nil))
+(debug_insn 35 34 36 2 (debug_marker) "../User/bldc_hal.c":206 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:SI 84)
+        (high:SI (symbol_ref:SI ("nsleep_set_cb") [flags 0x3] <function_decl 05949bb8 nsleep_set_cb>))) "../User/bldc_hal.c":206 -1
+     (nil))
+(insn 37 36 38 2 (set (reg/f:SI 83)
+        (lo_sum:SI (reg:SI 84)
+            (symbol_ref:SI ("nsleep_set_cb") [flags 0x3] <function_decl 05949bb8 nsleep_set_cb>))) "../User/bldc_hal.c":206 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("nsleep_set_cb") [flags 0x3] <function_decl 05949bb8 nsleep_set_cb>)
+        (nil)))
+(insn 38 37 39 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [16 cfg.nsleep_set+0 S4 A32])
+        (reg/f:SI 83)) "../User/bldc_hal.c":206 -1
+     (nil))
+(debug_insn 39 38 40 2 (debug_marker) "../User/bldc_hal.c":208 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:SI 85)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -40 [0xffffffffffffffd8]))) "../User/bldc_hal.c":208 -1
+     (nil))
+(insn 41 40 42 2 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/bldc_hal.c":208 -1
+     (nil))
+(insn 42 41 43 2 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/bldc_hal.c":208 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 43 42 44 2 (set (reg:SI 11 a1)
+        (reg:SI 85)) "../User/bldc_hal.c":208 -1
+     (nil))
+(insn 44 43 45 2 (set (reg:SI 10 a0)
+        (reg/f:SI 86)) "../User/bldc_hal.c":208 -1
+     (nil))
+(call_insn 45 44 46 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("drv8311_init") [flags 0x41] <function_decl 059492d0 drv8311_init>) [0 drv8311_init S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":208 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("drv8311_init") [flags 0x41] <function_decl 059492d0 drv8311_init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 46 45 50 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":208 -1
+     (nil))
+(insn 50 46 51 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "../User/bldc_hal.c":209 -1
+     (nil))
+(insn 51 50 0 2 (use (reg/i:SI 10 a0)) "../User/bldc_hal.c":209 -1
+     (nil))
+
+;; Function DRV8311_Enable (DRV8311_Enable, funcdef_no=30, decl_uid=4415, cgraph_uid=31, symbol_order=36)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":213 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 74)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/bldc_hal.c":213 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 73)
+        (lo_sum:SI (reg:SI 74)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/bldc_hal.c":213 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg/f:SI 72 [ drv.2_1 ])
+        (mem/f/c:SI (reg/f:SI 73) [17 drv+0 S4 A32])) "../User/bldc_hal.c":213 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (eq (reg/f:SI 72 [ drv.2_1 ])
+                (const_int 0 [0]))
+            (label_ref:SI 17)
+            (pc))) "../User/bldc_hal.c":213 180 {*branchsi}
+     (int_list:REG_BR_PROB 332323100 (nil))
+ -> 17)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 11 10 12 4 (debug_marker) "../User/bldc_hal.c":214 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":214 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 10 a0)
+        (reg/f:SI 72 [ drv.2_1 ])) "../User/bldc_hal.c":214 -1
+     (nil))
+(call_insn 14 13 17 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("drv8311_out_ctrl") [flags 0x41] <function_decl 05949618 drv8311_out_ctrl>) [0 drv8311_out_ctrl S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":214 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("drv8311_out_ctrl") [flags 0x41] <function_decl 05949618 drv8311_out_ctrl>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 17 14 18 6 52 (nil) [1 uses])
+(note 18 17 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function DRV8311_Disable (DRV8311_Disable, funcdef_no=31, decl_uid=4417, cgraph_uid=32, symbol_order=37)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":219 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 74)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/bldc_hal.c":219 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 73)
+        (lo_sum:SI (reg:SI 74)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/bldc_hal.c":219 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg/f:SI 72 [ drv.4_1 ])
+        (mem/f/c:SI (reg/f:SI 73) [17 drv+0 S4 A32])) "../User/bldc_hal.c":219 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (eq (reg/f:SI 72 [ drv.4_1 ])
+                (const_int 0 [0]))
+            (label_ref:SI 17)
+            (pc))) "../User/bldc_hal.c":219 180 {*branchsi}
+     (int_list:REG_BR_PROB 332323100 (nil))
+ -> 17)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 11 10 12 4 (debug_marker) "../User/bldc_hal.c":220 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../User/bldc_hal.c":220 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 10 a0)
+        (reg/f:SI 72 [ drv.4_1 ])) "../User/bldc_hal.c":220 -1
+     (nil))
+(call_insn 14 13 17 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("drv8311_out_ctrl") [flags 0x41] <function_decl 05949618 drv8311_out_ctrl>) [0 drv8311_out_ctrl S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":220 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("drv8311_out_ctrl") [flags 0x41] <function_decl 05949618 drv8311_out_ctrl>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 17 14 18 6 61 (nil) [1 uses])
+(note 18 17 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function HAL_ADC_Init (HAL_ADC_Init, funcdef_no=32, decl_uid=4053, cgraph_uid=33, symbol_order=38)
+
+Partition 0: size 24 align 4
+	ADC_InitStructure
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 6->7 to 8 failed.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":229 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 74)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "../User/bldc_hal.c":229 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 75)
+        (const_int 24 [0x18])) "../User/bldc_hal.c":229 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 12 a2)
+        (reg:SI 75)) "../User/bldc_hal.c":229 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../User/bldc_hal.c":229 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 10 a0)
+        (reg:SI 74)) "../User/bldc_hal.c":229 -1
+     (nil))
+(call_insn 11 10 12 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 053c1078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":229 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 053c1078 __builtin_memset>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (set (reg:SI 10 a0)
+            (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 10 a0))
+            (expr_list:SI (use (reg:SI 11 a1))
+                (expr_list:SI (use (reg:SI 12 a2))
+                    (nil))))))
+(insn 12 11 13 2 (set (reg:SI 76)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":229 -1
+     (nil))
+(debug_insn 13 12 14 2 (debug_marker) "../User/bldc_hal.c":231 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":231 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (const_int 512 [0x200])) "../User/bldc_hal.c":231 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":231 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 17 16 18 2 (debug_marker) "../User/bldc_hal.c":232 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 10 a0)
+        (const_int 49152 [0xc000])) "../User/bldc_hal.c":232 -1
+     (nil))
+(call_insn 19 18 20 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_ADCCLKConfig") [flags 0x41] <function_decl 059082d0 RCC_ADCCLKConfig>) [0 RCC_ADCCLKConfig S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":232 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_ADCCLKConfig") [flags 0x41] <function_decl 059082d0 RCC_ADCCLKConfig>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 20 19 21 2 (debug_marker) "../User/bldc_hal.c":234 -1
+     (nil))
+(insn 21 20 22 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [2 ADC_InitStructure.ADC_Mode+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":234 -1
+     (nil))
+(debug_insn 22 21 23 2 (debug_marker) "../User/bldc_hal.c":235 -1
+     (nil))
+(insn 23 22 24 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [19 ADC_InitStructure.ADC_ScanConvMode+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":235 -1
+     (nil))
+(debug_insn 24 23 25 2 (debug_marker) "../User/bldc_hal.c":236 -1
+     (nil))
+(insn 25 24 26 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [19 ADC_InitStructure.ADC_ContinuousConvMode+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":236 -1
+     (nil))
+(debug_insn 26 25 27 2 (debug_marker) "../User/bldc_hal.c":237 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:SI 77)
+        (const_int 917504 [0xe0000])) "../User/bldc_hal.c":237 -1
+     (nil))
+(insn 28 27 29 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [2 ADC_InitStructure.ADC_ExternalTrigConv+0 S4 A32])
+        (reg:SI 77)) "../User/bldc_hal.c":237 -1
+     (nil))
+(debug_insn 29 28 30 2 (debug_marker) "../User/bldc_hal.c":238 -1
+     (nil))
+(insn 30 29 31 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 ADC_InitStructure.ADC_DataAlign+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":238 -1
+     (nil))
+(debug_insn 31 30 32 2 (debug_marker) "../User/bldc_hal.c":239 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:QI 78)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":239 -1
+     (nil))
+(insn 33 32 34 2 (set (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [0 ADC_InitStructure.ADC_NbrOfChannel+0 S1 A32])
+        (reg:QI 78)) "../User/bldc_hal.c":239 -1
+     (nil))
+(debug_insn 34 33 35 2 (debug_marker) "../User/bldc_hal.c":240 -1
+     (nil))
+(insn 35 34 36 2 (set (reg:SI 79)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "../User/bldc_hal.c":240 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:SI 11 a1)
+        (reg:SI 79)) "../User/bldc_hal.c":240 -1
+     (nil))
+(insn 37 36 38 2 (set (reg:SI 80)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":240 -1
+     (nil))
+(insn 38 37 39 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 80)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":240 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 39 38 40 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 057c7708 ADC_Init>) [0 ADC_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":240 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 057c7708 ADC_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 40 39 41 2 (debug_marker) "../User/bldc_hal.c":243 -1
+     (nil))
+(insn 41 40 42 2 (set (reg:SI 13 a3)
+        (const_int 6 [0x6])) "../User/bldc_hal.c":243 -1
+     (nil))
+(insn 42 41 43 2 (set (reg:SI 12 a2)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":243 -1
+     (nil))
+(insn 43 42 44 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../User/bldc_hal.c":243 -1
+     (nil))
+(insn 44 43 45 2 (set (reg:SI 81)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":243 -1
+     (nil))
+(insn 45 44 46 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 81)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":243 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 46 45 47 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 057c7d20 ADC_RegularChannelConfig>) [0 ADC_RegularChannelConfig S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":243 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 057c7d20 ADC_RegularChannelConfig>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(debug_insn 47 46 48 2 (debug_marker) "../User/bldc_hal.c":245 -1
+     (nil))
+(insn 48 47 49 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":245 -1
+     (nil))
+(insn 49 48 50 2 (set (reg:SI 82)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":245 -1
+     (nil))
+(insn 50 49 51 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 82)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":245 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 51 50 52 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_Cmd") [flags 0x41] <function_decl 057c77f8 ADC_Cmd>) [0 ADC_Cmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":245 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_Cmd") [flags 0x41] <function_decl 057c77f8 ADC_Cmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 52 51 53 2 (debug_marker) "../User/bldc_hal.c":248 -1
+     (nil))
+(insn 53 52 54 2 (set (reg:SI 83)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":248 -1
+     (nil))
+(insn 54 53 55 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 83)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":248 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 55 54 56 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_ResetCalibration") [flags 0x41] <function_decl 057c7960 ADC_ResetCalibration>) [0 ADC_ResetCalibration S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":248 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_ResetCalibration") [flags 0x41] <function_decl 057c7960 ADC_ResetCalibration>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 56 55 63 2 (debug_marker) "../User/bldc_hal.c":249 -1
+     (nil))
+(code_label 63 56 57 4 71 (nil) [1 uses])
+(note 57 63 58 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 58 57 59 4 (debug_marker) "../User/bldc_hal.c":249 -1
+     (nil))
+(insn 59 58 60 4 (set (reg:SI 84)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":249 -1
+     (nil))
+(insn 60 59 61 4 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 84)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":249 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 61 60 62 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x41] <function_decl 057c79d8 ADC_GetResetCalibrationStatus>) [0 ADC_GetResetCalibrationStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":249 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x41] <function_decl 057c79d8 ADC_GetResetCalibrationStatus>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 62 61 64 4 (set (reg:SI 72 [ _1 ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":249 -1
+     (nil))
+(jump_insn 64 62 65 4 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 63)
+            (pc))) "../User/bldc_hal.c":249 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 63)
+(note 65 64 66 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 66 65 67 5 (debug_marker) "../User/bldc_hal.c":250 -1
+     (nil))
+(insn 67 66 68 5 (set (reg:SI 85)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":250 -1
+     (nil))
+(insn 68 67 69 5 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 85)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":250 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 69 68 70 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_StartCalibration") [flags 0x41] <function_decl 057c7a50 ADC_StartCalibration>) [0 ADC_StartCalibration S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":250 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_StartCalibration") [flags 0x41] <function_decl 057c7a50 ADC_StartCalibration>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 70 69 77 5 (debug_marker) "../User/bldc_hal.c":251 -1
+     (nil))
+(code_label 77 70 71 6 72 (nil) [1 uses])
+(note 71 77 72 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 72 71 73 6 (debug_marker) "../User/bldc_hal.c":251 -1
+     (nil))
+(insn 73 72 74 6 (set (reg:SI 86)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":251 -1
+     (nil))
+(insn 74 73 75 6 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 86)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":251 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 75 74 76 6 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x41] <function_decl 057c7ac8 ADC_GetCalibrationStatus>) [0 ADC_GetCalibrationStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":251 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x41] <function_decl 057c7ac8 ADC_GetCalibrationStatus>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 76 75 78 6 (set (reg:SI 73 [ _2 ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":251 -1
+     (nil))
+(jump_insn 78 76 79 6 (set (pc)
+        (if_then_else (ne (reg:SI 73 [ _2 ])
+                (const_int 0 [0]))
+            (label_ref 77)
+            (pc))) "../User/bldc_hal.c":251 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 77)
+(note 79 78 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function HAL_TIM1_Init (HAL_TIM1_Init, funcdef_no=33, decl_uid=4055, cgraph_uid=34, symbol_order=39)
+
+Partition 0: size 10 align 4
+	TIM_TimeBaseStructure
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":261 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [20 TIM_TimeBaseStructure+0 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":261 -1
+     (nil))
+(insn 7 6 8 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [20 TIM_TimeBaseStructure+4 S4 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":261 -1
+     (nil))
+(insn 8 7 9 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [20 TIM_TimeBaseStructure+8 S2 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":261 -1
+     (nil))
+(debug_insn 9 8 10 2 (debug_marker) "../User/bldc_hal.c":263 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":263 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 72)
+        (const_int 4096 [0x1000])) "../User/bldc_hal.c":263 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 72)
+            (const_int -2048 [0xfffffffffffff800]))) "../User/bldc_hal.c":263 -1
+     (expr_list:REG_EQUAL (const_int 2048 [0x800])
+        (nil)))
+(call_insn 13 12 14 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":263 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 059084b0 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 14 13 15 2 (debug_marker) "../User/bldc_hal.c":265 -1
+     (nil))
+(debug_insn 15 14 16 2 (debug_marker) "../User/bldc_hal.c":266 -1
+     (nil))
+(debug_insn 16 15 17 2 (debug_marker) "../User/bldc_hal.c":267 -1
+     (nil))
+(debug_insn 17 16 18 2 (debug_marker) "../User/bldc_hal.c":268 -1
+     (nil))
+(debug_insn 18 17 19 2 (debug_marker) "../User/bldc_hal.c":269 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 73)
+        (const_int 47 [0x2f])) "../User/bldc_hal.c":265 -1
+     (nil))
+(insn 20 19 21 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 MEM[(short unsigned int *)&TIM_TimeBaseStructure]+0 S4 A32])
+        (reg:SI 73)) "../User/bldc_hal.c":265 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 74)
+        (const_int 62 [0x3e])) "../User/bldc_hal.c":267 -1
+     (nil))
+(insn 22 21 23 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [4 MEM[(short unsigned int *)&TIM_TimeBaseStructure + 4B]+0 S4 A32])
+        (reg:SI 74)) "../User/bldc_hal.c":267 -1
+     (nil))
+(insn 23 22 24 2 (set (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [0 TIM_TimeBaseStructure.TIM_RepetitionCounter+0 S1 A32])
+        (const_int 0 [0])) "../User/bldc_hal.c":269 -1
+     (nil))
+(debug_insn 24 23 25 2 (debug_marker) "../User/bldc_hal.c":270 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 75)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/bldc_hal.c":270 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SI 11 a1)
+        (reg:SI 75)) "../User/bldc_hal.c":270 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:SI 76)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":270 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 76)
+            (const_int -1024 [0xfffffffffffffc00]))) "../User/bldc_hal.c":270 -1
+     (expr_list:REG_EQUAL (const_int 1073818624 [0x40012c00])
+        (nil)))
+(call_insn 29 28 30 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("TIM_TimeBaseInit") [flags 0x41] <function_decl 0590f348 TIM_TimeBaseInit>) [0 TIM_TimeBaseInit S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":270 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_TimeBaseInit") [flags 0x41] <function_decl 0590f348 TIM_TimeBaseInit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 30 29 31 2 (debug_marker) "../User/bldc_hal.c":273 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:SI 11 a1)
+        (const_int 32 [0x20])) "../User/bldc_hal.c":273 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 77)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":273 -1
+     (nil))
+(insn 33 32 34 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 77)
+            (const_int -1024 [0xfffffffffffffc00]))) "../User/bldc_hal.c":273 -1
+     (expr_list:REG_EQUAL (const_int 1073818624 [0x40012c00])
+        (nil)))
+(call_insn 34 33 35 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("TIM_SelectOutputTrigger") [flags 0x41] <function_decl 05938078 TIM_SelectOutputTrigger>) [0 TIM_SelectOutputTrigger S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":273 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SelectOutputTrigger") [flags 0x41] <function_decl 05938078 TIM_SelectOutputTrigger>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 35 34 36 2 (debug_marker) "../User/bldc_hal.c":276 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:SI 12 a2)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":276 -1
+     (nil))
+(insn 37 36 38 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":276 -1
+     (nil))
+(insn 38 37 39 2 (set (reg:SI 78)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":276 -1
+     (nil))
+(insn 39 38 40 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 78)
+            (const_int -1024 [0xfffffffffffffc00]))) "../User/bldc_hal.c":276 -1
+     (expr_list:REG_EQUAL (const_int 1073818624 [0x40012c00])
+        (nil)))
+(call_insn 40 39 41 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("TIM_ITConfig") [flags 0x41] <function_decl 0590f9d8 TIM_ITConfig>) [0 TIM_ITConfig S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":276 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ITConfig") [flags 0x41] <function_decl 0590f9d8 TIM_ITConfig>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(debug_insn 41 40 42 2 (debug_marker) "../User/bldc_hal.c":277 -1
+     (nil))
+(debug_insn 42 41 43 2 (var_location:SI IRQn (const_int 35 [0x23])) "../User/bldc_hal.c":277 -1
+     (nil))
+(debug_insn 43 42 44 2 (debug_marker) "c:/Users/Harry/Documents/GitHub/ADC2PWM/MounRiver_Firmware_CH32V003/BLDC_MOTOR_FAN_AIO/Core/core_riscv.h":167 -1
+     (nil))
+(insn 44 43 45 2 (set (reg/f:SI 79)
+        (const_int -536813568 [0xffffffffe000e000])) "c:/Users/Harry/Documents/GitHub/ADC2PWM/MounRiver_Firmware_CH32V003/BLDC_MOTOR_FAN_AIO/Core/core_riscv.h":167 -1
+     (nil))
+(insn 45 44 46 2 (set (reg:SI 80)
+        (const_int 8 [0x8])) "c:/Users/Harry/Documents/GitHub/ADC2PWM/MounRiver_Firmware_CH32V003/BLDC_MOTOR_FAN_AIO/Core/core_riscv.h":167 -1
+     (nil))
+(insn 46 45 47 2 (set (mem/v:SI (plus:SI (reg/f:SI 79)
+                (const_int 260 [0x104])) [2 MEM[(struct PFIC_Type *)3758153728B].IENR+4 S4 A32])
+        (reg:SI 80)) "c:/Users/Harry/Documents/GitHub/ADC2PWM/MounRiver_Firmware_CH32V003/BLDC_MOTOR_FAN_AIO/Core/core_riscv.h":167 -1
+     (nil))
+(debug_insn 47 46 0 2 (var_location:SI IRQn (clobber (const_int 0 [0]))) "../User/bldc_hal.c":277 -1
+     (nil))
+
+;; Function HAL_TIM1_Start (HAL_TIM1_Start, funcdef_no=34, decl_uid=4057, cgraph_uid=35, symbol_order=40)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":282 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":282 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 72)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":282 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 72)
+            (const_int -1024 [0xfffffffffffffc00]))) "../User/bldc_hal.c":282 -1
+     (expr_list:REG_EQUAL (const_int 1073818624 [0x40012c00])
+        (nil)))
+(call_insn 9 8 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 0590f8e8 TIM_Cmd>) [0 TIM_Cmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":282 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 0590f8e8 TIM_Cmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function HAL_TIM1_Stop (HAL_TIM1_Stop, funcdef_no=35, decl_uid=4059, cgraph_uid=36, symbol_order=41)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":283 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../User/bldc_hal.c":283 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 72)
+        (const_int 1073819648 [0x40013000])) "../User/bldc_hal.c":283 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 72)
+            (const_int -1024 [0xfffffffffffffc00]))) "../User/bldc_hal.c":283 -1
+     (expr_list:REG_EQUAL (const_int 1073818624 [0x40012c00])
+        (nil)))
+(call_insn 9 8 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 0590f8e8 TIM_Cmd>) [0 TIM_Cmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":283 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 0590f8e8 TIM_Cmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function BAT_ADC_Sample (BAT_ADC_Sample, funcdef_no=36, decl_uid=4426, cgraph_uid=37, symbol_order=42)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 56 from 8 to 9.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":294 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 13 a3)
+        (const_int 6 [0x6])) "../User/bldc_hal.c":294 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 12 a2)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":294 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../User/bldc_hal.c":294 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 83)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":294 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 83)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":294 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 11 10 12 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 057c7d20 ADC_RegularChannelConfig>) [0 ADC_RegularChannelConfig S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":294 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 057c7d20 ADC_RegularChannelConfig>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(debug_insn 12 11 13 2 (debug_marker) "../User/bldc_hal.c":296 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":296 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 84)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":296 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 84)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":296 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 16 15 17 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_SoftwareStartConvCmd") [flags 0x41] <function_decl 057c7b40 ADC_SoftwareStartConvCmd>) [0 ADC_SoftwareStartConvCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":296 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_SoftwareStartConvCmd") [flags 0x41] <function_decl 057c7b40 ADC_SoftwareStartConvCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 17 16 25 2 (debug_marker) "../User/bldc_hal.c":297 -1
+     (nil))
+(code_label 25 17 18 4 83 (nil) [1 uses])
+(note 18 25 19 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 19 18 20 4 (debug_marker) "../User/bldc_hal.c":297 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":297 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 85)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":297 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 85)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":297 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 23 22 24 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("ADC_GetFlagStatus") [flags 0x41] <function_decl 0583b4b0 ADC_GetFlagStatus>) [0 ADC_GetFlagStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":297 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetFlagStatus") [flags 0x41] <function_decl 0583b4b0 ADC_GetFlagStatus>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 24 23 26 4 (set (reg:SI 72 [ _1 ])
+        (reg:SI 10 a0)) "../User/bldc_hal.c":297 -1
+     (nil))
+(jump_insn 26 24 27 4 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 25)
+            (pc))) "../User/bldc_hal.c":297 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 25)
+(note 27 26 28 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 28 27 29 5 (debug_marker) "../User/bldc_hal.c":298 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 86)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":298 -1
+     (nil))
+(insn 30 29 31 5 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 86)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":298 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 31 30 32 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("ADC_GetConversionValue") [flags 0x41] <function_decl 057c7e10 ADC_GetConversionValue>) [0 ADC_GetConversionValue S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":298 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetConversionValue") [flags 0x41] <function_decl 057c7e10 ADC_GetConversionValue>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 32 31 33 5 (set (reg:SI 87)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":298 -1
+     (nil))
+(insn 33 32 34 5 (set (reg/v:SI 82 [ val ])
+        (reg:SI 87)) "../User/bldc_hal.c":298 -1
+     (nil))
+(debug_insn 34 33 35 5 (var_location:HI val (subreg:HI (reg/v:SI 82 [ val ]) 0)) "../User/bldc_hal.c":298 -1
+     (nil))
+(debug_insn 35 34 36 5 (debug_marker) "../User/bldc_hal.c":299 -1
+     (nil))
+(insn 36 35 37 5 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/bldc_hal.c":299 -1
+     (nil))
+(insn 37 36 38 5 (set (reg:SI 88)
+        (const_int 1073815552 [0x40012000])) "../User/bldc_hal.c":299 -1
+     (nil))
+(insn 38 37 39 5 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 88)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":299 -1
+     (expr_list:REG_EQUAL (const_int 1073816576 [0x40012400])
+        (nil)))
+(call_insn 39 38 40 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("ADC_ClearFlag") [flags 0x41] <function_decl 0583b528 ADC_ClearFlag>) [0 ADC_ClearFlag S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":299 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_ClearFlag") [flags 0x41] <function_decl 0583b528 ADC_ClearFlag>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 40 39 41 5 (debug_marker) "../User/bldc_hal.c":302 -1
+     (nil))
+(insn 41 40 42 5 (set (reg:SI 90)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "../User/bldc_hal.c":302 -1
+     (nil))
+(insn 42 41 43 5 (set (reg/f:SI 89)
+        (lo_sum:SI (reg:SI 90)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "../User/bldc_hal.c":302 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 43 42 44 5 (set (reg:SI 91)
+        (zero_extend:SI (mem/c:QI (reg/f:SI 89) [0 batt_initialized+0 S1 A8]))) "../User/bldc_hal.c":302 -1
+     (nil))
+(jump_insn 44 43 45 5 (set (pc)
+        (if_then_else (ne (reg:SI 91)
+                (const_int 0 [0]))
+            (label_ref 58)
+            (pc))) "../User/bldc_hal.c":302 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 58)
+(note 45 44 46 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 46 45 47 6 (debug_marker) "../User/bldc_hal.c":303 -1
+     (nil))
+(insn 47 46 48 6 (set (reg:SI 93)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":303 -1
+     (nil))
+(insn 48 47 49 6 (set (reg/f:SI 92)
+        (lo_sum:SI (reg:SI 93)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":303 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 49 48 50 6 (set (reg:SI 94)
+        (ashift:SI (reg/v:SI 82 [ val ])
+            (const_int 8 [0x8]))) "../User/bldc_hal.c":303 -1
+     (nil))
+(insn 50 49 51 6 (set (mem/c:HI (reg/f:SI 92) [4 batt_adc_ema+0 S2 A16])
+        (subreg:HI (reg:SI 94) 0)) "../User/bldc_hal.c":303 -1
+     (nil))
+(debug_insn 51 50 52 6 (debug_marker) "../User/bldc_hal.c":304 -1
+     (nil))
+(insn 52 51 53 6 (set (reg:SI 96)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "../User/bldc_hal.c":304 -1
+     (nil))
+(insn 53 52 54 6 (set (reg/f:SI 95)
+        (lo_sum:SI (reg:SI 96)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "../User/bldc_hal.c":304 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 54 53 55 6 (set (reg:QI 97)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":304 -1
+     (nil))
+(insn 55 54 56 6 (set (mem/c:QI (reg/f:SI 95) [0 batt_initialized+0 S1 A8])
+        (reg:QI 97)) "../User/bldc_hal.c":304 -1
+     (nil))
+(jump_insn 56 55 57 6 (set (pc)
+        (label_ref:SI 78)) 250 {jump}
+     (nil)
+ -> 78)
+(barrier 57 56 58)
+(code_label 58 57 59 7 84 (nil) [1 uses])
+(note 59 58 60 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 60 59 61 7 (debug_marker) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 61 60 62 7 (set (reg:SI 99)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 62 61 63 7 (set (reg/f:SI 98)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":307 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 63 62 64 7 (set (reg:SI 101)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 64 63 65 7 (set (reg/f:SI 100)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":307 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 65 64 66 7 (set (reg:SI 102)
+        (zero_extend:SI (mem/c:HI (reg/f:SI 100) [4 batt_adc_ema+0 S2 A16]))) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 66 65 67 7 (set (reg:SI 103)
+        (reg:SI 102)) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 67 66 68 7 (set (reg:SI 104)
+        (ashift:SI (reg:SI 103)
+            (const_int 1 [0x1]))) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 68 67 69 7 (set (reg:SI 103)
+        (reg:SI 104)) "../User/bldc_hal.c":307 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 102)
+            (const_int 2 [0x2]))
+        (nil)))
+(insn 69 68 70 7 (set (reg:SI 105)
+        (plus:SI (reg:SI 103)
+            (reg:SI 102))) "../User/bldc_hal.c":307 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 102)
+            (const_int 3 [0x3]))
+        (nil)))
+(insn 70 69 71 7 (set (reg:SI 106)
+        (ashiftrt:SI (reg:SI 105)
+            (const_int 2 [0x2]))) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 71 70 72 7 (set (reg:SI 107)
+        (ashift:SI (reg/v:SI 82 [ val ])
+            (const_int 6 [0x6]))) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 72 71 73 7 (set (reg:HI 108)
+        (subreg:HI (reg:SI 106) 0)) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 73 72 74 7 (set (reg:HI 109)
+        (subreg:HI (reg:SI 107) 0)) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 74 73 75 7 (set (reg:SI 110)
+        (plus:SI (subreg:SI (reg:HI 108) 0)
+            (subreg:SI (reg:HI 109) 0))) "../User/bldc_hal.c":307 -1
+     (nil))
+(insn 75 74 78 7 (set (mem/c:HI (reg/f:SI 98) [4 batt_adc_ema+0 S2 A16])
+        (subreg:HI (reg:SI 110) 0)) "../User/bldc_hal.c":307 -1
+     (nil))
+(code_label 78 75 79 9 82 (nil) [1 uses])
+(note 79 78 0 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+;; Function BAT_Get_mV (BAT_Get_mV, funcdef_no=37, decl_uid=4428, cgraph_uid=38, symbol_order=43)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 38.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 4 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 2 7 2 (debug_marker) "../User/bldc_hal.c":313 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 80)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "../User/bldc_hal.c":313 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:SI 79)
+        (lo_sum:SI (reg:SI 80)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "../User/bldc_hal.c":313 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 9 8 10 2 (set (reg:SI 81)
+        (zero_extend:SI (mem/c:QI (reg/f:SI 79) [0 batt_initialized+0 S1 A8]))) "../User/bldc_hal.c":313 -1
+     (nil))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (eq (reg:SI 81)
+                (const_int 0 [0]))
+            (label_ref:SI 47)
+            (pc))) "../User/bldc_hal.c":313 180 {*branchsi}
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 47)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 12 11 13 4 (debug_marker) "../User/bldc_hal.c":319 -1
+     (nil))
+(debug_insn 13 12 14 4 (var_location:HI adc_raw (lshiftrt:HI (mem/c:HI (symbol_ref:SI ("batt_adc_ema") [flags 0x82] <var_decl 05777ec8 batt_adc_ema>) [4 batt_adc_ema+0 S2 A16])
+        (const_int 8 [0x8]))) "../User/bldc_hal.c":319 -1
+     (nil))
+(debug_insn 14 13 15 4 (debug_marker) "../User/bldc_hal.c":320 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":319 -1
+     (nil))
+(insn 16 15 17 4 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "../User/bldc_hal.c":319 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 17 16 18 4 (set (reg:SI 84)
+        (zero_extend:SI (mem/c:HI (reg/f:SI 82) [4 batt_adc_ema+0 S2 A16]))) "../User/bldc_hal.c":319 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SI 85)
+        (lshiftrt:SI (reg:SI 84)
+            (const_int 8 [0x8]))) "../User/bldc_hal.c":319 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 86)
+        (zero_extend:SI (subreg:HI (reg:SI 85) 0))) "../User/bldc_hal.c":320 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 87)
+        (reg:SI 86)) "../User/bldc_hal.c":320 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 88)
+        (ashift:SI (reg:SI 87)
+            (const_int 6 [0x6]))) "../User/bldc_hal.c":320 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 87)
+        (reg:SI 88)) "../User/bldc_hal.c":320 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 86)
+            (const_int 64 [0x40]))
+        (nil)))
+(insn 23 22 24 4 (set (reg:SI 89)
+        (minus:SI (reg:SI 87)
+            (reg:SI 86))) "../User/bldc_hal.c":320 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 86)
+            (const_int 63 [0x3f]))
+        (nil)))
+(insn 24 23 25 4 (set (reg:SI 90)
+        (ashift:SI (reg:SI 89)
+            (const_int 4 [0x4]))) "../User/bldc_hal.c":320 -1
+     (nil))
+(insn 25 24 26 4 (set (reg:SI 89)
+        (reg:SI 90)) "../User/bldc_hal.c":320 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 86)
+            (const_int 1008 [0x3f0]))
+        (nil)))
+(insn 26 25 27 4 (set (reg:SI 11 a1)
+        (const_int 100 [0x64])) "../User/bldc_hal.c":320 -1
+     (nil))
+(insn 27 26 28 4 (set (reg:SI 10 a0)
+        (reg:SI 89)) "../User/bldc_hal.c":320 -1
+     (nil))
+(call_insn/u 28 27 29 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__udivsi3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":320 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__udivsi3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SI 11 a1))
+        (expr_list (use (reg:SI 10 a0))
+            (nil))))
+(insn 29 28 34 4 (set (reg:SI 94)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":320 -1
+     (expr_list:REG_EQUAL (udiv:SI (reg:SI 89)
+            (const_int 100 [0x64]))
+        (nil)))
+(insn 34 29 44 4 (set (reg:SI 78 [ <retval> ])
+        (zero_extend:SI (subreg:HI (reg:SI 94) 0))) "../User/bldc_hal.c":320 -1
+     (nil))
+(jump_insn 44 34 45 4 (set (pc)
+        (label_ref 35)) "../User/bldc_hal.c":320 -1
+     (nil)
+ -> 35)
+(barrier 45 44 47)
+(code_label 47 45 46 5 91 (nil) [1 uses])
+(note 46 47 3 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 3 46 35 5 (set (reg:SI 78 [ <retval> ])
+        (const_int 0 [0])) "../User/bldc_hal.c":313 -1
+     (nil))
+(code_label 35 3 36 6 90 (nil) [1 uses])
+(note 36 35 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 41 6 (set (reg:SI 78 [ <retval> ])
+        (reg:SI 78 [ <retval> ])) -1
+     (nil))
+(insn 41 37 42 6 (set (reg/i:SI 10 a0)
+        (reg:SI 78 [ <retval> ])) "../User/bldc_hal.c":321 -1
+     (nil))
+(insn 42 41 0 6 (use (reg/i:SI 10 a0)) "../User/bldc_hal.c":321 -1
+     (nil))
+
+;; Function BTN_Process (BTN_Process, funcdef_no=39, decl_uid=4438, cgraph_uid=40, symbol_order=47)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":396 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":396 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 78)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":396 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 78)
+            (const_int 1024 [0x400]))) "../User/bldc_hal.c":396 -1
+     (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
+        (nil)))
+(call_insn 9 8 10 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 058512d0 GPIO_ReadInputDataBit>) [0 GPIO_ReadInputDataBit S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":396 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 058512d0 GPIO_ReadInputDataBit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 10 9 11 2 (set (reg:SI 79)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":396 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 72 [ _1 ])
+        (reg:SI 79)) "../User/bldc_hal.c":396 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:QI up_raw (ne:QI (subreg:QI (reg:SI 72 [ _1 ]) 0)
+        (const_int 0 [0]))) "../User/bldc_hal.c":396 -1
+     (nil))
+(debug_insn 13 12 14 2 (debug_marker) "../User/bldc_hal.c":397 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/bldc_hal.c":397 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/bldc_hal.c":397 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 058512d0 GPIO_ReadInputDataBit>) [0 GPIO_ReadInputDataBit S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":397 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 058512d0 GPIO_ReadInputDataBit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 17 16 18 2 (set (reg:SI 80)
+        (reg:SI 10 a0)) "../User/bldc_hal.c":397 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 74 [ _3 ])
+        (reg:SI 80)) "../User/bldc_hal.c":397 -1
+     (nil))
+(debug_insn 19 18 20 2 (var_location:QI down_raw (ne:QI (subreg:QI (reg:SI 74 [ _3 ]) 0)
+        (const_int 0 [0]))) "../User/bldc_hal.c":397 -1
+     (nil))
+(debug_insn 20 19 21 2 (debug_marker) "../User/bldc_hal.c":399 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 82)
+        (ne:SI (reg:SI 72 [ _1 ])
+            (const_int 0 [0]))) "../User/bldc_hal.c":396 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:QI 81 [ up_raw ])
+        (subreg:QI (reg:SI 82) 0)) "../User/bldc_hal.c":396 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 83)
+        (zero_extend:SI (reg:QI 81 [ up_raw ]))) "../User/bldc_hal.c":399 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 85)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":399 -1
+     (nil))
+(insn 25 24 26 2 (set (reg/f:SI 84)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":399 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 26 25 27 2 (set (reg:SI 11 a1)
+        (reg:SI 83)) "../User/bldc_hal.c":399 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:SI 10 a0)
+        (reg/f:SI 84)) "../User/bldc_hal.c":399 -1
+     (nil))
+(call_insn 28 27 29 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("btn_update") [flags 0x3] <function_decl 057838e8 btn_update>) [0 btn_update S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":399 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("btn_update") [flags 0x3] <function_decl 057838e8 btn_update>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 29 28 30 2 (debug_marker) "../User/bldc_hal.c":400 -1
+     (nil))
+(insn 30 29 31 2 (set (reg:SI 87)
+        (ne:SI (reg:SI 74 [ _3 ])
+            (const_int 0 [0]))) "../User/bldc_hal.c":397 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:QI 86 [ down_raw ])
+        (subreg:QI (reg:SI 87) 0)) "../User/bldc_hal.c":397 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 88)
+        (zero_extend:SI (reg:QI 86 [ down_raw ]))) "../User/bldc_hal.c":400 -1
+     (nil))
+(insn 33 32 34 2 (set (reg:SI 90)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":400 -1
+     (nil))
+(insn 34 33 35 2 (set (reg/f:SI 89)
+        (lo_sum:SI (reg:SI 90)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":400 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 35 34 36 2 (set (reg:SI 11 a1)
+        (reg:SI 88)) "../User/bldc_hal.c":400 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:SI 10 a0)
+        (reg/f:SI 89)) "../User/bldc_hal.c":400 -1
+     (nil))
+(call_insn 37 36 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("btn_update") [flags 0x3] <function_decl 057838e8 btn_update>) [0 btn_update S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/bldc_hal.c":400 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("btn_update") [flags 0x3] <function_decl 057838e8 btn_update>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function BTN_Up_Pressed (BTN_Up_Pressed, funcdef_no=40, decl_uid=4430, cgraph_uid=41, symbol_order=48)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 21.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 5 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 2 8 2 (debug_marker) "../User/bldc_hal.c":405 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":405 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":405 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 10 9 11 2 (set (reg:SI 76)
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 74)
+                    (const_int 3 [0x3])) [0 btn_up_ctx.edge_detected+0 S1 A8]))) "../User/bldc_hal.c":405 -1
+     (nil))
+(jump_insn 11 10 12 2 (set (pc)
+        (if_then_else (eq (reg:SI 76)
+                (const_int 0 [0]))
+            (label_ref:SI 30)
+            (pc))) "../User/bldc_hal.c":405 180 {*branchsi}
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 30)
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 13 12 14 4 (debug_marker) "../User/bldc_hal.c":406 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":406 -1
+     (nil))
+(insn 15 14 16 4 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":406 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 16 15 17 4 (set (mem/c:QI (plus:SI (reg/f:SI 77)
+                (const_int 3 [0x3])) [0 btn_up_ctx.edge_detected+0 S1 A8])
+        (const_int 0 [0])) "../User/bldc_hal.c":406 -1
+     (nil))
+(debug_insn 17 16 3 4 (debug_marker) "../User/bldc_hal.c":407 -1
+     (nil))
+(insn 3 17 27 4 (set (reg:SI 73 [ <retval> ])
+        (const_int 1 [0x1])) "../User/bldc_hal.c":407 -1
+     (nil))
+(jump_insn 27 3 28 4 (set (pc)
+        (label_ref 18)) "../User/bldc_hal.c":407 -1
+     (nil)
+ -> 18)
+(barrier 28 27 30)
+(code_label 30 28 29 5 101 (nil) [1 uses])
+(note 29 30 4 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 4 29 18 5 (set (reg:SI 73 [ <retval> ])
+        (const_int 0 [0])) "../User/bldc_hal.c":409 -1
+     (nil))
+(code_label 18 4 19 6 100 (nil) [1 uses])
+(note 19 18 20 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 24 6 (set (reg:SI 73 [ <retval> ])
+        (reg:SI 73 [ <retval> ])) -1
+     (nil))
+(insn 24 20 25 6 (set (reg/i:SI 10 a0)
+        (reg:SI 73 [ <retval> ])) "../User/bldc_hal.c":410 -1
+     (nil))
+(insn 25 24 0 6 (use (reg/i:SI 10 a0)) "../User/bldc_hal.c":410 -1
+     (nil))
+
+;; Function BTN_Down_Pressed (BTN_Down_Pressed, funcdef_no=41, decl_uid=4432, cgraph_uid=42, symbol_order=49)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 21.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 5 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 2 8 2 (debug_marker) "../User/bldc_hal.c":414 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":414 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":414 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 10 9 11 2 (set (reg:SI 76)
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 74)
+                    (const_int 3 [0x3])) [0 btn_down_ctx.edge_detected+0 S1 A8]))) "../User/bldc_hal.c":414 -1
+     (nil))
+(jump_insn 11 10 12 2 (set (pc)
+        (if_then_else (eq (reg:SI 76)
+                (const_int 0 [0]))
+            (label_ref:SI 30)
+            (pc))) "../User/bldc_hal.c":414 180 {*branchsi}
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 30)
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 13 12 14 4 (debug_marker) "../User/bldc_hal.c":415 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":415 -1
+     (nil))
+(insn 15 14 16 4 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":415 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 16 15 17 4 (set (mem/c:QI (plus:SI (reg/f:SI 77)
+                (const_int 3 [0x3])) [0 btn_down_ctx.edge_detected+0 S1 A8])
+        (const_int 0 [0])) "../User/bldc_hal.c":415 -1
+     (nil))
+(debug_insn 17 16 3 4 (debug_marker) "../User/bldc_hal.c":416 -1
+     (nil))
+(insn 3 17 27 4 (set (reg:SI 73 [ <retval> ])
+        (const_int 1 [0x1])) "../User/bldc_hal.c":416 -1
+     (nil))
+(jump_insn 27 3 28 4 (set (pc)
+        (label_ref 18)) "../User/bldc_hal.c":416 -1
+     (nil)
+ -> 18)
+(barrier 28 27 30)
+(code_label 30 28 29 5 105 (nil) [1 uses])
+(note 29 30 4 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 4 29 18 5 (set (reg:SI 73 [ <retval> ])
+        (const_int 0 [0])) "../User/bldc_hal.c":418 -1
+     (nil))
+(code_label 18 4 19 6 104 (nil) [1 uses])
+(note 19 18 20 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 24 6 (set (reg:SI 73 [ <retval> ])
+        (reg:SI 73 [ <retval> ])) -1
+     (nil))
+(insn 24 20 25 6 (set (reg/i:SI 10 a0)
+        (reg:SI 73 [ <retval> ])) "../User/bldc_hal.c":419 -1
+     (nil))
+(insn 25 24 0 6 (use (reg/i:SI 10 a0)) "../User/bldc_hal.c":419 -1
+     (nil))
+
+;; Function BTN_Up_IsLongPress (BTN_Up_IsLongPress, funcdef_no=42, decl_uid=4434, cgraph_uid=43, symbol_order=50)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 13.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":423 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 76)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":423 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 75)
+        (lo_sum:SI (reg:SI 76)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "../User/bldc_hal.c":423 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 77)
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 75)
+                    (const_int 8 [0x8])) [0 btn_up_ctx.long_press_active+0 S1 A32]))) "../User/bldc_hal.c":423 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 78)
+        (ne:SI (reg:SI 77)
+            (const_int 0 [0]))) "../User/bldc_hal.c":423 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:QI 74)
+        (subreg:QI (reg:SI 78) 0)) "../User/bldc_hal.c":423 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 79)
+        (zero_extend:SI (reg:QI 74))) "../User/bldc_hal.c":423 -1
+     (nil))
+(insn 12 11 16 2 (set (reg:SI 73 [ <retval> ])
+        (reg:SI 79)) "../User/bldc_hal.c":423 -1
+     (nil))
+(insn 16 12 17 2 (set (reg/i:SI 10 a0)
+        (reg:SI 73 [ <retval> ])) "../User/bldc_hal.c":424 -1
+     (nil))
+(insn 17 16 0 2 (use (reg/i:SI 10 a0)) "../User/bldc_hal.c":424 -1
+     (nil))
+
+;; Function BTN_Down_IsLongPress (BTN_Down_IsLongPress, funcdef_no=43, decl_uid=4436, cgraph_uid=44, symbol_order=51)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 13.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/bldc_hal.c":428 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 76)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":428 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 75)
+        (lo_sum:SI (reg:SI 76)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "../User/bldc_hal.c":428 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 77)
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 75)
+                    (const_int 8 [0x8])) [0 btn_down_ctx.long_press_active+0 S1 A32]))) "../User/bldc_hal.c":428 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 78)
+        (ne:SI (reg:SI 77)
+            (const_int 0 [0]))) "../User/bldc_hal.c":428 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:QI 74)
+        (subreg:QI (reg:SI 78) 0)) "../User/bldc_hal.c":428 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 79)
+        (zero_extend:SI (reg:QI 74))) "../User/bldc_hal.c":428 -1
+     (nil))
+(insn 12 11 16 2 (set (reg:SI 73 [ <retval> ])
+        (reg:SI 79)) "../User/bldc_hal.c":428 -1
+     (nil))
+(insn 16 12 17 2 (set (reg/i:SI 10 a0)
+        (reg:SI 73 [ <retval> ])) "../User/bldc_hal.c":429 -1
+     (nil))
+(insn 17 16 0 2 (use (reg/i:SI 10 a0)) "../User/bldc_hal.c":429 -1
+     (nil))

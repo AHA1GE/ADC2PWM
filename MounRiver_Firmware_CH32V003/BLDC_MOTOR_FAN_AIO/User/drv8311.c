@@ -25,7 +25,7 @@
 // Created by wirano on 23-4-4.
 //
 
-#include <Arduino.h>
+#include "debug.h"
 #include "drv8311.h"
 #include "drv8311_reg.h"
 
@@ -212,11 +212,10 @@ int drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg) {
     *handle = dev;
 
     // --- Step 1: nSLEEP reset pulse ---
-    drv8311_nsleep_ctrl(dev, 0);  // sleep (reset)
-    delay(10);                     // hold in reset
-    drv8311_nsleep_ctrl(dev, 1);  // awake
-    delay(500);                    // extended stabilise (damaged DRV may need more time)
-    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) == Bit_RESET) return 1;
+    // nSLEEP is hardwired to BAT+ on this board — skip toggle.
+    // Just wait for DRV8311 power-on stabilization.
+    Delay_Ms(500);                  // extended stabilise
+    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) return 1;
 
     // --- Step 2: Unlock DRV8311 registers ---
     reg.half_word = 0;
@@ -226,12 +225,10 @@ int drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg) {
     drv8311_write(dev, DRV8311_SYS_CTRL_ADDR, reg.half_word);
 
     // --- Step 2b: Clear any latched faults before they trigger nFAULT ---
-    // The damaged built-in LDO may have caused UVLO/CP_UV faults that are
-    // still latched after nSLEEP wake.  Clear them BEFORE checking nFAULT.
     drv8311_write(dev, DRV8311_FLT_CLR_ADDR, 0x0001);
-    delay(5);
+    Delay_Ms(5);
 
-    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) == Bit_RESET) return 2;
+    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) return 2;
 
     // --- Step 3: PWM generator config ---
     reg.half_word = 0;
@@ -243,20 +240,20 @@ int drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg) {
         reg.pwmg_ctrl.spisync_acrcy = cfg->spi_sync_clks;
     }
     drv8311_write(dev, DRV8311_PWMG_CTRL_ADDR, reg.half_word);
-    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) == Bit_RESET) return 3;
+    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) return 3;
 
     // --- Step 4: PWM period ---
     reg.half_word = 0;
     dev->pwm_gen.period = cfg->pwm_period;
     reg.pwmg_period.pwm_prd_out = cfg->pwm_period;
     drv8311_write(dev, DRV8311_PWMG_PERIOD_ADDR, reg.half_word);
-    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) == Bit_RESET) return 4;
+    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) return 4;
 
     // --- Step 5: PWM mode (PWM_CTRL1) --- skipped for testing.
     // The DRV8311P may default to PWM Gen mode already.
     // If it does, we avoid the write that triggers nFAULT.
     // (void)drv8311_write(dev, DRV8311_PWM_CTRL1_ADDR, 0x0007);
-    // if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) == Bit_RESET) return 5;
+    // if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) return 5;
 
     // --- CSA config (optional) ---
     reg.half_word = 0;

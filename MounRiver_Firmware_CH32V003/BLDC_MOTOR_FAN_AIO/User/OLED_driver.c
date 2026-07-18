@@ -20,7 +20,7 @@
 #define OLED_VISIBLE_HEIGHT       (48)
 
 #define OLED_LOGICAL_WIDTH        (128)
-#define OLED_LOGICAL_HEIGHT       (56)
+#define OLED_LOGICAL_HEIGHT       (48)
 
 #define OLED_X_OFFSET             (40)
 #define OLED_Y_OFFSET             (8)
@@ -50,11 +50,6 @@ void OLED_SetColorMode(bool colormode)
 {
     OLED_ColorMode = colormode;
 }
-
-/**
- * @brief millisecond delay
- */
-extern void delay(unsigned long ms);
 
 /**
  * @brief I2C start

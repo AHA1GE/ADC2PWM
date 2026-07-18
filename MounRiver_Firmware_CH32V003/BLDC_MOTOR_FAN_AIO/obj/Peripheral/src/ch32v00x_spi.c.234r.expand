@@ -1,0 +1,1838 @@
+
+;; Function SPI_I2S_DeInit (SPI_I2S_DeInit, funcdef_no=21, decl_uid=3493, cgraph_uid=22, symbol_order=22)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 72 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":45 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":46 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 73)
+        (const_int 1073819648 [0x40013000])) "../Peripheral/src/ch32v00x_spi.c":46 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 72 [ SPIx ])
+                (reg:SI 73))
+            (label_ref:SI 20)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":46 180 {*branchsi}
+     (int_list:REG_BR_PROB 886588628 (nil))
+ -> 20)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 10 9 11 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":48 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_spi.c":48 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 10 a0)
+        (const_int 4096 [0x1000])) "../Peripheral/src/ch32v00x_spi.c":48 -1
+     (nil))
+(call_insn 13 12 14 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a62bb8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../Peripheral/src/ch32v00x_spi.c":48 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a62bb8 RCC_APB2PeriphResetCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 14 13 15 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":49 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":49 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 10 a0)
+        (const_int 4096 [0x1000])) "../Peripheral/src/ch32v00x_spi.c":49 -1
+     (nil))
+(call_insn 17 16 20 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a62bb8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../Peripheral/src/ch32v00x_spi.c":49 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a62bb8 RCC_APB2PeriphResetCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 20 17 21 6 1 (nil) [1 uses])
+(note 21 20 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_Init (SPI_Init, funcdef_no=22, decl_uid=3496, cgraph_uid=23, symbol_order=23)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 91 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":67 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 92 [ SPI_InitStruct ])
+        (reg:SI 11 a1 [ SPI_InitStruct ])) "../Peripheral/src/ch32v00x_spi.c":67 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":68 -1
+     (nil))
+(debug_insn 8 7 9 2 (var_location:HI tmpreg (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":68 -1
+     (nil))
+(debug_insn 9 8 10 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":70 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:HI 93)
+        (mem/v:HI (reg/v/f:SI 91 [ SPIx ]) [2 SPIx_18(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":70 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/v:SI 88 [ tmpreg ])
+        (zero_extend:SI (reg:HI 93))) "../Peripheral/src/ch32v00x_spi.c":70 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:HI tmpreg (subreg:HI (reg/v:SI 88 [ tmpreg ]) 0)) "../Peripheral/src/ch32v00x_spi.c":70 -1
+     (nil))
+(debug_insn 13 12 14 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":71 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 96)
+        (const_int 12288 [0x3000])) "../Peripheral/src/ch32v00x_spi.c":71 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 95)
+        (plus:SI (reg:SI 96)
+            (const_int 64 [0x40]))) "../Peripheral/src/ch32v00x_spi.c":71 -1
+     (expr_list:REG_EQUAL (const_int 12352 [0x3040])
+        (nil)))
+(insn 16 15 17 2 (set (reg:SI 94)
+        (and:SI (reg/v:SI 88 [ tmpreg ])
+            (reg:SI 95))) "../Peripheral/src/ch32v00x_spi.c":71 -1
+     (nil))
+(insn 17 16 18 2 (set (reg/v:SI 89 [ tmpreg ])
+        (zero_extend:SI (subreg:HI (reg:SI 94) 0))) "../Peripheral/src/ch32v00x_spi.c":71 -1
+     (nil))
+(debug_insn 18 17 19 2 (var_location:HI tmpreg (subreg:HI (reg/v:SI 89 [ tmpreg ]) 0)) "../Peripheral/src/ch32v00x_spi.c":71 -1
+     (nil))
+(debug_insn 19 18 20 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:HI 97)
+        (mem:HI (reg/v/f:SI 92 [ SPI_InitStruct ]) [2 SPI_InitStruct_21(D)->SPI_Direction+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:HI 98)
+        (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                (const_int 2 [0x2])) [2 SPI_InitStruct_21(D)->SPI_Mode+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 99)
+        (ior:SI (subreg:SI (reg:HI 97) 0)
+            (subreg:SI (reg:HI 98) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:HI 100)
+        (subreg:HI (reg:SI 99) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:HI 101)
+        (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                (const_int 4 [0x4])) [2 SPI_InitStruct_21(D)->SPI_DataSize+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 102)
+        (ior:SI (subreg:SI (reg:HI 100) 0)
+            (subreg:SI (reg:HI 101) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:HI 103)
+        (subreg:HI (reg:SI 102) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:HI 104)
+        (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                (const_int 6 [0x6])) [2 SPI_InitStruct_21(D)->SPI_CPOL+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 105)
+        (ior:SI (subreg:SI (reg:HI 103) 0)
+            (subreg:SI (reg:HI 104) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 29 28 30 2 (set (reg:HI 106)
+        (subreg:HI (reg:SI 105) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 30 29 31 2 (set (reg:HI 107)
+        (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                (const_int 8 [0x8])) [2 SPI_InitStruct_21(D)->SPI_CPHA+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:SI 108)
+        (ior:SI (subreg:SI (reg:HI 106) 0)
+            (subreg:SI (reg:HI 107) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:HI 109)
+        (subreg:HI (reg:SI 108) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 33 32 34 2 (set (reg:HI 110)
+        (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                (const_int 10 [0xa])) [2 SPI_InitStruct_21(D)->SPI_NSS+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 34 33 35 2 (set (reg:SI 111)
+        (ior:SI (subreg:SI (reg:HI 109) 0)
+            (subreg:SI (reg:HI 110) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 35 34 36 2 (set (reg:HI 112)
+        (subreg:HI (reg:SI 111) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:HI 113)
+        (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                (const_int 12 [0xc])) [2 SPI_InitStruct_21(D)->SPI_BaudRatePrescaler+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 37 36 38 2 (set (reg:SI 114)
+        (ior:SI (subreg:SI (reg:HI 112) 0)
+            (subreg:SI (reg:HI 113) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 38 37 39 2 (set (reg:HI 115)
+        (subreg:HI (reg:SI 114) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 39 38 40 2 (set (reg:HI 116)
+        (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                (const_int 14 [0xe])) [2 SPI_InitStruct_21(D)->SPI_FirstBit+0 S2 A16])) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:SI 117)
+        (ior:SI (subreg:SI (reg:HI 115) 0)
+            (subreg:SI (reg:HI 116) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 41 40 42 2 (set (reg:HI 118)
+        (subreg:HI (reg:SI 117) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 42 41 43 2 (set (reg:SI 119)
+        (ior:SI (reg/v:SI 89 [ tmpreg ])
+            (subreg:SI (reg:HI 118) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(insn 43 42 44 2 (set (reg/v:SI 90 [ tmpreg ])
+        (zero_extend:SI (subreg:HI (reg:SI 119) 0))) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(debug_insn 44 43 45 2 (var_location:HI tmpreg (subreg:HI (reg/v:SI 90 [ tmpreg ]) 0)) "../Peripheral/src/ch32v00x_spi.c":72 -1
+     (nil))
+(debug_insn 45 44 46 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":77 -1
+     (nil))
+(insn 46 45 47 2 (set (mem/v:HI (reg/v/f:SI 91 [ SPIx ]) [2 SPIx_18(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg/v:SI 90 [ tmpreg ]) 0)) "../Peripheral/src/ch32v00x_spi.c":77 -1
+     (nil))
+(debug_insn 47 46 48 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":78 -1
+     (nil))
+(insn 48 47 49 2 (set (reg:SI 87 [ _16 ])
+        (zero_extend:SI (mem:HI (plus:SI (reg/v/f:SI 92 [ SPI_InitStruct ])
+                    (const_int 16 [0x10])) [2 SPI_InitStruct_21(D)->SPI_CRCPolynomial+0 S2 A16]))) "../Peripheral/src/ch32v00x_spi.c":78 -1
+     (nil))
+(insn 49 48 0 2 (set (mem/v:HI (plus:SI (reg/v/f:SI 91 [ SPIx ])
+                (const_int 16 [0x10])) [2 SPIx_18(D)->CRCR+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 87 [ _16 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":78 -1
+     (nil))
+
+;; Function SPI_StructInit (SPI_StructInit, funcdef_no=23, decl_uid=3498, cgraph_uid=24, symbol_order=24)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 72 [ SPI_InitStruct ])
+        (reg:SI 10 a0 [ SPI_InitStruct ])) "../Peripheral/src/ch32v00x_spi.c":92 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":93 -1
+     (nil))
+(insn 7 6 8 2 (set (mem:HI (reg/v/f:SI 72 [ SPI_InitStruct ]) [2 SPI_InitStruct_2(D)->SPI_Direction+0 S2 A16])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":93 -1
+     (nil))
+(debug_insn 8 7 9 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":94 -1
+     (nil))
+(insn 9 8 10 2 (set (mem:HI (plus:SI (reg/v/f:SI 72 [ SPI_InitStruct ])
+                (const_int 2 [0x2])) [2 SPI_InitStruct_2(D)->SPI_Mode+0 S2 A16])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":94 -1
+     (nil))
+(debug_insn 10 9 11 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":95 -1
+     (nil))
+(insn 11 10 12 2 (set (mem:HI (plus:SI (reg/v/f:SI 72 [ SPI_InitStruct ])
+                (const_int 4 [0x4])) [2 SPI_InitStruct_2(D)->SPI_DataSize+0 S2 A16])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":95 -1
+     (nil))
+(debug_insn 12 11 13 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":96 -1
+     (nil))
+(insn 13 12 14 2 (set (mem:HI (plus:SI (reg/v/f:SI 72 [ SPI_InitStruct ])
+                (const_int 6 [0x6])) [2 SPI_InitStruct_2(D)->SPI_CPOL+0 S2 A16])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":96 -1
+     (nil))
+(debug_insn 14 13 15 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":97 -1
+     (nil))
+(insn 15 14 16 2 (set (mem:HI (plus:SI (reg/v/f:SI 72 [ SPI_InitStruct ])
+                (const_int 8 [0x8])) [2 SPI_InitStruct_2(D)->SPI_CPHA+0 S2 A16])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":97 -1
+     (nil))
+(debug_insn 16 15 17 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":98 -1
+     (nil))
+(insn 17 16 18 2 (set (mem:HI (plus:SI (reg/v/f:SI 72 [ SPI_InitStruct ])
+                (const_int 12 [0xc])) [2 SPI_InitStruct_2(D)->SPI_BaudRatePrescaler+0 S2 A16])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":98 -1
+     (nil))
+(debug_insn 18 17 19 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":100 -1
+     (nil))
+(insn 19 18 20 2 (set (mem:HI (plus:SI (reg/v/f:SI 72 [ SPI_InitStruct ])
+                (const_int 14 [0xe])) [2 SPI_InitStruct_2(D)->SPI_FirstBit+0 S2 A16])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":100 -1
+     (nil))
+(debug_insn 20 19 21 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":101 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:HI 73)
+        (const_int 7 [0x7])) "../Peripheral/src/ch32v00x_spi.c":101 -1
+     (nil))
+(insn 22 21 0 2 (set (mem:HI (plus:SI (reg/v/f:SI 72 [ SPI_InitStruct ])
+                (const_int 16 [0x10])) [2 SPI_InitStruct_2(D)->SPI_CRCPolynomial+0 S2 A16])
+        (reg:HI 73)) "../Peripheral/src/ch32v00x_spi.c":101 -1
+     (nil))
+
+;; Function SPI_Cmd (SPI_Cmd, funcdef_no=24, decl_uid=3501, cgraph_uid=25, symbol_order=25)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 16 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":115 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ NewState ])
+        (reg:SI 11 a1 [ NewState ])) "../Peripheral/src/ch32v00x_spi.c":115 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":116 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 77 [ NewState ])
+                (const_int 0 [0]))
+            (label_ref 18)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":116 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 18)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 10 9 11 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":118 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:HI 78)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":118 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 78))) "../Peripheral/src/ch32v00x_spi.c":118 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 79)
+        (ior:SI (reg:SI 72 [ _1 ])
+            (const_int 64 [0x40]))) "../Peripheral/src/ch32v00x_spi.c":118 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 79) 0))) "../Peripheral/src/ch32v00x_spi.c":118 -1
+     (nil))
+(insn 15 14 16 4 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":118 -1
+     (nil))
+(jump_insn 16 15 17 4 (set (pc)
+        (label_ref:SI 28)) 250 {jump}
+     (nil)
+ -> 28)
+(barrier 17 16 18)
+(code_label 18 17 19 5 10 (nil) [1 uses])
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 20 19 21 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":122 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:HI 80)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":122 -1
+     (nil))
+(insn 22 21 23 5 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (reg:HI 80))) "../Peripheral/src/ch32v00x_spi.c":122 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 81)
+        (and:SI (reg:SI 74 [ _3 ])
+            (const_int -65 [0xffffffffffffffbf]))) "../Peripheral/src/ch32v00x_spi.c":122 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 81) 0))) "../Peripheral/src/ch32v00x_spi.c":122 -1
+     (nil))
+(insn 25 24 28 5 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":122 -1
+     (nil))
+(code_label 28 25 29 7 9 (nil) [1 uses])
+(note 29 28 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_I2S_ITConfig (SPI_I2S_ITConfig, funcdef_no=25, decl_uid=3505, cgraph_uid=26, symbol_order=26)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 30 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 81 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":142 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 82 [ SPI_I2S_IT ])
+        (reg:SI 11 a1 [ SPI_I2S_IT ])) "../Peripheral/src/ch32v00x_spi.c":142 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 83 [ NewState ])
+        (reg:SI 12 a2 [ NewState ])) "../Peripheral/src/ch32v00x_spi.c":142 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 8 5 9 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":143 -1
+     (nil))
+(debug_insn 9 8 10 2 (var_location:HI itpos (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":143 -1
+     (nil))
+(debug_insn 10 9 11 2 (var_location:HI itmask (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":143 -1
+     (nil))
+(debug_insn 11 10 12 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":145 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:HI itpos (zero_extend:HI (lshiftrt:QI (subreg:QI (reg/v:SI 82 [ SPI_I2S_IT ]) 0)
+            (const_int 4 [0x4])))) "../Peripheral/src/ch32v00x_spi.c":145 -1
+     (nil))
+(debug_insn 13 12 14 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":146 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 84)
+        (lshiftrt:SI (reg/v:SI 82 [ SPI_I2S_IT ])
+            (const_int 4 [0x4]))) "../Peripheral/src/ch32v00x_spi.c":145 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 85)
+        (zero_extend:SI (subreg:QI (reg:SI 84) 0))) "../Peripheral/src/ch32v00x_spi.c":146 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 87)
+        (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_spi.c":146 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 86)
+        (ashift:SI (reg:SI 87)
+            (subreg:QI (reg:SI 85) 0))) "../Peripheral/src/ch32v00x_spi.c":146 -1
+     (nil))
+(insn 18 17 19 2 (set (reg/v:SI 80 [ itmask ])
+        (zero_extend:SI (subreg:HI (reg:SI 86) 0))) "../Peripheral/src/ch32v00x_spi.c":146 -1
+     (nil))
+(debug_insn 19 18 20 2 (var_location:HI itmask (subreg:HI (reg/v:SI 80 [ itmask ]) 0)) "../Peripheral/src/ch32v00x_spi.c":146 -1
+     (nil))
+(debug_insn 20 19 21 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":148 -1
+     (nil))
+(jump_insn 21 20 22 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 83 [ NewState ])
+                (const_int 0 [0]))
+            (label_ref 32)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":148 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 32)
+(note 22 21 23 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 23 22 25 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":150 -1
+     (nil))
+(insn 25 23 26 4 (set (reg:HI 89)
+        (mem/v:HI (plus:SI (reg/v/f:SI 81 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_14(D)->CTLR2+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":150 -1
+     (nil))
+(insn 26 25 27 4 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (reg:HI 89))) "../Peripheral/src/ch32v00x_spi.c":150 -1
+     (nil))
+(insn 27 26 28 4 (set (reg:SI 90)
+        (ior:SI (reg:SI 75 [ _4 ])
+            (reg/v:SI 80 [ itmask ]))) "../Peripheral/src/ch32v00x_spi.c":150 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:SI 76 [ _5 ])
+        (zero_extend:SI (subreg:HI (reg:SI 90) 0))) "../Peripheral/src/ch32v00x_spi.c":150 -1
+     (nil))
+(insn 29 28 30 4 (set (mem/v:HI (plus:SI (reg/v/f:SI 81 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_14(D)->CTLR2+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 76 [ _5 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":150 -1
+     (nil))
+(jump_insn 30 29 31 4 (set (pc)
+        (label_ref:SI 45)) 250 {jump}
+     (nil)
+ -> 45)
+(barrier 31 30 32)
+(code_label 32 31 33 5 14 (nil) [1 uses])
+(note 33 32 34 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 34 33 36 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(insn 36 34 37 5 (set (reg:HI 92)
+        (mem/v:HI (plus:SI (reg/v/f:SI 81 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_14(D)->CTLR2+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(insn 37 36 38 5 (set (reg:SI 77 [ _6 ])
+        (zero_extend:SI (reg:HI 92))) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(insn 38 37 39 5 (set (reg:SI 93)
+        (not:SI (reg/v:SI 80 [ itmask ]))) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(insn 39 38 40 5 (set (reg:HI 94)
+        (subreg:HI (reg:SI 93) 0)) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(insn 40 39 41 5 (set (reg:SI 95)
+        (and:SI (reg:SI 77 [ _6 ])
+            (subreg:SI (reg:HI 94) 0))) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(insn 41 40 42 5 (set (reg:SI 79 [ _8 ])
+        (zero_extend:SI (subreg:HI (reg:SI 95) 0))) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(insn 42 41 45 5 (set (mem/v:HI (plus:SI (reg/v/f:SI 81 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_14(D)->CTLR2+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 79 [ _8 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":154 -1
+     (nil))
+(code_label 45 42 46 7 13 (nil) [1 uses])
+(note 46 45 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_I2S_DMACmd (SPI_I2S_DMACmd, funcdef_no=26, decl_uid=3509, cgraph_uid=27, symbol_order=27)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 18 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 77 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":174 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 78 [ SPI_I2S_DMAReq ])
+        (reg:SI 11 a1 [ SPI_I2S_DMAReq ])) "../Peripheral/src/ch32v00x_spi.c":174 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 79 [ NewState ])
+        (reg:SI 12 a2 [ NewState ])) "../Peripheral/src/ch32v00x_spi.c":174 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 8 5 9 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":175 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 79 [ NewState ])
+                (const_int 0 [0]))
+            (label_ref 20)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":175 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 20)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 11 10 13 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":177 -1
+     (nil))
+(insn 13 11 14 4 (set (reg:HI 81)
+        (mem/v:HI (plus:SI (reg/v/f:SI 77 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_9(D)->CTLR2+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":177 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 81))) "../Peripheral/src/ch32v00x_spi.c":177 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 82)
+        (ior:SI (reg:SI 72 [ _1 ])
+            (reg/v:SI 78 [ SPI_I2S_DMAReq ]))) "../Peripheral/src/ch32v00x_spi.c":177 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 82) 0))) "../Peripheral/src/ch32v00x_spi.c":177 -1
+     (nil))
+(insn 17 16 18 4 (set (mem/v:HI (plus:SI (reg/v/f:SI 77 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_9(D)->CTLR2+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":177 -1
+     (nil))
+(jump_insn 18 17 19 4 (set (pc)
+        (label_ref:SI 33)) 250 {jump}
+     (nil)
+ -> 33)
+(barrier 19 18 20)
+(code_label 20 19 21 5 18 (nil) [1 uses])
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 22 21 24 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(insn 24 22 25 5 (set (reg:HI 84)
+        (mem/v:HI (plus:SI (reg/v/f:SI 77 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_9(D)->CTLR2+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (reg:HI 84))) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 85)
+        (not:SI (reg/v:SI 78 [ SPI_I2S_DMAReq ]))) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:HI 86)
+        (subreg:HI (reg:SI 85) 0)) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 87)
+        (and:SI (reg:SI 74 [ _3 ])
+            (subreg:SI (reg:HI 86) 0))) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 76 [ _5 ])
+        (zero_extend:SI (subreg:HI (reg:SI 87) 0))) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(insn 30 29 33 5 (set (mem/v:HI (plus:SI (reg/v/f:SI 77 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_9(D)->CTLR2+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 76 [ _5 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":181 -1
+     (nil))
+(code_label 33 30 34 7 17 (nil) [1 uses])
+(note 34 33 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_I2S_SendData (SPI_I2S_SendData, funcdef_no=27, decl_uid=3512, cgraph_uid=28, symbol_order=28)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 72 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":197 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 73 [ Data ])
+        (reg:SI 11 a1 [ Data ])) "../Peripheral/src/ch32v00x_spi.c":197 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":198 -1
+     (nil))
+(insn 8 7 0 2 (set (mem/v:HI (plus:SI (reg/v/f:SI 72 [ SPIx ])
+                (const_int 12 [0xc])) [2 SPIx_2(D)->DATAR+0 S2 A32])
+        (subreg/s/v:HI (reg/v:SI 73 [ Data ]) 0)) "../Peripheral/src/ch32v00x_spi.c":198 -1
+     (nil))
+
+;; Function SPI_I2S_ReceiveData (SPI_I2S_ReceiveData, funcdef_no=28, decl_uid=3514, cgraph_uid=29, symbol_order=29)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 11.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 73 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":213 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":214 -1
+     (nil))
+(insn 8 6 9 2 (set (reg:HI 75)
+        (mem/v:HI (plus:SI (reg/v/f:SI 73 [ SPIx ])
+                (const_int 12 [0xc])) [2 SPIx_2(D)->DATAR+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":214 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 72 [ <retval> ])
+        (zero_extend:SI (reg:HI 75))) "../Peripheral/src/ch32v00x_spi.c":214 -1
+     (nil))
+(insn 10 9 14 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":214 -1
+     (nil))
+(insn 14 10 15 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":215 -1
+     (nil))
+(insn 15 14 0 2 (use (reg/i:SI 10 a0)) "../Peripheral/src/ch32v00x_spi.c":215 -1
+     (nil))
+
+;; Function SPI_NSSInternalSoftwareConfig (SPI_NSSInternalSoftwareConfig, funcdef_no=29, decl_uid=3517, cgraph_uid=30, symbol_order=30)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 18 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":230 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ SPI_NSSInternalSoft ])
+        (reg:SI 11 a1 [ SPI_NSSInternalSoft ])) "../Peripheral/src/ch32v00x_spi.c":230 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":231 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 79)
+        (const_int 65536 [0x10000])) "../Peripheral/src/ch32v00x_spi.c":231 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 78)
+        (plus:SI (reg:SI 79)
+            (const_int -257 [0xfffffffffffffeff]))) "../Peripheral/src/ch32v00x_spi.c":231 -1
+     (expr_list:REG_EQUAL (const_int 65279 [0xfeff])
+        (nil)))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 77 [ SPI_NSSInternalSoft ])
+                (reg:SI 78))
+            (label_ref 20)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":231 -1
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 20)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 12 11 13 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":233 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:HI 80)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":233 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 80))) "../Peripheral/src/ch32v00x_spi.c":233 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 81)
+        (ior:SI (reg:SI 72 [ _1 ])
+            (const_int 256 [0x100]))) "../Peripheral/src/ch32v00x_spi.c":233 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 81) 0))) "../Peripheral/src/ch32v00x_spi.c":233 -1
+     (nil))
+(insn 17 16 18 4 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":233 -1
+     (nil))
+(jump_insn 18 17 19 4 (set (pc)
+        (label_ref:SI 30)) 250 {jump}
+     (nil)
+ -> 30)
+(barrier 19 18 20)
+(code_label 20 19 21 5 24 (nil) [1 uses])
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 22 21 23 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":237 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:HI 82)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":237 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (reg:HI 82))) "../Peripheral/src/ch32v00x_spi.c":237 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 83)
+        (and:SI (reg:SI 74 [ _3 ])
+            (const_int -257 [0xfffffffffffffeff]))) "../Peripheral/src/ch32v00x_spi.c":237 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 83) 0))) "../Peripheral/src/ch32v00x_spi.c":237 -1
+     (nil))
+(insn 27 26 30 5 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":237 -1
+     (nil))
+(code_label 30 27 31 7 23 (nil) [1 uses])
+(note 31 30 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_SSOutputCmd (SPI_SSOutputCmd, funcdef_no=30, decl_uid=3520, cgraph_uid=31, symbol_order=31)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 17 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":252 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ NewState ])
+        (reg:SI 11 a1 [ NewState ])) "../Peripheral/src/ch32v00x_spi.c":252 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":253 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 77 [ NewState ])
+                (const_int 0 [0]))
+            (label_ref 19)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":253 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 19)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 10 9 12 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":255 -1
+     (nil))
+(insn 12 10 13 4 (set (reg:HI 79)
+        (mem/v:HI (plus:SI (reg/v/f:SI 76 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_8(D)->CTLR2+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":255 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 79))) "../Peripheral/src/ch32v00x_spi.c":255 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 80)
+        (ior:SI (reg:SI 72 [ _1 ])
+            (const_int 4 [0x4]))) "../Peripheral/src/ch32v00x_spi.c":255 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 80) 0))) "../Peripheral/src/ch32v00x_spi.c":255 -1
+     (nil))
+(insn 16 15 17 4 (set (mem/v:HI (plus:SI (reg/v/f:SI 76 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_8(D)->CTLR2+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":255 -1
+     (nil))
+(jump_insn 17 16 18 4 (set (pc)
+        (label_ref:SI 30)) 250 {jump}
+     (nil)
+ -> 30)
+(barrier 18 17 19)
+(code_label 19 18 20 5 28 (nil) [1 uses])
+(note 20 19 21 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 21 20 23 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":259 -1
+     (nil))
+(insn 23 21 24 5 (set (reg:HI 82)
+        (mem/v:HI (plus:SI (reg/v/f:SI 76 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_8(D)->CTLR2+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":259 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (reg:HI 82))) "../Peripheral/src/ch32v00x_spi.c":259 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 83)
+        (and:SI (reg:SI 74 [ _3 ])
+            (const_int -5 [0xfffffffffffffffb]))) "../Peripheral/src/ch32v00x_spi.c":259 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 83) 0))) "../Peripheral/src/ch32v00x_spi.c":259 -1
+     (nil))
+(insn 27 26 30 5 (set (mem/v:HI (plus:SI (reg/v/f:SI 76 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_8(D)->CTLR2+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":259 -1
+     (nil))
+(code_label 30 27 31 7 27 (nil) [1 uses])
+(note 31 30 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_DataSizeConfig (SPI_DataSizeConfig, funcdef_no=31, decl_uid=3523, cgraph_uid=32, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":276 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ SPI_DataSize ])
+        (reg:SI 11 a1 [ SPI_DataSize ])) "../Peripheral/src/ch32v00x_spi.c":276 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:HI 78)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_6(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 78))) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 81)
+        (const_int -4096 [0xfffffffffffff000])) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 80)
+        (plus:SI (reg:SI 81)
+            (const_int 2047 [0x7ff]))) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (expr_list:REG_EQUAL (const_int -2049 [0xfffffffffffff7ff])
+        (nil)))
+(insn 12 11 13 2 (set (reg:SI 79)
+        (and:SI (reg:SI 72 [ _1 ])
+            (reg:SI 80))) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 79) 0))) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (nil))
+(insn 14 13 15 2 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_6(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":277 -1
+     (nil))
+(debug_insn 15 14 16 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":278 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:HI 82)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_6(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":278 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (reg:HI 82))) "../Peripheral/src/ch32v00x_spi.c":278 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 83)
+        (ior:SI (reg:SI 74 [ _3 ])
+            (reg/v:SI 77 [ SPI_DataSize ]))) "../Peripheral/src/ch32v00x_spi.c":278 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 83) 0))) "../Peripheral/src/ch32v00x_spi.c":278 -1
+     (nil))
+(insn 20 19 0 2 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_6(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":278 -1
+     (nil))
+
+;; Function SPI_TransmitCRC (SPI_TransmitCRC, funcdef_no=32, decl_uid=3525, cgraph_uid=33, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 74 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":291 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":292 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:HI 75)
+        (mem/v:HI (reg/v/f:SI 74 [ SPIx ]) [2 SPIx_4(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":292 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 75))) "../Peripheral/src/ch32v00x_spi.c":292 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:HI 76)
+        (const_int 4096 [0x1000])) "../Peripheral/src/ch32v00x_spi.c":292 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 77)
+        (ior:SI (reg:SI 72 [ _1 ])
+            (subreg:SI (reg:HI 76) 0))) "../Peripheral/src/ch32v00x_spi.c":292 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 77) 0))) "../Peripheral/src/ch32v00x_spi.c":292 -1
+     (nil))
+(insn 12 11 0 2 (set (mem/v:HI (reg/v/f:SI 74 [ SPIx ]) [2 SPIx_4(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":292 -1
+     (nil))
+
+;; Function SPI_CalculateCRC (SPI_CalculateCRC, funcdef_no=33, decl_uid=3528, cgraph_uid=34, symbol_order=34)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 17 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":306 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ NewState ])
+        (reg:SI 11 a1 [ NewState ])) "../Peripheral/src/ch32v00x_spi.c":306 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":307 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 77 [ NewState ])
+                (const_int 0 [0]))
+            (label_ref 19)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":307 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 19)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 10 9 11 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":309 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:HI 78)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":309 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 78))) "../Peripheral/src/ch32v00x_spi.c":309 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:HI 79)
+        (const_int 8192 [0x2000])) "../Peripheral/src/ch32v00x_spi.c":309 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 80)
+        (ior:SI (reg:SI 72 [ _1 ])
+            (subreg:SI (reg:HI 79) 0))) "../Peripheral/src/ch32v00x_spi.c":309 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 80) 0))) "../Peripheral/src/ch32v00x_spi.c":309 -1
+     (nil))
+(insn 16 15 17 4 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":309 -1
+     (nil))
+(jump_insn 17 16 18 4 (set (pc)
+        (label_ref:SI 31)) 250 {jump}
+     (nil)
+ -> 31)
+(barrier 18 17 19)
+(code_label 19 18 20 5 34 (nil) [1 uses])
+(note 20 19 21 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 21 20 22 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (nil))
+(insn 22 21 23 5 (set (reg:HI 81)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (reg:HI 81))) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 84)
+        (const_int -8192 [0xffffffffffffe000])) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 83)
+        (plus:SI (reg:SI 84)
+            (const_int -1 [0xffffffffffffffff]))) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (expr_list:REG_EQUAL (const_int -8193 [0xffffffffffffdfff])
+        (nil)))
+(insn 26 25 27 5 (set (reg:SI 82)
+        (and:SI (reg:SI 74 [ _3 ])
+            (reg:SI 83))) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 82) 0))) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (nil))
+(insn 28 27 31 5 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":313 -1
+     (nil))
+(code_label 31 28 32 7 33 (nil) [1 uses])
+(note 32 31 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_GetCRC (SPI_GetCRC, funcdef_no=34, decl_uid=3531, cgraph_uid=35, symbol_order=35)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 32.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 73 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":330 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ SPI_CRC ])
+        (reg:SI 11 a1 [ SPI_CRC ])) "../Peripheral/src/ch32v00x_spi.c":330 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":331 -1
+     (nil))
+(debug_insn 8 7 9 2 (var_location:HI crcreg (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":331 -1
+     (nil))
+(debug_insn 9 8 10 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":333 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 75)
+        (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_spi.c":333 -1
+     (nil))
+(jump_insn 11 10 12 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ SPI_CRC ])
+                (reg:SI 75))
+            (label_ref 20)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":333 -1
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 20)
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 13 12 15 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":335 -1
+     (nil))
+(insn 15 13 16 4 (set (reg:HI 77)
+        (mem/v:HI (plus:SI (reg/v/f:SI 73 [ SPIx ])
+                (const_int 24 [0x18])) [2 SPIx_4(D)->TCRCR+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":335 -1
+     (nil))
+(insn 16 15 17 4 (set (reg/v:SI 72 [ <retval> ])
+        (zero_extend:SI (reg:HI 77))) "../Peripheral/src/ch32v00x_spi.c":335 -1
+     (nil))
+(debug_insn 17 16 18 4 (var_location:HI crcreg (subreg:HI (reg/v:SI 72 [ <retval> ]) 0)) "../Peripheral/src/ch32v00x_spi.c":335 -1
+     (nil))
+(jump_insn 18 17 19 4 (set (pc)
+        (label_ref 27)) -1
+     (nil)
+ -> 27)
+(barrier 19 18 20)
+(code_label 20 19 21 5 38 (nil) [1 uses])
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 22 21 24 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":339 -1
+     (nil))
+(insn 24 22 25 5 (set (reg:HI 79)
+        (mem/v:HI (plus:SI (reg/v/f:SI 73 [ SPIx ])
+                (const_int 20 [0x14])) [2 SPIx_4(D)->RCRCR+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":339 -1
+     (nil))
+(insn 25 24 26 5 (set (reg/v:SI 72 [ <retval> ])
+        (zero_extend:SI (reg:HI 79))) "../Peripheral/src/ch32v00x_spi.c":339 -1
+     (nil))
+(debug_insn 26 25 27 5 (var_location:HI crcreg (subreg:HI (reg/v:SI 72 [ <retval> ]) 0)) "../Peripheral/src/ch32v00x_spi.c":339 -1
+     (nil))
+(code_label 27 26 28 6 39 (nil) [1 uses])
+(note 28 27 29 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 29 28 30 6 (var_location:HI crcreg (subreg:HI (reg/v:SI 72 [ <retval> ]) 0)) -1
+     (nil))
+(debug_insn 30 29 31 6 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":342 -1
+     (nil))
+(insn 31 30 35 6 (set (reg/v:SI 72 [ <retval> ])
+        (reg/v:SI 72 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":342 -1
+     (nil))
+(insn 35 31 36 6 (set (reg/i:SI 10 a0)
+        (reg/v:SI 72 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":343 -1
+     (nil))
+(insn 36 35 0 6 (use (reg/i:SI 10 a0)) "../Peripheral/src/ch32v00x_spi.c":343 -1
+     (nil))
+
+;; Function SPI_GetCRCPolynomial (SPI_GetCRCPolynomial, funcdef_no=35, decl_uid=3533, cgraph_uid=36, symbol_order=36)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 11.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 73 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":355 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":356 -1
+     (nil))
+(insn 8 6 9 2 (set (reg:HI 75)
+        (mem/v:HI (plus:SI (reg/v/f:SI 73 [ SPIx ])
+                (const_int 16 [0x10])) [2 SPIx_2(D)->CRCR+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":356 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 72 [ <retval> ])
+        (zero_extend:SI (reg:HI 75))) "../Peripheral/src/ch32v00x_spi.c":356 -1
+     (nil))
+(insn 10 9 14 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":356 -1
+     (nil))
+(insn 14 10 15 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":357 -1
+     (nil))
+(insn 15 14 0 2 (use (reg/i:SI 10 a0)) "../Peripheral/src/ch32v00x_spi.c":357 -1
+     (nil))
+
+;; Function SPI_BiDirectionalLineConfig (SPI_BiDirectionalLineConfig, funcdef_no=36, decl_uid=3536, cgraph_uid=37, symbol_order=37)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 18 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":374 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ SPI_Direction ])
+        (reg:SI 11 a1 [ SPI_Direction ])) "../Peripheral/src/ch32v00x_spi.c":374 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":375 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 78)
+        (const_int 16384 [0x4000])) "../Peripheral/src/ch32v00x_spi.c":375 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (ne (reg/v:SI 77 [ SPI_Direction ])
+                (reg:SI 78))
+            (label_ref 20)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":375 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 20)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 11 10 12 4 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":377 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:HI 79)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":377 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 79))) "../Peripheral/src/ch32v00x_spi.c":377 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:HI 80)
+        (const_int 16384 [0x4000])) "../Peripheral/src/ch32v00x_spi.c":377 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 81)
+        (ior:SI (reg:SI 72 [ _1 ])
+            (subreg:SI (reg:HI 80) 0))) "../Peripheral/src/ch32v00x_spi.c":377 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 73 [ _2 ])
+        (zero_extend:SI (subreg:HI (reg:SI 81) 0))) "../Peripheral/src/ch32v00x_spi.c":377 -1
+     (nil))
+(insn 17 16 18 4 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 73 [ _2 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":377 -1
+     (nil))
+(jump_insn 18 17 19 4 (set (pc)
+        (label_ref:SI 32)) 250 {jump}
+     (nil)
+ -> 32)
+(barrier 19 18 20)
+(code_label 20 19 21 5 43 (nil) [1 uses])
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 22 21 23 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:HI 82)
+        (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (reg:HI 82))) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 85)
+        (const_int -16384 [0xffffffffffffc000])) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 84)
+        (plus:SI (reg:SI 85)
+            (const_int -1 [0xffffffffffffffff]))) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (expr_list:REG_EQUAL (const_int -16385 [0xffffffffffffbfff])
+        (nil)))
+(insn 27 26 28 5 (set (reg:SI 83)
+        (and:SI (reg:SI 74 [ _3 ])
+            (reg:SI 84))) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 83) 0))) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (nil))
+(insn 29 28 32 5 (set (mem/v:HI (reg/v/f:SI 76 [ SPIx ]) [2 SPIx_8(D)->CTLR1+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":381 -1
+     (nil))
+(code_label 32 29 33 7 42 (nil) [1 uses])
+(note 33 32 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function SPI_I2S_GetFlagStatus (SPI_I2S_GetFlagStatus, funcdef_no=37, decl_uid=3539, cgraph_uid=38, symbol_order=38)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 19.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":405 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ SPI_I2S_FLAG ])
+        (reg:SI 11 a1 [ SPI_I2S_FLAG ])) "../Peripheral/src/ch32v00x_spi.c":405 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":406 -1
+     (nil))
+(debug_insn 8 7 9 2 (var_location:SI bitstatus (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":406 -1
+     (nil))
+(debug_insn 9 8 11 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":408 -1
+     (nil))
+(insn 11 9 12 2 (set (reg:HI 79)
+        (mem/v:HI (plus:SI (reg/v/f:SI 76 [ SPIx ])
+                (const_int 8 [0x8])) [2 SPIx_5(D)->STATR+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":408 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (reg:HI 79))) "../Peripheral/src/ch32v00x_spi.c":408 -1
+     (nil))
+(debug_insn 13 12 14 2 (var_location:SI bitstatus (zero_extend:SI (ne:QI (and:HI (subreg:HI (reg:SI 72 [ _1 ]) 0)
+                (subreg:HI (reg/v:SI 77 [ SPI_I2S_FLAG ]) 0))
+            (const_int 0 [0])))) -1
+     (nil))
+(debug_insn 14 13 15 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":417 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 81)
+        (and:SI (reg:SI 72 [ _1 ])
+            (reg/v:SI 77 [ SPI_I2S_FLAG ]))) "../Peripheral/src/ch32v00x_spi.c":408 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 83)
+        (zero_extend:SI (subreg:HI (reg:SI 81) 0))) "../Peripheral/src/ch32v00x_spi.c":408 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 84)
+        (ne:SI (reg:SI 83)
+            (const_int 0 [0]))) "../Peripheral/src/ch32v00x_spi.c":408 -1
+     (nil))
+(insn 18 17 22 2 (set (reg:SI 75 [ <retval> ])
+        (reg:SI 84)) "../Peripheral/src/ch32v00x_spi.c":417 -1
+     (nil))
+(insn 22 18 23 2 (set (reg/i:SI 10 a0)
+        (reg:SI 75 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":418 -1
+     (nil))
+(insn 23 22 0 2 (use (reg/i:SI 10 a0)) "../Peripheral/src/ch32v00x_spi.c":418 -1
+     (nil))
+
+;; Function SPI_I2S_ClearFlag (SPI_I2S_ClearFlag, funcdef_no=38, decl_uid=3542, cgraph_uid=39, symbol_order=39)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 73 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":441 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ SPI_I2S_FLAG ])
+        (reg:SI 11 a1 [ SPI_I2S_FLAG ])) "../Peripheral/src/ch32v00x_spi.c":441 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":442 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 75)
+        (not:SI (reg/v:SI 74 [ SPI_I2S_FLAG ]))) "../Peripheral/src/ch32v00x_spi.c":442 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (subreg:HI (reg:SI 75) 0))) "../Peripheral/src/ch32v00x_spi.c":442 -1
+     (nil))
+(insn 10 9 0 2 (set (mem/v:HI (plus:SI (reg/v/f:SI 73 [ SPIx ])
+                (const_int 8 [0x8])) [2 SPIx_4(D)->STATR+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 72 [ _1 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":442 -1
+     (nil))
+
+;; Function SPI_I2S_GetITStatus (SPI_I2S_GetITStatus, funcdef_no=39, decl_uid=3545, cgraph_uid=40, symbol_order=40)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 63 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+Removing jump 56.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 86 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":463 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 87 [ SPI_I2S_IT ])
+        (reg:SI 11 a1 [ SPI_I2S_IT ])) "../Peripheral/src/ch32v00x_spi.c":463 -1
+     (nil))
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 8 4 9 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":464 -1
+     (nil))
+(debug_insn 9 8 10 2 (var_location:SI bitstatus (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":464 -1
+     (nil))
+(debug_insn 10 9 11 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":465 -1
+     (nil))
+(debug_insn 11 10 12 2 (var_location:HI itpos (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":465 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:HI itmask (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":465 -1
+     (nil))
+(debug_insn 13 12 14 2 (var_location:HI enablestatus (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":465 -1
+     (nil))
+(debug_insn 14 13 58 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":467 -1
+     (nil))
+(debug_insn 58 14 15 2 (var_location:QI D#5 (subreg:QI (reg/v:SI 87 [ SPI_I2S_IT ]) 0)) "../Peripheral/src/ch32v00x_spi.c":481 -1
+     (nil))
+(debug_insn 15 58 16 2 (var_location:HI itpos (subreg:HI (ashift:SI (const_int 1 [0x1])
+            (zero_extend:SI (and:QI (debug_expr:QI D#5)
+                    (const_int 15 [0xf])))) 0)) "../Peripheral/src/ch32v00x_spi.c":467 -1
+     (nil))
+(debug_insn 16 15 17 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":468 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:QI D#4 (lshiftrt:QI (subreg:QI (reg/v:SI 87 [ SPI_I2S_IT ]) 0)
+        (const_int 4 [0x4]))) "../Peripheral/src/ch32v00x_spi.c":468 -1
+     (nil))
+(debug_insn 18 17 19 2 (var_location:HI itmask (zero_extend:HI (debug_expr:QI D#4))) "../Peripheral/src/ch32v00x_spi.c":468 -1
+     (nil))
+(debug_insn 19 18 20 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(debug_insn 20 19 21 2 (var_location:SI D#3 (zero_extend:SI (debug_expr:QI D#4))) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(debug_insn 21 20 22 2 (var_location:SI D#2 (ashift:SI (const_int 1 [0x1])
+        (debug_expr:SI D#3))) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(debug_insn 22 21 23 2 (var_location:HI D#1 (subreg:HI (debug_expr:SI D#2) 0)) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(debug_insn 23 22 24 2 (var_location:HI itmask (debug_expr:HI D#1)) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(debug_insn 24 23 26 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":470 -1
+     (nil))
+(insn 26 24 27 2 (set (reg:HI 89)
+        (mem/v:HI (plus:SI (reg/v/f:SI 86 [ SPIx ])
+                (const_int 4 [0x4])) [2 SPIx_15(D)->CTLR2+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":470 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:SI 77 [ _6 ])
+        (zero_extend:SI (reg:HI 89))) "../Peripheral/src/ch32v00x_spi.c":470 -1
+     (nil))
+(debug_insn 28 27 29 2 (var_location:HI enablestatus (and:HI (debug_expr:HI D#1)
+        (subreg:HI (reg:SI 77 [ _6 ]) 0))) "../Peripheral/src/ch32v00x_spi.c":470 -1
+     (nil))
+(debug_insn 29 28 31 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 31 29 32 2 (set (reg:HI 91)
+        (mem/v:HI (plus:SI (reg/v/f:SI 86 [ SPIx ])
+                (const_int 8 [0x8])) [2 SPIx_15(D)->STATR+0 S2 A32])) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 78 [ _7 ])
+        (zero_extend:SI (reg:HI 91))) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 33 32 34 2 (set (reg:SI 92)
+        (and:SI (reg/v:SI 87 [ SPI_I2S_IT ])
+            (const_int 15 [0xf]))) "../Peripheral/src/ch32v00x_spi.c":467 -1
+     (nil))
+(insn 34 33 35 2 (set (reg:SI 93)
+        (zero_extend:SI (subreg:QI (reg:SI 92) 0))) "../Peripheral/src/ch32v00x_spi.c":467 -1
+     (nil))
+(insn 35 34 36 2 (set (reg:SI 95)
+        (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_spi.c":467 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:SI 94)
+        (ashift:SI (reg:SI 95)
+            (subreg:QI (reg:SI 93) 0))) "../Peripheral/src/ch32v00x_spi.c":467 -1
+     (nil))
+(insn 37 36 38 2 (set (reg:HI 96)
+        (subreg:HI (reg:SI 94) 0)) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 38 37 39 2 (set (reg:SI 97)
+        (and:SI (reg:SI 78 [ _7 ])
+            (subreg:SI (reg:HI 96) 0))) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 39 38 40 2 (set (reg:HI 98)
+        (subreg:HI (reg:SI 97) 0)) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:SI 99)
+        (zero_extend:SI (reg:HI 98))) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(jump_insn 41 40 42 2 (set (pc)
+        (if_then_else (eq (reg:SI 99)
+                (const_int 0 [0]))
+            (label_ref:SI 66)
+            (pc))) "../Peripheral/src/ch32v00x_spi.c":472 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 66)
+(note 42 41 43 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 43 42 44 4 (set (reg:SI 100)
+        (lshiftrt:SI (reg/v:SI 87 [ SPI_I2S_IT ])
+            (const_int 4 [0x4]))) "../Peripheral/src/ch32v00x_spi.c":468 -1
+     (nil))
+(insn 44 43 45 4 (set (reg:SI 101)
+        (zero_extend:SI (subreg:QI (reg:SI 100) 0))) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(insn 45 44 46 4 (set (reg:SI 103)
+        (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(insn 46 45 47 4 (set (reg:SI 102)
+        (ashift:SI (reg:SI 103)
+            (subreg:QI (reg:SI 101) 0))) "../Peripheral/src/ch32v00x_spi.c":469 -1
+     (nil))
+(insn 47 46 48 4 (set (reg:HI 104)
+        (subreg:HI (reg:SI 102) 0)) "../Peripheral/src/ch32v00x_spi.c":470 -1
+     (nil))
+(insn 48 47 49 4 (set (reg:SI 105)
+        (and:SI (reg:SI 77 [ _6 ])
+            (subreg:SI (reg:HI 104) 0))) "../Peripheral/src/ch32v00x_spi.c":470 -1
+     (nil))
+(insn 49 48 50 4 (set (reg:SI 107)
+        (zero_extend:SI (subreg:HI (reg:SI 105) 0))) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 50 49 51 4 (set (reg:SI 108)
+        (ne:SI (reg:SI 107)
+            (const_int 0 [0]))) "../Peripheral/src/ch32v00x_spi.c":472 -1
+     (nil))
+(insn 51 50 63 4 (set (reg/v:SI 85 [ <retval> ])
+        (reg:SI 108)) "../Peripheral/src/ch32v00x_spi.c":478 -1
+     (nil))
+(jump_insn 63 51 64 4 (set (pc)
+        (label_ref:SI 59)) 250 {jump}
+     (nil)
+ -> 59)
+(barrier 64 63 66)
+(code_label 66 64 65 5 50 (nil) [1 uses])
+(note 65 66 5 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 5 65 54 5 (set (reg/v:SI 85 [ <retval> ])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":478 -1
+     (nil))
+(debug_insn 54 5 55 5 (var_location:SI bitstatus (reg/v:SI 85 [ <retval> ])) -1
+     (nil))
+(debug_insn 55 54 59 5 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":481 -1
+     (nil))
+(code_label 59 55 62 7 48 (nil) [1 uses])
+(note 62 59 60 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 60 62 61 7 (set (reg/i:SI 10 a0)
+        (reg/v:SI 85 [ <retval> ])) "../Peripheral/src/ch32v00x_spi.c":482 -1
+     (nil))
+(insn 61 60 0 7 (use (reg/i:SI 10 a0)) "../Peripheral/src/ch32v00x_spi.c":482 -1
+     (nil))
+
+;; Function SPI_I2S_ClearITPendingBit (SPI_I2S_ClearITPendingBit, funcdef_no=40, decl_uid=3548, cgraph_uid=41, symbol_order=41)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 77 [ SPIx ])
+        (reg:SI 10 a0 [ SPIx ])) "../Peripheral/src/ch32v00x_spi.c":506 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 78 [ SPI_I2S_IT ])
+        (reg:SI 11 a1 [ SPI_I2S_IT ])) "../Peripheral/src/ch32v00x_spi.c":506 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":507 -1
+     (nil))
+(debug_insn 8 7 9 2 (var_location:HI itpos (const_int 0 [0])) "../Peripheral/src/ch32v00x_spi.c":507 -1
+     (nil))
+(debug_insn 9 8 20 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":509 -1
+     (nil))
+(debug_insn 20 9 10 2 (var_location:QI D#6 (subreg:QI (reg/v:SI 78 [ SPI_I2S_IT ]) 0)) "../Peripheral/src/ch32v00x_spi.c":511 -1
+     (nil))
+(debug_insn 10 20 11 2 (var_location:HI itpos (subreg:HI (ashift:SI (const_int 1 [0x1])
+            (zero_extend:SI (and:QI (debug_expr:QI D#6)
+                    (const_int 15 [0xf])))) 0)) "../Peripheral/src/ch32v00x_spi.c":509 -1
+     (nil))
+(debug_insn 11 10 12 2 (debug_marker) "../Peripheral/src/ch32v00x_spi.c":510 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 79)
+        (and:SI (reg/v:SI 78 [ SPI_I2S_IT ])
+            (const_int 15 [0xf]))) "../Peripheral/src/ch32v00x_spi.c":509 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 80)
+        (zero_extend:SI (subreg:QI (reg:SI 79) 0))) "../Peripheral/src/ch32v00x_spi.c":509 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 82)
+        (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_spi.c":509 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 81)
+        (ashift:SI (reg:SI 82)
+            (subreg:QI (reg:SI 80) 0))) "../Peripheral/src/ch32v00x_spi.c":509 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:HI 83)
+        (subreg:HI (reg:SI 81) 0)) "../Peripheral/src/ch32v00x_spi.c":510 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 84)
+        (not:SI (subreg:SI (reg:HI 83) 0))) "../Peripheral/src/ch32v00x_spi.c":510 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (subreg:HI (reg:SI 84) 0))) "../Peripheral/src/ch32v00x_spi.c":510 -1
+     (nil))
+(insn 19 18 0 2 (set (mem/v:HI (plus:SI (reg/v/f:SI 77 [ SPIx ])
+                (const_int 8 [0x8])) [2 SPIx_8(D)->STATR+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 74 [ _3 ]) 0)) "../Peripheral/src/ch32v00x_spi.c":510 -1
+     (nil))

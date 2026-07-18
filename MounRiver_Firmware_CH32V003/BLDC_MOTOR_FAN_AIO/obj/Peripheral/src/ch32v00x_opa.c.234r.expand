@@ -1,0 +1,335 @@
+
+;; Function OPA_DeInit (OPA_DeInit, funcdef_no=21, decl_uid=4041, cgraph_uid=22, symbol_order=22)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 75)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 74)
+        (plus:SI (reg:SI 75)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 72 [ _1 ])
+        (mem/v:SI (reg/f:SI 74) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 77)
+        (const_int -458752 [0xfffffffffff90000])) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 76)
+        (plus:SI (reg:SI 77)
+            (const_int -1 [0xffffffffffffffff]))) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (expr_list:REG_EQUAL (const_int -458753 [0xfffffffffff8ffff])
+        (nil)))
+(insn 11 10 12 2 (set (reg:SI 73 [ _2 ])
+        (and:SI (reg:SI 72 [ _1 ])
+            (reg:SI 76))) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 79)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/f:SI 78)
+        (plus:SI (reg:SI 79)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 14 13 0 2 (set (mem/v:SI (reg/f:SI 78) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])
+        (reg:SI 73 [ _2 ])) "../Peripheral/src/ch32v00x_opa.c":25 -1
+     (nil))
+
+;; Function OPA_Init (OPA_Init, funcdef_no=22, decl_uid=4043, cgraph_uid=23, symbol_order=23)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 80 [ OPA_InitStruct ])
+        (reg:SI 10 a0 [ OPA_InitStruct ])) "../Peripheral/src/ch32v00x_opa.c":39 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":40 -1
+     (nil))
+(debug_insn 7 6 8 2 (var_location:SI tmp (const_int 0 [0])) "../Peripheral/src/ch32v00x_opa.c":40 -1
+     (nil))
+(debug_insn 8 7 9 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":41 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 82)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":41 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 81)
+        (plus:SI (reg:SI 82)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":41 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 11 10 12 2 (set (reg/v:SI 77 [ tmp ])
+        (mem/v:SI (reg/f:SI 81) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])) "../Peripheral/src/ch32v00x_opa.c":41 -1
+     (nil))
+(debug_insn 12 11 13 2 (var_location:SI tmp (reg/v:SI 77 [ tmp ])) "../Peripheral/src/ch32v00x_opa.c":41 -1
+     (nil))
+(debug_insn 13 12 14 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":42 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 84)
+        (const_int -393216 [0xfffffffffffa0000])) "../Peripheral/src/ch32v00x_opa.c":42 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 83)
+        (plus:SI (reg:SI 84)
+            (const_int -1 [0xffffffffffffffff]))) "../Peripheral/src/ch32v00x_opa.c":42 -1
+     (expr_list:REG_EQUAL (const_int -393217 [0xfffffffffff9ffff])
+        (nil)))
+(insn 16 15 17 2 (set (reg/v:SI 78 [ tmp ])
+        (and:SI (reg/v:SI 77 [ tmp ])
+            (reg:SI 83))) "../Peripheral/src/ch32v00x_opa.c":42 -1
+     (nil))
+(debug_insn 17 16 18 2 (var_location:SI tmp (reg/v:SI 78 [ tmp ])) "../Peripheral/src/ch32v00x_opa.c":42 -1
+     (nil))
+(debug_insn 18 17 19 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 86)
+        (mem:SI (reg/v/f:SI 80 [ OPA_InitStruct ]) [2 OPA_InitStruct_9(D)->PSEL+0 S4 A32])) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 85)
+        (ashift:SI (reg:SI 86)
+            (const_int 18 [0x12]))) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 88)
+        (mem:SI (plus:SI (reg/v/f:SI 80 [ OPA_InitStruct ])
+                (const_int 4 [0x4])) [3 OPA_InitStruct_9(D)->NSEL+0 S4 A32])) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 87)
+        (ashift:SI (reg:SI 88)
+            (const_int 17 [0x11]))) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 89)
+        (ior:SI (reg:SI 85)
+            (reg:SI 87))) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(insn 24 23 25 2 (set (reg/v:SI 79 [ tmp ])
+        (ior:SI (reg:SI 89)
+            (reg/v:SI 78 [ tmp ]))) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(debug_insn 25 24 26 2 (var_location:SI tmp (reg/v:SI 79 [ tmp ])) "../Peripheral/src/ch32v00x_opa.c":43 -1
+     (nil))
+(debug_insn 26 25 27 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":44 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:SI 91)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":44 -1
+     (nil))
+(insn 28 27 29 2 (set (reg/f:SI 90)
+        (plus:SI (reg:SI 91)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":44 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 29 28 0 2 (set (mem/v:SI (reg/f:SI 90) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])
+        (reg/v:SI 79 [ tmp ])) "../Peripheral/src/ch32v00x_opa.c":44 -1
+     (nil))
+
+;; Function OPA_StructInit (OPA_StructInit, funcdef_no=23, decl_uid=4045, cgraph_uid=24, symbol_order=24)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 72 [ OPA_InitStruct ])
+        (reg:SI 10 a0 [ OPA_InitStruct ])) "../Peripheral/src/ch32v00x_opa.c":57 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":58 -1
+     (nil))
+(insn 7 6 8 2 (set (mem:SI (reg/v/f:SI 72 [ OPA_InitStruct ]) [2 OPA_InitStruct_2(D)->PSEL+0 S4 A32])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_opa.c":58 -1
+     (nil))
+(debug_insn 8 7 9 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":59 -1
+     (nil))
+(insn 9 8 0 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ OPA_InitStruct ])
+                (const_int 4 [0x4])) [3 OPA_InitStruct_2(D)->NSEL+0 S4 A32])
+        (const_int 0 [0])) "../Peripheral/src/ch32v00x_opa.c":59 -1
+     (nil))
+
+;; Function OPA_Cmd (OPA_Cmd, funcdef_no=24, decl_uid=4047, cgraph_uid=25, symbol_order=25)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 19 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 76 [ NewState ])
+        (reg:SI 10 a0 [ NewState ])) "../Peripheral/src/ch32v00x_opa.c":73 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":74 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 77)
+        (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_opa.c":74 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (ne (reg/v:SI 76 [ NewState ])
+                (reg:SI 77))
+            (label_ref 21)
+            (pc))) "../Peripheral/src/ch32v00x_opa.c":74 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 21)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 10 9 11 4 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SI 79)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (nil))
+(insn 12 11 13 4 (set (reg/f:SI 78)
+        (plus:SI (reg:SI 79)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 13 12 14 4 (set (reg:SI 72 [ _1 ])
+        (mem/v:SI (reg/f:SI 78) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 80)
+        (const_int 65536 [0x10000])) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 73 [ _2 ])
+        (ior:SI (reg:SI 72 [ _1 ])
+            (reg:SI 80))) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 82)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (nil))
+(insn 17 16 18 4 (set (reg/f:SI 81)
+        (plus:SI (reg:SI 82)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 18 17 19 4 (set (mem/v:SI (reg/f:SI 81) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])
+        (reg:SI 73 [ _2 ])) "../Peripheral/src/ch32v00x_opa.c":76 -1
+     (nil))
+(jump_insn 19 18 20 4 (set (pc)
+        (label_ref:SI 35)) 250 {jump}
+     (nil)
+ -> 35)
+(barrier 20 19 21)
+(code_label 21 20 22 5 5 (nil) [1 uses])
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 23 22 24 5 (debug_marker) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 84)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (nil))
+(insn 25 24 26 5 (set (reg/f:SI 83)
+        (plus:SI (reg:SI 84)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 26 25 27 5 (set (reg:SI 74 [ _3 ])
+        (mem/v:SI (reg/f:SI 83) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 86)
+        (const_int -65536 [0xffffffffffff0000])) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 85)
+        (plus:SI (reg:SI 86)
+            (const_int -1 [0xffffffffffffffff]))) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (expr_list:REG_EQUAL (const_int -65537 [0xfffffffffffeffff])
+        (nil)))
+(insn 29 28 30 5 (set (reg:SI 75 [ _4 ])
+        (and:SI (reg:SI 74 [ _3 ])
+            (reg:SI 85))) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (nil))
+(insn 30 29 31 5 (set (reg:SI 88)
+        (const_int 1073889280 [0x40024000])) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (nil))
+(insn 31 30 32 5 (set (reg/f:SI 87)
+        (plus:SI (reg:SI 88)
+            (const_int -2048 [0xfffffffffffff800]))) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (expr_list:REG_EQUAL (const_int 1073887232 [0x40023800])
+        (nil)))
+(insn 32 31 35 5 (set (mem/v:SI (reg/f:SI 87) [5 MEM[(struct EXTEN_TypeDef *)1073887232B].EXTEN_CTR+0 S4 A128])
+        (reg:SI 75 [ _4 ])) "../Peripheral/src/ch32v00x_opa.c":80 -1
+     (nil))
+(code_label 35 32 36 7 4 (nil) [1 uses])
+(note 36 35 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)

@@ -13,7 +13,7 @@ extern "C" {
 
 //使用宏定义的方式确定oled的横向像素与竖向像素
 #define OLED_WIDTH (128)
-#define OLED_HEIGHT (56)
+#define OLED_HEIGHT (48)
 
 /*字体大小参数取值*/
 #define OLED_FONT_8 (8)

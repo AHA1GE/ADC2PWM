@@ -1,0 +1,2060 @@
+
+;; Function OLED_I2C_Start (OLED_I2C_Start, funcdef_no=23, decl_uid=4646, cgraph_uid=24, symbol_order=26)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/OLED_driver.c":59 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/OLED_driver.c":59 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":59 -1
+     (nil))
+(call_insn 8 7 9 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":59 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 9 8 10 2 (debug_marker) "../User/OLED_driver.c":60 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":60 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":60 -1
+     (nil))
+(call_insn 12 11 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":60 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 13 12 14 2 (debug_marker) "../User/OLED_driver.c":62 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/OLED_driver.c":62 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":62 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":62 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 17 16 18 2 (debug_marker) "../User/OLED_driver.c":63 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":63 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":63 -1
+     (nil))
+(call_insn 20 19 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":63 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function OLED_WriteByte (OLED_WriteByte, funcdef_no=25, decl_uid=4652, cgraph_uid=26, symbol_order=28)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v:SI 74 [ data ])
+        (reg:SI 10 a0 [ data ])) "../User/OLED_driver.c":81 -1
+     (nil))
+(note 3 2 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 3 8 2 (debug_marker) "../User/OLED_driver.c":82 -1
+     (nil))
+(debug_insn 8 7 9 2 (debug_marker) "../User/OLED_driver.c":84 -1
+     (nil))
+(debug_insn 9 8 10 2 (var_location:QI i (const_int 0 [0])) "../User/OLED_driver.c":84 -1
+     (nil))
+(debug_insn 10 9 11 2 (var_location:QI i (const_int 0 [0])) -1
+     (nil))
+(debug_insn 11 10 4 2 (var_location:QI data (subreg:QI (reg/v:SI 74 [ data ]) 0)) -1
+     (nil))
+(insn 4 11 51 2 (set (reg:SI 73 [ ivtmp_2 ])
+        (const_int 8 [0x8])) "../User/OLED_driver.c":81 -1
+     (nil))
+(code_label 51 4 12 4 6 (nil) [1 uses])
+(note 12 51 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 13 12 14 4 (var_location:QI i (minus:QI (const_int 8 [0x8])
+        (subreg:QI (reg:SI 73 [ ivtmp_2 ]) 0))) -1
+     (nil))
+(debug_insn 14 13 15 4 (var_location:QI data (subreg:QI (reg/v:SI 74 [ data ]) 0)) -1
+     (nil))
+(debug_insn 15 14 16 4 (debug_marker) "../User/OLED_driver.c":86 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 75)
+        (sign_extend:SI (subreg/v:QI (reg/v:SI 74 [ data ]) 0))) "../User/OLED_driver.c":86 -1
+     (nil))
+(jump_insn 17 16 18 4 (set (pc)
+        (if_then_else (ge (reg:SI 75)
+                (const_int 0 [0]))
+            (label_ref 25)
+            (pc))) "../User/OLED_driver.c":86 -1
+     (int_list:REG_BR_PROB 633507684 (nil))
+ -> 25)
+(note 18 17 19 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 19 18 20 5 (debug_marker) "../User/OLED_driver.c":88 -1
+     (nil))
+(insn 20 19 21 5 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/OLED_driver.c":88 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":88 -1
+     (nil))
+(call_insn 22 21 23 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":88 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(jump_insn 23 22 24 5 (set (pc)
+        (label_ref 31)) -1
+     (nil)
+ -> 31)
+(barrier 24 23 25)
+(code_label 25 24 26 6 4 (nil) [1 uses])
+(note 26 25 27 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 27 26 28 6 (debug_marker) "../User/OLED_driver.c":92 -1
+     (nil))
+(insn 28 27 29 6 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/OLED_driver.c":92 -1
+     (nil))
+(insn 29 28 30 6 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":92 -1
+     (nil))
+(call_insn 30 29 31 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":92 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 31 30 32 7 5 (nil) [1 uses])
+(note 32 31 33 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 33 32 34 7 (debug_marker) "../User/OLED_driver.c":95 -1
+     (nil))
+(insn 34 33 35 7 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":95 -1
+     (nil))
+(insn 35 34 36 7 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":95 -1
+     (nil))
+(call_insn 36 35 37 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":95 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 37 36 38 7 (debug_marker) "../User/OLED_driver.c":96 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":96 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":96 -1
+     (nil))
+(call_insn 40 39 41 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":96 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 41 40 42 7 (debug_marker) "../User/OLED_driver.c":98 -1
+     (nil))
+(insn 42 41 43 7 (set (reg:SI 76)
+        (ashift:SI (reg/v:SI 74 [ data ])
+            (const_int 1 [0x1]))) "../User/OLED_driver.c":98 -1
+     (nil))
+(insn 43 42 44 7 (set (reg/v:SI 74 [ data ])
+        (zero_extend:SI (subreg:QI (reg:SI 76) 0))) "../User/OLED_driver.c":98 -1
+     (nil))
+(debug_insn 44 43 45 7 (var_location:QI data (subreg:QI (reg/v:SI 74 [ data ]) 0)) "../User/OLED_driver.c":98 -1
+     (nil))
+(debug_insn 45 44 46 7 (var_location:QI D#1 (minus:QI (const_int 9 [0x9])
+        (subreg:QI (reg:SI 73 [ ivtmp_2 ]) 0))) -1
+     (nil))
+(debug_insn 46 45 47 7 (var_location:QI i (debug_expr:QI D#1)) "../User/OLED_driver.c":84 -1
+     (nil))
+(debug_insn 47 46 48 7 (var_location:QI i (debug_expr:QI D#1)) -1
+     (nil))
+(debug_insn 48 47 49 7 (var_location:QI data (subreg:QI (reg/v:SI 74 [ data ]) 0)) -1
+     (nil))
+(insn 49 48 50 7 (set (reg:SI 77)
+        (plus:SI (reg:SI 73 [ ivtmp_2 ])
+            (const_int -1 [0xffffffffffffffff]))) -1
+     (nil))
+(insn 50 49 52 7 (set (reg:SI 73 [ ivtmp_2 ])
+        (zero_extend:SI (subreg:QI (reg:SI 77) 0))) -1
+     (nil))
+(jump_insn 52 50 53 7 (set (pc)
+        (if_then_else (ne (reg:SI 73 [ ivtmp_2 ])
+                (const_int 0 [0]))
+            (label_ref 51)
+            (pc))) "../User/OLED_driver.c":84 -1
+     (int_list:REG_BR_PROB 939539196 (nil))
+ -> 51)
+(note 53 52 54 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 54 53 55 8 (debug_marker) "../User/OLED_driver.c":102 -1
+     (nil))
+(insn 55 54 56 8 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":102 -1
+     (nil))
+(insn 56 55 57 8 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":102 -1
+     (nil))
+(call_insn 57 56 58 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":102 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 58 57 59 8 (debug_marker) "../User/OLED_driver.c":103 -1
+     (nil))
+(insn 59 58 60 8 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":103 -1
+     (nil))
+(insn 60 59 61 8 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":103 -1
+     (nil))
+(call_insn 61 60 0 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":103 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function OLED_I2C_Stop (OLED_I2C_Stop, funcdef_no=24, decl_uid=4649, cgraph_uid=25, symbol_order=27)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/OLED_driver.c":71 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/OLED_driver.c":71 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":71 -1
+     (nil))
+(call_insn 8 7 9 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>) [0 GPIO_ResetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":71 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ResetBits") [flags 0x41] <function_decl 05a1e4b0 GPIO_ResetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 9 8 10 2 (debug_marker) "../User/OLED_driver.c":73 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":73 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":73 -1
+     (nil))
+(call_insn 12 11 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":73 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 13 12 14 2 (debug_marker) "../User/OLED_driver.c":74 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/OLED_driver.c":74 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":74 -1
+     (nil))
+(call_insn 16 15 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":74 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function OLED_Write_CMD (OLED_Write_CMD, funcdef_no=26, decl_uid=4659, cgraph_uid=27, symbol_order=29)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 72 [ cmd ])
+        (reg:SI 10 a0 [ cmd ])) "../User/OLED_driver.c":110 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../User/OLED_driver.c":111 -1
+     (nil))
+(call_insn 7 6 8 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_I2C_Start") [flags 0x3] <function_decl 05a5d690 OLED_I2C_Start>) [0 OLED_I2C_Start S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":111 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_I2C_Start") [flags 0x3] <function_decl 05a5d690 OLED_I2C_Start>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (nil))
+(debug_insn 8 7 9 2 (debug_marker) "../User/OLED_driver.c":113 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 10 a0)
+        (const_int 120 [0x78])) "../User/OLED_driver.c":113 -1
+     (nil))
+(call_insn 10 9 11 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>) [0 OLED_WriteByte S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":113 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 11 10 12 2 (debug_marker) "../User/OLED_driver.c":114 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 10 a0)
+        (const_int 0 [0])) "../User/OLED_driver.c":114 -1
+     (nil))
+(call_insn 13 12 14 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>) [0 OLED_WriteByte S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":114 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 14 13 15 2 (debug_marker) "../User/OLED_driver.c":115 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v:SI 72 [ cmd ])) "../User/OLED_driver.c":115 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>) [0 OLED_WriteByte S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":115 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 17 16 18 2 (debug_marker) "../User/OLED_driver.c":117 -1
+     (nil))
+(call_insn 18 17 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_I2C_Stop") [flags 0x3] <function_decl 05a5d708 OLED_I2C_Stop>) [0 OLED_I2C_Stop S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":117 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_I2C_Stop") [flags 0x3] <function_decl 05a5d708 OLED_I2C_Stop>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (nil))
+
+;; Function OLED_WriteDataArr (OLED_WriteDataArr, funcdef_no=27, decl_uid=4663, cgraph_uid=28, symbol_order=30)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 10->11 to 8 failed.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 10->11 to 8 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 84 [ Data ])
+        (reg:SI 10 a0 [ Data ])) "../User/OLED_driver.c":124 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 85 [ Count ])
+        (reg:SI 11 a1 [ Count ])) "../User/OLED_driver.c":124 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 7 4 8 2 (debug_marker) "../User/OLED_driver.c":125 -1
+     (nil))
+(debug_insn 8 7 9 2 (debug_marker) "../User/OLED_driver.c":127 -1
+     (nil))
+(call_insn 9 8 10 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_I2C_Start") [flags 0x3] <function_decl 05a5d690 OLED_I2C_Start>) [0 OLED_I2C_Start S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":127 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_I2C_Start") [flags 0x3] <function_decl 05a5d690 OLED_I2C_Start>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (nil))
+(debug_insn 10 9 11 2 (debug_marker) "../User/OLED_driver.c":129 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 10 a0)
+        (const_int 120 [0x78])) "../User/OLED_driver.c":129 -1
+     (nil))
+(call_insn 12 11 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>) [0 OLED_WriteByte S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":129 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 13 12 14 2 (debug_marker) "../User/OLED_driver.c":130 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 10 a0)
+        (const_int 64 [0x40])) "../User/OLED_driver.c":130 -1
+     (nil))
+(call_insn 15 14 16 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>) [0 OLED_WriteByte S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":130 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 16 15 17 2 (debug_marker) "../User/OLED_driver.c":132 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/OLED_driver.c":132 -1
+     (nil))
+(insn 18 17 19 2 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/OLED_driver.c":132 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 19 18 20 2 (set (reg:SI 88)
+        (zero_extend:SI (mem/c:QI (reg/f:SI 86) [1 OLED_ColorMode+0 S1 A8]))) "../User/OLED_driver.c":132 -1
+     (nil))
+(jump_insn 20 19 21 2 (set (pc)
+        (if_then_else (ne (reg:SI 88)
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) "../User/OLED_driver.c":132 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 26)
+(note 21 20 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 4 (set (reg:SI 80 [ ivtmp.32 ])
+        (reg/v/f:SI 84 [ Data ])) -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 82 [ _37 ])
+        (plus:SI (reg/v:SI 85 [ Count ])
+            (reg:SI 80 [ ivtmp.32 ]))) -1
+     (nil))
+(jump_insn 24 23 25 4 (set (pc)
+        (label_ref 58)) -1
+     (nil)
+ -> 58)
+(barrier 25 24 26)
+(code_label 26 25 27 5 14 (nil) [1 uses])
+(note 27 26 28 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 5 (set (reg:SI 76 [ ivtmp.24 ])
+        (reg/v/f:SI 84 [ Data ])) -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 78 [ _30 ])
+        (plus:SI (reg/v:SI 85 [ Count ])
+            (reg:SI 76 [ ivtmp.24 ]))) -1
+     (nil))
+(jump_insn 30 29 31 5 (set (pc)
+        (label_ref 39)) -1
+     (nil)
+ -> 39)
+(barrier 31 30 42)
+(code_label 42 31 32 6 17 (nil) [1 uses])
+(note 32 42 33 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 33 32 34 6 (debug_marker) "../User/OLED_driver.c":136 -1
+     (nil))
+(insn 34 33 35 6 (set (reg:SI 89)
+        (zero_extend:SI (mem:QI (reg:SI 76 [ ivtmp.24 ]) [0 MEM[base: _31, offset: 0B]+0 S1 A8]))) "../User/OLED_driver.c":136 -1
+     (nil))
+(insn 35 34 36 6 (set (reg:SI 10 a0)
+        (reg:SI 89)) "../User/OLED_driver.c":136 -1
+     (nil))
+(call_insn 36 35 37 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>) [0 OLED_WriteByte S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":136 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 37 36 38 6 (var_location:QI i (plus:QI (minus:QI (subreg:QI (reg:SI 76 [ ivtmp.24 ]) 0)
+            (subreg:QI (reg/v/f:SI 84 [ Data ]) 0))
+        (const_int 1 [0x1]))) "../User/OLED_driver.c":134 -1
+     (nil))
+(insn 38 37 39 6 (set (reg:SI 76 [ ivtmp.24 ])
+        (plus:SI (reg:SI 76 [ ivtmp.24 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(code_label 39 38 40 7 16 (nil) [1 uses])
+(note 40 39 41 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 41 40 43 7 (var_location:QI i (minus:QI (subreg:QI (reg:SI 76 [ ivtmp.24 ]) 0)
+        (subreg:QI (reg/v/f:SI 84 [ Data ]) 0))) -1
+     (nil))
+(jump_insn 43 41 63 7 (set (pc)
+        (if_then_else (ne (reg:SI 76 [ ivtmp.24 ])
+                (reg:SI 78 [ _30 ]))
+            (label_ref 42)
+            (pc))) "../User/OLED_driver.c":134 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 42)
+(code_label 63 43 44 8 19 (nil) [1 uses])
+(note 44 63 45 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 45 44 46 8 (debug_marker) "../User/OLED_driver.c":147 -1
+     (nil))
+(call_insn 46 45 47 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_I2C_Stop") [flags 0x3] <function_decl 05a5d708 OLED_I2C_Stop>) [0 OLED_I2C_Stop S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":147 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_I2C_Stop") [flags 0x3] <function_decl 05a5d708 OLED_I2C_Stop>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (nil))
+(jump_insn 47 46 48 8 (set (pc)
+        (label_ref 67)) "../User/OLED_driver.c":148 -1
+     (nil)
+ -> 67)
+(barrier 48 47 61)
+(code_label 61 48 49 9 18 (nil) [1 uses])
+(note 49 61 50 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 50 49 51 9 (debug_marker) "../User/OLED_driver.c":143 -1
+     (nil))
+(insn 51 50 52 9 (set (reg:QI 90)
+        (mem:QI (reg:SI 80 [ ivtmp.32 ]) [0 MEM[base: _38, offset: 0B]+0 S1 A8])) "../User/OLED_driver.c":143 -1
+     (nil))
+(insn 52 51 53 9 (set (reg:SI 91)
+        (not:SI (subreg:SI (reg:QI 90) 0))) "../User/OLED_driver.c":143 -1
+     (nil))
+(insn 53 52 54 9 (set (reg:SI 92)
+        (zero_extend:SI (subreg:QI (reg:SI 91) 0))) "../User/OLED_driver.c":143 -1
+     (nil))
+(insn 54 53 55 9 (set (reg:SI 10 a0)
+        (reg:SI 92)) "../User/OLED_driver.c":143 -1
+     (nil))
+(call_insn 55 54 56 9 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>) [0 OLED_WriteByte S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":143 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteByte") [flags 0x3] <function_decl 05a5d780 OLED_WriteByte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 56 55 57 9 (var_location:QI i (plus:QI (minus:QI (subreg:QI (reg:SI 80 [ ivtmp.32 ]) 0)
+            (subreg:QI (reg/v/f:SI 84 [ Data ]) 0))
+        (const_int 1 [0x1]))) "../User/OLED_driver.c":141 -1
+     (nil))
+(insn 57 56 58 9 (set (reg:SI 80 [ ivtmp.32 ])
+        (plus:SI (reg:SI 80 [ ivtmp.32 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(code_label 58 57 59 10 15 (nil) [1 uses])
+(note 59 58 60 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 60 59 62 10 (var_location:QI i (minus:QI (subreg:QI (reg:SI 80 [ ivtmp.32 ]) 0)
+        (subreg:QI (reg/v/f:SI 84 [ Data ]) 0))) -1
+     (nil))
+(jump_insn 62 60 66 10 (set (pc)
+        (if_then_else (ne (reg:SI 80 [ ivtmp.32 ])
+                (reg:SI 82 [ _37 ]))
+            (label_ref 61)
+            (pc))) "../User/OLED_driver.c":141 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 61)
+(note 66 62 64 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 64 66 65 11 (set (pc)
+        (label_ref 63)) -1
+     (nil)
+ -> 63)
+(barrier 65 64 67)
+(code_label 67 65 68 12 13 (nil) [1 uses])
+(note 68 67 0 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+;; Function OLED_SetColorMode (OLED_SetColorMode, funcdef_no=22, decl_uid=4635, cgraph_uid=23, symbol_order=25)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 72 [ colormode ])
+        (reg:SI 10 a0 [ colormode ])) "../User/OLED_driver.c":50 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../User/OLED_driver.c":51 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 74)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/OLED_driver.c":51 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:SI 73)
+        (lo_sum:SI (reg:SI 74)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "../User/OLED_driver.c":51 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 9 8 0 2 (set (mem/c:QI (reg/f:SI 73) [1 OLED_ColorMode+0 S1 A8])
+        (subreg/s/v:QI (reg/v:SI 72 [ colormode ]) 0)) "../User/OLED_driver.c":51 -1
+     (nil))
+
+;; Function OLED_Update (OLED_Update, funcdef_no=29, decl_uid=4628, cgraph_uid=30, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 4->5 to 6 failed.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 4 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 2 7 2 (debug_marker) "../User/OLED_driver.c":168 -1
+     (nil))
+(debug_insn 7 6 8 2 (debug_marker) "../User/OLED_driver.c":170 -1
+     (nil))
+(debug_insn 8 7 9 2 (var_location:QI page (const_int 0 [0])) "../User/OLED_driver.c":170 -1
+     (nil))
+(debug_insn 9 8 10 2 (var_location:QI page (const_int 0 [0])) -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 12 11 3 2 (set (reg:SI 74 [ ivtmp.39 ])
+        (reg/f:SI 76)) -1
+     (nil))
+(insn 3 12 45 2 (set (reg/v:SI 72 [ Page ])
+        (const_int 0 [0])) "../User/OLED_driver.c":170 -1
+     (nil))
+(code_label 45 3 13 4 24 (nil) [1 uses])
+(note 13 45 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 14 13 15 4 (var_location:QI page (subreg:QI (reg/v:SI 72 [ Page ]) 0)) -1
+     (nil))
+(debug_insn 15 14 16 4 (debug_marker) "../User/OLED_driver.c":172 -1
+     (nil))
+(debug_insn 16 15 17 4 (var_location:QI Page (subreg:QI (reg/v:SI 72 [ Page ]) 0)) "../User/OLED_driver.c":172 -1
+     (nil))
+(debug_insn 17 16 18 4 (var_location:QI X (const_int 0 [0])) "../User/OLED_driver.c":172 -1
+     (nil))
+(debug_insn 18 17 19 4 (debug_marker) "../User/OLED_driver.c":155 -1
+     (nil))
+(debug_insn 19 18 20 4 (var_location:QI X (const_int 40 [0x28])) "../User/OLED_driver.c":155 -1
+     (nil))
+(debug_insn 20 19 21 4 (debug_marker) "../User/OLED_driver.c":156 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 78)
+        (plus:SI (reg/v:SI 72 [ Page ])
+            (const_int 1 [0x1]))) "../User/OLED_driver.c":156 -1
+     (nil))
+(insn 22 21 23 4 (set (reg/v:SI 72 [ Page ])
+        (zero_extend:SI (subreg:QI (reg:SI 78) 0))) "../User/OLED_driver.c":156 -1
+     (nil))
+(debug_insn 23 22 24 4 (var_location:QI Page (subreg:QI (reg/v:SI 72 [ Page ]) 0)) "../User/OLED_driver.c":156 -1
+     (nil))
+(debug_insn 24 23 25 4 (debug_marker) "../User/OLED_driver.c":158 -1
+     (nil))
+(insn 25 24 26 4 (set (reg:SI 79)
+        (ior:SI (reg/v:SI 72 [ Page ])
+            (const_int -80 [0xffffffffffffffb0]))) "../User/OLED_driver.c":158 -1
+     (nil))
+(insn 26 25 27 4 (set (reg:SI 80)
+        (zero_extend:SI (subreg:QI (reg:SI 79) 0))) "../User/OLED_driver.c":158 -1
+     (nil))
+(insn 27 26 28 4 (set (reg:SI 10 a0)
+        (reg:SI 80)) "../User/OLED_driver.c":158 -1
+     (nil))
+(call_insn 28 27 29 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":158 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 29 28 30 4 (debug_marker) "../User/OLED_driver.c":159 -1
+     (nil))
+(insn 30 29 31 4 (set (reg:SI 10 a0)
+        (const_int 18 [0x12])) "../User/OLED_driver.c":159 -1
+     (nil))
+(call_insn 31 30 32 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":159 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 32 31 33 4 (debug_marker) "../User/OLED_driver.c":160 -1
+     (nil))
+(insn 33 32 34 4 (set (reg:SI 10 a0)
+        (const_int 8 [0x8])) "../User/OLED_driver.c":160 -1
+     (nil))
+(call_insn 34 33 35 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":160 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 35 34 36 4 (var_location:QI Page (clobber (const_int 0 [0]))) "../User/OLED_driver.c":172 -1
+     (nil))
+(debug_insn 36 35 37 4 (var_location:QI X (clobber (const_int 0 [0]))) "../User/OLED_driver.c":172 -1
+     (nil))
+(debug_insn 37 36 38 4 (debug_marker) "../User/OLED_driver.c":174 -1
+     (nil))
+(insn 38 37 39 4 (set (reg:SI 11 a1)
+        (const_int 88 [0x58])) "../User/OLED_driver.c":174 -1
+     (nil))
+(insn 39 38 40 4 (set (reg:SI 10 a0)
+        (reg:SI 74 [ ivtmp.39 ])) "../User/OLED_driver.c":174 -1
+     (nil))
+(call_insn 40 39 41 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteDataArr") [flags 0x3] <function_decl 05a5d870 OLED_WriteDataArr>) [0 OLED_WriteDataArr S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":174 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteDataArr") [flags 0x3] <function_decl 05a5d870 OLED_WriteDataArr>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 41 40 42 4 (var_location:QI page (subreg:QI (reg/v:SI 72 [ Page ]) 0)) "../User/OLED_driver.c":170 -1
+     (nil))
+(debug_insn 42 41 43 4 (var_location:QI page (subreg:QI (reg/v:SI 72 [ Page ]) 0)) -1
+     (nil))
+(insn 43 42 44 4 (set (reg:SI 74 [ ivtmp.39 ])
+        (plus:SI (reg:SI 74 [ ivtmp.39 ])
+            (const_int 128 [0x80]))) -1
+     (nil))
+(insn 44 43 46 4 (set (reg/v:SI 72 [ Page ])
+        (reg/v:SI 72 [ Page ])) -1
+     (nil))
+(insn 46 44 47 4 (set (reg:SI 81)
+        (const_int 6 [0x6])) "../User/OLED_driver.c":170 -1
+     (nil))
+(jump_insn 47 46 48 4 (set (pc)
+        (if_then_else (ne (reg/v:SI 72 [ Page ])
+                (reg:SI 81))
+            (label_ref 45)
+            (pc))) "../User/OLED_driver.c":170 -1
+     (int_list:REG_BR_PROB 894722220 (nil))
+ -> 45)
+(note 48 47 0 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+;; Function OLED_UpdateArea (OLED_UpdateArea, funcdef_no=30, decl_uid=4633, cgraph_uid=31, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+Predictions for insn 26 bb 5
+  DS theory heuristics: 59.0%  exec 118111601 (estimated locally) hit 236223201 (estimated locally) (200.0%)
+  combined heuristics: 59.0%  exec 118111601 (estimated locally) hit 236223201 (estimated locally) (200.0%)
+  opcode values positive heuristics: 59.0%  exec 118111601 (estimated locally) hit 236223201 (estimated locally) (200.0%)
+Predictions for insn 34 bb 16
+  DS theory heuristics: 59.0%  exec 118111601 (estimated locally) hit 236223201 (estimated locally) (200.0%)
+  combined heuristics: 59.0%  exec 118111601 (estimated locally) hit 236223201 (estimated locally) (200.0%)
+  opcode values positive heuristics: 59.0%  exec 118111601 (estimated locally) hit 236223201 (estimated locally) (200.0%)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 2->4 to 18 failed.
+Forwarding edge 2->4 to 18 failed.
+Edge 5->4 redirected to 18
+Forwarding edge 16->17 to 18 failed.
+Removing jump 134.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 2->4 to 18 failed.
+Deleted label in block 4.
+Forwarding edge 16->17 to 18 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v:SI 105 [ X ])
+        (reg:SI 10 a0 [ X ])) "../User/OLED_driver.c":190 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 106 [ Y ])
+        (reg:SI 11 a1 [ Y ])) "../User/OLED_driver.c":190 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 107 [ Width ])
+        (reg:SI 12 a2 [ Width ])) "../User/OLED_driver.c":190 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 108 [ Height ])
+        (reg:SI 13 a3 [ Height ])) "../User/OLED_driver.c":190 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 9 6 10 2 (debug_marker) "../User/OLED_driver.c":191 -1
+     (nil))
+(debug_insn 10 9 11 2 (debug_marker) "../User/OLED_driver.c":193 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 109)
+        (const_int 87 [0x57])) "../User/OLED_driver.c":193 -1
+     (nil))
+(jump_insn 12 11 13 2 (set (pc)
+        (if_then_else (le (reg/v:SI 105 [ X ])
+                (reg:SI 109))
+            (label_ref 16)
+            (pc))) "../User/OLED_driver.c":193 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 16)
+(note 13 12 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 14 13 15 4 (set (pc)
+        (label_ref 137)) -1
+     (nil)
+ -> 137)
+(barrier 15 14 16)
+(code_label 16 15 17 5 28 (nil) [1 uses])
+(note 17 16 18 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 18 17 20 5 (debug_marker) "../User/OLED_driver.c":198 -1
+     (nil))
+(insn 20 18 21 5 (set (reg:SI 110)
+        (const_int 47 [0x2f])) "../User/OLED_driver.c":198 -1
+     (nil))
+(jump_insn 21 20 22 5 (set (pc)
+        (if_then_else (gt (reg/v:SI 106 [ Y ])
+                (reg:SI 110))
+            (label_ref:SI 137)
+            (pc))) "../User/OLED_driver.c":198 180 {*branchsi}
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 137)
+(note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 23 22 24 6 (debug_marker) "../User/OLED_driver.c":203 -1
+     (nil))
+(insn 24 23 25 6 (set (reg:HI 111)
+        (subreg/s/u:HI (reg/v:SI 105 [ X ]) 0)) -1
+     (nil))
+(insn 25 24 26 6 (set (reg:SI 112)
+        (sign_extend:SI (reg:HI 111))) -1
+     (nil))
+(jump_insn 26 25 139 6 (set (pc)
+        (if_then_else (ge (reg:SI 112)
+                (const_int 0 [0]))
+            (label_ref 28)
+            (pc))) -1
+     (int_list:REG_BR_PROB 633507684 (nil))
+ -> 28)
+(note 139 26 27 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 27 139 28 7 (set (reg:HI 111)
+        (const_int 0 [0])) -1
+     (nil))
+(code_label 28 27 140 8 30 (nil) [1 uses])
+(note 140 28 29 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 29 140 30 8 (set (reg/v:SI 103 [ X ])
+        (sign_extend:SI (reg:HI 111))) -1
+     (nil))
+(debug_insn 30 29 31 8 (var_location:HI X (subreg:HI (reg/v:SI 103 [ X ]) 0)) -1
+     (nil))
+(debug_insn 31 30 32 8 (debug_marker) "../User/OLED_driver.c":208 -1
+     (nil))
+(insn 32 31 33 8 (set (reg:HI 113)
+        (subreg/s/u:HI (reg/v:SI 106 [ Y ]) 0)) -1
+     (nil))
+(insn 33 32 34 8 (set (reg:SI 114)
+        (sign_extend:SI (reg:HI 113))) -1
+     (nil))
+(jump_insn 34 33 141 8 (set (pc)
+        (if_then_else (ge (reg:SI 114)
+                (const_int 0 [0]))
+            (label_ref 36)
+            (pc))) -1
+     (int_list:REG_BR_PROB 633507684 (nil))
+ -> 36)
+(note 141 34 35 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 35 141 36 9 (set (reg:HI 113)
+        (const_int 0 [0])) -1
+     (nil))
+(code_label 36 35 142 10 31 (nil) [1 uses])
+(note 142 36 37 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 37 142 38 10 (set (reg/v:SI 95 [ Y ])
+        (sign_extend:SI (reg:HI 113))) -1
+     (nil))
+(debug_insn 38 37 39 10 (var_location:HI Y (subreg:HI (reg/v:SI 95 [ Y ]) 0)) -1
+     (nil))
+(debug_insn 39 38 40 10 (debug_marker) "../User/OLED_driver.c":213 -1
+     (nil))
+(insn 40 39 41 10 (set (reg:SI 115)
+        (plus:SI (reg/v:SI 103 [ X ])
+            (reg/v:SI 107 [ Width ]))) "../User/OLED_driver.c":213 -1
+     (nil))
+(insn 41 40 42 10 (set (reg:SI 116)
+        (const_int 88 [0x58])) "../User/OLED_driver.c":213 -1
+     (nil))
+(jump_insn 42 41 43 10 (set (pc)
+        (if_then_else (le (reg:SI 115)
+                (reg:SI 116))
+            (label_ref 50)
+            (pc))) "../User/OLED_driver.c":213 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 50)
+(note 43 42 44 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 44 43 45 11 (debug_marker) "../User/OLED_driver.c":215 -1
+     (nil))
+(insn 45 44 46 11 (set (reg:HI 117)
+        (const_int 88 [0x58])) "../User/OLED_driver.c":215 -1
+     (nil))
+(insn 46 45 47 11 (set (reg:HI 118)
+        (subreg/u:HI (reg/v:SI 103 [ X ]) 0)) "../User/OLED_driver.c":215 -1
+     (nil))
+(insn 47 46 48 11 (set (reg:SI 119)
+        (minus:SI (subreg:SI (reg:HI 117) 0)
+            (subreg:SI (reg:HI 118) 0))) "../User/OLED_driver.c":215 -1
+     (nil))
+(insn 48 47 49 11 (set (reg/v:SI 107 [ Width ])
+        (sign_extend:SI (subreg:HI (reg:SI 119) 0))) "../User/OLED_driver.c":215 -1
+     (nil))
+(debug_insn 49 48 50 11 (var_location:HI Width (subreg:HI (reg/v:SI 107 [ Width ]) 0)) "../User/OLED_driver.c":215 -1
+     (nil))
+(code_label 50 49 51 12 32 (nil) [1 uses])
+(note 51 50 52 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 52 51 53 12 (var_location:HI Width (subreg:HI (reg/v:SI 107 [ Width ]) 0)) -1
+     (nil))
+(debug_insn 53 52 54 12 (debug_marker) "../User/OLED_driver.c":218 -1
+     (nil))
+(insn 54 53 55 12 (set (reg:SI 77 [ _6 ])
+        (reg/v:SI 95 [ Y ])) "../User/OLED_driver.c":218 -1
+     (nil))
+(insn 55 54 56 12 (set (reg:SI 120)
+        (plus:SI (reg/v:SI 108 [ Height ])
+            (reg:SI 77 [ _6 ]))) "../User/OLED_driver.c":218 -1
+     (nil))
+(insn 56 55 57 12 (set (reg:SI 121)
+        (const_int 48 [0x30])) "../User/OLED_driver.c":218 -1
+     (nil))
+(jump_insn 57 56 58 12 (set (pc)
+        (if_then_else (le (reg:SI 120)
+                (reg:SI 121))
+            (label_ref 65)
+            (pc))) "../User/OLED_driver.c":218 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 65)
+(note 58 57 59 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 59 58 60 13 (debug_marker) "../User/OLED_driver.c":220 -1
+     (nil))
+(insn 60 59 61 13 (set (reg:HI 122)
+        (const_int 48 [0x30])) "../User/OLED_driver.c":220 -1
+     (nil))
+(insn 61 60 62 13 (set (reg:HI 123)
+        (subreg/u:HI (reg/v:SI 95 [ Y ]) 0)) "../User/OLED_driver.c":220 -1
+     (nil))
+(insn 62 61 63 13 (set (reg:SI 124)
+        (minus:SI (subreg:SI (reg:HI 122) 0)
+            (subreg:SI (reg:HI 123) 0))) "../User/OLED_driver.c":220 -1
+     (nil))
+(insn 63 62 64 13 (set (reg/v:SI 108 [ Height ])
+        (sign_extend:SI (subreg:HI (reg:SI 124) 0))) "../User/OLED_driver.c":220 -1
+     (nil))
+(debug_insn 64 63 65 13 (var_location:HI Height (subreg:HI (reg/v:SI 108 [ Height ]) 0)) "../User/OLED_driver.c":220 -1
+     (nil))
+(code_label 65 64 66 14 33 (nil) [1 uses])
+(note 66 65 67 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 67 66 68 14 (var_location:HI Height (subreg:HI (reg/v:SI 108 [ Height ]) 0)) -1
+     (nil))
+(debug_insn 68 67 69 14 (debug_marker) "../User/OLED_driver.c":223 -1
+     (nil))
+(debug_insn 69 68 70 14 (var_location:HI j (ashiftrt:HI (subreg:HI (reg/v:SI 95 [ Y ]) 0)
+        (const_int 3 [0x3]))) "../User/OLED_driver.c":223 -1
+     (nil))
+(insn 70 69 71 14 (set (reg:SI 125)
+        (plus:SI (reg/v:SI 108 [ Height ])
+            (reg:SI 77 [ _6 ]))) "../User/OLED_driver.c":224 -1
+     (nil))
+(insn 71 70 74 14 (set (reg:SI 126)
+        (plus:SI (reg:SI 125)
+            (const_int -1 [0xffffffffffffffff]))) "../User/OLED_driver.c":224 -1
+     (nil))
+(insn 74 71 75 14 (set (reg:SI 129)
+        (ashiftrt:SI (reg:SI 126)
+            (const_int 31 [0x1f]))) "../User/OLED_driver.c":224 -1
+     (nil))
+(insn 75 74 76 14 (set (reg:SI 130)
+        (and:SI (reg:SI 129)
+            (const_int 7 [0x7]))) "../User/OLED_driver.c":224 -1
+     (nil))
+(insn 76 75 77 14 (set (reg:SI 131)
+        (plus:SI (reg:SI 130)
+            (reg:SI 126))) "../User/OLED_driver.c":224 -1
+     (nil))
+(insn 77 76 78 14 (set (reg:SI 132)
+        (ashiftrt:SI (reg:SI 131)
+            (const_int 3 [0x3]))) "../User/OLED_driver.c":224 -1
+     (expr_list:REG_EQUAL (div:SI (reg:SI 126)
+            (const_int 8 [0x8]))
+        (nil)))
+(insn 78 77 79 14 (set (reg:SI 88 [ _20 ])
+        (reg:SI 132)) "../User/OLED_driver.c":224 -1
+     (nil))
+(debug_insn 79 78 80 14 (var_location:QI D#3 (subreg:QI (reg/v:SI 103 [ X ]) 0)) "../User/OLED_driver.c":227 -1
+     (nil))
+(insn 80 79 81 14 (set (reg:QI 133)
+        (subreg:QI (reg/v:SI 103 [ X ]) 0)) "../User/OLED_driver.c":155 -1
+     (nil))
+(insn 81 80 82 14 (set (reg:SI 134)
+        (plus:SI (subreg:SI (reg:QI 133) 0)
+            (const_int 40 [0x28]))) "../User/OLED_driver.c":155 -1
+     (nil))
+(insn 82 81 83 14 (set (reg/v:SI 96 [ X ])
+        (zero_extend:SI (subreg:QI (reg:SI 134) 0))) "../User/OLED_driver.c":155 -1
+     (nil))
+(insn 83 82 84 14 (set (reg:SI 135)
+        (lshiftrt:SI (reg/v:SI 96 [ X ])
+            (const_int 4 [0x4]))) "../User/OLED_driver.c":159 -1
+     (nil))
+(insn 84 83 85 14 (set (reg:QI 136)
+        (subreg:QI (reg:SI 135) 0)) "../User/OLED_driver.c":159 -1
+     (nil))
+(insn 85 84 86 14 (set (reg:SI 137)
+        (ior:SI (subreg:SI (reg:QI 136) 0)
+            (const_int 16 [0x10]))) "../User/OLED_driver.c":159 -1
+     (nil))
+(insn 86 85 87 14 (set (reg:SI 99 [ _44 ])
+        (zero_extend:SI (subreg:QI (reg:SI 137) 0))) "../User/OLED_driver.c":159 -1
+     (nil))
+(insn 87 86 88 14 (set (reg:SI 138)
+        (ashiftrt:SI (reg/v:SI 95 [ Y ])
+            (const_int 3 [0x3]))) "../User/OLED_driver.c":223 -1
+     (nil))
+(insn 88 87 89 14 (set (reg:SI 93 [ ivtmp.42 ])
+        (zero_extend:SI (subreg:HI (reg:SI 138) 0))) -1
+     (nil))
+(jump_insn 89 88 90 14 (set (pc)
+        (label_ref 126)) "../User/OLED_driver.c":223 -1
+     (nil)
+ -> 126)
+(barrier 90 89 132)
+(code_label 132 90 91 15 35 (nil) [1 uses])
+(note 91 132 92 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(debug_insn 92 91 93 15 (debug_marker) "../User/OLED_driver.c":227 -1
+     (nil))
+(debug_insn 93 92 94 15 (var_location:QI Page (plus:QI (subreg:QI (reg:SI 93 [ ivtmp.42 ]) 0)
+        (const_int -1 [0xffffffffffffffff]))) "../User/OLED_driver.c":227 -1
+     (nil))
+(debug_insn 94 93 95 15 (var_location:QI X (subreg:QI (reg/v:SI 103 [ X ]) 0)) "../User/OLED_driver.c":227 -1
+     (nil))
+(debug_insn 95 94 96 15 (debug_marker) "../User/OLED_driver.c":155 -1
+     (nil))
+(debug_insn 96 95 97 15 (var_location:QI X (plus:QI (debug_expr:QI D#3)
+        (const_int 40 [0x28]))) "../User/OLED_driver.c":155 -1
+     (nil))
+(debug_insn 97 96 98 15 (debug_marker) "../User/OLED_driver.c":156 -1
+     (nil))
+(debug_insn 98 97 99 15 (var_location:QI Page (subreg:QI (reg:SI 93 [ ivtmp.42 ]) 0)) "../User/OLED_driver.c":156 -1
+     (nil))
+(debug_insn 99 98 100 15 (debug_marker) "../User/OLED_driver.c":158 -1
+     (nil))
+(insn 100 99 101 15 (set (reg:QI 139)
+        (subreg:QI (reg:SI 93 [ ivtmp.42 ]) 0)) "../User/OLED_driver.c":158 -1
+     (nil))
+(insn 101 100 102 15 (set (reg:SI 140)
+        (ior:SI (subreg:SI (reg:QI 139) 0)
+            (const_int -80 [0xffffffffffffffb0]))) "../User/OLED_driver.c":158 -1
+     (nil))
+(insn 102 101 103 15 (set (reg:SI 141)
+        (zero_extend:SI (subreg:QI (reg:SI 140) 0))) "../User/OLED_driver.c":158 -1
+     (nil))
+(insn 103 102 104 15 (set (reg:SI 10 a0)
+        (reg:SI 141)) "../User/OLED_driver.c":158 -1
+     (nil))
+(call_insn 104 103 105 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":158 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 105 104 106 15 (debug_marker) "../User/OLED_driver.c":159 -1
+     (nil))
+(insn 106 105 107 15 (set (reg:SI 10 a0)
+        (reg:SI 99 [ _44 ])) "../User/OLED_driver.c":159 -1
+     (nil))
+(call_insn 107 106 108 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":159 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 108 107 109 15 (debug_marker) "../User/OLED_driver.c":160 -1
+     (nil))
+(insn 109 108 110 15 (set (reg:SI 142)
+        (and:SI (reg/v:SI 96 [ X ])
+            (const_int 15 [0xf]))) "../User/OLED_driver.c":160 -1
+     (nil))
+(insn 110 109 111 15 (set (reg:SI 143)
+        (zero_extend:SI (subreg:QI (reg:SI 142) 0))) "../User/OLED_driver.c":160 -1
+     (nil))
+(insn 111 110 112 15 (set (reg:SI 10 a0)
+        (reg:SI 143)) "../User/OLED_driver.c":160 -1
+     (nil))
+(call_insn 112 111 113 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":160 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 113 112 114 15 (var_location:QI Page (clobber (const_int 0 [0]))) "../User/OLED_driver.c":227 -1
+     (nil))
+(debug_insn 114 113 115 15 (var_location:QI X (clobber (const_int 0 [0]))) "../User/OLED_driver.c":227 -1
+     (nil))
+(debug_insn 115 114 116 15 (debug_marker) "../User/OLED_driver.c":229 -1
+     (nil))
+(insn 116 115 117 15 (set (reg:SI 144)
+        (zero_extend:SI (subreg:QI (reg/v:SI 107 [ Width ]) 0))) "../User/OLED_driver.c":229 -1
+     (nil))
+(insn 117 116 118 15 (set (reg:SI 146)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/OLED_driver.c":229 -1
+     (nil))
+(insn 118 117 119 15 (set (reg/f:SI 145)
+        (lo_sum:SI (reg:SI 146)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "../User/OLED_driver.c":229 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 119 118 120 15 (set (reg:SI 147)
+        (ashift:SI (reg/v:SI 92 [ j ])
+            (const_int 7 [0x7]))) "../User/OLED_driver.c":229 -1
+     (nil))
+(insn 120 119 121 15 (set (reg:SI 148)
+        (plus:SI (reg:SI 147)
+            (reg/v:SI 103 [ X ]))) "../User/OLED_driver.c":229 -1
+     (nil))
+(insn 121 120 122 15 (set (reg:SI 149)
+        (plus:SI (reg/f:SI 145)
+            (reg:SI 148))) "../User/OLED_driver.c":229 -1
+     (nil))
+(insn 122 121 123 15 (set (reg:SI 11 a1)
+        (reg:SI 144)) "../User/OLED_driver.c":229 -1
+     (nil))
+(insn 123 122 124 15 (set (reg:SI 10 a0)
+        (reg:SI 149)) "../User/OLED_driver.c":229 -1
+     (nil))
+(call_insn 124 123 125 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_WriteDataArr") [flags 0x3] <function_decl 05a5d870 OLED_WriteDataArr>) [0 OLED_WriteDataArr S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":229 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_WriteDataArr") [flags 0x3] <function_decl 05a5d870 OLED_WriteDataArr>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 125 124 126 15 (var_location:HI j (subreg:HI (reg:SI 93 [ ivtmp.42 ]) 0)) "../User/OLED_driver.c":225 -1
+     (nil))
+(code_label 126 125 127 16 34 (nil) [1 uses])
+(note 127 126 128 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 128 127 129 16 (set (reg/v:SI 92 [ j ])
+        (sign_extend:SI (subreg/v:HI (reg:SI 93 [ ivtmp.42 ]) 0))) -1
+     (nil))
+(debug_insn 129 128 130 16 (var_location:HI j (subreg:HI (reg/v:SI 92 [ j ]) 0)) -1
+     (nil))
+(insn 130 129 131 16 (set (reg:SI 150)
+        (plus:SI (reg:SI 93 [ ivtmp.42 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 131 130 133 16 (set (reg:SI 93 [ ivtmp.42 ])
+        (zero_extend:SI (subreg:HI (reg:SI 150) 0))) -1
+     (nil))
+(jump_insn 133 131 136 16 (set (pc)
+        (if_then_else (ge (reg:SI 88 [ _20 ])
+                (reg/v:SI 92 [ j ]))
+            (label_ref 132)
+            (pc))) "../User/OLED_driver.c":223 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 132)
+(note 136 133 137 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(code_label 137 136 138 18 27 (nil) [2 uses])
+(note 138 137 0 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+
+;; Function OLED_Init (OLED_Init, funcdef_no=31, decl_uid=4626, cgraph_uid=32, symbol_order=34)
+
+Partition 0: size 12 align 4
+	GPIO_InitStructure
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 5 2 6 2 (debug_marker) "../User/OLED_driver.c":244 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 GPIO_InitStructure+0 S4 A32])
+        (const_int 0 [0])) "../User/OLED_driver.c":244 -1
+     (nil))
+(insn 7 6 8 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 GPIO_InitStructure+4 S4 A32])
+        (const_int 0 [0])) "../User/OLED_driver.c":244 -1
+     (nil))
+(insn 8 7 9 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 GPIO_InitStructure+8 S4 A32])
+        (const_int 0 [0])) "../User/OLED_driver.c":244 -1
+     (nil))
+(debug_insn 9 8 10 2 (debug_marker) "../User/OLED_driver.c":246 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "../User/OLED_driver.c":246 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 10 a0)
+        (const_int 16 [0x10])) "../User/OLED_driver.c":246 -1
+     (nil))
+(call_insn 12 11 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 05a26870 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":246 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 05a26870 RCC_APB2PeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 13 12 14 2 (debug_marker) "../User/OLED_driver.c":248 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:HI 72)
+        (const_int 6 [0x6])) "../User/OLED_driver.c":248 -1
+     (nil))
+(insn 15 14 16 2 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [4 GPIO_InitStructure.GPIO_Pin+0 S2 A32])
+        (reg:HI 72)) "../User/OLED_driver.c":248 -1
+     (nil))
+(debug_insn 16 15 17 2 (debug_marker) "../User/OLED_driver.c":251 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 73)
+        (const_int 20 [0x14])) "../User/OLED_driver.c":251 -1
+     (nil))
+(insn 18 17 19 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 GPIO_InitStructure.GPIO_Mode+0 S4 A32])
+        (reg:SI 73)) "../User/OLED_driver.c":251 -1
+     (nil))
+(debug_insn 19 18 20 2 (debug_marker) "../User/OLED_driver.c":254 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 74)
+        (const_int 3 [0x3])) "../User/OLED_driver.c":254 -1
+     (nil))
+(insn 21 20 22 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 GPIO_InitStructure.GPIO_Speed+0 S4 A32])
+        (reg:SI 74)) "../User/OLED_driver.c":254 -1
+     (nil))
+(debug_insn 22 21 23 2 (debug_marker) "../User/OLED_driver.c":257 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 75)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "../User/OLED_driver.c":257 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 11 a1)
+        (reg:SI 75)) "../User/OLED_driver.c":257 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":257 -1
+     (nil))
+(call_insn 26 25 27 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 05a1e168 GPIO_Init>) [0 GPIO_Init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":257 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 05a1e168 GPIO_Init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 27 26 28 2 (debug_marker) "../User/OLED_driver.c":259 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 11 a1)
+        (const_int 4 [0x4])) "../User/OLED_driver.c":259 -1
+     (nil))
+(insn 29 28 30 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":259 -1
+     (nil))
+(call_insn 30 29 31 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":259 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 31 30 32 2 (debug_marker) "../User/OLED_driver.c":260 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "../User/OLED_driver.c":260 -1
+     (nil))
+(insn 33 32 34 2 (set (reg:SI 10 a0)
+        (const_int 1073811456 [0x40011000])) "../User/OLED_driver.c":260 -1
+     (nil))
+(call_insn 34 33 35 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>) [0 GPIO_SetBits S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":260 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_SetBits") [flags 0x41] <function_decl 05a1e438 GPIO_SetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(debug_insn 35 34 36 2 (debug_marker) "../User/OLED_driver.c":262 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:SI 10 a0)
+        (const_int 174 [0xae])) "../User/OLED_driver.c":262 -1
+     (nil))
+(call_insn 37 36 38 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":262 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 38 37 39 2 (debug_marker) "../User/OLED_driver.c":264 -1
+     (nil))
+(insn 39 38 40 2 (set (reg:SI 10 a0)
+        (const_int 213 [0xd5])) "../User/OLED_driver.c":264 -1
+     (nil))
+(call_insn 40 39 41 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":264 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 41 40 42 2 (debug_marker) "../User/OLED_driver.c":265 -1
+     (nil))
+(insn 42 41 43 2 (set (reg:SI 10 a0)
+        (const_int 128 [0x80])) "../User/OLED_driver.c":265 -1
+     (nil))
+(call_insn 43 42 44 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":265 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 44 43 45 2 (debug_marker) "../User/OLED_driver.c":267 -1
+     (nil))
+(insn 45 44 46 2 (set (reg:SI 10 a0)
+        (const_int 168 [0xa8])) "../User/OLED_driver.c":267 -1
+     (nil))
+(call_insn 46 45 47 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":267 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 47 46 48 2 (debug_marker) "../User/OLED_driver.c":268 -1
+     (nil))
+(insn 48 47 49 2 (set (reg:SI 10 a0)
+        (const_int 63 [0x3f])) "../User/OLED_driver.c":268 -1
+     (nil))
+(call_insn 49 48 50 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":268 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 50 49 51 2 (debug_marker) "../User/OLED_driver.c":270 -1
+     (nil))
+(insn 51 50 52 2 (set (reg:SI 10 a0)
+        (const_int 211 [0xd3])) "../User/OLED_driver.c":270 -1
+     (nil))
+(call_insn 52 51 53 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":270 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 53 52 54 2 (debug_marker) "../User/OLED_driver.c":271 -1
+     (nil))
+(insn 54 53 55 2 (set (reg:SI 10 a0)
+        (const_int 0 [0])) "../User/OLED_driver.c":271 -1
+     (nil))
+(call_insn 55 54 56 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":271 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 56 55 57 2 (debug_marker) "../User/OLED_driver.c":273 -1
+     (nil))
+(insn 57 56 58 2 (set (reg:SI 10 a0)
+        (const_int 64 [0x40])) "../User/OLED_driver.c":273 -1
+     (nil))
+(call_insn 58 57 59 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":273 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 59 58 60 2 (debug_marker) "../User/OLED_driver.c":275 -1
+     (nil))
+(insn 60 59 61 2 (set (reg:SI 10 a0)
+        (const_int 161 [0xa1])) "../User/OLED_driver.c":275 -1
+     (nil))
+(call_insn 61 60 62 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":275 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 62 61 63 2 (debug_marker) "../User/OLED_driver.c":277 -1
+     (nil))
+(insn 63 62 64 2 (set (reg:SI 10 a0)
+        (const_int 200 [0xc8])) "../User/OLED_driver.c":277 -1
+     (nil))
+(call_insn 64 63 65 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":277 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 65 64 66 2 (debug_marker) "../User/OLED_driver.c":279 -1
+     (nil))
+(insn 66 65 67 2 (set (reg:SI 10 a0)
+        (const_int 218 [0xda])) "../User/OLED_driver.c":279 -1
+     (nil))
+(call_insn 67 66 68 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":279 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 68 67 69 2 (debug_marker) "../User/OLED_driver.c":280 -1
+     (nil))
+(insn 69 68 70 2 (set (reg:SI 10 a0)
+        (const_int 18 [0x12])) "../User/OLED_driver.c":280 -1
+     (nil))
+(call_insn 70 69 71 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":280 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 71 70 72 2 (debug_marker) "../User/OLED_driver.c":282 -1
+     (nil))
+(insn 72 71 73 2 (set (reg:SI 10 a0)
+        (const_int 129 [0x81])) "../User/OLED_driver.c":282 -1
+     (nil))
+(call_insn 73 72 74 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":282 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 74 73 75 2 (debug_marker) "../User/OLED_driver.c":283 -1
+     (nil))
+(insn 75 74 76 2 (set (reg:SI 10 a0)
+        (const_int 207 [0xcf])) "../User/OLED_driver.c":283 -1
+     (nil))
+(call_insn 76 75 77 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":283 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 77 76 78 2 (debug_marker) "../User/OLED_driver.c":285 -1
+     (nil))
+(insn 78 77 79 2 (set (reg:SI 10 a0)
+        (const_int 217 [0xd9])) "../User/OLED_driver.c":285 -1
+     (nil))
+(call_insn 79 78 80 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":285 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 80 79 81 2 (debug_marker) "../User/OLED_driver.c":286 -1
+     (nil))
+(insn 81 80 82 2 (set (reg:SI 10 a0)
+        (const_int 241 [0xf1])) "../User/OLED_driver.c":286 -1
+     (nil))
+(call_insn 82 81 83 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":286 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 83 82 84 2 (debug_marker) "../User/OLED_driver.c":288 -1
+     (nil))
+(insn 84 83 85 2 (set (reg:SI 10 a0)
+        (const_int 219 [0xdb])) "../User/OLED_driver.c":288 -1
+     (nil))
+(call_insn 85 84 86 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":288 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 86 85 87 2 (debug_marker) "../User/OLED_driver.c":289 -1
+     (nil))
+(insn 87 86 88 2 (set (reg:SI 10 a0)
+        (const_int 48 [0x30])) "../User/OLED_driver.c":289 -1
+     (nil))
+(call_insn 88 87 89 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":289 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 89 88 90 2 (debug_marker) "../User/OLED_driver.c":291 -1
+     (nil))
+(insn 90 89 91 2 (set (reg:SI 10 a0)
+        (const_int 164 [0xa4])) "../User/OLED_driver.c":291 -1
+     (nil))
+(call_insn 91 90 92 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":291 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 92 91 93 2 (debug_marker) "../User/OLED_driver.c":293 -1
+     (nil))
+(insn 93 92 94 2 (set (reg:SI 10 a0)
+        (const_int 166 [0xa6])) "../User/OLED_driver.c":293 -1
+     (nil))
+(call_insn 94 93 95 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":293 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 95 94 96 2 (debug_marker) "../User/OLED_driver.c":295 -1
+     (nil))
+(insn 96 95 97 2 (set (reg:SI 10 a0)
+        (const_int 141 [0x8d])) "../User/OLED_driver.c":295 -1
+     (nil))
+(call_insn 97 96 98 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":295 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 98 97 99 2 (debug_marker) "../User/OLED_driver.c":296 -1
+     (nil))
+(insn 99 98 100 2 (set (reg:SI 10 a0)
+        (const_int 20 [0x14])) "../User/OLED_driver.c":296 -1
+     (nil))
+(call_insn 100 99 101 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":296 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 101 100 102 2 (debug_marker) "../User/OLED_driver.c":298 -1
+     (nil))
+(call_insn 102 101 103 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 05a5da50 OLED_Clear>) [0 OLED_Clear S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":298 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 05a5da50 OLED_Clear>)
+        (nil))
+    (nil))
+(debug_insn 103 102 104 2 (debug_marker) "../User/OLED_driver.c":300 -1
+     (nil))
+(call_insn 104 103 105 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x3] <function_decl 05a5d3c0 OLED_Update>) [0 OLED_Update S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":300 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x3] <function_decl 05a5d3c0 OLED_Update>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (nil))
+(debug_insn 105 104 106 2 (debug_marker) "../User/OLED_driver.c":302 -1
+     (nil))
+(insn 106 105 107 2 (set (reg:SI 10 a0)
+        (const_int 175 [0xaf])) "../User/OLED_driver.c":302 -1
+     (nil))
+(call_insn 107 106 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":302 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+
+;; Function OLED_SetBrightness (OLED_SetBrightness, funcdef_no=32, decl_uid=4637, cgraph_uid=33, symbol_order=35)
+
+
+;; Generating RTL for gimple basic block 2
+Predictions for insn 9 bb 2
+  DS theory heuristics: 59.0%  exec 1073741825 (estimated locally) hit 2147483642 (estimated locally) (200.0%)
+  combined heuristics: 59.0%  exec 1073741825 (estimated locally) hit 2147483642 (estimated locally) (200.0%)
+  opcode values positive heuristics: 59.0%  exec 1073741825 (estimated locally) hit 2147483642 (estimated locally) (200.0%)
+Predictions for insn 21 bb 6
+  no prediction heuristics: 50.0%  exec 1073741825 (estimated locally) hit 2147483642 (estimated locally) (200.0%)
+  combined heuristics: 50.0%  exec 1073741825 (estimated locally) hit 2147483642 (estimated locally) (200.0%)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 75 [ Brightness ])
+        (reg:SI 10 a0 [ Brightness ])) "../User/OLED_driver.c":309 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(debug_insn 6 3 7 2 (debug_marker) "../User/OLED_driver.c":310 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:HI 76)
+        (subreg/s/u:HI (reg/v:SI 75 [ Brightness ]) 0)) -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 77)
+        (sign_extend:SI (reg:HI 76))) -1
+     (nil))
+(jump_insn 9 8 29 2 (set (pc)
+        (if_then_else (ge (reg:SI 77)
+                (const_int 0 [0]))
+            (label_ref 11)
+            (pc))) -1
+     (int_list:REG_BR_PROB 633507684 (nil))
+ -> 11)
+(note 29 9 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 29 11 4 (set (reg:HI 76)
+        (const_int 0 [0])) -1
+     (nil))
+(code_label 11 10 30 5 43 (nil) [1 uses])
+(note 30 11 12 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 12 30 13 5 (set (reg:SI 73 [ _8 ])
+        (sign_extend:SI (reg:HI 76))) -1
+     (nil))
+(debug_insn 13 12 14 5 (var_location:HI Brightness (smin:HI (subreg:HI (reg:SI 73 [ _8 ]) 0)
+        (const_int 255 [0xff]))) -1
+     (nil))
+(debug_insn 14 13 15 5 (debug_marker) "../User/OLED_driver.c":320 -1
+     (nil))
+(insn 15 14 16 5 (set (reg:SI 10 a0)
+        (const_int 129 [0x81])) "../User/OLED_driver.c":320 -1
+     (nil))
+(call_insn 16 15 17 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":320 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(debug_insn 17 16 18 5 (debug_marker) "../User/OLED_driver.c":321 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:HI 78 [ Brightness ])
+        (subreg/s/u:HI (reg:SI 73 [ _8 ]) 0)) "../User/OLED_driver.c":321 -1
+     (nil))
+(insn 19 18 20 5 (set (reg:SI 79)
+        (sign_extend:SI (reg:HI 78 [ Brightness ]))) "../User/OLED_driver.c":321 -1
+     (nil))
+(insn 20 19 21 5 (set (reg:SI 80)
+        (const_int 255 [0xff])) "../User/OLED_driver.c":321 -1
+     (nil))
+(jump_insn 21 20 31 5 (set (pc)
+        (if_then_else (le (reg:SI 79)
+                (reg:SI 80))
+            (label_ref 23)
+            (pc))) "../User/OLED_driver.c":321 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 23)
+(note 31 21 22 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 22 31 23 6 (set (reg:HI 78 [ Brightness ])
+        (const_int 255 [0xff])) "../User/OLED_driver.c":321 -1
+     (nil))
+(code_label 23 22 32 7 44 (nil) [1 uses])
+(note 32 23 24 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 24 32 25 7 (set (reg:SI 81)
+        (zero_extend:SI (subreg:QI (reg:HI 78 [ Brightness ]) 0))) "../User/OLED_driver.c":321 -1
+     (nil))
+(insn 25 24 26 7 (set (reg:SI 10 a0)
+        (reg:SI 81)) "../User/OLED_driver.c":321 -1
+     (nil))
+(call_insn 26 25 0 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>) [0 OLED_Write_CMD S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "../User/OLED_driver.c":321 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Write_CMD") [flags 0x3] <function_decl 05a5d7f8 OLED_Write_CMD>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
