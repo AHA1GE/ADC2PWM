@@ -6,4 +6,4 @@ USER_OBJS :=
 
 USER_OBJS_ESCAPE := 
 
-LIBS :=
+LIBS := -lm

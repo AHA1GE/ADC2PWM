@@ -28,11 +28,11 @@ try_optimize_cfg iteration 2
 (debug_insn 5 2 6 2 (debug_marker) "../Debug/debug.c":30 -1
      (nil))
 (insn 6 5 7 2 (set (reg:SI 77)
-        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 057c9d68 SystemCoreClock>))) "../Debug/debug.c":30 -1
+        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 05808d68 SystemCoreClock>))) "../Debug/debug.c":30 -1
      (nil))
 (insn 7 6 8 2 (set (reg:SI 79)
         (mem/c:SI (lo_sum:SI (reg:SI 77)
-                (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 057c9d68 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "../Debug/debug.c":30 -1
+                (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 05808d68 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "../Debug/debug.c":30 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 82)
         (const_int 7999488 [0x7a1000])) "../Debug/debug.c":30 -1
@@ -543,11 +543,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 16416 [0x4020])
         (nil)))
 (call_insn 12 11 13 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 05889690 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 058c9690 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":97 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 05889690 RCC_APB2PeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 058c9690 RCC_APB2PeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -597,11 +597,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 27 26 28 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 0586c1e0 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058a71e0 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":102 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 0586c1e0 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 058a71e0 GPIO_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -655,11 +655,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073821696 [0x40013800])
         (nil)))
 (call_insn 44 43 45 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 058bbe88 USART_Init>) [0 USART_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 058f9e88 USART_Init>) [0 USART_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":140 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 058bbe88 USART_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 058f9e88 USART_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -678,11 +678,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073821696 [0x40013800])
         (nil)))
 (call_insn 49 48 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 058c5078 USART_Cmd>) [0 USART_Cmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 05903078 USART_Cmd>) [0 USART_Cmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":141 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 058c5078 USART_Cmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 05903078 USART_Cmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -730,11 +730,11 @@ try_optimize_cfg iteration 2
 (debug_insn 9 8 10 2 (debug_marker) "../Debug/debug.c":156 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Init") [flags 0x3] <function_decl 05937e10 Delay_Init>) [0 Delay_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Init") [flags 0x3] <function_decl 05976e10 Delay_Init>) [0 Delay_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Init") [flags 0x3] <function_decl 05937e10 Delay_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Init") [flags 0x3] <function_decl 05976e10 Delay_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -744,11 +744,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "../Debug/debug.c":157 -1
      (nil))
 (call_insn 13 12 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x3] <function_decl 05937f00 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x3] <function_decl 05976f00 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":157 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x3] <function_decl 05937f00 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x3] <function_decl 05976f00 Delay_Ms>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -835,11 +835,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 22 21 23 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 058c59d8 USART_GetFlagStatus>) [0 USART_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 059039d8 USART_GetFlagStatus>) [0 USART_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 058c59d8 USART_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 059039d8 USART_GetFlagStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -883,11 +883,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073821696 [0x40013800])
         (nil)))
 (call_insn 35 34 36 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 058c5438 USART_SendData>) [0 USART_SendData S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 05903438 USART_SendData>) [0 USART_SendData S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Debug/debug.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 058c5438 USART_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 05903438 USART_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -988,12 +988,12 @@ try_optimize_cfg iteration 2
             (reg/v:SI 75 [ incr ]))) "../Debug/debug.c":234 -1
      (nil))
 (insn 16 15 17 2 (set (reg:SI 79)
-        (high:SI (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0594b0b0 _end>))) "../Debug/debug.c":234 -1
+        (high:SI (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0598b0b0 _end>))) "../Debug/debug.c":234 -1
      (nil))
 (insn 17 16 18 2 (set (reg/f:SI 78)
         (lo_sum:SI (reg:SI 79)
-            (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0594b0b0 _end>))) "../Debug/debug.c":234 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0594b0b0 _end>)
+            (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0598b0b0 _end>))) "../Debug/debug.c":234 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0598b0b0 _end>)
         (nil)))
 (jump_insn 18 17 19 2 (set (pc)
         (if_then_else (ltu (reg/f:SI 73 [ _3 ])
@@ -1004,12 +1004,12 @@ try_optimize_cfg iteration 2
  -> 40)
 (note 19 18 20 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 20 19 21 4 (set (reg:SI 81)
-        (high:SI (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0594b108 _heap_end>))) "../Debug/debug.c":234 -1
+        (high:SI (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0598b108 _heap_end>))) "../Debug/debug.c":234 -1
      (nil))
 (insn 21 20 22 4 (set (reg/f:SI 80)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0594b108 _heap_end>))) "../Debug/debug.c":234 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0594b108 _heap_end>)
+            (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0598b108 _heap_end>))) "../Debug/debug.c":234 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0598b108 _heap_end>)
         (nil)))
 (jump_insn 22 21 23 4 (set (pc)
         (if_then_else (gtu (reg/f:SI 73 [ _3 ])

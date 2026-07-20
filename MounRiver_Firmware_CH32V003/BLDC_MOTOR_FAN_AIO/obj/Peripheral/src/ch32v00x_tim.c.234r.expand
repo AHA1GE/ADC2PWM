@@ -627,11 +627,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 2048 [0x800])
         (nil)))
 (call_insn 15 14 16 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a03bb8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06654bb8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":44 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a03bb8 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06654bb8 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -650,11 +650,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 2048 [0x800])
         (nil)))
 (call_insn 20 19 21 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a03bb8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06654bb8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":45 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 05a03bb8 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06654bb8 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -688,11 +688,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_tim.c":49 -1
      (nil))
 (call_insn 32 31 33 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05a03c30 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06654c30 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":49 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05a03c30 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06654c30 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -706,11 +706,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "../Peripheral/src/ch32v00x_tim.c":50 -1
      (nil))
 (call_insn 36 35 39 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05a03c30 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06654c30 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":50 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05a03c30 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06654c30 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3165,11 +3165,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ TIMx ])) -1
      (nil))
 (call_insn 11 10 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_ITConfig") [flags 0x3] <function_decl 059d5e10 TIM_ITConfig>) [0 TIM_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_ITConfig") [flags 0x3] <function_decl 06626e10 TIM_ITConfig>) [0 TIM_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ITConfig") [flags 0x3] <function_decl 059d5e10 TIM_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ITConfig") [flags 0x3] <function_decl 06626e10 TIM_ITConfig>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3407,11 +3407,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 77 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":680 -1
      (nil))
 (call_insn 18 17 19 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>) [0 TI2_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>) [0 TI2_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":680 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3441,11 +3441,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 77 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":684 -1
      (nil))
 (call_insn 28 27 29 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>) [0 TI1_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>) [0 TI1_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":684 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3691,11 +3691,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 75 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":715 -1
      (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 059ec258 TIM_ETRConfig>) [0 TIM_ETRConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 0663d258 TIM_ETRConfig>) [0 TIM_ETRConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":715 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 059ec258 TIM_ETRConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 0663d258 TIM_ETRConfig>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3809,11 +3809,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":746 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 059ec258 TIM_ETRConfig>) [0 TIM_ETRConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 0663d258 TIM_ETRConfig>) [0 TIM_ETRConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":746 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 059ec258 TIM_ETRConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ETRConfig") [flags 0x3] <function_decl 0663d258 TIM_ETRConfig>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8123,11 +8123,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":346 -1
      (nil))
 (call_insn 40 39 41 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>) [0 TI1_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>) [0 TI1_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":346 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8148,11 +8148,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":348 -1
      (nil))
 (call_insn 45 44 46 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 059f08e8 TIM_SetIC1Prescaler>) [0 TIM_SetIC1Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 066418e8 TIM_SetIC1Prescaler>) [0 TIM_SetIC1Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":348 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 059f08e8 TIM_SetIC1Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 066418e8 TIM_SetIC1Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8177,11 +8177,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":349 -1
      (nil))
 (call_insn 52 51 53 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>) [0 TI2_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>) [0 TI2_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":349 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8202,11 +8202,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":350 -1
      (nil))
 (call_insn 57 56 58 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 059f0960 TIM_SetIC2Prescaler>) [0 TIM_SetIC2Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 06641960 TIM_SetIC2Prescaler>) [0 TIM_SetIC2Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":350 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 059f0960 TIM_SetIC2Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 06641960 TIM_SetIC2Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8234,11 +8234,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":354 -1
      (nil))
 (call_insn 67 66 68 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>) [0 TI2_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>) [0 TI2_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":354 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8259,11 +8259,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":356 -1
      (nil))
 (call_insn 72 71 73 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 059f0960 TIM_SetIC2Prescaler>) [0 TIM_SetIC2Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 06641960 TIM_SetIC2Prescaler>) [0 TIM_SetIC2Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":356 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 059f0960 TIM_SetIC2Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 06641960 TIM_SetIC2Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8288,11 +8288,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":357 -1
      (nil))
 (call_insn 79 78 80 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>) [0 TI1_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>) [0 TI1_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":357 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8313,11 +8313,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":358 -1
      (nil))
 (call_insn 84 83 87 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 059f08e8 TIM_SetIC1Prescaler>) [0 TIM_SetIC1Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 066418e8 TIM_SetIC1Prescaler>) [0 TIM_SetIC1Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":358 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 059f08e8 TIM_SetIC1Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 066418e8 TIM_SetIC1Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8592,11 +8592,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 113 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":281 -1
      (nil))
 (call_insn 19 18 20 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>) [0 TI1_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>) [0 TI1_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":281 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 05a03f78 TI1_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI1_Config") [flags 0x3] <function_decl 06654f78 TI1_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8617,11 +8617,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 113 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":284 -1
      (nil))
 (call_insn 24 23 25 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 059f08e8 TIM_SetIC1Prescaler>) [0 TIM_SetIC1Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 066418e8 TIM_SetIC1Prescaler>) [0 TIM_SetIC1Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":284 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 059f08e8 TIM_SetIC1Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC1Prescaler") [flags 0x3] <function_decl 066418e8 TIM_SetIC1Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8662,11 +8662,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 113 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":288 -1
      (nil))
 (call_insn 38 37 39 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>) [0 TI2_Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>) [0 TI2_Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 05a0a000 TI2_Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TI2_Config") [flags 0x3] <function_decl 0665b000 TI2_Config>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8687,11 +8687,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 113 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":291 -1
      (nil))
 (call_insn 43 42 44 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 059f0960 TIM_SetIC2Prescaler>) [0 TIM_SetIC2Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 06641960 TIM_SetIC2Prescaler>) [0 TIM_SetIC2Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":291 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 059f0960 TIM_SetIC2Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC2Prescaler") [flags 0x3] <function_decl 06641960 TIM_SetIC2Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -9003,11 +9003,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 113 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":298 -1
      (nil))
 (call_insn 157 156 158 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC3Prescaler") [flags 0x3] <function_decl 059f09d8 TIM_SetIC3Prescaler>) [0 TIM_SetIC3Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC3Prescaler") [flags 0x3] <function_decl 066419d8 TIM_SetIC3Prescaler>) [0 TIM_SetIC3Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":298 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC3Prescaler") [flags 0x3] <function_decl 059f09d8 TIM_SetIC3Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC3Prescaler") [flags 0x3] <function_decl 066419d8 TIM_SetIC3Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -9334,11 +9334,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 113 [ TIMx ])) "../Peripheral/src/ch32v00x_tim.c":305 -1
      (nil))
 (call_insn 275 274 278 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_SetIC4Prescaler") [flags 0x3] <function_decl 059f0a50 TIM_SetIC4Prescaler>) [0 TIM_SetIC4Prescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_SetIC4Prescaler") [flags 0x3] <function_decl 06641a50 TIM_SetIC4Prescaler>) [0 TIM_SetIC4Prescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../Peripheral/src/ch32v00x_tim.c":305 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC4Prescaler") [flags 0x3] <function_decl 059f0a50 TIM_SetIC4Prescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_SetIC4Prescaler") [flags 0x3] <function_decl 06641a50 TIM_SetIC4Prescaler>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

@@ -1,5 +1,5 @@
 
-;; Function main (main, funcdef_no=29, decl_uid=5261, cgraph_uid=30, symbol_order=39) (executed once)
+;; Function main (main, funcdef_no=29, decl_uid=5262, cgraph_uid=30, symbol_order=39) (executed once)
 
 Partition 1: size 22 align 4
 	buf	buf
@@ -112,21 +112,21 @@ Deleted label in block 11.
 (debug_insn 6 5 7 2 (debug_marker) "../User/main.c":182 -1
      (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 06516618 SystemCoreClockUpdate>) [0 SystemCoreClockUpdate S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 064cb618 SystemCoreClockUpdate>) [0 SystemCoreClockUpdate S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 06516618 SystemCoreClockUpdate>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 064cb618 SystemCoreClockUpdate>)
         (nil))
     (nil))
 (debug_insn 8 7 9 2 (debug_marker) "../User/main.c":183 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 0667ae10 Delay_Init>) [0 Delay_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 0663ae10 Delay_Init>) [0 Delay_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":183 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 0667ae10 Delay_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 0663ae10 Delay_Init>)
         (nil))
     (nil))
 (debug_insn 10 9 11 2 (debug_marker) "../User/main.c":184 -1
@@ -135,82 +135,82 @@ Deleted label in block 11.
         (const_int 1 [0x1])) "../User/main.c":184 -1
      (nil))
 (call_insn 12 11 13 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 065b2ac8 NVIC_PriorityGroupConfig>) [0 NVIC_PriorityGroupConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 06572ac8 NVIC_PriorityGroupConfig>) [0 NVIC_PriorityGroupConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":184 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 065b2ac8 NVIC_PriorityGroupConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 06572ac8 NVIC_PriorityGroupConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (debug_insn 13 12 14 2 (debug_marker) "../User/main.c":187 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_GPIO_Init") [flags 0x41] <function_decl 0667aa50 HAL_GPIO_Init>) [0 HAL_GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_GPIO_Init") [flags 0x41] <function_decl 0663aa50 HAL_GPIO_Init>) [0 HAL_GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":187 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GPIO_Init") [flags 0x41] <function_decl 0667aa50 HAL_GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GPIO_Init") [flags 0x41] <function_decl 0663aa50 HAL_GPIO_Init>)
         (nil))
     (nil))
 (debug_insn 15 14 16 2 (debug_marker) "../User/main.c":188 -1
      (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Init") [flags 0x41] <function_decl 06687000 HAL_SPI_Init>) [0 HAL_SPI_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Init") [flags 0x41] <function_decl 06647000 HAL_SPI_Init>) [0 HAL_SPI_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":188 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Init") [flags 0x41] <function_decl 06687000 HAL_SPI_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Init") [flags 0x41] <function_decl 06647000 HAL_SPI_Init>)
         (nil))
     (nil))
 (debug_insn 17 16 18 2 (debug_marker) "../User/main.c":189 -1
      (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ADC_Init") [flags 0x41] <function_decl 06687078 HAL_ADC_Init>) [0 HAL_ADC_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ADC_Init") [flags 0x41] <function_decl 06647078 HAL_ADC_Init>) [0 HAL_ADC_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":189 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_Init") [flags 0x41] <function_decl 06687078 HAL_ADC_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_Init") [flags 0x41] <function_decl 06647078 HAL_ADC_Init>)
         (nil))
     (nil))
 (debug_insn 19 18 20 2 (debug_marker) "../User/main.c":190 -1
      (nil))
 (call_insn 20 19 21 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIM1_Init") [flags 0x41] <function_decl 066870f0 HAL_TIM1_Init>) [0 HAL_TIM1_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIM1_Init") [flags 0x41] <function_decl 066470f0 HAL_TIM1_Init>) [0 HAL_TIM1_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":190 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIM1_Init") [flags 0x41] <function_decl 066870f0 HAL_TIM1_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIM1_Init") [flags 0x41] <function_decl 066470f0 HAL_TIM1_Init>)
         (nil))
     (nil))
 (debug_insn 21 20 22 2 (debug_marker) "../User/main.c":193 -1
      (nil))
 (call_insn 22 21 23 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Init") [flags 0x41] <function_decl 066cf960 OLED_Init>) [0 OLED_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Init") [flags 0x41] <function_decl 0668e960 OLED_Init>) [0 OLED_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":193 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Init") [flags 0x41] <function_decl 066cf960 OLED_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Init") [flags 0x41] <function_decl 0668e960 OLED_Init>)
         (nil))
     (nil))
 (debug_insn 23 22 24 2 (debug_marker) "../User/main.c":194 -1
      (nil))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>) [0 OLED_Clear S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>) [0 OLED_Clear S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":194 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>)
         (nil))
     (nil))
 (debug_insn 25 24 26 2 (debug_marker) "../User/main.c":195 -1
      (nil))
 (call_insn 26 25 27 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>) [0 OLED_Update S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>) [0 OLED_Update S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>)
         (nil))
     (nil))
 (debug_insn 27 26 28 2 (debug_marker) "../User/main.c":201 -1
@@ -219,11 +219,11 @@ Deleted label in block 11.
      (nil))
 (call_insn 29 28 30 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("DRV8311_Init") [flags 0x41] <function_decl 066879d8 DRV8311_Init>) [0 DRV8311_Init S4 A32])
+                (call (mem:SI (symbol_ref:SI ("DRV8311_Init") [flags 0x41] <function_decl 066479d8 DRV8311_Init>) [0 DRV8311_Init S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":148 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DRV8311_Init") [flags 0x41] <function_decl 066879d8 DRV8311_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DRV8311_Init") [flags 0x41] <function_decl 066479d8 DRV8311_Init>)
         (nil))
     (nil))
 (insn 30 29 31 2 (set (reg/v:SI 89 [ ret ])
@@ -244,11 +244,11 @@ Deleted label in block 11.
 (debug_insn 35 34 36 4 (debug_marker) "../User/main.c":152 -1
      (nil))
 (call_insn 36 35 37 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>) [0 OLED_Clear S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>) [0 OLED_Clear S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":152 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>)
         (nil))
     (nil))
 (debug_insn 37 36 38 4 (debug_marker) "../User/main.c":153 -1
@@ -263,23 +263,23 @@ Deleted label in block 11.
         (reg/v:SI 89 [ ret ])) "../User/main.c":154 -1
      (nil))
 (insn 41 40 42 4 (set (reg:SI 122)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 067435d8 *.LC0>))) "../User/main.c":154 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06700580 *.LC0>))) "../User/main.c":154 -1
      (nil))
 (insn 42 41 43 4 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 122)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 067435d8 *.LC0>))) "../User/main.c":154 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 067435d8 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06700580 *.LC0>))) "../User/main.c":154 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06700580 *.LC0>)
         (nil)))
 (insn 43 42 44 4 (set (reg:SI 10 a0)
         (reg:SI 121)) "../User/main.c":154 -1
      (nil))
 (call_insn 44 43 45 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>) [0 __builtin_sprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>) [0 __builtin_sprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":154 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -321,11 +321,11 @@ Deleted label in block 11.
         (const_int 0 [0])) "../User/main.c":155 -1
      (nil))
 (call_insn 56 55 57 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -340,11 +340,11 @@ Deleted label in block 11.
 (debug_insn 57 56 58 4 (debug_marker) "../User/main.c":156 -1
      (nil))
 (call_insn 58 57 66 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>) [0 OLED_Update S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>) [0 OLED_Update S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>)
         (nil))
     (nil))
 (code_label 66 58 59 5 3 (nil) [1 uses])
@@ -354,11 +354,11 @@ Deleted label in block 11.
 (debug_insn 61 60 62 5 (debug_marker) "../User/main.c":160 -1
      (nil))
 (call_insn 62 61 63 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("LED_Toggle") [flags 0x41] <function_decl 066c0078 LED_Toggle>) [0 LED_Toggle S4 A32])
+            (call (mem:SI (symbol_ref:SI ("LED_Toggle") [flags 0x41] <function_decl 06680078 LED_Toggle>) [0 LED_Toggle S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":160 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Toggle") [flags 0x41] <function_decl 066c0078 LED_Toggle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Toggle") [flags 0x41] <function_decl 06680078 LED_Toggle>)
         (nil))
     (nil))
 (debug_insn 63 62 64 5 (debug_marker) "../User/main.c":161 -1
@@ -367,11 +367,11 @@ Deleted label in block 11.
         (const_int 100 [0x64])) "../User/main.c":161 -1
      (nil))
 (call_insn 65 64 67 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":161 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -385,11 +385,11 @@ Deleted label in block 11.
 (debug_insn 71 70 72 6 (debug_marker) "../User/main.c":166 -1
      (nil))
 (insn 72 71 73 6 (set (reg:SI 125)
-        (high:SI (symbol_ref:SI ("drv") [flags 0xc0] <var_decl 066b4cb8 drv>))) "../User/main.c":166 -1
+        (high:SI (symbol_ref:SI ("drv") [flags 0xc0] <var_decl 06673d10 drv>))) "../User/main.c":166 -1
      (nil))
 (insn 73 72 74 6 (set (reg:SI 126)
         (mem/f/c:SI (lo_sum:SI (reg:SI 125)
-                (symbol_ref:SI ("drv") [flags 0xc0] <var_decl 066b4cb8 drv>)) [1 drv+0 S4 A32])) "../User/main.c":166 -1
+                (symbol_ref:SI ("drv") [flags 0xc0] <var_decl 06673d10 drv>)) [1 drv+0 S4 A32])) "../User/main.c":166 -1
      (nil))
 (insn 74 73 75 6 (set (reg:SI 11 a1)
         (const_int 0 [0])) "../User/main.c":166 -1
@@ -399,11 +399,11 @@ Deleted label in block 11.
      (nil))
 (call_insn 76 75 77 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("drv8311_read_reg") [flags 0x41] <function_decl 06687870 drv8311_read_reg>) [0 drv8311_read_reg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("drv8311_read_reg") [flags 0x41] <function_decl 06647870 drv8311_read_reg>) [0 drv8311_read_reg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":166 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("drv8311_read_reg") [flags 0x41] <function_decl 06687870 drv8311_read_reg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("drv8311_read_reg") [flags 0x41] <function_decl 06647870 drv8311_read_reg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -415,11 +415,11 @@ Deleted label in block 11.
 (debug_insn 79 78 80 6 (debug_marker) "../User/main.c":170 -1
      (nil))
 (call_insn 80 79 81 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DRV8311_Enable") [flags 0x41] <function_decl 06687a50 DRV8311_Enable>) [0 DRV8311_Enable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DRV8311_Enable") [flags 0x41] <function_decl 06647a50 DRV8311_Enable>) [0 DRV8311_Enable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":170 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DRV8311_Enable") [flags 0x41] <function_decl 06687a50 DRV8311_Enable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DRV8311_Enable") [flags 0x41] <function_decl 06647a50 DRV8311_Enable>)
         (nil))
     (nil))
 (debug_insn 81 80 82 6 (debug_marker) "../User/main.c":172 -1
@@ -431,11 +431,11 @@ Deleted label in block 11.
 (debug_insn 84 83 85 6 (debug_marker) "../User/main.c":135 -1
      (nil))
 (call_insn 85 84 86 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>) [0 OLED_Clear S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>) [0 OLED_Clear S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":135 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>)
         (nil))
     (nil))
 (debug_insn 86 85 87 6 (debug_marker) "../User/main.c":136 -1
@@ -448,12 +448,12 @@ Deleted label in block 11.
         (reg:SI 127)) "../User/main.c":136 -1
      (nil))
 (insn 89 88 90 6 (set (reg:SI 129)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067437e8 *.LC1>))) "../User/main.c":136 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 06700630 *.LC1>))) "../User/main.c":136 -1
      (nil))
 (insn 90 89 91 6 (set (reg/f:SI 128)
         (lo_sum:SI (reg:SI 129)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067437e8 *.LC1>))) "../User/main.c":136 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067437e8 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 06700630 *.LC1>))) "../User/main.c":136 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 06700630 *.LC1>)
         (nil)))
 (insn 91 90 92 6 (set (mem:SI (reg/f:SI 69 virtual-outgoing-args) [0  S4 A32])
         (reg/f:SI 128)) "../User/main.c":136 -1
@@ -477,11 +477,11 @@ Deleted label in block 11.
         (const_int 0 [0])) "../User/main.c":136 -1
      (nil))
 (call_insn 98 97 99 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":136 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -503,12 +503,12 @@ Deleted label in block 11.
         (reg:SI 130)) "../User/main.c":137 -1
      (nil))
 (insn 102 101 103 6 (set (reg:SI 132)
-        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 06743840 *.LC2>))) "../User/main.c":137 -1
+        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 06700840 *.LC2>))) "../User/main.c":137 -1
      (nil))
 (insn 103 102 104 6 (set (reg/f:SI 131)
         (lo_sum:SI (reg:SI 132)
-            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 06743840 *.LC2>))) "../User/main.c":137 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 06743840 *.LC2>)
+            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 06700840 *.LC2>))) "../User/main.c":137 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 06700840 *.LC2>)
         (nil)))
 (insn 104 103 105 6 (set (mem:SI (reg/f:SI 69 virtual-outgoing-args) [0  S4 A32])
         (reg/f:SI 131)) "../User/main.c":137 -1
@@ -532,11 +532,11 @@ Deleted label in block 11.
         (const_int 0 [0])) "../User/main.c":137 -1
      (nil))
 (call_insn 111 110 112 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":137 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -551,11 +551,11 @@ Deleted label in block 11.
 (debug_insn 112 111 113 6 (debug_marker) "../User/main.c":138 -1
      (nil))
 (call_insn 113 112 114 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>) [0 OLED_Update S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>) [0 OLED_Update S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":138 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>)
         (nil))
     (nil))
 (debug_insn 114 113 115 6 (debug_marker) "../User/main.c":139 -1
@@ -564,11 +564,11 @@ Deleted label in block 11.
         (const_int 1000 [0x3e8])) "../User/main.c":139 -1
      (nil))
 (call_insn 116 115 117 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":139 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -578,22 +578,22 @@ Deleted label in block 11.
         (const_int 100 [0x64])) "../User/main.c":207 -1
      (nil))
 (call_insn 119 118 120 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":207 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (debug_insn 120 119 121 6 (debug_marker) "../User/main.c":210 -1
      (nil))
 (call_insn 121 120 122 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("LED_Init") [flags 0x41] <function_decl 06687258 LED_Init>) [0 LED_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("LED_Init") [flags 0x41] <function_decl 06647258 LED_Init>) [0 LED_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":210 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Init") [flags 0x41] <function_decl 06687258 LED_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Init") [flags 0x41] <function_decl 06647258 LED_Init>)
         (nil))
     (nil))
 (debug_insn 122 121 123 6 (debug_marker) "../User/main.c":211 -1
@@ -601,11 +601,11 @@ Deleted label in block 11.
 (debug_insn 123 122 124 6 (debug_marker) "../User/main.c":123 -1
      (nil))
 (call_insn 124 123 125 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06687f78 LED_On>) [0 LED_On S4 A32])
+            (call (mem:SI (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06647f78 LED_On>) [0 LED_On S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":123 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06687f78 LED_On>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06647f78 LED_On>)
         (nil))
     (nil))
 (debug_insn 125 124 126 6 (debug_marker) "../User/main.c":124 -1
@@ -614,22 +614,22 @@ Deleted label in block 11.
         (const_int 200 [0xc8])) "../User/main.c":124 -1
      (nil))
 (call_insn 127 126 128 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (debug_insn 128 127 129 6 (debug_marker) "../User/main.c":125 -1
      (nil))
 (call_insn 129 128 130 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 066c0000 LED_Off>) [0 LED_Off S4 A32])
+            (call (mem:SI (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 06680000 LED_Off>) [0 LED_Off S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":125 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 066c0000 LED_Off>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 06680000 LED_Off>)
         (nil))
     (nil))
 (debug_insn 130 129 131 6 (debug_marker) "../User/main.c":126 -1
@@ -638,22 +638,22 @@ Deleted label in block 11.
         (const_int 200 [0xc8])) "../User/main.c":126 -1
      (nil))
 (call_insn 132 131 133 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":126 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0667af00 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 0663af00 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (debug_insn 133 132 134 6 (debug_marker) "../User/main.c":214 -1
      (nil))
 (insn 134 133 135 6 (set (reg:SI 133)
-        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 06501d68 SystemCoreClock>))) "../User/main.c":214 -1
+        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 064b6d68 SystemCoreClock>))) "../User/main.c":214 -1
      (nil))
 (insn 135 134 136 6 (set (reg:SI 135)
         (mem/c:SI (lo_sum:SI (reg:SI 133)
-                (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 06501d68 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "../User/main.c":214 -1
+                (symbol_ref:SI ("SystemCoreClock") [flags 0xc0] <var_decl 064b6d68 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "../User/main.c":214 -1
      (nil))
 (insn 136 135 137 6 (set (reg:SI 138)
         (const_int 7999488 [0x7a1000])) "../User/main.c":214 -1
@@ -758,21 +758,21 @@ Deleted label in block 11.
 (debug_insn 160 159 161 6 (debug_marker) "../User/main.c":220 -1
      (nil))
 (call_insn 161 160 162 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BLDC_Init") [flags 0x41] <function_decl 066c00f0 BLDC_Init>) [0 BLDC_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BLDC_Init") [flags 0x41] <function_decl 066800f0 BLDC_Init>) [0 BLDC_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":220 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_Init") [flags 0x41] <function_decl 066c00f0 BLDC_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_Init") [flags 0x41] <function_decl 066800f0 BLDC_Init>)
         (nil))
     (nil))
 (debug_insn 162 161 163 6 (debug_marker) "../User/main.c":226 -1
      (nil))
 (call_insn 163 162 164 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06687c30 BAT_ADC_Sample>) [0 BAT_ADC_Sample S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06647c30 BAT_ADC_Sample>) [0 BAT_ADC_Sample S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":226 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06687c30 BAT_ADC_Sample>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06647c30 BAT_ADC_Sample>)
         (nil))
     (nil))
 (debug_insn 164 163 165 6 (debug_marker) "../User/main.c":227 -1
@@ -797,11 +797,11 @@ Deleted label in block 11.
 (debug_insn 171 170 172 8 (debug_marker) "../User/main.c":239 -1
      (nil))
 (insn 172 171 173 8 (set (reg:SI 152)
-        (high:SI (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0658f738 sys_tick_millis>))) "../User/main.c":239 -1
+        (high:SI (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0654d738 sys_tick_millis>))) "../User/main.c":239 -1
      (nil))
 (insn 173 172 174 8 (set (reg/v:SI 85 [ now ])
         (mem/v/c:SI (lo_sum:SI (reg:SI 152)
-                (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0658f738 sys_tick_millis>)) [2 sys_tick_millis+0 S4 A32])) "../User/main.c":239 -1
+                (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0654d738 sys_tick_millis>)) [2 sys_tick_millis+0 S4 A32])) "../User/main.c":239 -1
      (nil))
 (debug_insn 174 173 175 8 (var_location:SI now (reg/v:SI 85 [ now ])) "../User/main.c":239 -1
      (nil))
@@ -849,21 +849,21 @@ Deleted label in block 11.
 (debug_insn 187 186 188 9 (debug_marker) "../User/main.c":244 -1
      (nil))
 (call_insn 188 187 189 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BTN_Process") [flags 0x41] <function_decl 06687f00 BTN_Process>) [0 BTN_Process S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BTN_Process") [flags 0x41] <function_decl 06647f00 BTN_Process>) [0 BTN_Process S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":244 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BTN_Process") [flags 0x41] <function_decl 06687f00 BTN_Process>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BTN_Process") [flags 0x41] <function_decl 06647f00 BTN_Process>)
         (nil))
     (nil))
 (debug_insn 189 188 190 9 (debug_marker) "../User/main.c":245 -1
      (nil))
 (call_insn 190 189 191 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BLDC_ProcessButtons") [flags 0x41] <function_decl 066c0258 BLDC_ProcessButtons>) [0 BLDC_ProcessButtons S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BLDC_ProcessButtons") [flags 0x41] <function_decl 06680258 BLDC_ProcessButtons>) [0 BLDC_ProcessButtons S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":245 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_ProcessButtons") [flags 0x41] <function_decl 066c0258 BLDC_ProcessButtons>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_ProcessButtons") [flags 0x41] <function_decl 06680258 BLDC_ProcessButtons>)
         (nil))
     (nil))
 (code_label 191 190 192 10 4 (nil) [1 uses])
@@ -933,11 +933,11 @@ Deleted label in block 11.
         (nil)))
 (call_insn 214 213 215 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 065952d0 GPIO_ReadInputDataBit>) [0 GPIO_ReadInputDataBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 065532d0 GPIO_ReadInputDataBit>) [0 GPIO_ReadInputDataBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":99 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 065952d0 GPIO_ReadInputDataBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_ReadInputDataBit") [flags 0x41] <function_decl 065532d0 GPIO_ReadInputDataBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1001,11 +1001,11 @@ Deleted label in block 11.
  -> 247)
 (note 231 230 232 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
 (insn 232 231 233 14 (set (reg:SI 176)
-        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":101 -1
+        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":101 -1
      (nil))
 (insn 233 232 234 14 (set (reg:SI 177)
         (mem/c:SI (lo_sum:SI (reg:SI 176)
-                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":101 -1
+                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":101 -1
      (nil))
 (insn 234 233 235 14 (set (reg:SI 178)
         (const_int 3 [0x3])) "../User/main.c":101 -1
@@ -1021,11 +1021,11 @@ Deleted label in block 11.
 (debug_insn 237 236 238 15 (debug_marker) "../User/main.c":102 -1
      (nil))
 (call_insn 238 237 239 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 066c0438 BLDC_EnterFault>) [0 BLDC_EnterFault S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 06680438 BLDC_EnterFault>) [0 BLDC_EnterFault S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":102 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 066c0438 BLDC_EnterFault>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 06680438 BLDC_EnterFault>)
         (nil))
     (nil))
 (jump_insn 239 238 240 15 (set (pc)
@@ -1054,11 +1054,11 @@ Deleted label in block 11.
      (nil))
 (call_insn 250 249 251 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06687ca8 BAT_Get_mV>) [0 BAT_Get_mV S4 A32])
+                (call (mem:SI (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06647ca8 BAT_Get_mV>) [0 BAT_Get_mV S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":109 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06687ca8 BAT_Get_mV>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06647ca8 BAT_Get_mV>)
         (nil))
     (nil))
 (insn 251 250 252 17 (set (reg:SI 181)
@@ -1095,11 +1095,11 @@ Deleted label in block 11.
  -> 272)
 (note 261 260 262 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
 (insn 262 261 263 18 (set (reg:SI 186)
-        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":110 -1
+        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":110 -1
      (nil))
 (insn 263 262 264 18 (set (reg:SI 97 [ _51 ])
         (mem/c:SI (lo_sum:SI (reg:SI 186)
-                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":110 -1
+                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":110 -1
      (nil))
 (jump_insn 264 263 265 18 (set (pc)
         (if_then_else (eq (reg:SI 97 [ _51 ])
@@ -1125,11 +1125,11 @@ Deleted label in block 11.
 (debug_insn 270 269 271 20 (debug_marker) "../User/main.c":112 -1
      (nil))
 (call_insn 271 270 272 20 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 066c0438 BLDC_EnterFault>) [0 BLDC_EnterFault S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 06680438 BLDC_EnterFault>) [0 BLDC_EnterFault S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":112 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 066c0438 BLDC_EnterFault>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_EnterFault") [flags 0x41] <function_decl 06680438 BLDC_EnterFault>)
         (nil))
     (nil))
 (code_label 272 271 273 21 6 (nil) [4 uses])
@@ -1178,11 +1178,11 @@ Deleted label in block 11.
 (debug_insn 286 285 287 22 (debug_marker) "../User/main.c":257 -1
      (nil))
 (call_insn 287 286 288 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06687c30 BAT_ADC_Sample>) [0 BAT_ADC_Sample S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06647c30 BAT_ADC_Sample>) [0 BAT_ADC_Sample S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":257 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06687c30 BAT_ADC_Sample>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_ADC_Sample") [flags 0x41] <function_decl 06647c30 BAT_ADC_Sample>)
         (nil))
     (nil))
 (code_label 288 287 289 23 10 (nil) [1 uses])
@@ -1190,11 +1190,11 @@ Deleted label in block 11.
 (debug_insn 290 289 291 23 (debug_marker) "../User/main.c":261 -1
      (nil))
 (insn 291 290 292 23 (set (reg:SI 195)
-        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":261 -1
+        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":261 -1
      (nil))
 (insn 292 291 293 23 (set (reg:SI 196)
         (mem/c:SI (lo_sum:SI (reg:SI 195)
-                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":261 -1
+                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":261 -1
      (nil))
 (insn 293 292 294 23 (set (reg:SI 197)
         (const_int 2 [0x2])) "../User/main.c":261 -1
@@ -1250,11 +1250,11 @@ Deleted label in block 11.
      (nil))
 (call_insn 308 307 309 25 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("BLDC_GetBusCurrent_mA") [flags 0x41] <function_decl 066c0528 BLDC_GetBusCurrent_mA>) [0 BLDC_GetBusCurrent_mA S4 A32])
+                (call (mem:SI (symbol_ref:SI ("BLDC_GetBusCurrent_mA") [flags 0x41] <function_decl 06680528 BLDC_GetBusCurrent_mA>) [0 BLDC_GetBusCurrent_mA S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":264 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_GetBusCurrent_mA") [flags 0x41] <function_decl 066c0528 BLDC_GetBusCurrent_mA>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_GetBusCurrent_mA") [flags 0x41] <function_decl 06680528 BLDC_GetBusCurrent_mA>)
         (nil))
     (nil))
 (insn 309 308 310 25 (set (reg:SI 205)
@@ -1279,11 +1279,11 @@ Deleted label in block 11.
 (debug_insn 316 315 317 26 (debug_marker) "../User/main.c":268 -1
      (nil))
 (insn 317 316 318 26 (set (reg:SI 208)
-        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":268 -1
+        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":268 -1
      (nil))
 (insn 318 317 319 26 (set (reg:SI 209)
         (mem/c:SI (lo_sum:SI (reg:SI 208)
-                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":268 -1
+                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":268 -1
      (nil))
 (insn 319 318 320 26 (set (reg:SI 210)
         (const_int 3 [0x3])) "../User/main.c":268 -1
@@ -1301,11 +1301,11 @@ Deleted label in block 11.
 (debug_insn 323 322 324 27 (debug_marker) "../User/main.c":78 -1
      (nil))
 (insn 324 323 325 27 (set (reg:SI 211)
-        (high:SI (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0658f738 sys_tick_millis>))) "../User/main.c":78 -1
+        (high:SI (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0654d738 sys_tick_millis>))) "../User/main.c":78 -1
      (nil))
 (insn 325 324 326 27 (set (reg/v:SI 98 [ now ])
         (mem/v/c:SI (lo_sum:SI (reg:SI 211)
-                (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0658f738 sys_tick_millis>)) [2 sys_tick_millis+0 S4 A32])) "../User/main.c":78 -1
+                (symbol_ref:SI ("sys_tick_millis") [flags 0xc0] <var_decl 0654d738 sys_tick_millis>)) [2 sys_tick_millis+0 S4 A32])) "../User/main.c":78 -1
      (nil))
 (debug_insn 326 325 327 27 (var_location:SI now (reg/v:SI 98 [ now ])) "../User/main.c":78 -1
      (nil))
@@ -1391,11 +1391,11 @@ Deleted label in block 11.
 (debug_insn 350 349 351 29 (debug_marker) "../User/main.c":83 -1
      (nil))
 (call_insn 351 350 352 29 (parallel [
-            (call (mem:SI (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06687f78 LED_On>) [0 LED_On S4 A32])
+            (call (mem:SI (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06647f78 LED_On>) [0 LED_On S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":83 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06687f78 LED_On>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_On") [flags 0x41] <function_decl 06647f78 LED_On>)
         (nil))
     (nil))
 (jump_insn 352 351 353 29 (set (pc)
@@ -1408,11 +1408,11 @@ Deleted label in block 11.
 (debug_insn 356 355 357 30 (debug_marker) "../User/main.c":85 -1
      (nil))
 (call_insn 357 356 358 30 (parallel [
-            (call (mem:SI (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 066c0000 LED_Off>) [0 LED_Off S4 A32])
+            (call (mem:SI (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 06680000 LED_Off>) [0 LED_Off S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":85 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 066c0000 LED_Off>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 06680000 LED_Off>)
         (nil))
     (nil))
 (jump_insn 358 357 359 30 (set (pc)
@@ -1425,21 +1425,21 @@ Deleted label in block 11.
 (debug_insn 362 361 363 31 (debug_marker) "../User/main.c":271 -1
      (nil))
 (call_insn 363 362 364 31 (parallel [
-            (call (mem:SI (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 066c0000 LED_Off>) [0 LED_Off S4 A32])
+            (call (mem:SI (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 06680000 LED_Off>) [0 LED_Off S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":271 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 066c0000 LED_Off>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_Off") [flags 0x41] <function_decl 06680000 LED_Off>)
         (nil))
     (nil))
 (debug_insn 364 363 365 31 (debug_marker) "../User/main.c":272 -1
      (nil))
 (call_insn 365 364 366 31 (parallel [
-            (call (mem:SI (symbol_ref:SI ("BLDC_StateMachine") [flags 0x41] <function_decl 066c0168 BLDC_StateMachine>) [0 BLDC_StateMachine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("BLDC_StateMachine") [flags 0x41] <function_decl 06680168 BLDC_StateMachine>) [0 BLDC_StateMachine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":272 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_StateMachine") [flags 0x41] <function_decl 066c0168 BLDC_StateMachine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BLDC_StateMachine") [flags 0x41] <function_decl 06680168 BLDC_StateMachine>)
         (nil))
     (nil))
 (code_label 366 365 367 32 13 (nil) [3 uses])
@@ -1492,22 +1492,22 @@ Deleted label in block 11.
 (debug_insn 383 382 384 33 (debug_marker) "../User/main.c":43 -1
      (nil))
 (call_insn 384 383 385 33 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>) [0 OLED_Clear S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>) [0 OLED_Clear S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":43 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 066cfc30 OLED_Clear>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Clear") [flags 0x41] <function_decl 0668ec30 OLED_Clear>)
         (nil))
     (nil))
 (debug_insn 385 384 386 33 (debug_marker) "../User/main.c":46 -1
      (nil))
 (call_insn 386 385 387 33 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06687ca8 BAT_Get_mV>) [0 BAT_Get_mV S4 A32])
+                (call (mem:SI (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06647ca8 BAT_Get_mV>) [0 BAT_Get_mV S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":46 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06687ca8 BAT_Get_mV>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("BAT_Get_mV") [flags 0x41] <function_decl 06647ca8 BAT_Get_mV>)
         (nil))
     (nil))
 (insn 387 386 388 33 (set (reg:SI 231)
@@ -1609,23 +1609,23 @@ Deleted label in block 11.
         (reg:SI 253)) "../User/main.c":47 -1
      (nil))
 (insn 414 413 415 33 (set (reg:SI 255)
-        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 06743898 *.LC3>))) "../User/main.c":47 -1
+        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 06700898 *.LC3>))) "../User/main.c":47 -1
      (nil))
 (insn 415 414 416 33 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 255)
-            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 06743898 *.LC3>))) "../User/main.c":47 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 06743898 *.LC3>)
+            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 06700898 *.LC3>))) "../User/main.c":47 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 06700898 *.LC3>)
         (nil)))
 (insn 416 415 417 33 (set (reg:SI 10 a0)
         (reg:SI 254)) "../User/main.c":47 -1
      (nil))
 (call_insn 417 416 418 33 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>) [0 __builtin_sprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>) [0 __builtin_sprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":47 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1668,11 +1668,11 @@ Deleted label in block 11.
         (const_int 0 [0])) "../User/main.c":48 -1
      (nil))
 (call_insn 429 428 430 33 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":48 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1687,11 +1687,11 @@ Deleted label in block 11.
 (debug_insn 430 429 431 33 (debug_marker) "../User/main.c":51 -1
      (nil))
 (insn 431 430 432 33 (set (reg:SI 258)
-        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":51 -1
+        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":51 -1
      (nil))
 (insn 432 431 433 33 (set (reg:SI 259)
         (mem/c:SI (lo_sum:SI (reg:SI 258)
-                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":51 -1
+                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":51 -1
      (nil))
 (insn 433 432 434 33 (set (reg:SI 260)
         (const_int 3 [0x3])) "../User/main.c":51 -1
@@ -1711,23 +1711,23 @@ Deleted label in block 11.
             (const_int -24 [0xffffffffffffffe8]))) "../User/main.c":52 -1
      (nil))
 (insn 438 437 439 34 (set (reg:SI 262)
-        (high:SI (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 067438f0 *.LC4>))) "../User/main.c":52 -1
+        (high:SI (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 067008f0 *.LC4>))) "../User/main.c":52 -1
      (nil))
 (insn 439 438 440 34 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 262)
-            (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 067438f0 *.LC4>))) "../User/main.c":52 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 067438f0 *.LC4>)
+            (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 067008f0 *.LC4>))) "../User/main.c":52 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 067008f0 *.LC4>)
         (nil)))
 (insn 440 439 441 34 (set (reg:SI 10 a0)
         (reg:SI 261)) "../User/main.c":52 -1
      (nil))
 (call_insn 441 440 442 34 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 0610f7f8 __builtin_strcpy>) [0 __builtin_strcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 060cf7f8 __builtin_strcpy>) [0 __builtin_strcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 0610f7f8 __builtin_strcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 060cf7f8 __builtin_strcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -1745,11 +1745,11 @@ Deleted label in block 11.
 (debug_insn 446 445 447 35 (debug_marker) "../User/main.c":54 -1
      (nil))
 (insn 447 446 448 35 (set (reg:SI 263)
-        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":54 -1
+        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":54 -1
      (nil))
 (insn 448 447 449 35 (set (reg/f:SI 264)
         (lo_sum:SI (reg:SI 263)
-            (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":54 -1
+            (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":54 -1
      (nil))
 (insn 449 448 450 35 (set (reg:SI 265)
         (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 264)
@@ -1763,23 +1763,23 @@ Deleted label in block 11.
         (reg:SI 265)) "../User/main.c":54 -1
      (nil))
 (insn 452 451 453 35 (set (reg:SI 267)
-        (high:SI (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 06743948 *.LC5>))) "../User/main.c":54 -1
+        (high:SI (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 06700948 *.LC5>))) "../User/main.c":54 -1
      (nil))
 (insn 453 452 454 35 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 267)
-            (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 06743948 *.LC5>))) "../User/main.c":54 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 06743948 *.LC5>)
+            (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 06700948 *.LC5>))) "../User/main.c":54 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 06700948 *.LC5>)
         (nil)))
 (insn 454 453 455 35 (set (reg:SI 10 a0)
         (reg:SI 266)) "../User/main.c":54 -1
      (nil))
 (call_insn 455 454 456 35 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>) [0 __builtin_sprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>) [0 __builtin_sprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":54 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1823,11 +1823,11 @@ Deleted label in block 11.
         (const_int 0 [0])) "../User/main.c":56 -1
      (nil))
 (call_insn 469 468 470 36 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":56 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1842,11 +1842,11 @@ Deleted label in block 11.
 (debug_insn 470 469 471 36 (debug_marker) "../User/main.c":59 -1
      (nil))
 (insn 471 470 472 36 (set (reg:SI 270)
-        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>))) "../User/main.c":59 -1
+        (high:SI (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>))) "../User/main.c":59 -1
      (nil))
 (insn 472 471 473 36 (set (reg:SI 113 [ _67 ])
         (mem/c:SI (lo_sum:SI (reg:SI 270)
-                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 066c2738 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":59 -1
+                (symbol_ref:SI ("motor") [flags 0xc0] <var_decl 06681790 motor>)) [5 motor.state+0 S4 A32])) "../User/main.c":59 -1
      (nil))
 (insn 473 472 474 36 (set (reg:SI 271)
         (const_int 3 [0x3])) "../User/main.c":59 -1
@@ -1866,23 +1866,23 @@ Deleted label in block 11.
             (const_int -24 [0xffffffffffffffe8]))) "../User/main.c":60 -1
      (nil))
 (insn 478 477 479 37 (set (reg:SI 273)
-        (high:SI (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 067439a0 *.LC6>))) "../User/main.c":60 -1
+        (high:SI (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 067009a0 *.LC6>))) "../User/main.c":60 -1
      (nil))
 (insn 479 478 480 37 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 273)
-            (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 067439a0 *.LC6>))) "../User/main.c":60 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 067439a0 *.LC6>)
+            (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 067009a0 *.LC6>))) "../User/main.c":60 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 067009a0 *.LC6>)
         (nil)))
 (insn 480 479 481 37 (set (reg:SI 10 a0)
         (reg:SI 272)) "../User/main.c":60 -1
      (nil))
 (call_insn 481 480 482 37 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 0610f7f8 __builtin_strcpy>) [0 __builtin_strcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 060cf7f8 __builtin_strcpy>) [0 __builtin_strcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":60 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 0610f7f8 __builtin_strcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 060cf7f8 __builtin_strcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -1914,23 +1914,23 @@ Deleted label in block 11.
             (const_int -24 [0xffffffffffffffe8]))) "../User/main.c":62 -1
      (nil))
 (insn 491 490 492 39 (set (reg:SI 275)
-        (high:SI (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 067439f8 *.LC7>))) "../User/main.c":62 -1
+        (high:SI (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 067009f8 *.LC7>))) "../User/main.c":62 -1
      (nil))
 (insn 492 491 493 39 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 275)
-            (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 067439f8 *.LC7>))) "../User/main.c":62 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 067439f8 *.LC7>)
+            (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 067009f8 *.LC7>))) "../User/main.c":62 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 067009f8 *.LC7>)
         (nil)))
 (insn 493 492 494 39 (set (reg:SI 10 a0)
         (reg:SI 274)) "../User/main.c":62 -1
      (nil))
 (call_insn 494 493 495 39 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 0610f7f8 __builtin_strcpy>) [0 __builtin_strcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 060cf7f8 __builtin_strcpy>) [0 __builtin_strcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":62 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 0610f7f8 __builtin_strcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 060cf7f8 __builtin_strcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -2047,23 +2047,23 @@ Deleted label in block 11.
         (reg:SI 299)) "../User/main.c":64 -1
      (nil))
 (insn 526 525 527 40 (set (reg:SI 301)
-        (high:SI (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 06743a50 *.LC8>))) "../User/main.c":64 -1
+        (high:SI (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 06700a50 *.LC8>))) "../User/main.c":64 -1
      (nil))
 (insn 527 526 528 40 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 301)
-            (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 06743a50 *.LC8>))) "../User/main.c":64 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 06743a50 *.LC8>)
+            (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 06700a50 *.LC8>))) "../User/main.c":64 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 06700a50 *.LC8>)
         (nil)))
 (insn 528 527 529 40 (set (reg:SI 10 a0)
         (reg:SI 300)) "../User/main.c":64 -1
      (nil))
 (call_insn 529 528 530 40 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>) [0 __builtin_sprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>) [0 __builtin_sprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":64 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06471690 sprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 060d7690 sprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2108,11 +2108,11 @@ Deleted label in block 11.
         (const_int 0 [0])) "../User/main.c":67 -1
      (nil))
 (call_insn 543 542 544 41 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>) [0 OLED_ShowMixStringArea S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":67 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 066cfe88 OLED_ShowMixStringArea>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_ShowMixStringArea") [flags 0x41] <function_decl 0668ee88 OLED_ShowMixStringArea>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2127,11 +2127,11 @@ Deleted label in block 11.
 (debug_insn 544 543 545 41 (debug_marker) "../User/main.c":69 -1
      (nil))
 (call_insn 545 544 547 41 (parallel [
-            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>) [0 OLED_Update S4 A32])
+            (call (mem:SI (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>) [0 OLED_Update S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "../User/main.c":69 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 066cf9d8 OLED_Update>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("OLED_Update") [flags 0x41] <function_decl 0668e9d8 OLED_Update>)
         (nil))
     (nil))
 (jump_insn 547 545 548 41 (set (pc)

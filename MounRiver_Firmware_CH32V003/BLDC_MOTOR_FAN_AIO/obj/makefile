@@ -55,7 +55,7 @@ main-build: BLDC_MOTOR_FAN_AIO.elf secondary-outputs
 
 # Tool invocations
 BLDC_MOTOR_FAN_AIO.elf: $(OBJS) $(USER_OBJS_ESCAPE)
-	@	riscv-none-embed-gcc -march=rv32ecxw -mabi=ilp32e -msmall-data-limit=0 -msave-restore -fmax-errors=20 -fdump-rtl-expand -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -Wunused -Wuninitialized -g -T "c:\Users\Harry\Documents\GitHub\ADC2PWM\MounRiver_Firmware_CH32V003\BLDC_MOTOR_FAN_AIO\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -Xlinker --print-memory-usage -Wl,-Map,"BLDC_MOTOR_FAN_AIO.map" --specs=nano.specs --specs=nosys.specs -o "BLDC_MOTOR_FAN_AIO.elf" $(OBJS) $(LIBS) -lprintf
+	@	riscv-none-embed-gcc -march=rv32ecxw -mabi=ilp32e -msmall-data-limit=0 -msave-restore -fmax-errors=20 -fdump-rtl-expand -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -Wunused -Wuninitialized -g -T "d:\Harry\ADC2PWM\MounRiver_Firmware_CH32V003\BLDC_MOTOR_FAN_AIO\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -Xlinker --print-memory-usage -Wl,-Map,"BLDC_MOTOR_FAN_AIO.map" --specs=nano.specs --specs=nosys.specs -o "BLDC_MOTOR_FAN_AIO.elf" $(OBJS) $(LIBS) -lprintf
 BLDC_MOTOR_FAN_AIO.hex: BLDC_MOTOR_FAN_AIO.elf
 	@	riscv-none-embed-objcopy -O ihex "BLDC_MOTOR_FAN_AIO.elf" "BLDC_MOTOR_FAN_AIO.hex"
 BLDC_MOTOR_FAN_AIO.lst: BLDC_MOTOR_FAN_AIO.elf
