@@ -5,7 +5,7 @@
  * Date               : 2026-07-18
  * Description        : BLDC Fan Controller — CH32V003F4P6 + DRV8311 + CH1115 OLED
  *
- * BEMF sensorless 6-step commutation, duty via tSPI, OLED status display,
+ * 48MHz HSI+PLL, BEMF sensorless 6-step commutation, duty via tSPI, OLED status display,
  * 2-button throttle control.
  *******************************************************************************/
 
