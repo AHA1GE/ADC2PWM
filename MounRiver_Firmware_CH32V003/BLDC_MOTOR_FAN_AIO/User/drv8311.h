@@ -78,8 +78,9 @@ typedef struct {
 typedef drv8311_instance_t *drv8311_handle_t;
 
 
-// Returns 0 on success, or step number (1-4) where nFAULT went LOW:
-//   1 = after nSLEEP wake, 2 = after SYS_CTRL, 3 = after PWMG_CTRL, 4 = after PWMG_PERIOD
+// Returns 0 on success, or step number (1-5) where nFAULT went LOW:
+//   1 = after nSLEEP wake, 2 = after SYS_CTRL, 3 = after PWMG_CTRL,
+//   4 = after PWMG_PERIOD, 5 = after PWM_CTRL1
 int  drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg);
 
 void drv8311_nsleep_ctrl(drv8311_handle_t handle, uint8_t level);

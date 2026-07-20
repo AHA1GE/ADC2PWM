@@ -19,6 +19,12 @@ volatile uint32_t tim1_tick_count = 0;
 static uint16_t batt_adc_ema;   // EMA of battery ADC (×1, no fixed-point needed)
 static uint8_t  batt_initialized;
 
+/* DMA buffer — continuously filled by ADC1 scan of all 8 channels.
+ * Index = ADC channel number (0–7).
+ * BATT=0, NEUTRAL=1, CURR_U=2, CURR_V=3, CURR_W=4, BEMF_U=5, BEMF_V=6, BEMF_W=7
+ */
+volatile uint16_t adc_dma_buf[ADC_DMA_BUF_SIZE];
+
 /*===========================================================================
  * GPIO Initialization — All 20 pins per PIN.md
  *===========================================================================*/
@@ -221,34 +227,72 @@ void DRV8311_Disable(void)
 }
 
 /*===========================================================================
- * ADC1 — All 8 analog channels, single-channel mode, 6MHz ADCCLK
+ * ADC1 — 8-channel continuous scan → DMA1 Channel 1 circular buffer
+ *
+ * Each channel sampled at 6MHz ADCCLK / (73+12.5) ≈ 70 kSps per channel.
+ * Full 8-channel scan completes in ~1.1 ms, so every channel refreshes
+ * at ~900 Hz.  No software trigger needed after init — just read adc_dma_buf[].
+ *
+ * DMA buffer index = ADC channel number (ranks are assigned in channel order).
  *===========================================================================*/
 
 void HAL_ADC_Init(void)
 {
     ADC_InitTypeDef ADC_InitStructure = {0};
+    DMA_InitTypeDef DMA_InitStructure = {0};
 
+    /* --- ADC1 clock --- */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
-    RCC_ADCCLKConfig(RCC_PCLK2_Div8);  // 48MHz / 8 = 6MHz ADCCLK
+    RCC_ADCCLKConfig(RCC_PCLK2_Div8);       // 48 MHz / 8 = 6 MHz ADCCLK
 
-    ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
-    ADC_InitStructure.ADC_ScanConvMode = DISABLE;        // Single channel per conversion
-    ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;  // One conversion per trigger
-    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;  // Software trigger
-    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-    ADC_InitStructure.ADC_NbrOfChannel = 1;
+    /* --- DMA1 Channel 1 (hardwired to ADC1) --- */
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+    DMA_DeInit(DMA1_Channel1);
+    DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&ADC1->RDATAR;
+    DMA_InitStructure.DMA_MemoryBaseAddr     = (uint32_t)adc_dma_buf;
+    DMA_InitStructure.DMA_DIR                = DMA_DIR_PeripheralSRC;
+    DMA_InitStructure.DMA_BufferSize         = ADC_DMA_BUF_SIZE;
+    DMA_InitStructure.DMA_PeripheralInc      = DMA_PeripheralInc_Disable;
+    DMA_InitStructure.DMA_MemoryInc          = DMA_MemoryInc_Enable;
+    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+    DMA_InitStructure.DMA_MemoryDataSize     = DMA_MemoryDataSize_HalfWord;
+    DMA_InitStructure.DMA_Mode               = DMA_Mode_Circular;
+    DMA_InitStructure.DMA_Priority           = DMA_Priority_High;
+    DMA_InitStructure.DMA_M2M                = DMA_M2M_Disable;
+    DMA_Init(DMA1_Channel1, &DMA_InitStructure);
+    DMA_Cmd(DMA1_Channel1, ENABLE);
+
+    /* --- ADC1: continuous scan, 8 channels, software-triggered start --- */
+    ADC_InitStructure.ADC_Mode              = ADC_Mode_Independent;
+    ADC_InitStructure.ADC_ScanConvMode      = ENABLE;
+    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
+    ADC_InitStructure.ADC_ExternalTrigConv  = ADC_ExternalTrigConv_None;
+    ADC_InitStructure.ADC_DataAlign         = ADC_DataAlign_Right;
+    ADC_InitStructure.ADC_NbrOfChannel      = ADC_DMA_BUF_SIZE;
     ADC_Init(ADC1, &ADC_InitStructure);
 
-    // Start with battery channel (safe default)
-    ADC_RegularChannelConfig(ADC1, ADC_CH_BATT, 1, ADC_SampleTime_73Cycles);
+    /* Assign channels in rank order (rank 1 → buf[0], rank 2 → buf[1], …) */
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_0,  1, ADC_SampleTime_73Cycles); // BATT
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_1,  2, ADC_SampleTime_73Cycles); // NEUTRAL
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_2,  3, ADC_SampleTime_73Cycles); // CURR_U
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_3,  4, ADC_SampleTime_73Cycles); // CURR_V
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_4,  5, ADC_SampleTime_73Cycles); // CURR_W
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_5,  6, ADC_SampleTime_73Cycles); // BEMF_U
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_6,  7, ADC_SampleTime_73Cycles); // BEMF_V
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_7,  8, ADC_SampleTime_73Cycles); // BEMF_W
 
+    /* Enable DMA peripheral request */
+    ADC_DMACmd(ADC1, ENABLE);
+
+    /* Power-up and calibrate */
     ADC_Cmd(ADC1, ENABLE);
-
-    // Calibration
     ADC_ResetCalibration(ADC1);
     while (ADC_GetResetCalibrationStatus(ADC1));
     ADC_StartCalibration(ADC1);
     while (ADC_GetCalibrationStatus(ADC1));
+
+    /* Start continuous scan — ADC never stops after this */
+    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
 }
 
 /*===========================================================================
@@ -283,27 +327,20 @@ void HAL_TIM1_Start(void) { TIM_Cmd(TIM1, ENABLE); }
 void HAL_TIM1_Stop(void)  { TIM_Cmd(TIM1, DISABLE); }
 
 /*===========================================================================
- * Battery ADC — Periodic sampling, EMA filter
+ * Battery ADC — Read latest value from DMA buffer, EMA filter
  *===========================================================================*/
 
 void BAT_ADC_Sample(void)
 {
-    // Temporarily switch to battery channel, sample, restore.
-    // Save current channel config to restore after (simplified: just set back to
-    // whatever the motor control layer expects — bldc_control manages BEMF channel).
-    ADC_RegularChannelConfig(ADC1, ADC_CH_BATT, 1, ADC_SampleTime_73Cycles);
-
-    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-    while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC));
-    uint16_t val = ADC_GetConversionValue(ADC1);
-    ADC_ClearFlag(ADC1, ADC_FLAG_EOC);
+    // Read directly from DMA buffer — no channel switching or trigger needed
+    uint16_t val = adc_dma_buf[ADC_CH_BATT];  // Channel 0
 
     // EMA filter: α = 0.25
     if (!batt_initialized) {
-        batt_adc_ema = val * 256;  // Fixed-point ×256
+        batt_adc_ema   = val * 256;       // Fixed-point × 256
         batt_initialized = 1;
     } else {
-        // ema = (3 * ema + 1 * val) / 4  → α = 0.25
+        // ema = (3 * ema + 1 * val) / 4  => α = 0.25
         batt_adc_ema = ((batt_adc_ema * 3) >> 2) + (val * 64);
     }
 }

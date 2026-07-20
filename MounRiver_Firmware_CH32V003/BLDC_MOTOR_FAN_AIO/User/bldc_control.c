@@ -250,21 +250,11 @@ void BLDC_SampleBEMF(void)
     if (motor.state != STATE_RUN) return;
 
     const CommEntry_t *e = &comm_table[motor.step];
-    uint16_t bemf_raw, neutral_raw;
 
-    // Sample floating phase BEMF
-    ADC_RegularChannelConfig(ADC1, e->bemf_adc_ch, 1, ADC_SampleTime_73Cycles);
-    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-    while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC));
-    bemf_raw = ADC_GetConversionValue(ADC1);
-    ADC_ClearFlag(ADC1, ADC_FLAG_EOC);
-
-    // Sample neutral
-    ADC_RegularChannelConfig(ADC1, ADC_CH_BEMF_NEUTRAL, 1, ADC_SampleTime_73Cycles);
-    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-    while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC));
-    neutral_raw = ADC_GetConversionValue(ADC1);
-    ADC_ClearFlag(ADC1, ADC_FLAG_EOC);
+    // Read latest values directly from DMA buffer — no channel switching,
+    // software trigger, or polling loops.  Buffer index = ADC channel number.
+    uint16_t bemf_raw    = adc_dma_buf[e->bemf_adc_ch];
+    uint16_t neutral_raw = adc_dma_buf[ADC_CH_BEMF_NEUTRAL];
 
     // EMA filter: α = 1/8 → ema = (7 * ema + sample) / 8
     // Fixed-point: ×256
@@ -430,24 +420,10 @@ uint16_t BLDC_GetBusCurrent_mA(void)
 {
     uint32_t sum = 0;
 
-    // Sample all 3 CSA channels
-    ADC_RegularChannelConfig(ADC1, ADC_CH_CURR_U, 1, ADC_SampleTime_73Cycles);
-    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-    while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC));
-    sum += ADC_GetConversionValue(ADC1);
-    ADC_ClearFlag(ADC1, ADC_FLAG_EOC);
-
-    ADC_RegularChannelConfig(ADC1, ADC_CH_CURR_V, 1, ADC_SampleTime_73Cycles);
-    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-    while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC));
-    sum += ADC_GetConversionValue(ADC1);
-    ADC_ClearFlag(ADC1, ADC_FLAG_EOC);
-
-    ADC_RegularChannelConfig(ADC1, ADC_CH_CURR_W, 1, ADC_SampleTime_73Cycles);
-    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-    while (!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC));
-    sum += ADC_GetConversionValue(ADC1);
-    ADC_ClearFlag(ADC1, ADC_FLAG_EOC);
+    // Read all 3 CSA channels directly from DMA buffer
+    sum += adc_dma_buf[ADC_CH_CURR_U];  // Channel 2
+    sum += adc_dma_buf[ADC_CH_CURR_V];  // Channel 3
+    sum += adc_dma_buf[ADC_CH_CURR_W];  // Channel 4
 
     // Average, then scale: mA = avg * 3300 / 1024 / 0.5 = avg * 6.445
     uint16_t avg = (uint16_t)(sum / 3);

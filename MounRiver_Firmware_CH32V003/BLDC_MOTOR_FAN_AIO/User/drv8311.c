@@ -194,7 +194,7 @@ static uint16_t drv8311_read(drv8311_handle_t handle, uint8_t reg) {
     return ((uint16_t)rx[1] << 8) | rx[2];
 }
 
-// Returns 0 on success, or the step number (1-4) where nFAULT went LOW.
+// Returns 0 on success, or the step number (1-5) where nFAULT went LOW.
 int drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg) {
     drv8311_reg_t reg;
 
@@ -249,11 +249,32 @@ int drv8311_init(drv8311_handle_t *handle, drv8311_cfg_t *cfg) {
     drv8311_write(dev, DRV8311_PWMG_PERIOD_ADDR, reg.half_word);
     if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) return 4;
 
-    // --- Step 5: PWM mode (PWM_CTRL1) --- skipped for testing.
-    // The DRV8311P may default to PWM Gen mode already.
-    // If it does, we avoid the write that triggers nFAULT.
-    // (void)drv8311_write(dev, DRV8311_PWM_CTRL1_ADDR, 0x0007);
-    // if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) return 5;
+    // --- Step 5: PWM mode select (PWM_CTRL1) ---
+    // PWM_MODE = 11b (PWM Generator Mode), SSC disabled.
+    // DRV8311 reset default is Hi-Z (00b) — MUST be written.
+    // The previous tSPI driver had broken framing that caused SPI_FLT
+    // on this write; the corrected 32-bit tSPI protocol now works.
+    reg.half_word = 0;
+    reg.pwm_ctrl1.pwm_mode = 3;       // PWM Generator Mode (0b11)
+    reg.pwm_ctrl1.ssc_dis  = 1;       // Disable spread-spectrum clocking
+    drv8311_write(dev, DRV8311_PWM_CTRL1_ADDR, reg.half_word);
+
+    // Readback: verify PWM_CTRL1 was accepted
+    uint16_t ctrl1_rb = drv8311_read(dev, DRV8311_PWM_CTRL1_ADDR);
+    if ((ctrl1_rb & 0x0007) != 0x0007) return 5;
+
+    if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) {
+        // nFAULT triggered — check status, clear, retry once
+        uint16_t sts1 = drv8311_read(dev, DRV8311_DEV_STS1_ADDR);
+        drv8311_write(dev, DRV8311_FLT_CLR_ADDR, 0x0001);
+        Delay_Ms(2);
+        // Retry
+        drv8311_write(dev, DRV8311_PWM_CTRL1_ADDR, reg.half_word);
+        if (GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7) == Bit_RESET) {
+            (void)sts1;
+            return 5;
+        }
+    }
 
     // --- CSA config (optional) ---
     reg.half_word = 0;
@@ -292,7 +313,7 @@ uint16_t drv8311_get_sync_period(drv8311_handle_t handle) {
 void drv8311_csa_ctrl(drv8311_handle_t handle, uint8_t en) {
     drv8311_reg_t csa_ctrl;
 
-    csa_ctrl.half_word = drv8311_read(handle, DRV8311_PWMG_CTRL_ADDR);
+    csa_ctrl.half_word = drv8311_read(handle, DRV8311_CSA_CTRL_ADDR);
 
     if (en) {
         csa_ctrl.csa_ctrl.csa_en = 1;
@@ -306,7 +327,7 @@ void drv8311_csa_ctrl(drv8311_handle_t handle, uint8_t en) {
 void drv8311_csa_set_gain(drv8311_handle_t handle, DRV8311_CSA_GAIN_t gain) {
     drv8311_reg_t csa_ctrl;
 
-    csa_ctrl.half_word = drv8311_read(handle, DRV8311_PWMG_CTRL_ADDR);
+    csa_ctrl.half_word = drv8311_read(handle, DRV8311_CSA_CTRL_ADDR);
 
     csa_ctrl.csa_ctrl.csa_gain = gain;
 
